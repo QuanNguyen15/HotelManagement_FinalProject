@@ -12,6 +12,7 @@ namespace BusinessLogic
 
     public class BUSCongTy
     {
+        ServerName serverName=new ServerName();
 
         DataTable dt = null;
 
@@ -21,7 +22,8 @@ namespace BusinessLogic
 
         public DataTable getCongTy()
         {
-            DBCongTy dbCongTy = new DBCongTy("DESKTOP-9HGBU5H\\SQLEXPRESS", "HOTELS");
+            
+            DBCongTy dbCongTy = new DBCongTy(serverName.userName, "HOTELS");
             DataTable getDatatable= dbCongTy.getDataTable();
             dt = getDatatable;
             return dt;
