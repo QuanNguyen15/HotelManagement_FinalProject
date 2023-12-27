@@ -30,5 +30,9 @@ namespace DataAccess
             Email = email;
             DiaChi = diaChi;
         }
+        public void hello()
+        {
+
+        }
     }
 }
