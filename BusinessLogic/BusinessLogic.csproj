@@ -54,6 +54,7 @@
     <Compile Include="BUSTaiKhoan.cs" />
     <Compile Include="BUSThietBi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerName.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
