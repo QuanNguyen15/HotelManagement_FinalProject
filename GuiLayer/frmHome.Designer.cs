@@ -48,6 +48,8 @@
             this.pnAbout = new ReaLTaiizor.Controls.Panel();
             this.btnAbout = new System.Windows.Forms.Button();
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new ReaLTaiizor.Controls.Panel();
+            this.button1 = new ReaLTaiizor.Controls.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -57,11 +59,12 @@
             this.pnBill.SuspendLayout();
             this.pnClient.SuspendLayout();
             this.pnAbout.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.btnHam);
             this.panel1.Controls.Add(this.nightControlBox1);
             this.panel1.Controls.Add(this.label2);
@@ -118,13 +121,14 @@
             // 
             // sidebar
             // 
-            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.sidebar.Controls.Add(this.pnHome);
             this.sidebar.Controls.Add(this.pnMyroom);
             this.sidebar.Controls.Add(this.pnBookingroom);
             this.sidebar.Controls.Add(this.pnBill);
             this.sidebar.Controls.Add(this.pnClient);
             this.sidebar.Controls.Add(this.pnAbout);
+            this.sidebar.Controls.Add(this.panel2);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 57);
             this.sidebar.Name = "sidebar";
@@ -158,6 +162,7 @@
             this.btnHome.Text = "              Home";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // pnMyroom
             // 
@@ -186,6 +191,7 @@
             this.btnMyroom.Text = "              My Room";
             this.btnMyroom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyroom.UseVisualStyleBackColor = false;
+            this.btnMyroom.Click += new System.EventHandler(this.btnMyroom_Click);
             // 
             // pnBookingroom
             // 
@@ -304,6 +310,40 @@
             this.sidebarTransition.Interval = 10;
             this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(51)))), ((int)(((byte)(63)))));
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
+            this.panel2.Location = new System.Drawing.Point(3, 361);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.panel2.Size = new System.Drawing.Size(277, 65);
+            this.panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.panel2.TabIndex = 9;
+            this.panel2.Text = "panel2";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.EnteredBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.button1.EnteredColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button1.Image = null;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.button1.Location = new System.Drawing.Point(-34, -21);
+            this.button1.Name = "button1";
+            this.button1.PressedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.button1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.button1.Size = new System.Drawing.Size(335, 111);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Sign out";
+            this.button1.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -314,7 +354,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "frmHome";
-            this.Text = "frmHome";
+            this.Text = "formTheme1";
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -326,6 +366,7 @@
             this.pnBill.ResumeLayout(false);
             this.pnClient.ResumeLayout(false);
             this.pnAbout.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -350,5 +391,7 @@
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Timer sidebarTransition;
         private System.Windows.Forms.PictureBox btnHam;
+        private ReaLTaiizor.Controls.Panel panel2;
+        private ReaLTaiizor.Controls.Button button1;
     }
 }

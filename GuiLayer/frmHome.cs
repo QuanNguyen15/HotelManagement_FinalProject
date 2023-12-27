@@ -64,5 +64,25 @@ namespace GuiLayer
         {
 
         }
+
+        private void dreamForm1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMyroom_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
