@@ -42,6 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DBCongTy.cs" />
+    <Compile Include="DAL\DBDatPhong.cs" />
+    <Compile Include="DAL\DBDonVi.cs" />
+    <Compile Include="DAL\DBHoaDon.cs" />
+    <Compile Include="DAL\DBKhachHang.cs" />
+    <Compile Include="DAL\DBLoaiPhong.cs" />
+    <Compile Include="DAL\DBNhanVien.cs" />
+    <Compile Include="DAL\DBPhongThietBi.cs" />
+    <Compile Include="DAL\DBSanPham.cs" />
+    <Compile Include="DAL\DBTaiKhoan.cs" />
+    <Compile Include="DAL\DBThietBi.cs" />
     <Compile Include="DTO\classCongTy.cs" />
     <Compile Include="classDataBase.cs" />
     <Compile Include="DTO\classDatPhong.cs" />

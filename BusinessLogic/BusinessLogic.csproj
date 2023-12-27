@@ -42,6 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BNCongTy.cs" />
+    <Compile Include="BNDatPhong.cs" />
+    <Compile Include="BNDonVi.cs" />
+    <Compile Include="BNHoaDon.cs" />
+    <Compile Include="BNKhachHang.cs" />
+    <Compile Include="BNLoaiPhong.cs" />
+    <Compile Include="BNNhanVien.cs" />
+    <Compile Include="BNPhong.cs" />
+    <Compile Include="BNPhongThietBi.cs" />
+    <Compile Include="BNSanPham.cs" />
+    <Compile Include="BNTaiKhoan.cs" />
+    <Compile Include="BNThietBi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
