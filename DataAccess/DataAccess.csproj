@@ -42,11 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classCongTy.cs" />
+    <Compile Include="classDataBase.cs" />
     <Compile Include="classDatPhong.cs" />
     <Compile Include="classDonVi.cs" />
     <Compile Include="classHoaDon.cs" />
     <Compile Include="classKhachHang.cs" />
     <Compile Include="classLoaiPhong.cs" />
+    <Compile Include="classSanPham.cs" />
+    <Compile Include="classTaiKhoan.cs" />
+    <Compile Include="classThietBi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
