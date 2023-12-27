@@ -1,5 +1,4 @@
-﻿using DataAccess;
-using DataAccess.DAL;
+﻿using DataAccess.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,23 +8,20 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-
-    public class BNCongTy
+    public class BUSDatPhong
     {
-
         DataTable dt = null;
 
-        public BNCongTy()
+        public BUSDatPhong()
         {
         }
 
         public DataTable getCongTy()
         {
-            DBCongTy dbCongTy = new DBCongTy("DESKTOP-9HGBU5H\\SQLEXPRESS", "HOTELS");
-            DataTable getDatatable= dbCongTy.getDataTable();
+            DBCongTy dbCongTy = new DBCongTy("DESKTOP-2MC26TB\\SQLEXPRESS", "HOTELS");
+            DataTable getDatatable = dbCongTy.getDataTable();
             dt = getDatatable;
             return dt;
         }
-
     }
 }

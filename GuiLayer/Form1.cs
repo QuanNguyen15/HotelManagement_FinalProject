@@ -13,7 +13,8 @@ namespace GuiLayer
     public partial class Form1 : Form
     {
         DataTable dt = null;
-        BNCongTy congty =new BNCongTy();
+        BUSCongTy congty =new BUSCongTy();
+        BUSDatPhong bNDatPhong = new BUSDatPhong();
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace GuiLayer
         {
             dt= congty.getCongTy();
             dataGridView1.DataSource = dt;
+            dt= bNDatPhong.getCongTy() ;
 
         }
     }
