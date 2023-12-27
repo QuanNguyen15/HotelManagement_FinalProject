@@ -19,8 +19,13 @@ namespace BusinessLogic
 
         public DataTable getDatPhong()
         {
+<<<<<<< HEAD
+            DBDatPhong dBDatPhong = new DBDatPhong("DESKTOP-2MC26TB\\SQLEXPRESS", "HOTELS");
+            DataTable getDatatable = dBDatPhong.getDataTable();
+=======
             DBDatPhong dbDatPhong = new DBDatPhong(ServerName.userName, "HOTELS");
             DataTable getDatatable = dbDatPhong.getDataTable();
+>>>>>>> 351ba38e7667c961988ab07c7536f417fb62d5c4
             dt = getDatatable;
             return dt;
         }
