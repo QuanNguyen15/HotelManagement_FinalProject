@@ -15,6 +15,12 @@ namespace GuiLayer
         BUSCongTy congty =new BUSCongTy();
         BUSNhanVien nhanVien = new BUSNhanVien();
         BUSDatPhong bNDatPhong = new BUSDatPhong();
+        BUSDonVi bUSDonVi = new BUSDonVi();
+        BUSHoaDon bUSHoaDon = new BUSHoaDon();
+        BUSKhachHang bUSKhachHang = new BUSKhachHang();
+        BUSLoaiPhong bUSLoaiPhong = new BUSLoaiPhong();
+
+
         public Form1()
         {
             InitializeComponent();
@@ -30,6 +36,16 @@ namespace GuiLayer
             dt2 = bNDatPhong.getDatPhong();
             dataGridView3.DataSource = dt2;
 
+         
+            dataGridView1.DataSource = dt;
+            dt = nhanVien.getNhanVien();
+            dataGridView1.DataSource = dt;
+            dt = nhanVien.getNhanVien();
+            dataGridView1.DataSource = dt;
+            dt = nhanVien.getNhanVien();
+            dataGridView1.DataSource = dt;
+            dt = nhanVien.getNhanVien();
+            dataGridView1.DataSource = dt;
         }
 
         private void data_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -38,6 +54,11 @@ namespace GuiLayer
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
