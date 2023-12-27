@@ -10,16 +10,17 @@ namespace BusinessLogic
 {
     public class BUSDatPhong
     {
+        ServerName ServerName = new ServerName();
         DataTable dt = null;
 
         public BUSDatPhong()
         {
         }
 
-        public DataTable getCongTy()
+        public DataTable getDatPhong()
         {
-            DBCongTy dbCongTy = new DBCongTy("DESKTOP-2MC26TB\\SQLEXPRESS", "HOTELS");
-            DataTable getDatatable = dbCongTy.getDataTable();
+            DBDatPhong dbDatPhong = new DBDatPhong(ServerName.userName, "HOTELS");
+            DataTable getDatatable = dbDatPhong.getDataTable();
             dt = getDatatable;
             return dt;
         }

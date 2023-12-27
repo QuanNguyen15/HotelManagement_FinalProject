@@ -12,8 +12,8 @@ namespace GuiLayer
 {
     public partial class Form1 : Form
     {
-        DataTable dt = null;
         BUSCongTy congty =new BUSCongTy();
+        BUSNhanVien nhanVien = new BUSNhanVien();
         BUSDatPhong bNDatPhong = new BUSDatPhong();
         public Form1()
         {
@@ -22,9 +22,23 @@ namespace GuiLayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dt= congty.getCongTy();
+            DataTable dt = null;
+            DataTable dt2 = null;
+            dt = nhanVien.getNhanVien();
             dataGridView1.DataSource = dt;
-            dt= bNDatPhong.getCongTy() ;
+
+            dt2 = bNDatPhong.getDatPhong();
+            dataGridView3.DataSource = dt2;
+
+        }
+
+        private void data_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
