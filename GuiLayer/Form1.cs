@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BusinessLogic;
 namespace GuiLayer
 {
     public partial class Form1 : Form
     {
+        DataTable dt = null;
+        BNCongTy congty =new BNCongTy();
         public Form1()
         {
             InitializeComponent();
@@ -19,6 +21,8 @@ namespace GuiLayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            dt= congty.getCongTy();
+            dataGridView1.DataSource = dt;
 
         }
     }

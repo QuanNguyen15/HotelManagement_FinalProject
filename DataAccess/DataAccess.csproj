@@ -41,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\DBCongTy.cs" />
     <Compile Include="DTO\classCongTy.cs" />
-    <Compile Include="DTO\classDataBase.cs" />
+    <Compile Include="classDataBase.cs" />
     <Compile Include="DTO\classDatPhong.cs" />
     <Compile Include="DTO\classDonVi.cs" />
     <Compile Include="DTO\classHoaDon.cs" />
@@ -54,7 +55,7 @@
     <Compile Include="DTO\classSanPham.cs" />
     <Compile Include="DTO\classTaiKhoan.cs" />
     <Compile Include="DTO\classThietBi.cs" />
-    <Compile Include="DBPhong.cs" />
+    <Compile Include="DAL\DBPhong.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
