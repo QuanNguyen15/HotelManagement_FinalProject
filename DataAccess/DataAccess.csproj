@@ -54,7 +54,9 @@
     <Compile Include="classSanPham.cs" />
     <Compile Include="classTaiKhoan.cs" />
     <Compile Include="classThietBi.cs" />
+    <Compile Include="DBPhong.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
