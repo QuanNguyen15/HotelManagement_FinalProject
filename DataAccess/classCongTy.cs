@@ -20,5 +20,15 @@ namespace DataAccess
 
         }
 
+        public classCongTy(int id, string maCongTy, string tenCongTy, string dienThoai, string fax, string email, string diaChi)
+        {
+            Id = id;
+            MaCongTy = maCongTy;
+            TenCongTy = tenCongTy;
+            DienThoai = dienThoai;
+            Fax = fax;
+            Email = email;
+            DiaChi = diaChi;
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace GuiLayer
             else
             {
                 sidebar.Width += 10;
-                if (sidebar.Width >= 284)
+                if (sidebar.Width >= 200)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
@@ -57,6 +57,11 @@ namespace GuiLayer
         private void btnHam_Click(object sender, EventArgs e)
         {
             sidebarTransition.Start();
+
+        }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
 
         }
     }
