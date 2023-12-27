@@ -21,7 +21,7 @@ namespace BusinessLogic
 
         public DataTable getCongTy()
         {
-            DBCongTy dbCongTy = new DBCongTy("DESKTOP-2MC26TB\\SQLEXPRESS", "HOTELS");
+            DBCongTy dbCongTy = new DBCongTy("DESKTOP-9HGBU5H\\SQLEXPRESS", "HOTELS");
             DataTable getDatatable= dbCongTy.getDataTable();
             dt = getDatatable;
             return dt;
