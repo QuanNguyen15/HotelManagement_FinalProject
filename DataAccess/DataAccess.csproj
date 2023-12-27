@@ -53,7 +53,7 @@
     <Compile Include="DAL\DBTaiKhoan.cs" />
     <Compile Include="DAL\DBThietBi.cs" />
     <Compile Include="DTO\classCongTy.cs" />
-    <Compile Include="classDataBase.cs" />
+    <Compile Include="DAL\classDataBase.cs" />
     <Compile Include="DTO\classDatPhong.cs" />
     <Compile Include="DTO\classDonVi.cs" />
     <Compile Include="DTO\classHoaDon.cs" />

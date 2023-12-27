@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 namespace BusinessLogic
 {
 
-    public class BNCongTy
+    public class BUSCongTy
     {
 
         DataTable dt = null;
 
-        public BNCongTy()
+        public BUSCongTy()
         {
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    internal class BNThietBi
+    internal class BUSSanPham
     {
     }
 }

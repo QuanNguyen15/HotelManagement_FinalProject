@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    internal class BNPhong
+    internal class BUSPhong
     {
     }
 }
