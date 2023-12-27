@@ -48,7 +48,9 @@
     <Compile Include="classHoaDon.cs" />
     <Compile Include="classKhachHang.cs" />
     <Compile Include="classLoaiPhong.cs" />
+    <Compile Include="classNhanVien.cs" />
     <Compile Include="classPhong.cs" />
+    <Compile Include="classPhongThietBi.cs" />
     <Compile Include="classSanPham.cs" />
     <Compile Include="classTaiKhoan.cs" />
     <Compile Include="classThietBi.cs" />
