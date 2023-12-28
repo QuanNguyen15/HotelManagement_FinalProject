@@ -26,5 +26,7 @@ namespace DataAccess.DAL
             dt = cDB.getTable("HoaDon");
             return dt;
         }
+
+
     }
 }

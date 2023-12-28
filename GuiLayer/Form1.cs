@@ -33,8 +33,7 @@ namespace GuiLayer
             dt = nhanVien.getNhanVien();
             dataGridView1.DataSource = dt;
 
-            dt2 = bNDatPhong.getDatPhong();
-            dataGridView3.DataSource = dt2;
+ 
 
          
             dataGridView1.DataSource = dt;
