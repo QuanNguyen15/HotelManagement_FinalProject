@@ -21,10 +21,55 @@ namespace GuiLayer
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void PanelMove(Control btn)
+        {
+            pnIMove.Top = btn.Top;
+            pnIMove.Height = btn.Height;
+        }
+        private void HomePage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            PanelMove(btnHome);
+        }
+
+        private void btnRoom_Click(object sender, EventArgs e)
+        {
+            PanelMove(btnRoom);
+        }
+
+        private void btnBooking_Click(object sender, EventArgs e)
+        {
+            PanelMove(btnBooking);
+        }
+
+        private void btnClient_Click(object sender, EventArgs e)
+        {
+            PanelMove(btnClient);
+        }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            PanelMove(btnBill);
+        }
+
+        private void btnService_Click(object sender, EventArgs e)
+        {
+            PanelMove(btnService);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to log out the account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                PanelMove(btnLogout);
+                /*timerDateAndTime.Stop();*/
+                this.Close();
+            }
         }
     }
 }
