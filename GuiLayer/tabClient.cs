@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace GuiLayer
 {
     public partial class tabClient : UserControl
     {
+        BUSKhachHang bUSKhachHang = new BUSKhachHang();
         public tabClient()
         {
             InitializeComponent();
@@ -49,7 +51,8 @@ namespace GuiLayer
 
         private void tabClient_Load(object sender, EventArgs e)
         {
-
+            DataTable dt = bUSKhachHang.getKhachHang();
+            dataGridViewCLient.DataSource = dt;
         }
     }
 }

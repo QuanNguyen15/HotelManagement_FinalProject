@@ -99,5 +99,10 @@ namespace GuiLayer
         {
 
         }
+
+        private void tabClient1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
