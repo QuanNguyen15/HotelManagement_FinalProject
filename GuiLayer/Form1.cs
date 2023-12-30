@@ -35,13 +35,16 @@ namespace GuiLayer
             DataTable dt2 = null;
             dt = nhanVien.getNhanVien();
             dataGridView1.DataSource = dt;
-            classDatPhong datPhong =new classDatPhong();
+
+            classDatPhong datPhong = new classDatPhong();
             datPhong.idPhong = 1;
-            datPhong.ngayDat = DateTime.Parse("2023-01-01 12:00:00.000");
+            datPhong.ngayDat = DateTime.Parse("2023-01-01 00:00:00.000");
 
             dt = bUSDatPhong.getDataDatPhong(datPhong);
-
             dataGridView6.DataSource = dt;
+
+            /*            dt2 =bUSKhachHang.getKhachHang();
+                        dataGridView6.DataSource = dt2;*/
         }
 
         private void data_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -57,6 +57,7 @@ namespace DataAccess
             da.Fill(dt);//điền dữ liệu vào đối tượng DataTable
             return dt;
         }
+
         //phương thực thi câu lệnh truy vấn sql:insert,update,delet, create...
         public bool executeSQL(string sql)
         {
@@ -70,7 +71,7 @@ namespace DataAccess
             return false;
         }
         //phương thức thực thi truy vấn qua thủ tục
-        public DataTable executeProcedure(string nameProcedure, SqlParameter[] parma)
+        public DataTable executeSQLselect(string nameProcedure, SqlParameter[] parma)
         //nameProcedure: Chuỗi biểu diễn tên của thủ tục lưu trữ mà bạn muốn thực thi.
         //parma: Một mảng các đối tượng SqlParameter, đại diện cho các tham số của thủ tục lưu trữ.
         {
@@ -94,6 +95,23 @@ namespace DataAccess
             }
             return dataTable;
         }
+
+        public bool executeProcedure(string nameProcedure, SqlParameter[] parma)
+        {
+            cmd = new SqlCommand(nameProcedure);
+            cmd.CommandType = CommandType.StoredProcedure;
+            foreach (SqlParameter par in parma)
+            {
+                cmd.Parameters.Add(par);
+            }
+            cmd.Connection = conn;
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
 
     }
 }

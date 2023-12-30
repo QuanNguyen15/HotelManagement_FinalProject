@@ -38,8 +38,7 @@ namespace DataAccess.DAL
             sp[1] = new SqlParameter("@ngayDat", SqlDbType.DateTime);
             sp[1].Value = Object.ngayDat;
 
-
-            return cDB.executeProcedure("GetHoaDonByRoomAndDate", sp);
+            return cDB.executeSQLselect("GetHoaDonInfoByDatPhong", sp);
 
         }
     }
