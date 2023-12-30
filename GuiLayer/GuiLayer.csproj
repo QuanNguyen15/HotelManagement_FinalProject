@@ -190,6 +190,8 @@
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.19.13.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="ServiceStack.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <HintPath>..\packages\ServiceStack.Common.6.0.2\lib\net472\ServiceStack.Common.dll</HintPath>
     </Reference>
@@ -249,6 +251,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -261,6 +264,7 @@
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.26\lib\net48\Ubiety.Dns.Core.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.26\lib\net48\Zstandard.Net.dll</HintPath>
     </Reference>
@@ -271,6 +275,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientInformation.Designer.cs">
+      <DependentUpon>frmClientInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -286,14 +296,32 @@
     <Compile Include="tabBill.Designer.cs">
       <DependentUpon>tabBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="tabClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="tabClient.Designer.cs">
+      <DependentUpon>tabClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="tabHomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="tabHomePage.Designer.cs">
       <DependentUpon>tabHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="tabRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="tabRoom.Designer.cs">
+      <DependentUpon>tabRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test.xaml.cs">
+      <DependentUpon>test.xaml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientInformation.resx">
+      <DependentUpon>frmClientInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -310,8 +338,14 @@
     <EmbeddedResource Include="tabBill.resx">
       <DependentUpon>tabBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="tabClient.resx">
+      <DependentUpon>tabClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="tabHomePage.resx">
       <DependentUpon>tabHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tabRoom.resx">
+      <DependentUpon>tabRoom.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -332,6 +366,12 @@
       <Project>{c284b5a9-c979-454c-87f1-37f5aac6ccea}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

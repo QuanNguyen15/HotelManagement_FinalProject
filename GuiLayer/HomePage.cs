@@ -28,37 +28,55 @@ namespace GuiLayer
         }
         private void HomePage_Load(object sender, EventArgs e)
         {
-
+            timerDateAndTime.Start();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             PanelMove(btnHome);
+            tabBill1.Visible = false;
+            tabRoom1.Visible = false;
+            tabClient1.Visible = false;
         }
 
         private void btnRoom_Click(object sender, EventArgs e)
         {
             PanelMove(btnRoom);
+            tabBill1.Visible = false;
+            tabRoom1.Visible = true;
+            tabClient1.Visible = false;
         }
 
         private void btnBooking_Click(object sender, EventArgs e)
         {
             PanelMove(btnBooking);
+            tabBill1.Visible = false;
+            tabRoom1.Visible = false;
+            tabClient1.Visible = false;
         }
 
         private void btnClient_Click(object sender, EventArgs e)
         {
             PanelMove(btnClient);
+            tabBill1.Visible = false;
+            tabRoom1.Visible = false;
+            tabClient1.Visible = true;  
         }
 
         private void btnBill_Click(object sender, EventArgs e)
         {
             PanelMove(btnBill);
+            tabBill1.Visible = true;
+            tabRoom1.Visible = false;
+            tabClient1.Visible = false;
         }
 
         private void btnService_Click(object sender, EventArgs e)
         {
             PanelMove(btnService);
+            tabBill1.Visible = false;
+            tabRoom1.Visible = false;
+            tabClient1.Visible = false;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -67,9 +85,19 @@ namespace GuiLayer
             if (dialogResult == DialogResult.Yes)
             {
                 PanelMove(btnLogout);
-                /*timerDateAndTime.Stop();*/
+                timerDateAndTime.Stop();
                 this.Close();
             }
+        }
+
+        private void timerDateAndTime_Tick(object sender, EventArgs e)
+        {
+            lbDateAndTime.Text = DateTime.Now.ToString("dd-MMM-yyyy       hh:mm:ss tt ");
+        }
+
+        private void pnHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
