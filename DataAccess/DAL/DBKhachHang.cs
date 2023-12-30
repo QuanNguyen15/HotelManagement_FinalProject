@@ -24,6 +24,7 @@ namespace DataAccess.DAL
         {
             dt = new DataTable();
             dt = cDB.getTable("KhachHang");
+
             return dt;
         }
     }

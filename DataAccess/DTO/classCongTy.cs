@@ -8,13 +8,13 @@ namespace DataAccess
 {
     public class classCongTy
     {
-        public int Id { get; set; }
-        public string MaCongTy { get; set; }
-        public string TenCongTy { get; set; }
-        public string DienThoai { get; set; }
-        public string Fax { get; set; }
-        public string Email { get; set; }
-        public string DiaChi { get; set; }
+        public int id { get; set; }
+        public string maCongTy { get; set; }
+        public string tenCongTy { get; set; }
+        public string dienThoai { get; set; }
+        public string fax { get; set; }
+        public string email { get; set; }
+        public string diaChi { get; set; }
         public classCongTy()
         {
 
@@ -22,13 +22,13 @@ namespace DataAccess
 
         public classCongTy(int id, string maCongTy, string tenCongTy, string dienThoai, string fax, string email, string diaChi)
         {
-            Id = id;
-            MaCongTy = maCongTy;
-            TenCongTy = tenCongTy;
-            DienThoai = dienThoai;
-            Fax = fax;
-            Email = email;
-            DiaChi = diaChi;
+            this.id = id;
+            this.maCongTy = maCongTy;
+            this.tenCongTy = tenCongTy;
+            this.dienThoai = dienThoai;
+            this.fax = fax;
+            this.email = email;
+            this.diaChi = diaChi;
         }
     }
 }
