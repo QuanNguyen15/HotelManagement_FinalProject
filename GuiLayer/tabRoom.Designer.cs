@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tabRoom));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridViewRoom = new System.Windows.Forms.DataGridView();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Infomation = new System.Windows.Forms.DataGridViewImageColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -40,51 +35,7 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoom)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridViewRoom);
-            this.panel1.Location = new System.Drawing.Point(26, 156);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1128, 668);
-            this.panel1.TabIndex = 0;
-            // 
-            // dataGridViewRoom
-            // 
-            this.dataGridViewRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Delete,
-            this.Infomation});
-            this.dataGridViewRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewRoom.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewRoom.Name = "dataGridViewRoom";
-            this.dataGridViewRoom.RowHeadersWidth = 51;
-            this.dataGridViewRoom.RowTemplate.Height = 24;
-            this.dataGridViewRoom.Size = new System.Drawing.Size(1128, 668);
-            this.dataGridViewRoom.TabIndex = 0;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Delete.Width = 125;
-            // 
-            // Infomation
-            // 
-            this.Infomation.HeaderText = "Information";
-            this.Infomation.Image = ((System.Drawing.Image)(resources.GetObject("Infomation.Image")));
-            this.Infomation.MinimumWidth = 6;
-            this.Infomation.Name = "Infomation";
-            this.Infomation.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Infomation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Infomation.Width = 125;
             // 
             // textBox1
             // 
@@ -172,27 +123,19 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel1);
             this.Name = "tabRoom";
             this.Size = new System.Drawing.Size(1601, 980);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.DataGridView dataGridViewRoom;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.DataGridViewImageColumn Infomation;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

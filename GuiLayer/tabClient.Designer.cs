@@ -28,15 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tabClient));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewCLient = new System.Windows.Forms.DataGridView();
+            this.idKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Information = new System.Windows.Forms.DataGridViewImageColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCLient)).BeginInit();
             this.SuspendLayout();
@@ -51,46 +60,123 @@
             // 
             // dataGridViewCLient
             // 
+            this.dataGridViewCLient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCLient.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCLient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewCLient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCLient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idKhachHang,
+            this.hoTen,
+            this.gioiTinh,
+            this.soCCCD,
+            this.dienThoai,
+            this.email,
+            this.diaChi,
             this.Delete,
-            this.Information});
+            this.Edit});
             this.dataGridViewCLient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCLient.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewCLient.Name = "dataGridViewCLient";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCLient.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewCLient.RowHeadersWidth = 51;
             this.dataGridViewCLient.RowTemplate.Height = 24;
             this.dataGridViewCLient.Size = new System.Drawing.Size(1450, 668);
             this.dataGridViewCLient.TabIndex = 0;
             this.dataGridViewCLient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCLient_CellContentClick);
             // 
+            // idKhachHang
+            // 
+            this.idKhachHang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idKhachHang.DataPropertyName = "idKhachHang";
+            this.idKhachHang.FillWeight = 80F;
+            this.idKhachHang.HeaderText = "Id Client";
+            this.idKhachHang.MinimumWidth = 6;
+            this.idKhachHang.Name = "idKhachHang";
+            // 
+            // hoTen
+            // 
+            this.hoTen.DataPropertyName = "hoTen";
+            this.hoTen.HeaderText = "Fullname";
+            this.hoTen.MinimumWidth = 6;
+            this.hoTen.Name = "hoTen";
+            // 
+            // gioiTinh
+            // 
+            this.gioiTinh.DataPropertyName = "gioiTinh";
+            this.gioiTinh.HeaderText = "Gender";
+            this.gioiTinh.MinimumWidth = 6;
+            this.gioiTinh.Name = "gioiTinh";
+            // 
+            // soCCCD
+            // 
+            this.soCCCD.DataPropertyName = "soCCCD";
+            this.soCCCD.FillWeight = 170F;
+            this.soCCCD.HeaderText = "Id Card Number";
+            this.soCCCD.MinimumWidth = 6;
+            this.soCCCD.Name = "soCCCD";
+            // 
+            // dienThoai
+            // 
+            this.dienThoai.DataPropertyName = "dienThoai";
+            this.dienThoai.HeaderText = "Phone";
+            this.dienThoai.MinimumWidth = 6;
+            this.dienThoai.Name = "dienThoai";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            // 
+            // diaChi
+            // 
+            this.diaChi.DataPropertyName = "diaChi";
+            this.diaChi.HeaderText = "Address";
+            this.diaChi.MinimumWidth = 6;
+            this.diaChi.Name = "diaChi";
+            // 
             // Delete
             // 
+            this.Delete.FillWeight = 75F;
             this.Delete.HeaderText = "Delete";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Delete.Width = 125;
             // 
-            // Information
+            // Edit
             // 
-            this.Information.HeaderText = "Information";
-            this.Information.Image = ((System.Drawing.Image)(resources.GetObject("Information.Image")));
-            this.Information.MinimumWidth = 6;
-            this.Information.Name = "Information";
-            this.Information.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Information.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Information.Width = 125;
+            this.Edit.FillWeight = 75F;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(26, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(761, 34);
-            this.textBox1.TabIndex = 1;
+            this.txtSearch.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(26, 75);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(761, 34);
+            this.txtSearch.TabIndex = 1;
             // 
             // label1
             // 
@@ -102,35 +188,36 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Client";
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1436, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 40);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(810, 75);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(55, 34);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(810, 75);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 34);
-            this.button2.TabIndex = 7;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(1436, 75);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(40, 40);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tabClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.panel1);
             this.Name = "tabClient";
             this.Size = new System.Drawing.Size(1601, 980);
@@ -145,12 +232,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataGridViewCLient;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.DataGridViewImageColumn Information;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soCCCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dienThoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diaChi;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

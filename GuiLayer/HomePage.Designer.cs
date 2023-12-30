@@ -315,6 +315,9 @@
             // 
             // lbDateAndTime
             // 
+            this.lbDateAndTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDateAndTime.AutoSize = true;
             this.lbDateAndTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDateAndTime.ForeColor = System.Drawing.Color.White;

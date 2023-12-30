@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TheArtOfDev.HtmlRenderer.Adapters;
 
 namespace GuiLayer
 {
@@ -24,7 +25,34 @@ namespace GuiLayer
         {
             
         }
-
+        public void SetClientInformation(string id, string name, string idCard, string phone, string email, string address,string gender)
+        {
+            txtId.Text = id;
+            txtName.Text = name;
+            txtIdCard.Text = idCard;
+            txtPhone.Text = phone;
+            txtEmail.Text = email;
+            txtAddress.Text = address;
+            switch (gender)
+            {
+                case "Male":
+                    rdMale.Checked = true;
+                    break;
+                case "Female":
+                    rdFemale.Checked = true;
+                    break;
+                case "Other":
+                    rdOther.Checked = true;
+                    break;
+                default:
+                    // Xử lý trường hợp giới tính không hợp lệ
+                    break;
+            }
+        }
+        public void SetClientInformation(string id)
+        {
+            lbIdClient.Text = id; // Cập nhật giá trị ID lên Label
+        }
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Do you want to log out the account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -36,6 +64,41 @@ namespace GuiLayer
         }
 
         private void pnFather_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdCard_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbIdClient_Click(object sender, EventArgs e)
         {
 
         }
