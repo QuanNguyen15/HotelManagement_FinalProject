@@ -83,7 +83,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
             this.label7.Location = new System.Drawing.Point(250, 48);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(445, 51);
+            this.label7.Size = new System.Drawing.Size(434, 51);
             this.label7.TabIndex = 25;
             this.label7.Text = "Client\'s Information ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

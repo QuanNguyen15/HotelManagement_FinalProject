@@ -44,14 +44,14 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.btnRoom = new System.Windows.Forms.Button();
             this.pnCenter = new System.Windows.Forms.Panel();
+            this.tabClient1 = new GuiLayer.tabClient();
+            this.tabRoom1 = new GuiLayer.tabRoom();
+            this.tabBill1 = new GuiLayer.tabBill();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnGrid = new System.Windows.Forms.Panel();
             this.pnHeader = new System.Windows.Forms.Panel();
             this.lbDateAndTime = new System.Windows.Forms.Label();
             this.timerDateAndTime = new System.Windows.Forms.Timer(this.components);
-            this.tabRoom1 = new GuiLayer.tabRoom();
-            this.tabBill1 = new GuiLayer.tabBill();
-            this.tabClient1 = new GuiLayer.tabClient();
             this.pnMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -254,6 +254,34 @@
             this.pnCenter.Size = new System.Drawing.Size(1611, 980);
             this.pnCenter.TabIndex = 2;
             // 
+            // tabClient1
+            // 
+            this.tabClient1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.tabClient1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabClient1.Location = new System.Drawing.Point(10, 0);
+            this.tabClient1.Name = "tabClient1";
+            this.tabClient1.Size = new System.Drawing.Size(1601, 980);
+            this.tabClient1.TabIndex = 5;
+            this.tabClient1.Load += new System.EventHandler(this.tabClient1_Load);
+            // 
+            // tabRoom1
+            // 
+            this.tabRoom1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.tabRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabRoom1.Location = new System.Drawing.Point(10, 0);
+            this.tabRoom1.Name = "tabRoom1";
+            this.tabRoom1.Size = new System.Drawing.Size(1601, 980);
+            this.tabRoom1.TabIndex = 4;
+            // 
+            // tabBill1
+            // 
+            this.tabBill1.BackColor = System.Drawing.Color.DimGray;
+            this.tabBill1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabBill1.Location = new System.Drawing.Point(10, 0);
+            this.tabBill1.Name = "tabBill1";
+            this.tabBill1.Size = new System.Drawing.Size(1601, 980);
+            this.tabBill1.TabIndex = 3;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -299,33 +327,6 @@
             // timerDateAndTime
             // 
             this.timerDateAndTime.Tick += new System.EventHandler(this.timerDateAndTime_Tick);
-            // 
-            // tabRoom1
-            // 
-            this.tabRoom1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
-            this.tabRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabRoom1.Location = new System.Drawing.Point(10, 0);
-            this.tabRoom1.Name = "tabRoom1";
-            this.tabRoom1.Size = new System.Drawing.Size(1601, 980);
-            this.tabRoom1.TabIndex = 4;
-            // 
-            // tabBill1
-            // 
-            this.tabBill1.BackColor = System.Drawing.Color.DimGray;
-            this.tabBill1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabBill1.Location = new System.Drawing.Point(10, 0);
-            this.tabBill1.Name = "tabBill1";
-            this.tabBill1.Size = new System.Drawing.Size(1601, 980);
-            this.tabBill1.TabIndex = 3;
-            // 
-            // tabClient1
-            // 
-            this.tabClient1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
-            this.tabClient1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabClient1.Location = new System.Drawing.Point(10, 0);
-            this.tabClient1.Name = "tabClient1";
-            this.tabClient1.Size = new System.Drawing.Size(1601, 980);
-            this.tabClient1.TabIndex = 5;
             // 
             // HomePage
             // 
