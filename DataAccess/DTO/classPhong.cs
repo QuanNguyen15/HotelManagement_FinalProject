@@ -11,14 +11,14 @@ namespace DataAccess
         public int id { get; set; }
         public string tenPhong { get; set; }
 
-        public bool trangThai { get; set; }
+        public string trangThai { get; set; }
         public int idLoaiPhong { get; set; }
 
         public classPhong()
         {
 
         }
-        public classPhong(int id, string tenPhong, bool trangThai, int idLoaiPhong)
+        public classPhong(int id, string tenPhong, string trangThai, int idLoaiPhong)
         {
             this.id = id;
             this.tenPhong = tenPhong;
