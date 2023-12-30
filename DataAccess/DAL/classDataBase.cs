@@ -70,7 +70,7 @@ namespace DataAccess
             return false;
         }
         //phương thức thực thi truy vấn qua thủ tục
-        public bool executeProcedure(string nameProcedure, SqlParameter[] parma)
+        public DataTable executeProcedure(string nameProcedure, SqlParameter[] parma)
         //nameProcedure: Chuỗi biểu diễn tên của thủ tục lưu trữ mà bạn muốn thực thi.
         //parma: Một mảng các đối tượng SqlParameter, đại diện cho các tham số của thủ tục lưu trữ.
         {
@@ -82,11 +82,18 @@ namespace DataAccess
 
             }
             cmd.Connection = conn;
-            if (cmd.ExecuteNonQuery() > 0)
+            /*if (cmd.ExecuteNonQuery() > 0)
             {
                 return true;
             }
-            return false;
+            return false;*/
+            DataTable dataTable = new DataTable();
+            using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+            {
+                adapter.Fill(dataTable);
+            }
+            return dataTable;
         }
+
     }
 }

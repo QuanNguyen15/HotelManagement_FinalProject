@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic;
+using DataAccess;
+using ServiceStack;
+
 namespace GuiLayer
 {
     public partial class Form1 : Form
@@ -19,7 +22,7 @@ namespace GuiLayer
         BUSHoaDon bUSHoaDon = new BUSHoaDon();
         BUSKhachHang bUSKhachHang = new BUSKhachHang();
         BUSLoaiPhong bUSLoaiPhong = new BUSLoaiPhong();
-
+        BUSDatPhong bUSDatPhong = new BUSDatPhong();
 
         public Form1()
         {
@@ -32,19 +35,13 @@ namespace GuiLayer
             DataTable dt2 = null;
             dt = nhanVien.getNhanVien();
             dataGridView1.DataSource = dt;
+            classDatPhong datPhong =new classDatPhong();
+            datPhong.idPhong = 1;
+            datPhong.ngayDat = DateTime.Parse("2023-01-01 12:00:00.000");
 
- 
+            dt = bUSDatPhong.getDataDatPhong(datPhong);
 
-         
-            dataGridView1.DataSource = dt;
-            dt = nhanVien.getNhanVien();
-            dataGridView1.DataSource = dt;
-            dt = nhanVien.getNhanVien();
-            dataGridView1.DataSource = dt;
-            dt = nhanVien.getNhanVien();
-            dataGridView1.DataSource = dt;
-            dt = nhanVien.getNhanVien();
-            dataGridView1.DataSource = dt;
+            dataGridView6.DataSource = dt;
         }
 
         private void data_CellContentClick(object sender, DataGridViewCellEventArgs e)

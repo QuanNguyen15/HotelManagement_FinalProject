@@ -1,4 +1,5 @@
-﻿using DataAccess.DAL;
+﻿using DataAccess;
+using DataAccess.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,6 +17,7 @@ namespace BusinessLogic
         public BUSDatPhong()
         {
         }
+         
 
         public DataTable getDatPhong()
         {
@@ -25,6 +27,12 @@ namespace BusinessLogic
 
             dt = getDatatable;
             return dt;
+        }
+
+        public DataTable getDataDatPhong(classDatPhong datphong)
+        { 
+            DBDatPhong dbDatPhong = new DBDatPhong(ServerName.userName, "HOTELS");
+            return dbDatPhong.getDataDatPhong(datphong);
         }
     }
 }
