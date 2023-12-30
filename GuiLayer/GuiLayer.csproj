@@ -288,6 +288,11 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOTELSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HOTELSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tabBill.cs">
@@ -313,9 +318,6 @@
     </Compile>
     <Compile Include="tabRoom.Designer.cs">
       <DependentUpon>tabRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="test.xaml.cs">
-      <DependentUpon>test.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -347,6 +349,17 @@
     <EmbeddedResource Include="tabRoom.resx">
       <DependentUpon>tabRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="HOTELSDataSet.xsc">
+      <DependentUpon>HOTELSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HOTELSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HOTELSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HOTELSDataSet.xss">
+      <DependentUpon>HOTELSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -370,12 +383,6 @@
       <Project>{9a1df3fe-f38d-4bc4-a1e4-04b5ce43cbaf}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="test.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
