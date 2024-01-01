@@ -1,4 +1,5 @@
-﻿using DataAccess.DAL;
+﻿using DataAccess;
+using DataAccess.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -25,6 +26,12 @@ namespace BusinessLogic
 
             dt = getDatatable;
             return dt;
+        }
+
+        public bool addKhachHang(classKhachHang Object)
+        {
+            DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
+            return dBKhachHang.AddKhachHang(Object);
         }
     }
 }

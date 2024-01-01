@@ -8,15 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace GuiLayer
 {
     public partial class tabClient : UserControl
     {
         BUSKhachHang bUSKhachHang = new BUSKhachHang();
+        DataTable dt;
         public tabClient()
         {
             InitializeComponent();
+
         }
 
         private void dataGridViewCLient_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -63,9 +66,10 @@ namespace GuiLayer
 
         private void tabClient_Load(object sender, EventArgs e)
         {
-            DataTable dt = bUSKhachHang.getKhachHang();
+            dt = bUSKhachHang.getKhachHang();
             dataGridViewCLient.DataSource = dt;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -77,6 +81,43 @@ namespace GuiLayer
         {
             frmAddClient addClient = new frmAddClient();
             addClient.ShowDialog(); 
+        }
+
+        public void getAllKhachHang(string hoten , string gioiTinh,string card, string dienThoai, string email, string diaChi)
+        {
+            DataTable dt = bUSKhachHang.getKhachHang();
+            dataGridViewCLient.DataSource = dt;
+            DataRow dr = dt.NewRow();
+            dr[0] = 1;
+            dr[1] = hoten;
+            dr[2] = gioiTinh;
+            dr[3] = card;
+            dr[4] = dienThoai;
+            dr[5] = email;
+            dr[6] = diaChi;
+            dr[6] = diaChi;
+            dr[6] = diaChi;
+
+            dt.Rows.Add(dr);
+            dataGridViewCLient.DataSource = dt;
+        }
+
+
+        public void RefreshDataGridView()
+        {
+           
+            dataGridViewCLient.DataSource = bUSKhachHang.getKhachHang(); ;
+            dataGridViewCLient.Refresh();
+            MessageBox.Show("show");
+        }
+
+
+
+        public void callBack() { 
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            RefreshDataGridView();
         }
     }
 }

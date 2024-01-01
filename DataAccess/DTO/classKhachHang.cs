@@ -14,9 +14,10 @@ namespace DataAccess
         public string dienThoai {  get; set; }
         public string email {  get; set; }
         public string diaChi {  get; set; }
-
+        public string gioiTinh { get; set; }    
         public classKhachHang() { }
-        public classKhachHang(int id, string hoTen, string soCCCD, string dienThoai, string email, string diaChi)
+
+        public classKhachHang(int id, string hoTen, string soCCCD, string dienThoai, string email, string diaChi, string gioiTinh)
         {
             this.id = id;
             this.hoTen = hoTen;
@@ -24,6 +25,23 @@ namespace DataAccess
             this.dienThoai = dienThoai;
             this.email = email;
             this.diaChi = diaChi;
+            this.gioiTinh = gioiTinh;
+        }
+
+        public classKhachHang(string hoTen, string gioiTinh, string soCCCD, string dienThoai, string email, string diaChi)
+        {
+            this.hoTen = hoTen;
+            this.soCCCD = soCCCD;
+            this.dienThoai = dienThoai;
+            this.email = email;
+            this.diaChi = diaChi;
+            this.gioiTinh = gioiTinh;
+        }
+
+
+        public override string ToString()
+        {
+            return $"hoTen: {hoTen}, gioiTinh: {gioiTinh}, soCCCD: {soCCCD}, dienThoai: {dienThoai}, email: {email}, diaChi: {diaChi}";
         }
     }
 }

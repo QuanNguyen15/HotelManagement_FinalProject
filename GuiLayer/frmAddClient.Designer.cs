@@ -33,7 +33,10 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.pnForm = new System.Windows.Forms.Panel();
-            this.cbbGender = new System.Windows.Forms.ComboBox();
+            this.pnRadio = new System.Windows.Forms.Panel();
+            this.rdOther = new System.Windows.Forms.RadioButton();
+            this.rdFemale = new System.Windows.Forms.RadioButton();
+            this.rdMale = new System.Windows.Forms.RadioButton();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -52,6 +55,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnForm.SuspendLayout();
+            this.pnRadio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -83,6 +87,7 @@
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -95,11 +100,12 @@
             this.btnSave.TabIndex = 27;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnForm
             // 
             this.pnForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(234)))));
-            this.pnForm.Controls.Add(this.cbbGender);
+            this.pnForm.Controls.Add(this.pnRadio);
             this.pnForm.Controls.Add(this.pictureBox7);
             this.pnForm.Controls.Add(this.label8);
             this.pnForm.Controls.Add(this.pictureBox6);
@@ -122,18 +128,52 @@
             this.pnForm.Size = new System.Drawing.Size(755, 379);
             this.pnForm.TabIndex = 26;
             // 
-            // cbbGender
+            // pnRadio
             // 
-            this.cbbGender.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbGender.FormattingEnabled = true;
-            this.cbbGender.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "<3"});
-            this.cbbGender.Location = new System.Drawing.Point(105, 250);
-            this.cbbGender.Name = "cbbGender";
-            this.cbbGender.Size = new System.Drawing.Size(237, 34);
-            this.cbbGender.TabIndex = 24;
+            this.pnRadio.BackColor = System.Drawing.Color.White;
+            this.pnRadio.Controls.Add(this.rdOther);
+            this.pnRadio.Controls.Add(this.rdFemale);
+            this.pnRadio.Controls.Add(this.rdMale);
+            this.pnRadio.Location = new System.Drawing.Point(105, 250);
+            this.pnRadio.Name = "pnRadio";
+            this.pnRadio.Size = new System.Drawing.Size(241, 67);
+            this.pnRadio.TabIndex = 46;
+            // 
+            // rdOther
+            // 
+            this.rdOther.AutoSize = true;
+            this.rdOther.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdOther.Location = new System.Drawing.Point(23, 37);
+            this.rdOther.Name = "rdOther";
+            this.rdOther.Size = new System.Drawing.Size(81, 27);
+            this.rdOther.TabIndex = 2;
+            this.rdOther.TabStop = true;
+            this.rdOther.Text = "Other";
+            this.rdOther.UseVisualStyleBackColor = true;
+            // 
+            // rdFemale
+            // 
+            this.rdFemale.AutoSize = true;
+            this.rdFemale.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdFemale.Location = new System.Drawing.Point(133, 3);
+            this.rdFemale.Name = "rdFemale";
+            this.rdFemale.Size = new System.Drawing.Size(96, 27);
+            this.rdFemale.TabIndex = 1;
+            this.rdFemale.TabStop = true;
+            this.rdFemale.Text = "Female";
+            this.rdFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdMale
+            // 
+            this.rdMale.AutoSize = true;
+            this.rdMale.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdMale.Location = new System.Drawing.Point(23, 4);
+            this.rdMale.Name = "rdMale";
+            this.rdMale.Size = new System.Drawing.Size(74, 27);
+            this.rdMale.TabIndex = 0;
+            this.rdMale.TabStop = true;
+            this.rdMale.Text = "Male";
+            this.rdMale.UseVisualStyleBackColor = true;
             // 
             // pictureBox7
             // 
@@ -233,6 +273,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(241, 30);
             this.txtEmail.TabIndex = 12;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtPhone
             // 
@@ -337,6 +378,8 @@
             this.Load += new System.EventHandler(this.frmAddClient_Load);
             this.pnForm.ResumeLayout(false);
             this.pnForm.PerformLayout();
+            this.pnRadio.ResumeLayout(false);
+            this.pnRadio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -371,6 +414,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbbGender;
+        private System.Windows.Forms.Panel pnRadio;
+        private System.Windows.Forms.RadioButton rdOther;
+        private System.Windows.Forms.RadioButton rdFemale;
+        private System.Windows.Forms.RadioButton rdMale;
     }
 }
