@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -73,35 +74,44 @@ namespace GuiLayer
                     }
                 }
             }
-
             if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(soCDCD) || string.IsNullOrEmpty(dienThoai) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(diachi))
             {
-                MessageBox.Show("Please fill full information");
+                MessageBox.Show("Please fill in all information");
+            }
+            else if (!IsNumeric(soCDCD) || !IsNumeric(dienThoai))
+            {
+                MessageBox.Show("ID card number and phone must be numeric");
             }
             else
             {
-                
-                classKhachHang khachHang;
-                khachHang = new classKhachHang(hoTen, gioiTinh, soCDCD, dienThoai, email, diachi);
+                classKhachHang khachHang = new classKhachHang(hoTen, gioiTinh, soCDCD, dienThoai, email, diachi);
 
-
-                save = busKhachHang.addKhachHang(khachHang);
+                bool save = busKhachHang.addKhachHang(khachHang);
                 if (save)
                 {
-                    MessageBox.Show("Add successfully");                   
+                    MessageBox.Show("Add successfully");
                     TabClient.RefreshDataGridView();
-                    //goi ham RefreshDataGridView() de thuc hien refresh data
                     this.Close();
-
                 }
             }
 
+
         }
 
+
+        static bool IsNumeric(string input)
+        {
+            Regex regex = new Regex("^[0-9]+$");
+            return regex.IsMatch(input);
+        }
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+        private void pnForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
