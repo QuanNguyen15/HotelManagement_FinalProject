@@ -16,10 +16,11 @@ namespace GuiLayer
     {
         BUSKhachHang busKhachHang = new BUSKhachHang();
         bool save;
-        private tabClient tabClient = new tabClient() ;
+        private tabClient TabClient ;
 
-        public frmAddClient()
+        public frmAddClient(tabClient tabClient)
         {
+            TabClient = tabClient;
             InitializeComponent();
             
         }
@@ -68,10 +69,6 @@ namespace GuiLayer
                         {
                             gioiTinh = "Other";
                         }
-                        else
-                        {
-                            MessageBox.Show("Please fill full information");
-                        }
 
                     }
                 }
@@ -83,7 +80,7 @@ namespace GuiLayer
             }
             else
             {
-                MessageBox.Show(hoTen + gioiTinh + soCDCD + dienThoai + email + diachi);
+                
                 classKhachHang khachHang;
                 khachHang = new classKhachHang(hoTen, gioiTinh, soCDCD, dienThoai, email, diachi);
 
@@ -91,8 +88,9 @@ namespace GuiLayer
                 save = busKhachHang.addKhachHang(khachHang);
                 if (save)
                 {
-                    MessageBox.Show("add thanh cong");
-                    tabClient.RefreshDataGridView(); 
+                    MessageBox.Show("Add successfully");                   
+                    TabClient.RefreshDataGridView();
+                    //goi ham RefreshDataGridView() de thuc hien refresh data
                     this.Close();
 
                 }
@@ -104,5 +102,6 @@ namespace GuiLayer
         {
 
         }
+
     }
 }

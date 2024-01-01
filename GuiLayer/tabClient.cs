@@ -77,47 +77,20 @@ namespace GuiLayer
             infoForm.ShowDialog();
         }
 
+        //tao mot class frmAddClient 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddClient addClient = new frmAddClient();
+            frmAddClient addClient = new frmAddClient(this); //truyen doi tuong this(tabClient)
             addClient.ShowDialog(); 
-        }
-
-        public void getAllKhachHang(string hoten , string gioiTinh,string card, string dienThoai, string email, string diaChi)
-        {
-            DataTable dt = bUSKhachHang.getKhachHang();
-            dataGridViewCLient.DataSource = dt;
-            DataRow dr = dt.NewRow();
-            dr[0] = 1;
-            dr[1] = hoten;
-            dr[2] = gioiTinh;
-            dr[3] = card;
-            dr[4] = dienThoai;
-            dr[5] = email;
-            dr[6] = diaChi;
-            dr[6] = diaChi;
-            dr[6] = diaChi;
-
-            dt.Rows.Add(dr);
-            dataGridViewCLient.DataSource = dt;
-        }
-
+        }      
 
         public void RefreshDataGridView()
         {
-           
-            dataGridViewCLient.DataSource = bUSKhachHang.getKhachHang(); ;
-            dataGridViewCLient.Refresh();
-            MessageBox.Show("show");
+            dt = bUSKhachHang.getKhachHang();
+            //thuc hien load lai du lieu sau khi save du lieu moi
+            dataGridViewCLient.DataSource = dt;
+          
         }
 
-
-
-        public void callBack() { 
-        }
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            RefreshDataGridView();
-        }
     }
 }
