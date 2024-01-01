@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace GuiLayer
 {
     public partial class frmRoomInformation : Form
     {
+        BUSSanPham busSanPham = new BUSSanPham();
         public frmRoomInformation()
         {
             InitializeComponent();
@@ -20,10 +22,11 @@ namespace GuiLayer
         private void frmRoomInformation_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'hOTELSDataSet1.SanPham' table. You can move, or remove it, as needed.
-            this.sanPhamTableAdapter.Fill(this.hOTELSDataSet1.SanPham);
-
+            /* this.sanPhamTableAdapter.Fill(this.hOTELSDataSet1.SanPham);*/
+            DataTable dt = new DataTable();
+            dt = busSanPham.getSanPham();
             btnAddService.Visible = false;
-            
+            dataGridView1.DataSource = dt;
 
         }
 
@@ -37,6 +40,11 @@ namespace GuiLayer
         {
            frmAddSevice addSevice = new frmAddSevice();
             addSevice.ShowDialog();
+        }
+
+        private void pnFatherSanPham_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

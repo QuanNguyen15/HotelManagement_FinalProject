@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRoomInformation));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.hOTELSDataSet1 = new GuiLayer.HOTELSDataSet1();
             this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,11 +47,6 @@
             this.lbClientName = new System.Windows.Forms.Label();
             this.btnAddService = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idSanPhamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenSanPhamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbRoomType = new System.Windows.Forms.Label();
             this.lbRomStatus = new System.Windows.Forms.Label();
@@ -60,6 +55,11 @@
             this.btnBook = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.idSanPhamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenSanPhamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.hOTELSDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
             this.pnFatherSanPham.SuspendLayout();
@@ -115,6 +115,7 @@
             this.pnFatherSanPham.Name = "pnFatherSanPham";
             this.pnFatherSanPham.Size = new System.Drawing.Size(1258, 614);
             this.pnFatherSanPham.TabIndex = 31;
+            this.pnFatherSanPham.Paint += new System.Windows.Forms.PaintEventHandler(this.pnFatherSanPham_Paint);
             // 
             // pictureBox4
             // 
@@ -211,14 +212,14 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idSanPhamDataGridViewTextBoxColumn,
@@ -227,63 +228,20 @@
             this.Delete,
             this.Edit});
             this.dataGridView1.DataSource = this.sanPhamBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(43, 176);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(776, 284);
             this.dataGridView1.TabIndex = 40;
-            // 
-            // idSanPhamDataGridViewTextBoxColumn
-            // 
-            this.idSanPhamDataGridViewTextBoxColumn.DataPropertyName = "idSanPham";
-            this.idSanPhamDataGridViewTextBoxColumn.FillWeight = 70F;
-            this.idSanPhamDataGridViewTextBoxColumn.HeaderText = "ID service";
-            this.idSanPhamDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idSanPhamDataGridViewTextBoxColumn.Name = "idSanPhamDataGridViewTextBoxColumn";
-            this.idSanPhamDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenSanPhamDataGridViewTextBoxColumn
-            // 
-            this.tenSanPhamDataGridViewTextBoxColumn.DataPropertyName = "tenSanPham";
-            this.tenSanPhamDataGridViewTextBoxColumn.HeaderText = "Name service";
-            this.tenSanPhamDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenSanPhamDataGridViewTextBoxColumn.Name = "tenSanPhamDataGridViewTextBoxColumn";
-            // 
-            // dongGiaDataGridViewTextBoxColumn
-            // 
-            this.dongGiaDataGridViewTextBoxColumn.DataPropertyName = "dongGia";
-            this.dongGiaDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.dongGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dongGiaDataGridViewTextBoxColumn.Name = "dongGiaDataGridViewTextBoxColumn";
-            // 
-            // Delete
-            // 
-            this.Delete.FillWeight = 70F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Edit
-            // 
-            this.Edit.FillWeight = 70F;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel2
             // 
@@ -377,6 +335,48 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
+            // idSanPhamDataGridViewTextBoxColumn
+            // 
+            this.idSanPhamDataGridViewTextBoxColumn.DataPropertyName = "idSanPham";
+            this.idSanPhamDataGridViewTextBoxColumn.HeaderText = "Id Product";
+            this.idSanPhamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idSanPhamDataGridViewTextBoxColumn.Name = "idSanPhamDataGridViewTextBoxColumn";
+            this.idSanPhamDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenSanPhamDataGridViewTextBoxColumn
+            // 
+            this.tenSanPhamDataGridViewTextBoxColumn.DataPropertyName = "tenSanPham";
+            this.tenSanPhamDataGridViewTextBoxColumn.HeaderText = "Product Name";
+            this.tenSanPhamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenSanPhamDataGridViewTextBoxColumn.Name = "tenSanPhamDataGridViewTextBoxColumn";
+            // 
+            // dongGiaDataGridViewTextBoxColumn
+            // 
+            this.dongGiaDataGridViewTextBoxColumn.DataPropertyName = "dongGia";
+            this.dongGiaDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.dongGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dongGiaDataGridViewTextBoxColumn.Name = "dongGiaDataGridViewTextBoxColumn";
+            // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 70F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Edit
+            // 
+            this.Edit.FillWeight = 70F;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // frmRoomInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -425,11 +425,6 @@
         private System.Windows.Forms.Label lbClientName;
         private System.Windows.Forms.Button btnAddService;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idSanPhamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenSanPhamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dongGiaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbRoomType;
         private System.Windows.Forms.Label lbRomStatus;
@@ -438,5 +433,10 @@
         private System.Windows.Forms.Button btnBook;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSanPhamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenSanPhamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dongGiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
     }
 }
