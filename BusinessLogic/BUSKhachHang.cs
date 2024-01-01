@@ -45,5 +45,10 @@ namespace BusinessLogic
             return dBKhachHang.UpdateKhachHang(Object);
         }
 
+        public DataTable searchKhachHang(classKhachHang Object)
+        {
+            DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
+            return dBKhachHang.searchKhachHang(Object);
+        }
     }
 }

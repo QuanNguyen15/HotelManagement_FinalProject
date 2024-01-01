@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheArtOfDev.HtmlRenderer.Adapters;
@@ -148,7 +149,11 @@ namespace GuiLayer
 
             if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(soCDCD) || string.IsNullOrEmpty(dienThoai) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(diachi))
             {
-                MessageBox.Show("Please fill full information");
+                MessageBox.Show("Please fill in all information");
+            }
+            else if (!IsNumeric(soCDCD) || !IsNumeric(dienThoai))
+            {
+                MessageBox.Show("ID card number and phone must be numeric");
             }
             else
             {
@@ -160,5 +165,10 @@ namespace GuiLayer
                 
             }
             }
+        static bool IsNumeric(string input)
+        {
+            Regex regex = new Regex("^[0-9]+$");
+            return regex.IsMatch(input);
+        }
     }
 }

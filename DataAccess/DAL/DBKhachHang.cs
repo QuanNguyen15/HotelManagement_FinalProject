@@ -32,9 +32,9 @@ namespace DataAccess.DAL
         public bool AddKhachHang(classKhachHang Object)
         {
             SqlParameter[] sp = new SqlParameter[6];
-            
+
             sp[0] = new SqlParameter("@hoTen", SqlDbType.NVarChar, 100);
-            sp[0].Value = Object.hoTen;            
+            sp[0].Value = Object.hoTen;
             sp[1] = new SqlParameter("@gioiTinh", SqlDbType.NVarChar, 20);
             sp[1].Value = Object.gioiTinh;
             sp[2] = new SqlParameter("@soCCCD", SqlDbType.NVarChar, 20);
@@ -80,6 +80,16 @@ namespace DataAccess.DAL
             sp[6].Value = Object.diaChi;
 
             return cDB.executeProcedure("UpdateKhachHang", sp);
+        }
+
+        public DataTable searchKhachHang(classKhachHang Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@SearchTerm", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.hoTen;
+            return cDB.executeSQLselect("SearchKhachHang", sp);
 
         }
     }

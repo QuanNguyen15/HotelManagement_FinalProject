@@ -99,5 +99,15 @@ namespace GuiLayer
           
         }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Text.Trim();
+
+            classKhachHang khachHang = new classKhachHang();
+            khachHang.hoTen = searchTerm;
+
+            dt = bUSKhachHang.searchKhachHang(khachHang);
+            dataGridViewCLient.DataSource = dt;
+        }
     }
 }
