@@ -19,29 +19,90 @@ namespace GuiLayer
         public tabRoom()
         {
             InitializeComponent();
+            foreach (Control control in panel3.Controls)
+            {
+                if (control is RadioButton radioButton)
+                {
+                    
+                    radioButton.CheckedChanged += RadioButton;
+                }
+            }
         }
+        private void RadioButton(object sender, EventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
 
+            if (radioButton != null && radioButton.Checked)
+            {
+                string Option = radioButton.Text;
+                if (Option == "All")
+                {
+                    getAll();
+                }else if(Option == "Available")
+                {
+                    getAvailable();
+                }else if (Option == "Maintainece")
+                {
+                    getMaintainece();
+                }
+            }
+        }
         private void tabRoom_Load(object sender, EventArgs e)
         {
+           
             List<classPhong> phong = busPhong.getPhongToList();
             flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
             flpSingleRoom.WrapContents = true;
             int maxButtonsPerRow = 4; // Số lượng nút tối đa trên mỗi hàng
             int buttonCount = 0;
-
+            
 
             foreach (var room in phong)
             {
+                if(room.idLoaiPhong == 1)
+                {
+                    Button roomButtonForSingleRoom = CreateRoom(room);
+                    flpSingleRoom.Controls.Add(roomButtonForSingleRoom);
+                }
 
-                Button roomButtonForSingleRoom = CreateRoom(room);
-                flpSingleRoom.Controls.Add(roomButtonForSingleRoom);
+                if (room.idLoaiPhong == 2)
+                {
+                    Button roomButtonForDbRoom = CreateRoom(room); // Tạo một Button mới
+                    flpDoubleRoom.Controls.Add(roomButtonForDbRoom);
 
-                Button roomButtonForDbRoom = CreateRoom(room); // Tạo một Button mới
-                flpDbRoom.Controls.Add(roomButtonForDbRoom);
+                }
 
-                Button roomButtonForVipRoom = CreateRoom(room); // Tạo một Button mới
-                flpVipRoom.Controls.Add(roomButtonForVipRoom);
+                if (room.idLoaiPhong == 3)
+                {
+                    Button roomButtonForVipRoom = CreateRoom(room); // Tạo một Button mới
+                    flpVipRoom.Controls.Add(roomButtonForVipRoom);
+                }
+
+             
+           
             }
+
+
+            flpSingleRoom.WrapContents = true;
+            flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
+            flpSingleRoom.AutoSize = true;
+            flpSingleRoom.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flpSingleRoom.AutoScroll = true;
+
+            flpVipRoom.WrapContents = true;
+            flpVipRoom.FlowDirection = FlowDirection.LeftToRight;
+            flpVipRoom.AutoSize = true;
+            flpVipRoom.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flpVipRoom.AutoScroll = true;
+
+            flpDoubleRoom.WrapContents = true;
+            flpDoubleRoom.FlowDirection = FlowDirection.LeftToRight;
+            flpDoubleRoom.AutoSize = true;
+            flpDoubleRoom.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flpDoubleRoom.AutoScroll = true;
+
+
+
         }
         private Button CreateRoom( classPhong room)
         {
@@ -123,12 +184,228 @@ namespace GuiLayer
             MessageBox.Show($"Thanh toán cho phòng {room.id}");
         }
 
+        private void getAll()
+        {
+            foreach (Control control in flpSingleRoom.Controls.OfType<Button>().ToList())
+            {
+                flpSingleRoom.Controls.Remove(control);
+                control.Dispose(); 
+            }
+
+            foreach (Control control in flpDoubleRoom.Controls.OfType<Button>().ToList())
+            {
+                flpDoubleRoom.Controls.Remove(control);
+                control.Dispose();
+            }
+
+            foreach (Control control in flpVipRoom.Controls.OfType<Button>().ToList())
+            {
+                flpVipRoom.Controls.Remove(control);
+                control.Dispose();
+            }
+
+            List<classPhong> phong = busPhong.getPhongToList();
+            flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
+            flpSingleRoom.WrapContents = true;
+            int maxButtonsPerRow = 4; // Số lượng nút tối đa trên mỗi hàng
+            int buttonCount = 0;
+
+
+            foreach (var room in phong)
+            {
+                if (room.idLoaiPhong == 1)
+                {
+                    Button roomButtonForSingleRoom = CreateRoom(room);
+                    flpSingleRoom.Controls.Add(roomButtonForSingleRoom);
+                }
+
+                if (room.idLoaiPhong == 2)
+                {
+                    Button roomButtonForDbRoom = CreateRoom(room); // Tạo một Button mới
+                    flpDoubleRoom.Controls.Add(roomButtonForDbRoom);
+
+                }
+
+                if (room.idLoaiPhong == 3)
+                {
+                    Button roomButtonForVipRoom = CreateRoom(room); // Tạo một Button mới
+                    flpVipRoom.Controls.Add(roomButtonForVipRoom);
+                }
+            }
+        }
+
+        public void getAvailable()
+        {
+            foreach (Control control in flpSingleRoom.Controls.OfType<Button>().ToList())
+            {
+                flpSingleRoom.Controls.Remove(control);
+                control.Dispose();
+            }
+
+            foreach (Control control in flpDoubleRoom.Controls.OfType<Button>().ToList())
+            {
+                flpDoubleRoom.Controls.Remove(control);
+                control.Dispose();
+            }
+
+            foreach (Control control in flpVipRoom.Controls.OfType<Button>().ToList())
+            {
+                flpVipRoom.Controls.Remove(control);
+                control.Dispose();
+            }
+
+            List<classPhong> phong = busPhong.getPhongToList();
+            flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
+            flpSingleRoom.WrapContents = true;
+            int maxButtonsPerRow = 4; // Số lượng nút tối đa trên mỗi hàng
+            int buttonCount = 0;
+
+
+            foreach (var room in phong)
+            {
+                if(room.trangThai == "Available")
+                {
+                    if (room.idLoaiPhong == 1)
+                    {
+                        Button roomButtonForSingleRoom = CreateRoom(room);
+                        flpSingleRoom.Controls.Add(roomButtonForSingleRoom);
+                    }
+
+                    if (room.idLoaiPhong == 2)
+                    {
+                        Button roomButtonForDbRoom = CreateRoom(room); // Tạo một Button mới
+                        flpDoubleRoom.Controls.Add(roomButtonForDbRoom);
+
+                    }
+
+                    if (room.idLoaiPhong == 3)
+                    {
+                        Button roomButtonForVipRoom = CreateRoom(room); // Tạo một Button mới
+                        flpVipRoom.Controls.Add(roomButtonForVipRoom);
+                    }
+                }            
+            }
+        }
+
+        public void getMaintainece()
+        {
+            foreach (Control control in flpSingleRoom.Controls.OfType<Button>().ToList())
+            {
+                flpSingleRoom.Controls.Remove(control);
+                control.Dispose();
+            }
+
+            foreach (Control control in flpDoubleRoom.Controls.OfType<Button>().ToList())
+            {
+                flpDoubleRoom.Controls.Remove(control);
+                control.Dispose();
+            }
+
+            foreach (Control control in flpVipRoom.Controls.OfType<Button>().ToList())
+            {
+                flpVipRoom.Controls.Remove(control);
+                control.Dispose();
+            }
+
+            List<classPhong> phong = busPhong.getPhongToList();
+            flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
+            flpSingleRoom.WrapContents = true;
+            int maxButtonsPerRow = 4; // Số lượng nút tối đa trên mỗi hàng
+            int buttonCount = 0;
+
+
+            foreach (var room in phong)
+            {
+                if (room.trangThai == "Maintenance")
+                {
+                    if (room.idLoaiPhong == 1)
+                    {
+                        Button roomButtonForSingleRoom = CreateRoom(room);
+                        flpSingleRoom.Controls.Add(roomButtonForSingleRoom);
+                    }
+
+                    if (room.idLoaiPhong == 2)
+                    {
+                        Button roomButtonForDbRoom = CreateRoom(room); // Tạo một Button mới
+                        flpDoubleRoom.Controls.Add(roomButtonForDbRoom);
+
+                    }
+
+                    if (room.idLoaiPhong == 3)
+                    {
+                        Button roomButtonForVipRoom = CreateRoom(room); // Tạo một Button mới
+                        flpVipRoom.Controls.Add(roomButtonForVipRoom);
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void flpSingleRoom_Paint(object sender, PaintEventArgs e)
         {
+
 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flpSingleRoom_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flpSingleRoom_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flpVipRoom_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flpDbRoom_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Single_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
