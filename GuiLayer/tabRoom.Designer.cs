@@ -39,13 +39,13 @@
             this.flpVipRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.flpDoubleRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.radOcc = new System.Windows.Forms.RadioButton();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.lbStatus = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.radOcc = new System.Windows.Forms.RadioButton();
             this.flpSingleRoom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flpVipRoom.SuspendLayout();
@@ -167,6 +167,16 @@
             this.flpDoubleRoom.TabIndex = 37;
             this.flpDoubleRoom.Paint += new System.Windows.Forms.PaintEventHandler(this.flpVipRoom_Paint);
             // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(1549, 56);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Double Room";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel1);
@@ -187,46 +197,6 @@
             this.panel3.Size = new System.Drawing.Size(484, 100);
             this.panel3.TabIndex = 39;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(733, 27);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(55, 34);
-            this.btnAdd.TabIndex = 40;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(591, 27);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(55, 34);
-            this.btnSearch.TabIndex = 41;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // lbStatus
-            // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatus.Location = new System.Drawing.Point(9, 13);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(146, 24);
-            this.lbStatus.TabIndex = 13;
-            this.lbStatus.Text = "Room\'s status";
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1549, 56);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Double Room";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
             // radOcc
             // 
             this.radOcc.AutoSize = true;
@@ -238,6 +208,37 @@
             this.radOcc.TabStop = true;
             this.radOcc.Text = "Occupied";
             this.radOcc.UseVisualStyleBackColor = true;
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.Location = new System.Drawing.Point(9, 13);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(146, 24);
+            this.lbStatus.TabIndex = 13;
+            this.lbStatus.Text = "Room\'s status";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(733, 27);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(55, 34);
+            this.btnAdd.TabIndex = 40;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(591, 27);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(55, 34);
+            this.btnSearch.TabIndex = 41;
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // tabRoom
             // 

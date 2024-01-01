@@ -152,21 +152,29 @@ namespace GuiLayer
             ToolStripMenuItem menuItem2 = new ToolStripMenuItem("Đặt phòng nhanh");
             ToolStripMenuItem menuItem3 = new ToolStripMenuItem("Cập nhật sản phẩm");
             ToolStripMenuItem menuItem4 = new ToolStripMenuItem("Thanh toán");
+            ToolStripMenuItem menuItem5 = new ToolStripMenuItem("Thong tin phong");
 
             menuItem1.Click += (sender, e) => ChuyenPhong(room);  // bieu thuc lamda
             menuItem2.Click += (sender, e) => DatPhongNhanh(room);
             menuItem3.Click += (sender, e) => CapNhatSanPham(room);
             menuItem4.Click += (sender, e) => ThanhToan(room, control);
+            menuItem5.Click += (sender, e) => getThongTinPhong(room);
+
 
             contextMenuStrip.Items.Add(menuItem1);
             contextMenuStrip.Items.Add(menuItem2);
             contextMenuStrip.Items.Add(menuItem3);
             contextMenuStrip.Items.Add(menuItem4);
+            contextMenuStrip.Items.Add(menuItem5);
 
             contextMenuStrip.Show(control, new Point(control.Width / 2, control.Height / 2));
             // control vi tri của click 
         }
-
+        private void getThongTinPhong(classPhong room)
+        {
+           frmRoomInformation roomInformation = new frmRoomInformation();
+            roomInformation.ShowDialog();
+        }
         private void ChuyenPhong(classPhong room)
         {
             MessageBox.Show($"Đặt phòng nhanh {room.id}");
@@ -470,6 +478,12 @@ namespace GuiLayer
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddRoom addRoom = new frmAddRoom();
+            addRoom.ShowDialog();
         }
     }
 }
