@@ -49,5 +49,16 @@ namespace DataAccess.DAL
             return cDB.executeProcedure("AddKhachHang", sp);
 
         }
+
+        public bool DeleteKhachHang(classKhachHang Object)
+        {
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@idKhachHang", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.id;
+
+            return cDB.executeProcedure("DeleteKhachHang", sp);
+
+        }
     }
 }

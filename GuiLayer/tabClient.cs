@@ -1,4 +1,5 @@
 ﻿using BusinessLogic;
+using DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,7 +35,13 @@ namespace GuiLayer
 
                     if (result == DialogResult.Yes)
                     {
-
+                        
+                        DataGridViewRow selectedRow = dataGridViewCLient.Rows[e.RowIndex];
+                        string id = selectedRow.Cells["idKhachHang"].Value.ToString();
+                        int idAsInt = int.Parse(id);
+                        classKhachHang khachHang=new classKhachHang();
+                        khachHang.id = idAsInt;
+                        bUSKhachHang.deleteKhachHang(khachHang);
                         dataGridViewCLient.Rows.RemoveAt(e.RowIndex);
                         MessageBox.Show("Xóa thành công!");
                     }

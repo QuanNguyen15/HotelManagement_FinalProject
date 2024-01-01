@@ -13,7 +13,7 @@ namespace BusinessLogic
     {
         ServerName ServerName = new ServerName();
         DataTable dt = null;
-
+       
         public BUSKhachHang()
         {
         }
@@ -32,6 +32,12 @@ namespace BusinessLogic
         {
             DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
             return dBKhachHang.AddKhachHang(Object);
+        }
+
+        public bool deleteKhachHang(classKhachHang Object)
+        {
+            DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
+            return dBKhachHang.DeleteKhachHang(Object);
         }
     }
 }
