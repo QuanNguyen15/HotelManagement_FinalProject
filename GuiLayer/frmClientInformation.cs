@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogic;
+using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +15,12 @@ namespace GuiLayer
 {
     public partial class frmClientInformation : Form
     {
-        public frmClientInformation()
+        BUSKhachHang busKhachHang =new BUSKhachHang();
+        tabClient client;
+
+        public frmClientInformation(tabClient clientFrom1)
         {
+            client = clientFrom1;
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
@@ -102,5 +108,57 @@ namespace GuiLayer
         {
 
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string idString = txtId.Text;
+            int id = int.Parse(idString);
+
+            string hoTen = txtName.Text;
+            string gioiTinh = null;
+            string soCDCD = txtIdCard.Text;
+            string dienThoai = txtPhone.Text;
+            string email = txtEmail.Text;
+            string diachi = txtAddress.Text;
+
+            foreach (Control control in pnRadio.Controls)
+            {
+                if (control is RadioButton radioButton)
+                {
+
+                    if (radioButton != null && radioButton.Checked)
+                    {
+                        string Option = radioButton.Text;
+                        if (Option == "Male")
+                        {
+                            gioiTinh = "Male";
+                        }
+                        else if (Option == "Female")
+                        {
+                            gioiTinh = "Female";
+                        }
+                        else if (Option == "Other")
+                        {
+                            gioiTinh = "Other";
+                        }
+
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(soCDCD) || string.IsNullOrEmpty(dienThoai) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(diachi))
+            {
+                MessageBox.Show("Please fill full information");
+            }
+            else
+            {
+                classKhachHang khachHang = new classKhachHang(id,hoTen,gioiTinh,soCDCD,dienThoai,email,diachi);
+                bool update = busKhachHang.upDateKhachHang(khachHang);
+                 MessageBox.Show("Update successful");
+                 client.RefreshDataGridView();
+                   this.Close();
+                
+            }
+            }
     }
 }

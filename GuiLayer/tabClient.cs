@@ -61,7 +61,7 @@ namespace GuiLayer
                     
 
                     // Tạo form mới và truyền thông tin vào
-                    frmClientInformation infoForm = new frmClientInformation();
+                    frmClientInformation infoForm = new frmClientInformation(this);
                     infoForm.SetClientInformation(id, name, idCard, phone, email, address, gender);
                     infoForm.SetClientInformation(id);
                     infoForm.ShowDialog();
@@ -78,11 +78,11 @@ namespace GuiLayer
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+/*        private void button1_Click(object sender, EventArgs e)
         {
-            frmClientInformation infoForm = new frmClientInformation();
+            frmClientInformation infoForm = new frmClientInformation(this);
             infoForm.ShowDialog();
-        }
+        }*/
 
         //tao mot class frmAddClient 
         private void btnAdd_Click(object sender, EventArgs e)

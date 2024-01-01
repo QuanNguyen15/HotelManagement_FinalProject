@@ -17,7 +17,7 @@ namespace DataAccess
         public string gioiTinh { get; set; }    
         public classKhachHang() { }
 
-        public classKhachHang(int id, string hoTen, string soCCCD, string dienThoai, string email, string diaChi, string gioiTinh)
+        public classKhachHang(int id, string hoTen, string gioiTinh, string soCCCD, string dienThoai, string email, string diaChi)
         {
             this.id = id;
             this.hoTen = hoTen;

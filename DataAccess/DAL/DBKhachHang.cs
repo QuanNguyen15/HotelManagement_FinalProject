@@ -60,5 +60,27 @@ namespace DataAccess.DAL
             return cDB.executeProcedure("DeleteKhachHang", sp);
 
         }
+
+        public bool UpdateKhachHang(classKhachHang Object)
+        {
+            SqlParameter[] sp = new SqlParameter[7];
+            sp[0] = new SqlParameter("@idKhachHang", SqlDbType.Int, 100);
+            sp[0].Value = Object.id;
+            sp[1] = new SqlParameter("@hoTen", SqlDbType.NVarChar, 100);
+            sp[1].Value = Object.hoTen;
+            sp[2] = new SqlParameter("@gioiTinh", SqlDbType.NVarChar, 20);
+            sp[2].Value = Object.gioiTinh;
+            sp[3] = new SqlParameter("@soCCCD", SqlDbType.NVarChar, 20);
+            sp[3].Value = Object.soCCCD;
+            sp[4] = new SqlParameter("@dienThoai", SqlDbType.NVarChar, 20);
+            sp[4].Value = Object.dienThoai;
+            sp[5] = new SqlParameter("@email", SqlDbType.NVarChar, 100);
+            sp[5].Value = Object.email;
+            sp[6] = new SqlParameter("@diaChi", SqlDbType.NVarChar, 100);
+            sp[6].Value = Object.diaChi;
+
+            return cDB.executeProcedure("UpdateKhachHang", sp);
+
+        }
     }
 }

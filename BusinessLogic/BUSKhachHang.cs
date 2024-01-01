@@ -39,5 +39,11 @@ namespace BusinessLogic
             DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
             return dBKhachHang.DeleteKhachHang(Object);
         }
+        public bool upDateKhachHang(classKhachHang Object)
+        {
+            DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
+            return dBKhachHang.UpdateKhachHang(Object);
+        }
+
     }
 }
