@@ -29,102 +29,217 @@
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.button21 = new System.Windows.Forms.Button();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.radAll = new System.Windows.Forms.RadioButton();
+            this.radAvail = new System.Windows.Forms.RadioButton();
+            this.radMaintenece = new System.Windows.Forms.RadioButton();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.flpDbRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.flpSingleRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.flpVipRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 69);
+            this.textBox1.Location = new System.Drawing.Point(26, 18);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(548, 43);
             this.textBox1.TabIndex = 1;
             // 
-            // radioButton1
+            // radAll
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(1298, 186);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(91, 28);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Empty";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radAll.AutoSize = true;
+            this.radAll.Location = new System.Drawing.Point(774, 17);
+            this.radAll.Name = "radAll";
+            this.radAll.Size = new System.Drawing.Size(43, 20);
+            this.radAll.TabIndex = 9;
+            this.radAll.TabStop = true;
+            this.radAll.Text = "All";
+            this.radAll.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radAvail
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(1298, 231);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(103, 28);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Booked";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radAvail.AutoSize = true;
+            this.radAvail.Location = new System.Drawing.Point(860, 19);
+            this.radAvail.Name = "radAvail";
+            this.radAvail.Size = new System.Drawing.Size(85, 20);
+            this.radAvail.TabIndex = 10;
+            this.radAvail.TabStop = true;
+            this.radAvail.Text = "Available";
+            this.radAvail.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // radMaintenece
             // 
-            this.button21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.Location = new System.Drawing.Point(1316, 461);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(103, 33);
-            this.button21.TabIndex = 5;
-            this.button21.Text = "Add room";
-            this.button21.UseVisualStyleBackColor = true;
+            this.radMaintenece.AutoSize = true;
+            this.radMaintenece.Location = new System.Drawing.Point(975, 17);
+            this.radMaintenece.Name = "radMaintenece";
+            this.radMaintenece.Size = new System.Drawing.Size(101, 20);
+            this.radMaintenece.TabIndex = 12;
+            this.radMaintenece.TabStop = true;
+            this.radMaintenece.Text = "Maintainece";
+            this.radMaintenece.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // btnSearch
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(1297, 147);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(109, 28);
-            this.radioButton3.TabIndex = 7;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "All room";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.btnSearch.BackColor = System.Drawing.Color.Silver;
+            this.btnSearch.Location = new System.Drawing.Point(581, 17);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(113, 44);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // comboBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 24);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Room";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(860, 45);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 20;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(26, 75);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1503, 807);
+            this.panel1.TabIndex = 21;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel4
+            // 
+            this.panel4.AutoSize = true;
+            this.panel4.Controls.Add(this.flpVipRoom);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 100);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1503, 40);
+            this.panel4.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(21, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 24);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "VIP Room";
+            // 
+            // panel3
+            // 
+            this.panel3.AutoSize = true;
+            this.panel3.Controls.Add(this.flpDbRoom);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1503, 50);
+            this.panel3.TabIndex = 31;
+            // 
+            // flpDbRoom
+            // 
+            this.flpDbRoom.AutoScroll = true;
+            this.flpDbRoom.AutoSize = true;
+            this.flpDbRoom.BackColor = System.Drawing.Color.White;
+            this.flpDbRoom.Location = new System.Drawing.Point(25, 37);
+            this.flpDbRoom.Name = "flpDbRoom";
+            this.flpDbRoom.Size = new System.Drawing.Size(1400, 10);
+            this.flpDbRoom.TabIndex = 26;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 24);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Double Room";
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.flpSingleRoom);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.MaximumSize = new System.Drawing.Size(0, 800);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1503, 50);
+            this.panel2.TabIndex = 29;
+            // 
+            // flpSingleRoom
+            // 
+            this.flpSingleRoom.AutoScroll = true;
+            this.flpSingleRoom.AutoSize = true;
+            this.flpSingleRoom.BackColor = System.Drawing.Color.White;
+            this.flpSingleRoom.Location = new System.Drawing.Point(25, 37);
+            this.flpSingleRoom.MinimumSize = new System.Drawing.Size(1400, 0);
+            this.flpSingleRoom.Name = "flpSingleRoom";
+            this.flpSingleRoom.Size = new System.Drawing.Size(1400, 10);
+            this.flpSingleRoom.TabIndex = 26;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1322, 273);
+            this.label2.Location = new System.Drawing.Point(21, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 24);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Room type";
+            this.label2.Size = new System.Drawing.Size(129, 24);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Single Room";
+            // 
+            // flpVipRoom
+            // 
+            this.flpVipRoom.BackColor = System.Drawing.Color.White;
+            this.flpVipRoom.Location = new System.Drawing.Point(25, 27);
+            this.flpVipRoom.MaximumSize = new System.Drawing.Size(1400, 0);
+            this.flpVipRoom.Name = "flpVipRoom";
+            this.flpVipRoom.Size = new System.Drawing.Size(277, 10);
+            this.flpVipRoom.TabIndex = 23;
             // 
             // tabRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.button21);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.radMaintenece);
+            this.Controls.Add(this.radAvail);
+            this.Controls.Add(this.radAll);
             this.Controls.Add(this.textBox1);
             this.Name = "tabRoom";
             this.Size = new System.Drawing.Size(1601, 980);
+            this.Load += new System.EventHandler(this.tabRoom_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,11 +247,20 @@
 
         #endregion
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radAll;
+        private System.Windows.Forms.RadioButton radAvail;
+        private System.Windows.Forms.RadioButton radMaintenece;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel flpSingleRoom;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.FlowLayoutPanel flpDbRoom;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel flpVipRoom;
     }
 }

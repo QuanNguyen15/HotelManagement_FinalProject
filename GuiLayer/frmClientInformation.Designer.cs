@@ -30,12 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientInformation));
             this.pnFather = new System.Windows.Forms.Panel();
+            this.lbIdClient = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.pnForm = new System.Windows.Forms.Panel();
-            this.lbIdClient = new System.Windows.Forms.Label();
             this.pnRadio = new System.Windows.Forms.Panel();
+            this.rdOther = new System.Windows.Forms.RadioButton();
+            this.rdFemale = new System.Windows.Forms.RadioButton();
+            this.rdMale = new System.Windows.Forms.RadioButton();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -56,9 +59,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rdMale = new System.Windows.Forms.RadioButton();
-            this.rdFemale = new System.Windows.Forms.RadioButton();
-            this.rdOther = new System.Windows.Forms.RadioButton();
             this.pnFather.SuspendLayout();
             this.pnForm.SuspendLayout();
             this.pnRadio.SuspendLayout();
@@ -73,7 +73,7 @@
             // 
             // pnFather
             // 
-            this.pnFather.BackColor = System.Drawing.Color.White;
+            this.pnFather.BackColor = System.Drawing.SystemColors.Control;
             this.pnFather.Controls.Add(this.lbIdClient);
             this.pnFather.Controls.Add(this.label7);
             this.pnFather.Controls.Add(this.btnCancel);
@@ -85,6 +85,19 @@
             this.pnFather.Size = new System.Drawing.Size(946, 674);
             this.pnFather.TabIndex = 0;
             this.pnFather.Paint += new System.Windows.Forms.PaintEventHandler(this.pnFather_Paint);
+            // 
+            // lbIdClient
+            // 
+            this.lbIdClient.AutoSize = true;
+            this.lbIdClient.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            this.lbIdClient.Location = new System.Drawing.Point(584, 52);
+            this.lbIdClient.Name = "lbIdClient";
+            this.lbIdClient.Size = new System.Drawing.Size(82, 51);
+            this.lbIdClient.TabIndex = 26;
+            this.lbIdClient.Text = "{?}";
+            this.lbIdClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbIdClient.Click += new System.EventHandler(this.lbIdClient_Click);
             // 
             // label7
             // 
@@ -152,19 +165,6 @@
             this.pnForm.Size = new System.Drawing.Size(755, 426);
             this.pnForm.TabIndex = 22;
             // 
-            // lbIdClient
-            // 
-            this.lbIdClient.AutoSize = true;
-            this.lbIdClient.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
-            this.lbIdClient.Location = new System.Drawing.Point(584, 52);
-            this.lbIdClient.Name = "lbIdClient";
-            this.lbIdClient.Size = new System.Drawing.Size(82, 51);
-            this.lbIdClient.TabIndex = 26;
-            this.lbIdClient.Text = "{?}";
-            this.lbIdClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbIdClient.Click += new System.EventHandler(this.lbIdClient_Click);
-            // 
             // pnRadio
             // 
             this.pnRadio.BackColor = System.Drawing.Color.White;
@@ -175,6 +175,42 @@
             this.pnRadio.Name = "pnRadio";
             this.pnRadio.Size = new System.Drawing.Size(241, 67);
             this.pnRadio.TabIndex = 45;
+            // 
+            // rdOther
+            // 
+            this.rdOther.AutoSize = true;
+            this.rdOther.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdOther.Location = new System.Drawing.Point(23, 37);
+            this.rdOther.Name = "rdOther";
+            this.rdOther.Size = new System.Drawing.Size(81, 27);
+            this.rdOther.TabIndex = 2;
+            this.rdOther.TabStop = true;
+            this.rdOther.Text = "Other";
+            this.rdOther.UseVisualStyleBackColor = true;
+            // 
+            // rdFemale
+            // 
+            this.rdFemale.AutoSize = true;
+            this.rdFemale.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdFemale.Location = new System.Drawing.Point(133, 3);
+            this.rdFemale.Name = "rdFemale";
+            this.rdFemale.Size = new System.Drawing.Size(96, 27);
+            this.rdFemale.TabIndex = 1;
+            this.rdFemale.TabStop = true;
+            this.rdFemale.Text = "Female";
+            this.rdFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdMale
+            // 
+            this.rdMale.AutoSize = true;
+            this.rdMale.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdMale.Location = new System.Drawing.Point(23, 4);
+            this.rdMale.Name = "rdMale";
+            this.rdMale.Size = new System.Drawing.Size(74, 27);
+            this.rdMale.TabIndex = 0;
+            this.rdMale.TabStop = true;
+            this.rdMale.Text = "Male";
+            this.rdMale.UseVisualStyleBackColor = true;
             // 
             // pictureBox7
             // 
@@ -397,42 +433,6 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "ID:";
             // 
-            // rdMale
-            // 
-            this.rdMale.AutoSize = true;
-            this.rdMale.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdMale.Location = new System.Drawing.Point(23, 4);
-            this.rdMale.Name = "rdMale";
-            this.rdMale.Size = new System.Drawing.Size(74, 27);
-            this.rdMale.TabIndex = 0;
-            this.rdMale.TabStop = true;
-            this.rdMale.Text = "Male";
-            this.rdMale.UseVisualStyleBackColor = true;
-            // 
-            // rdFemale
-            // 
-            this.rdFemale.AutoSize = true;
-            this.rdFemale.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdFemale.Location = new System.Drawing.Point(133, 3);
-            this.rdFemale.Name = "rdFemale";
-            this.rdFemale.Size = new System.Drawing.Size(96, 27);
-            this.rdFemale.TabIndex = 1;
-            this.rdFemale.TabStop = true;
-            this.rdFemale.Text = "Female";
-            this.rdFemale.UseVisualStyleBackColor = true;
-            // 
-            // rdOther
-            // 
-            this.rdOther.AutoSize = true;
-            this.rdOther.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdOther.Location = new System.Drawing.Point(23, 37);
-            this.rdOther.Name = "rdOther";
-            this.rdOther.Size = new System.Drawing.Size(81, 27);
-            this.rdOther.TabIndex = 2;
-            this.rdOther.TabStop = true;
-            this.rdOther.Text = "Other";
-            this.rdOther.UseVisualStyleBackColor = true;
-            // 
             // frmClientInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -440,7 +440,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(946, 674);
             this.Controls.Add(this.pnFather);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmClientInformation";
             this.Text = "frmClientInformation";
             this.Load += new System.EventHandler(this.frmClientInformation_Load);

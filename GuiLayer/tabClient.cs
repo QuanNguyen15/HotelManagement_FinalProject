@@ -33,6 +33,7 @@ namespace GuiLayer
                     {
 
                         dataGridViewCLient.Rows.RemoveAt(e.RowIndex);
+                        MessageBox.Show("Xóa thành công!");
                     }
 
                 }

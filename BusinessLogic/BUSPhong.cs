@@ -27,10 +27,10 @@ namespace BusinessLogic
             dt = getDatatable;
             return dt;
         }
-        public List<classPhong> getSanPhamToList()
+        public List<classPhong> getPhongToList()
         {
-            DBSanPham dbSanPham = new DBSanPham(serverName.userName, "HOTELS");
-            DataTable dataTable = dbSanPham.getDataTable();
+            DBPhong dbPhong = new DBPhong(serverName.userName, "HOTELS");
+            DataTable dataTable = dbPhong.getDataTable();
 
             List<classPhong> phongList = ConvertDataTableToPhongList(dataTable);
             return phongList;

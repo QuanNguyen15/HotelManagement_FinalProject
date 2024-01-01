@@ -37,6 +37,7 @@ namespace GuiLayer
             tabBill1.Visible = false;
             tabRoom1.Visible = false;
             tabClient1.Visible = false;
+            tabHomePage1.Visible = true;
         }
 
         private void btnRoom_Click(object sender, EventArgs e)
@@ -45,6 +46,7 @@ namespace GuiLayer
             tabBill1.Visible = false;
             tabRoom1.Visible = true;
             tabClient1.Visible = false;
+            tabHomePage1.Visible = false;
         }
 
         private void btnBooking_Click(object sender, EventArgs e)
@@ -53,6 +55,7 @@ namespace GuiLayer
             tabBill1.Visible = false;
             tabRoom1.Visible = false;
             tabClient1.Visible = false;
+            tabHomePage1.Visible = false;
         }
 
         private void btnClient_Click(object sender, EventArgs e)
@@ -60,7 +63,8 @@ namespace GuiLayer
             PanelMove(btnClient);
             tabBill1.Visible = false;
             tabRoom1.Visible = false;
-            tabClient1.Visible = true;  
+            tabClient1.Visible = true;
+            tabHomePage1.Visible = false;
         }
 
         private void btnBill_Click(object sender, EventArgs e)
@@ -69,6 +73,7 @@ namespace GuiLayer
             tabBill1.Visible = true;
             tabRoom1.Visible = false;
             tabClient1.Visible = false;
+            tabHomePage1.Visible = false;
         }
 
         private void btnService_Click(object sender, EventArgs e)
@@ -77,6 +82,7 @@ namespace GuiLayer
             tabBill1.Visible = false;
             tabRoom1.Visible = false;
             tabClient1.Visible = false;
+            tabHomePage1.Visible = false;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
