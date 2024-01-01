@@ -11,9 +11,11 @@ namespace BusinessLogic
         public string userName {get ; set;}
         public string password { get; set; }
 
+        public string Quan = "DESKTOP-FOV0R60\\SQLEXPRESS";
+        public string Viet = "DESKTOP-2MC26TB\\SQLEXPRESS";
         public ServerName()
         {
-            userName = "DESKTOP-FOV0R60\\SQLEXPRESS";
+            userName = Viet;
         }
 
     }
