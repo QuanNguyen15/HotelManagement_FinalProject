@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tabRoom));
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.radAll = new System.Windows.Forms.RadioButton();
             this.radAvail = new System.Windows.Forms.RadioButton();
             this.radMaintenece = new System.Windows.Forms.RadioButton();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.flpSingleRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.Single = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flpVipRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.flpDoubleRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Single = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.radOcc = new System.Windows.Forms.RadioButton();
             this.flpSingleRoom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flpVipRoom.SuspendLayout();
@@ -51,20 +54,21 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 18);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(548, 43);
-            this.textBox1.TabIndex = 1;
+            this.txtSearch.Location = new System.Drawing.Point(26, 27);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(548, 34);
+            this.txtSearch.TabIndex = 1;
             // 
             // radAll
             // 
             this.radAll.AutoSize = true;
-            this.radAll.Location = new System.Drawing.Point(15, 17);
+            this.radAll.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAll.Location = new System.Drawing.Point(26, 51);
             this.radAll.Name = "radAll";
-            this.radAll.Size = new System.Drawing.Size(43, 20);
+            this.radAll.Size = new System.Drawing.Size(48, 28);
             this.radAll.TabIndex = 9;
             this.radAll.TabStop = true;
             this.radAll.Text = "All";
@@ -73,9 +77,10 @@
             // radAvail
             // 
             this.radAvail.AutoSize = true;
-            this.radAvail.Location = new System.Drawing.Point(101, 19);
+            this.radAvail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAvail.Location = new System.Drawing.Point(92, 51);
             this.radAvail.Name = "radAvail";
-            this.radAvail.Size = new System.Drawing.Size(85, 20);
+            this.radAvail.Size = new System.Drawing.Size(96, 28);
             this.radAvail.TabIndex = 10;
             this.radAvail.TabStop = true;
             this.radAvail.Text = "Available";
@@ -84,31 +89,14 @@
             // radMaintenece
             // 
             this.radMaintenece.AutoSize = true;
-            this.radMaintenece.Location = new System.Drawing.Point(216, 19);
+            this.radMaintenece.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radMaintenece.Location = new System.Drawing.Point(207, 51);
             this.radMaintenece.Name = "radMaintenece";
-            this.radMaintenece.Size = new System.Drawing.Size(101, 20);
+            this.radMaintenece.Size = new System.Drawing.Size(119, 28);
             this.radMaintenece.TabIndex = 12;
             this.radMaintenece.TabStop = true;
             this.radMaintenece.Text = "Maintainece";
             this.radMaintenece.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Silver;
-            this.btnSearch.Location = new System.Drawing.Point(581, 17);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(113, 44);
-            this.btnSearch.TabIndex = 13;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(196, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 20;
             // 
             // flpSingleRoom
             // 
@@ -120,6 +108,16 @@
             this.flpSingleRoom.Size = new System.Drawing.Size(1600, 56);
             this.flpSingleRoom.TabIndex = 34;
             this.flpSingleRoom.Paint += new System.Windows.Forms.PaintEventHandler(this.flpSingleRoom_Paint_2);
+            // 
+            // Single
+            // 
+            this.Single.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Single.Location = new System.Drawing.Point(3, 0);
+            this.Single.Name = "Single";
+            this.Single.Size = new System.Drawing.Size(1549, 56);
+            this.Single.TabIndex = 39;
+            this.Single.Text = "Single Room";
+            this.Single.Click += new System.EventHandler(this.Single_Click);
             // 
             // panel1
             // 
@@ -148,6 +146,16 @@
             this.flpVipRoom.TabIndex = 38;
             this.flpVipRoom.Paint += new System.Windows.Forms.PaintEventHandler(this.flpDbRoom_Paint);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1549, 53);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Vip Room";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // flpDoubleRoom
             // 
             this.flpDoubleRoom.BackColor = System.Drawing.Color.White;
@@ -169,18 +177,49 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.radOcc);
+            this.panel3.Controls.Add(this.lbStatus);
             this.panel3.Controls.Add(this.radMaintenece);
             this.panel3.Controls.Add(this.radAll);
-            this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.radAvail);
             this.panel3.Location = new System.Drawing.Point(846, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(363, 100);
+            this.panel3.Size = new System.Drawing.Size(484, 100);
             this.panel3.TabIndex = 39;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(733, 27);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(55, 34);
+            this.btnAdd.TabIndex = 40;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(591, 27);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(55, 34);
+            this.btnSearch.TabIndex = 41;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.Location = new System.Drawing.Point(9, 13);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(146, 24);
+            this.lbStatus.TabIndex = 13;
+            this.lbStatus.Text = "Room\'s status";
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(1549, 56);
@@ -188,35 +227,28 @@
             this.label5.Text = "Double Room";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // Single
+            // radOcc
             // 
-            this.Single.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Single.Location = new System.Drawing.Point(3, 0);
-            this.Single.Name = "Single";
-            this.Single.Size = new System.Drawing.Size(1549, 56);
-            this.Single.TabIndex = 39;
-            this.Single.Text = "Single Room";
-            this.Single.Click += new System.EventHandler(this.Single_Click);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1549, 53);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Vip Room";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.radOcc.AutoSize = true;
+            this.radOcc.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radOcc.Location = new System.Drawing.Point(351, 51);
+            this.radOcc.Name = "radOcc";
+            this.radOcc.Size = new System.Drawing.Size(99, 28);
+            this.radOcc.TabIndex = 14;
+            this.radOcc.TabStop = true;
+            this.radOcc.Text = "Occupied";
+            this.radOcc.UseVisualStyleBackColor = true;
             // 
             // tabRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Name = "tabRoom";
             this.Size = new System.Drawing.Size(1601, 980);
             this.Load += new System.EventHandler(this.tabRoom_Load);
@@ -234,12 +266,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.RadioButton radAll;
         private System.Windows.Forms.RadioButton radAvail;
         private System.Windows.Forms.RadioButton radMaintenece;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.FlowLayoutPanel flpSingleRoom;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flpVipRoom;
@@ -247,7 +277,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label Single;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton radOcc;
     }
 }
