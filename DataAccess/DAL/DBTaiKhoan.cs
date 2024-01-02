@@ -26,5 +26,6 @@ namespace DataAccess.DAL
             dt = cDB.getTable("TaiKhoan");
             return dt;
         }
+
     }
 }

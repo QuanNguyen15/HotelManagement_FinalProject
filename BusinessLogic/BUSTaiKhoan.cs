@@ -1,4 +1,5 @@
-﻿using DataAccess.DAL;
+﻿using DataAccess;
+using DataAccess.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +18,7 @@ namespace BusinessLogic
         {
         }
 
-        public DataTable getKhachHang()
+        public DataTable getTaiKhoan()
         {
 
             DBTaiKhoan dBTaiKhoan = new DBTaiKhoan(ServerName.userName, "HOTELS");
@@ -26,5 +27,37 @@ namespace BusinessLogic
             dt = getDatatable;
             return dt;
         }
+        public List<classTaiKhoan> checkTaiKhoan(DataTable dt)
+        {
+            List<classTaiKhoan> listTaiKhoan = new List<classTaiKhoan>();
+            foreach (DataRow dtTaiKhoan in dt.Rows)
+            {
+                classTaiKhoan taiKhoan = new classTaiKhoan();
+
+                // Gán giá trị từ DataRow vào đối tượng classTaiKhoan
+                taiKhoan.idTaiKhoan = Convert.ToInt32(dtTaiKhoan["idTaiKhoan"]);
+                taiKhoan.userName = dtTaiKhoan["userName"].ToString();
+                taiKhoan.password = dtTaiKhoan["password"].ToString();
+                taiKhoan.idCongty = Convert.ToInt32(dtTaiKhoan["idCongTy"]);
+                taiKhoan.idNhanVien = Convert.ToInt32(dtTaiKhoan["idNhanVien"]);
+                taiKhoan.idRole = Convert.ToInt32(dtTaiKhoan["idRole"]);
+
+                // Thêm đối tượng vào danh sách
+                listTaiKhoan.Add(taiKhoan);
+            }
+            return listTaiKhoan;
+        }
+        public List<classTaiKhoan> getTaiKhoanList()
+        {
+
+            DBTaiKhoan dBTaiKhoan = new DBTaiKhoan(ServerName.userName, "HOTELS");
+            DataTable getDatatable = dBTaiKhoan.getDataTable();
+
+            dt = getDatatable;
+
+            return checkTaiKhoan(dt);
+
+        }
+
     }
 }

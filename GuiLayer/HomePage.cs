@@ -12,9 +12,12 @@ namespace GuiLayer
 {
     public partial class HomePage : Form
     {
-        public HomePage()
+        private string loggedInUser;
+        public HomePage(string username)
         {
             InitializeComponent();
+            loggedInUser = username;
+            lbUser.Text = loggedInUser;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -90,9 +93,14 @@ namespace GuiLayer
             DialogResult dialogResult = MessageBox.Show("Do you want to log out the account?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                PanelMove(btnLogout);
+
                 timerDateAndTime.Stop();
+                this.Hide();
+                frmLogIn login = new frmLogIn();
+                login.ShowDialog();
                 this.Close();
+
+
             }
         }
 
