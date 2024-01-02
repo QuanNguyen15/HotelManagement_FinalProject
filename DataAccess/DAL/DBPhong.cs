@@ -55,7 +55,22 @@ namespace BusinessLogic
 
         }
 
+        public bool UpdatePhong(classPhong Object)
+        {
+            SqlParameter[] sp = new SqlParameter[4];
 
+            sp[0] = new SqlParameter("@idPhong", SqlDbType.Int);
+            sp[0].Value = Object.id;
+            sp[1] = new SqlParameter("@tenPhong", SqlDbType.NVarChar, 50);
+            sp[1].Value = Object.tenPhong;
+            sp[2] = new SqlParameter("@trangThai", SqlDbType.NVarChar, 50);
+            sp[2].Value = Object.trangThai;
+            sp[3] = new SqlParameter("@idLoaiPhong", SqlDbType.NVarChar, 50);
+            sp[3].Value = Object.idLoaiPhong;
+
+            return cDB.executeProcedure("UpdatePhong", sp);
+
+        }
 
     }
 }

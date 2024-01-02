@@ -68,10 +68,13 @@ namespace BusinessLogic
             DataTable dt = dbPhong.searchPhong(Object);
             List<classPhong> list = ConvertDataTableToPhongList(dt);
             return list;
-            {
-
-
-            }
         }
+
+        public bool updatePhong(classPhong Object)
+        {
+            DBPhong dbPhong = new DBPhong(serverName.userName, "HOTELS");
+            return dbPhong.UpdatePhong(Object);
+        }
+
     }
 }

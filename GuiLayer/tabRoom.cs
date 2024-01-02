@@ -120,13 +120,17 @@ namespace GuiLayer
 
             if (room.trangThai == "Available")
             {
-                check = true;
+                roomButton.BackColor = Color.FromArgb(136, 230, 185);
             }
-            else
+            else if(room.trangThai == "Occupied")
             {
-                check = false;
+                roomButton.BackColor = Color.FromArgb(224, 115, 130);
             }
-            roomButton.BackColor = check ? Color.FromArgb(136, 230, 185) : Color.FromArgb(224, 115, 130);
+            else if(room.trangThai == "Maintenance") 
+            {
+                roomButton.BackColor = Color.FromArgb(119, 136, 153);
+            }
+   
 
             roomButton.Click += RoomButton_Click;
 
@@ -150,16 +154,15 @@ namespace GuiLayer
 
             ToolStripMenuItem menuItem1 = new ToolStripMenuItem("Chuyển phòng");
             ToolStripMenuItem menuItem2 = new ToolStripMenuItem("Đặt phòng nhanh");
-            ToolStripMenuItem menuItem3 = new ToolStripMenuItem("Cập nhật sản phẩm");
+            ToolStripMenuItem menuItem3 = new ToolStripMenuItem("Cập nhật trạng thái phòng");
             ToolStripMenuItem menuItem4 = new ToolStripMenuItem("Thanh toán");
             ToolStripMenuItem menuItem5 = new ToolStripMenuItem("Thong tin phong");
 
-            menuItem1.Click += (sender, e) => ChuyenPhong(room);  // bieu thuc lamda
-            menuItem2.Click += (sender, e) => DatPhongNhanh(room);
-            menuItem3.Click += (sender, e) => CapNhatSanPham(room);
+            menuItem1.Click += (sender, e) => ChuyenPhong(room, control);  // bieu thuc lam da
+            menuItem2.Click += (sender, e) => DatPhongNhanh(room, control);
+            menuItem3.Click += (sender, e) => CapNhatSanPham(room, control);
             menuItem4.Click += (sender, e) => ThanhToan(room, control);
-            menuItem5.Click += (sender, e) => getThongTinPhong(room);
-
+            menuItem5.Click += (sender, e) => getThongTinPhong(room ,control);
 
             contextMenuStrip.Items.Add(menuItem1);
             contextMenuStrip.Items.Add(menuItem2);
@@ -170,40 +173,82 @@ namespace GuiLayer
             contextMenuStrip.Show(control, new Point(control.Width / 2, control.Height / 2));
             // control vi tri của click 
         }
-        private void getThongTinPhong(classPhong room)
+        private void getThongTinPhong(classPhong room, Control control)
         {
             frmRoomInformation roomInformation = new frmRoomInformation();
             roomInformation.ShowDialog();
         }
-        private void ChuyenPhong(classPhong room)
+        private void ChuyenPhong(classPhong room, Control control)
         {
             MessageBox.Show($"Đặt phòng nhanh {room.id}");
         }
 
-        private void DatPhongNhanh(classPhong room)
+        private void DatPhongNhanh(classPhong room, Control control)
         {
-            MessageBox.Show($"Đặt phòng nhanh {room.id}");
+            if (room.trangThai == "Available")
+            {
+                room.trangThai = "Occupied";
+                busPhong.updatePhong(room);
+                control.Text = $"{room.tenPhong}\n {room.trangThai}";
+                control.BackColor = Color.FromArgb(224, 115, 130);
+              /*  MessageBox.Show($"đặt phòng thành công{room.id}");*/
+                MessageBox.Show($"{room.tenPhong} has been booked successfuly", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (room.trangThai == "Occupied")
+            {
+                MessageBox.Show($"{room.tenPhong} has been booked", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
+            }
+            else
+            {
+                MessageBox.Show($"{room.tenPhong} is maintaining", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
+            }
+
         }
 
-        private void CapNhatSanPham(classPhong room)
+        private void CapNhatSanPham(classPhong room, Control control)
         {
-            MessageBox.Show($"Cập nhật sản phẩm cho phòng {room.id}");
+            if (room.trangThai == "Available")
+            {
+                room.trangThai = "Maintenance";
+                busPhong.updatePhong(room);
+                control.Text = $"{room.tenPhong}\n {room.trangThai}";
+                control.BackColor = Color.FromArgb(119, 136, 153);
+                MessageBox.Show($"{room.tenPhong} has been updated successfuly", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (room.trangThai == "Maintenance")
+            {
+                room.trangThai = "Available";
+                busPhong.updatePhong(room);
+                control.Text = $"{room.tenPhong}\n {room.trangThai}";
+                control.BackColor = Color.FromArgb(136, 230, 185);
+                MessageBox.Show($"{room.tenPhong} has been Available", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show($"{room.tenPhong} is in use ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void ThanhToan(classPhong room, Control control)
         {
             if(room.trangThai == "Occupied")
             {
+                room.trangThai = "Available";
+                busPhong.updatePhong(room);
+                control.Text = $"{room.tenPhong}\n {room.trangThai}";
                 control.BackColor = Color.FromArgb(136, 230, 185);
-                MessageBox.Show($"Thanh toán thành công {room.id}");
+                MessageBox.Show($"{room.tenPhong} has been booked", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+    
             else if(room.trangThai == "Maintenance")
             {
-                MessageBox.Show($"sửa phòng thanh công {room.id}");
+                MessageBox.Show($"{room.tenPhong} is under maintainance", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show($"phòng chưa được đặt {room.id}");
+                MessageBox.Show($"{room.tenPhong} has not been booked yet", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
            
         }
