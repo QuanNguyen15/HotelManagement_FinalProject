@@ -58,7 +58,7 @@ namespace GuiLayer
             if (save)
             {
                 //
-                TabRoom.getAvailable();
+                TabRoom.getAll();
                 MessageBox.Show("Add room successfull");
                 this.Close();
             }

@@ -24,7 +24,7 @@ namespace GuiLayer
             {
                 if (control is RadioButton radioButton)
                 {
-                    
+
                     radioButton.CheckedChanged += RadioButton;
                 }
             }
@@ -39,14 +39,16 @@ namespace GuiLayer
                 if (Option == "All")
                 {
                     getAll();
-                }else if(Option == "Available")
+                }
+                else if (Option == "Available")
                 {
                     getAvailable();
-                }else if (Option == "Maintainece")
+                }
+                else if (Option == "Maintainece")
                 {
                     getMaintainece();
                 }
-                else if(Option == "Occupied")
+                else if (Option == "Occupied")
                 {
                     getOccupied();
                 }
@@ -54,14 +56,14 @@ namespace GuiLayer
         }
         private void tabRoom_Load(object sender, EventArgs e)
         {
-           
+
             List<classPhong> phong = busPhong.getPhongToList();
             flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
             flpSingleRoom.WrapContents = true;
 
             foreach (var room in phong)
             {
-                if(room.idLoaiPhong == 1)
+                if (room.idLoaiPhong == 1)
                 {
                     Button roomButtonForSingleRoom = CreateRoom(room);
                     flpSingleRoom.Controls.Add(roomButtonForSingleRoom);
@@ -80,8 +82,8 @@ namespace GuiLayer
                     flpVipRoom.Controls.Add(roomButtonForVipRoom);
                 }
 
-             
-           
+
+
             }
 
 
@@ -89,28 +91,28 @@ namespace GuiLayer
             flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
             flpSingleRoom.AutoSize = true;
             flpSingleRoom.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            
+
 
             flpVipRoom.WrapContents = true;
             flpVipRoom.FlowDirection = FlowDirection.LeftToRight;
             flpVipRoom.AutoSize = true;
             flpVipRoom.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-           
+
 
             flpDoubleRoom.WrapContents = true;
             flpDoubleRoom.FlowDirection = FlowDirection.LeftToRight;
             flpDoubleRoom.AutoSize = true;
             flpDoubleRoom.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            
+
 
 
 
         }
-        private Button CreateRoom( classPhong room)
+        private Button CreateRoom(classPhong room)
         {
             bool check = true;
             Button roomButton = new Button();
-            roomButton.Text = $"Room {room.id} \n {room.trangThai}";
+            roomButton.Text = $"{room.tenPhong}\n {room.trangThai}";
             roomButton.Tag = room; // luu tru giu lieu 
             roomButton.Size = new Size(240, 160);
             roomButton.Margin = new Padding(5, 10, 15, 10);
@@ -124,7 +126,7 @@ namespace GuiLayer
             {
                 check = false;
             }
-            roomButton.BackColor = check ? Color.FromArgb(136,230,185) : Color.FromArgb(224, 115, 130) ;
+            roomButton.BackColor = check ? Color.FromArgb(136, 230, 185) : Color.FromArgb(224, 115, 130);
 
             roomButton.Click += RoomButton_Click;
 
@@ -170,7 +172,7 @@ namespace GuiLayer
         }
         private void getThongTinPhong(classPhong room)
         {
-           frmRoomInformation roomInformation = new frmRoomInformation();
+            frmRoomInformation roomInformation = new frmRoomInformation();
             roomInformation.ShowDialog();
         }
         private void ChuyenPhong(classPhong room)
@@ -214,8 +216,8 @@ namespace GuiLayer
                 //control.Dispose();
             }
 
-/*            DataTable dt = new DataTable();
-            dt = busPhong.getPhong();*/
+            /*            DataTable dt = new DataTable();
+                        dt = busPhong.getPhong();*/
 
             List<classPhong> phong = busPhong.getPhongToList();
 
@@ -274,7 +276,7 @@ namespace GuiLayer
 
             foreach (var room in phong)
             {
-                if(room.trangThai == "Available")
+                if (room.trangThai == "Available")
                 {
                     if (room.idLoaiPhong == 1)
                     {
@@ -294,7 +296,7 @@ namespace GuiLayer
                         Button roomButtonForVipRoom = CreateRoom(room); // Tạo một Button mới
                         flpVipRoom.Controls.Add(roomButtonForVipRoom);
                     }
-                }            
+                }
             }
         }
 
@@ -373,7 +375,7 @@ namespace GuiLayer
             List<classPhong> phong = busPhong.getPhongToList();
             flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
             flpSingleRoom.WrapContents = true;
-            
+
 
 
             foreach (var room in phong)
@@ -463,7 +465,7 @@ namespace GuiLayer
 
         }
 
-        
+
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -474,7 +476,7 @@ namespace GuiLayer
         {
             dt = busPhong.getPhong();
             //thuc hien load lai du lieu sau khi save du lieu moi
-            
+
 
         }
 
@@ -489,9 +491,51 @@ namespace GuiLayer
             string searchTermRoom = txtSearch.Text.Trim();
             classPhong phong = new classPhong();
             phong.tenPhong = searchTermRoom;
+            List<classPhong> listPhong = busPhong.searchPhong(phong);
+            foreach (Control control in flpSingleRoom.Controls.OfType<Button>().ToList())
+            {
+                flpSingleRoom.Controls.Remove(control);
+                //control.Dispose(); 
+            }
 
-            
+            foreach (Control control in flpDoubleRoom.Controls.OfType<Button>().ToList())
+            {
+                flpDoubleRoom.Controls.Remove(control);
+                //control.Dispose();
+            }
 
+            foreach (Control control in flpVipRoom.Controls.OfType<Button>().ToList())
+            {
+                flpVipRoom.Controls.Remove(control);
+                //control.Dispose();
+            }
+
+
+
+            flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
+            flpSingleRoom.WrapContents = true;
+
+            foreach (var room in listPhong)
+            {
+                if (room.idLoaiPhong == 1)
+                {
+                    Button roomButtonForSingleRoom = CreateRoom(room);
+                    flpSingleRoom.Controls.Add(roomButtonForSingleRoom);
+                }
+
+                if (room.idLoaiPhong == 2)
+                {
+                    Button roomButtonForDbRoom = CreateRoom(room); // Tạo một Button mới
+                    flpDoubleRoom.Controls.Add(roomButtonForDbRoom);
+
+                }
+
+                if (room.idLoaiPhong == 3)
+                {
+                    Button roomButtonForVipRoom = CreateRoom(room); // Tạo một Button mới
+                    flpVipRoom.Controls.Add(roomButtonForVipRoom);
+                }
+            }
         }
     }
 }
