@@ -192,8 +192,20 @@ namespace GuiLayer
 
         private void ThanhToan(classPhong room, Control control)
         {
-            control.BackColor = Color.FromArgb(53, 203, 230);
-            MessageBox.Show($"Thanh toán cho phòng {room.id}");
+            if(room.trangThai == "Occupied")
+            {
+                control.BackColor = Color.FromArgb(136, 230, 185);
+                MessageBox.Show($"Thanh toán thành công {room.id}");
+            }
+            else if(room.trangThai == "Maintenance")
+            {
+                MessageBox.Show($"sửa phòng thanh công {room.id}");
+            }
+            else
+            {
+                MessageBox.Show($"phòng chưa được đặt {room.id}");
+            }
+           
         }
 
         public void getAll()

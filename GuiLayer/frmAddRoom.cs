@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GuiLayer
 {
@@ -36,33 +37,38 @@ namespace GuiLayer
         private void btnSave_Click(object sender, EventArgs e)
         {
             string tenPhong = txtRoomName.Text;
-
-            int idLoaiPhong = 1;
-
-            if ("Single" == cbRoomType.Text)
+            if (string.IsNullOrEmpty(tenPhong))
             {
-                idLoaiPhong = 1;
-            }
-            else if("Double" == cbRoomType.Text)
-            {
-                idLoaiPhong = 2;
+                MessageBox.Show("Please fill in all information");
             }
             else
             {
-                idLoaiPhong = 3;
-            }
+                int idLoaiPhong = 1;
+
+                if ("Single" == cbRoomType.Text)
+                {
+                    idLoaiPhong = 1;
+                }
+                else if ("Double" == cbRoomType.Text)
+                {
+                    idLoaiPhong = 2;
+                }
+                else
+                {
+                    idLoaiPhong = 3;
+                }
 
 
-            classPhong phong = new classPhong(tenPhong,idLoaiPhong);
-            bool save = busPhong.addPhong(phong);
-            if (save)
-            {
-                //
-                TabRoom.getAll();
-                MessageBox.Show("Add room successfull");
-                this.Close();
-            }
-            
+                classPhong phong = new classPhong(tenPhong, idLoaiPhong);
+                bool save = busPhong.addPhong(phong);
+                if (save)
+                {
+                    //
+                    TabRoom.getAll();
+                    MessageBox.Show("Add room successfull");
+                    this.Close();
+                }
+            }             
         }
 
         private void frmAddRoom_Load(object sender, EventArgs e)

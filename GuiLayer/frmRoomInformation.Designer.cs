@@ -47,11 +47,6 @@
             this.lbClientName = new System.Windows.Forms.Label();
             this.btnAddService = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idSanPhamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenSanPhamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbRoomType = new System.Windows.Forms.Label();
             this.lbRomStatus = new System.Windows.Forms.Label();
@@ -60,6 +55,11 @@
             this.btnBook = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenSanPhamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.hOTELSDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
             this.pnFatherSanPham.SuspendLayout();
@@ -222,7 +222,7 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idSanPhamDataGridViewTextBoxColumn,
+            this.idSanPham,
             this.tenSanPhamDataGridViewTextBoxColumn,
             this.dongGiaDataGridViewTextBoxColumn,
             this.Delete,
@@ -242,48 +242,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(776, 284);
             this.dataGridView1.TabIndex = 40;
-            // 
-            // idSanPhamDataGridViewTextBoxColumn
-            // 
-            this.idSanPhamDataGridViewTextBoxColumn.DataPropertyName = "idSanPham";
-            this.idSanPhamDataGridViewTextBoxColumn.HeaderText = "Id Product";
-            this.idSanPhamDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idSanPhamDataGridViewTextBoxColumn.Name = "idSanPhamDataGridViewTextBoxColumn";
-            this.idSanPhamDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenSanPhamDataGridViewTextBoxColumn
-            // 
-            this.tenSanPhamDataGridViewTextBoxColumn.DataPropertyName = "tenSanPham";
-            this.tenSanPhamDataGridViewTextBoxColumn.HeaderText = "Product Name";
-            this.tenSanPhamDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenSanPhamDataGridViewTextBoxColumn.Name = "tenSanPhamDataGridViewTextBoxColumn";
-            // 
-            // dongGiaDataGridViewTextBoxColumn
-            // 
-            this.dongGiaDataGridViewTextBoxColumn.DataPropertyName = "dongGia";
-            this.dongGiaDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.dongGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dongGiaDataGridViewTextBoxColumn.Name = "dongGiaDataGridViewTextBoxColumn";
-            // 
-            // Delete
-            // 
-            this.Delete.FillWeight = 70F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Edit
-            // 
-            this.Edit.FillWeight = 70F;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel2
             // 
@@ -378,6 +337,48 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // idSanPham
+            // 
+            this.idSanPham.DataPropertyName = "idSanPham";
+            this.idSanPham.HeaderText = "Id Product";
+            this.idSanPham.MinimumWidth = 6;
+            this.idSanPham.Name = "idSanPham";
+            this.idSanPham.ReadOnly = true;
+            // 
+            // tenSanPhamDataGridViewTextBoxColumn
+            // 
+            this.tenSanPhamDataGridViewTextBoxColumn.DataPropertyName = "tenSanPham";
+            this.tenSanPhamDataGridViewTextBoxColumn.HeaderText = "Product Name";
+            this.tenSanPhamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenSanPhamDataGridViewTextBoxColumn.Name = "tenSanPhamDataGridViewTextBoxColumn";
+            // 
+            // dongGiaDataGridViewTextBoxColumn
+            // 
+            this.dongGiaDataGridViewTextBoxColumn.DataPropertyName = "dongGia";
+            this.dongGiaDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.dongGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dongGiaDataGridViewTextBoxColumn.Name = "dongGiaDataGridViewTextBoxColumn";
+            // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 70F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Edit
+            // 
+            this.Edit.FillWeight = 70F;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // frmRoomInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -434,7 +435,7 @@
         private System.Windows.Forms.Button btnBook;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idSanPhamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSanPhamDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dongGiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Delete;

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BusinessLogic;
+using DataAccess;
+using DataAccess.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,7 @@ namespace GuiLayer
 {
     public partial class frmAddSevice : Form
     {
+        BUSSanPham bUSSanPham = new BUSSanPham(); 
         public frmAddSevice()
         {
             InitializeComponent();
@@ -24,6 +28,37 @@ namespace GuiLayer
             {
 
                 this.Close();
+            }
+        }
+
+        private void frmAddSevice_Load(object sender, EventArgs e)
+        {
+            BUSSanPham bUSSanPham = new BUSSanPham();
+            DataTable dt =bUSSanPham.getSanPham();
+            foreach (DataRow row in dt.Rows)
+            {                
+                string tenSanPham = row["TenSanPham"].ToString();
+                comboBox1.Items.Add(tenSanPham);
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBox1.Text.Trim();
+            comboBox1.Items.Clear();
+            classSanPham sanPham = new classSanPham();
+            sanPham.tenSanPham = searchText;
+            BUSSanPham bUSSanPham = new BUSSanPham();
+            DataTable dt = bUSSanPham.searchSanPham(sanPham);
+            foreach (DataRow row in dt.Rows)
+            {
+                string tenSanPham = row["TenSanPham"].ToString();
+                comboBox1.Items.Add(tenSanPham);
             }
         }
     }
