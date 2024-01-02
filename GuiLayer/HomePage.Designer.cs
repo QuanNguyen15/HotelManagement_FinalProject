@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.btnStatistic = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnService = new System.Windows.Forms.Button();
@@ -49,10 +50,12 @@
             this.pnHeader = new System.Windows.Forms.Panel();
             this.lbDateAndTime = new System.Windows.Forms.Label();
             this.timerDateAndTime = new System.Windows.Forms.Timer(this.components);
+            this.tabStatistic1 = new GuiLayer.tabStatistic();
+            this.tabHomePage1 = new GuiLayer.tabHomePage();
             this.tabClient1 = new GuiLayer.tabClient();
             this.tabRoom1 = new GuiLayer.tabRoom();
             this.tabBill1 = new GuiLayer.tabBill();
-            this.tabHomePage1 = new GuiLayer.tabHomePage();
+            this.tabBooking1 = new GuiLayer.tabBooking();
             this.pnMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,6 +68,7 @@
             // pnMenu
             // 
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.pnMenu.Controls.Add(this.btnStatistic);
             this.pnMenu.Controls.Add(this.panel3);
             this.pnMenu.Controls.Add(this.btnService);
             this.pnMenu.Controls.Add(this.pnIMove);
@@ -80,6 +84,22 @@
             this.pnMenu.Size = new System.Drawing.Size(291, 980);
             this.pnMenu.TabIndex = 1;
             this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnStatistic
+            // 
+            this.btnStatistic.FlatAppearance.BorderSize = 0;
+            this.btnStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistic.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistic.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistic.Image")));
+            this.btnStatistic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStatistic.Location = new System.Drawing.Point(64, 601);
+            this.btnStatistic.Name = "btnStatistic";
+            this.btnStatistic.Size = new System.Drawing.Size(186, 53);
+            this.btnStatistic.TabIndex = 16;
+            this.btnStatistic.Text = "       Statistic";
+            this.btnStatistic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStatistic.UseVisualStyleBackColor = true;
+            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
             // panel3
             // 
@@ -112,7 +132,7 @@
             this.btnService.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnService.Image = ((System.Drawing.Image)(resources.GetObject("btnService.Image")));
             this.btnService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnService.Location = new System.Drawing.Point(64, 517);
+            this.btnService.Location = new System.Drawing.Point(64, 521);
             this.btnService.Name = "btnService";
             this.btnService.Size = new System.Drawing.Size(186, 53);
             this.btnService.TabIndex = 14;
@@ -244,6 +264,8 @@
             // pnCenter
             // 
             this.pnCenter.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnCenter.Controls.Add(this.tabBooking1);
+            this.pnCenter.Controls.Add(this.tabStatistic1);
             this.pnCenter.Controls.Add(this.tabHomePage1);
             this.pnCenter.Controls.Add(this.tabClient1);
             this.pnCenter.Controls.Add(this.tabRoom1);
@@ -305,6 +327,25 @@
             // 
             this.timerDateAndTime.Tick += new System.EventHandler(this.timerDateAndTime_Tick);
             // 
+            // tabStatistic1
+            // 
+            this.tabStatistic1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.tabStatistic1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabStatistic1.Location = new System.Drawing.Point(10, 0);
+            this.tabStatistic1.Name = "tabStatistic1";
+            this.tabStatistic1.Size = new System.Drawing.Size(1601, 980);
+            this.tabStatistic1.TabIndex = 7;
+            this.tabStatistic1.Load += new System.EventHandler(this.tabStatistic1_Load);
+            // 
+            // tabHomePage1
+            // 
+            this.tabHomePage1.BackColor = System.Drawing.Color.RosyBrown;
+            this.tabHomePage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabHomePage1.Location = new System.Drawing.Point(10, 0);
+            this.tabHomePage1.Name = "tabHomePage1";
+            this.tabHomePage1.Size = new System.Drawing.Size(1601, 980);
+            this.tabHomePage1.TabIndex = 6;
+            // 
             // tabClient1
             // 
             this.tabClient1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
@@ -333,14 +374,14 @@
             this.tabBill1.Size = new System.Drawing.Size(1601, 980);
             this.tabBill1.TabIndex = 3;
             // 
-            // tabHomePage1
+            // tabBooking1
             // 
-            this.tabHomePage1.BackColor = System.Drawing.Color.RosyBrown;
-            this.tabHomePage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabHomePage1.Location = new System.Drawing.Point(10, 0);
-            this.tabHomePage1.Name = "tabHomePage1";
-            this.tabHomePage1.Size = new System.Drawing.Size(1601, 980);
-            this.tabHomePage1.TabIndex = 6;
+            this.tabBooking1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabBooking1.Location = new System.Drawing.Point(10, 0);
+            this.tabBooking1.Name = "tabBooking1";
+            this.tabBooking1.Size = new System.Drawing.Size(1601, 980);
+            this.tabBooking1.TabIndex = 8;
+            this.tabBooking1.Load += new System.EventHandler(this.tabBooking1_Load);
             // 
             // HomePage
             // 
@@ -390,5 +431,8 @@
         private tabRoom tabRoom1;
         private tabClient tabClient1;
         private tabHomePage tabHomePage1;
+        private System.Windows.Forms.Button btnStatistic;
+        private tabStatistic tabStatistic1;
+        private tabBooking tabBooking1;
     }
 }

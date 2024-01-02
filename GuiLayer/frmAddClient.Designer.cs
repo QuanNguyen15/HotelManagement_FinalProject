@@ -105,7 +105,7 @@
             // 
             // pnForm
             // 
-            this.pnForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(234)))));
+            this.pnForm.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnForm.Controls.Add(this.pnRadio);
             this.pnForm.Controls.Add(this.pictureBox7);
             this.pnForm.Controls.Add(this.label8);
@@ -369,7 +369,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1245, 627);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCancel);

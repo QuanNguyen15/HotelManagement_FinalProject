@@ -73,7 +73,7 @@
             // 
             // pnFather
             // 
-            this.pnFather.BackColor = System.Drawing.SystemColors.Control;
+            this.pnFather.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnFather.Controls.Add(this.lbIdClient);
             this.pnFather.Controls.Add(this.label7);
             this.pnFather.Controls.Add(this.btnCancel);
@@ -90,7 +90,7 @@
             // 
             this.lbIdClient.AutoSize = true;
             this.lbIdClient.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            this.lbIdClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(52)))), ((int)(((byte)(108)))));
             this.lbIdClient.Location = new System.Drawing.Point(874, 52);
             this.lbIdClient.Name = "lbIdClient";
             this.lbIdClient.Size = new System.Drawing.Size(82, 51);
@@ -103,7 +103,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(52)))), ((int)(((byte)(108)))));
             this.label7.Location = new System.Drawing.Point(394, 52);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(474, 51);
@@ -126,7 +126,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(132)))), ((int)(((byte)(230)))));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(52)))), ((int)(((byte)(108)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(894, 563);
@@ -139,7 +139,7 @@
             // 
             // pnForm
             // 
-            this.pnForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(212)))), ((int)(((byte)(234)))));
+            this.pnForm.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnForm.Controls.Add(this.pnRadio);
             this.pnForm.Controls.Add(this.pictureBox7);
             this.pnForm.Controls.Add(this.label8);
