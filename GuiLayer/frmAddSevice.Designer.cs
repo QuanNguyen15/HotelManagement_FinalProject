@@ -47,7 +47,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.dataGridViewPickedService);
             this.panel1.Controls.Add(this.dataGridViewService);
             this.panel1.Controls.Add(this.label3);
@@ -63,7 +63,7 @@
             // 
             // dataGridViewPickedService
             // 
-            this.dataGridViewPickedService.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewPickedService.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewPickedService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPickedService.Location = new System.Drawing.Point(524, 146);
             this.dataGridViewPickedService.Name = "dataGridViewPickedService";
@@ -74,7 +74,7 @@
             // 
             // dataGridViewService
             // 
-            this.dataGridViewService.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewService.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewService.Location = new System.Drawing.Point(39, 146);
             this.dataGridViewService.Name = "dataGridViewService";
@@ -147,7 +147,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(52)))), ((int)(((byte)(108)))));
             this.label7.Location = new System.Drawing.Point(398, 30);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(265, 51);
@@ -170,7 +170,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(132)))), ((int)(((byte)(230)))));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(52)))), ((int)(((byte)(108)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(767, 605);
@@ -184,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1118, 710);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
