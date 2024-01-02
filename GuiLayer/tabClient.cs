@@ -31,7 +31,7 @@ namespace GuiLayer
                 if (dataGridViewCLient.Columns[e.ColumnIndex].HeaderText == "Delete")
                 {
 
-                    DialogResult result = MessageBox.Show("Bạn có muốn xóa không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete?", "Comfirm to delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
@@ -43,7 +43,7 @@ namespace GuiLayer
                         khachHang.id = idAsInt;
                         bUSKhachHang.deleteKhachHang(khachHang);
                         dataGridViewCLient.Rows.RemoveAt(e.RowIndex);
-                        MessageBox.Show("Xóa thành công!");
+                        MessageBox.Show("Delete successfull");
                     }
 
                 }
