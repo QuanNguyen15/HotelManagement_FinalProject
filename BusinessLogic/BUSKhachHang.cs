@@ -11,7 +11,7 @@ namespace BusinessLogic
 {
     public class BUSKhachHang
     {
-        ServerName ServerName = new ServerName();
+        ServerName serverName = new ServerName();
         DataTable dt = null;
        
         public BUSKhachHang()
@@ -20,34 +20,32 @@ namespace BusinessLogic
 
         public DataTable getKhachHang()
         {
-
-            DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
+            DBKhachHang dBKhachHang = new DBKhachHang(serverName.userName, "HOTELS");
             DataTable getDatatable = dBKhachHang.getDataTable();
-
             dt = getDatatable;
             return dt;
         }
 
         public bool addKhachHang(classKhachHang Object)
         {
-            DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
+            DBKhachHang dBKhachHang = new DBKhachHang(serverName.userName, "HOTELS");
             return dBKhachHang.AddKhachHang(Object);
         }
 
         public bool deleteKhachHang(classKhachHang Object)
         {
-            DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
+            DBKhachHang dBKhachHang = new DBKhachHang(serverName.userName, "HOTELS");
             return dBKhachHang.DeleteKhachHang(Object);
         }
         public bool upDateKhachHang(classKhachHang Object)
         {
-            DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
+            DBKhachHang dBKhachHang = new DBKhachHang(serverName.userName, "HOTELS");
             return dBKhachHang.UpdateKhachHang(Object);
         }
 
         public DataTable searchKhachHang(classKhachHang Object)
         {
-            DBKhachHang dBKhachHang = new DBKhachHang(ServerName.userName, "HOTELS");
+            DBKhachHang dBKhachHang = new DBKhachHang(serverName.userName, "HOTELS");
             return dBKhachHang.searchKhachHang(Object);
         }
     }

@@ -89,8 +89,8 @@ namespace GuiLayer
                 bool save = busKhachHang.addKhachHang(khachHang);
                 if (save)
                 {
-                    MessageBox.Show("Add successfully");
                     TabClient.RefreshDataGridView();
+                    MessageBox.Show("Add successfully");
                     this.Close();
                 }
             }

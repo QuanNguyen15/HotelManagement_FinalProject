@@ -16,6 +16,7 @@ namespace GuiLayer
     public partial class tabRoom : UserControl
     {
         BUSPhong busPhong = new BUSPhong();
+        DataTable dt;
         public tabRoom()
         {
             InitializeComponent();
@@ -57,9 +58,6 @@ namespace GuiLayer
             List<classPhong> phong = busPhong.getPhongToList();
             flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
             flpSingleRoom.WrapContents = true;
-            int maxButtonsPerRow = 4; // Số lượng nút tối đa trên mỗi hàng
-            int buttonCount = 0;
-            
 
             foreach (var room in phong)
             {
@@ -196,32 +194,33 @@ namespace GuiLayer
             MessageBox.Show($"Thanh toán cho phòng {room.id}");
         }
 
-        private void getAll()
+        public void getAll()
         {
             foreach (Control control in flpSingleRoom.Controls.OfType<Button>().ToList())
             {
                 flpSingleRoom.Controls.Remove(control);
-                control.Dispose(); 
+                //control.Dispose(); 
             }
 
             foreach (Control control in flpDoubleRoom.Controls.OfType<Button>().ToList())
             {
                 flpDoubleRoom.Controls.Remove(control);
-                control.Dispose();
+                //control.Dispose();
             }
 
             foreach (Control control in flpVipRoom.Controls.OfType<Button>().ToList())
             {
                 flpVipRoom.Controls.Remove(control);
-                control.Dispose();
+                //control.Dispose();
             }
 
+/*            DataTable dt = new DataTable();
+            dt = busPhong.getPhong();*/
+
             List<classPhong> phong = busPhong.getPhongToList();
+
             flpSingleRoom.FlowDirection = FlowDirection.LeftToRight;
             flpSingleRoom.WrapContents = true;
-            int maxButtonsPerRow = 4; // Số lượng nút tối đa trên mỗi hàng
-            int buttonCount = 0;
-
 
             foreach (var room in phong)
             {
@@ -408,15 +407,6 @@ namespace GuiLayer
 
 
 
-
-
-
-
-
-
-
-
-
         private void flpSingleRoom_Paint(object sender, PaintEventArgs e)
         {
 
@@ -480,10 +470,28 @@ namespace GuiLayer
 
         }
 
+        public void RefreshRoom()
+        {
+            dt = busPhong.getPhong();
+            //thuc hien load lai du lieu sau khi save du lieu moi
+            
+
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddRoom addRoom = new frmAddRoom();
+            frmAddRoom addRoom = new frmAddRoom(this);
             addRoom.ShowDialog();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchTermRoom = txtSearch.Text.Trim();
+            classPhong phong = new classPhong();
+            phong.tenPhong = searchTermRoom;
+
+            
+
         }
     }
 }

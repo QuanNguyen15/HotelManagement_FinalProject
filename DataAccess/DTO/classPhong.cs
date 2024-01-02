@@ -25,5 +25,11 @@ namespace DataAccess
             this.trangThai = trangThai;
             this.idLoaiPhong = idLoaiPhong;
         }
+
+        public classPhong(string tenPhong, int idLoaiPhong)
+        {
+            this.tenPhong = tenPhong;
+            this.idLoaiPhong = idLoaiPhong;
+        }
     }
 }

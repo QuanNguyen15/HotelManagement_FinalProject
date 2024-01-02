@@ -46,5 +46,15 @@ namespace GuiLayer
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to cancel?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                this.Close();
+            }
+        }
     }
 }

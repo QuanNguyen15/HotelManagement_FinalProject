@@ -56,11 +56,12 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(26, 27);
+            this.txtSearch.Location = new System.Drawing.Point(58, 34);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(548, 34);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // radAll
             // 
@@ -180,7 +181,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(26, 106);
+            this.panel2.Location = new System.Drawing.Point(58, 113);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1600, 810);
             this.panel2.TabIndex = 22;
@@ -192,7 +193,7 @@
             this.panel3.Controls.Add(this.radMaintenece);
             this.panel3.Controls.Add(this.radAll);
             this.panel3.Controls.Add(this.radAvail);
-            this.panel3.Location = new System.Drawing.Point(846, 3);
+            this.panel3.Location = new System.Drawing.Point(878, 10);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(484, 100);
             this.panel3.TabIndex = 39;
@@ -223,7 +224,7 @@
             // 
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(733, 27);
+            this.btnAdd.Location = new System.Drawing.Point(765, 34);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(55, 34);
             this.btnAdd.TabIndex = 40;
@@ -234,7 +235,7 @@
             // 
             this.btnSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(591, 27);
+            this.btnSearch.Location = new System.Drawing.Point(623, 34);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(55, 34);
             this.btnSearch.TabIndex = 41;
