@@ -65,12 +65,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewRoomSelect = new System.Windows.Forms.DataGridView();
             this.dataGridViewRoomAvail = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.roomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Add = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -413,9 +413,9 @@
             this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label3.Location = new System.Drawing.Point(47, 202);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 24);
+            this.label3.Size = new System.Drawing.Size(153, 24);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Room information";
+            this.label3.Text = "Room available";
             // 
             // dataGridViewRoomSelect
             // 
@@ -430,6 +430,7 @@
             // 
             // dataGridViewRoomAvail
             // 
+            this.dataGridViewRoomAvail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewRoomAvail.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -452,6 +453,35 @@
             this.dataGridViewRoomAvail.RowTemplate.Height = 24;
             this.dataGridViewRoomAvail.Size = new System.Drawing.Size(329, 327);
             this.dataGridViewRoomAvail.TabIndex = 2;
+            // 
+            // roomName
+            // 
+            this.roomName.DataPropertyName = "tenPhong";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.roomName.DefaultCellStyle = dataGridViewCellStyle2;
+            this.roomName.HeaderText = "Room Name";
+            this.roomName.MinimumWidth = 6;
+            this.roomName.Name = "roomName";
+            // 
+            // trangThai
+            // 
+            this.trangThai.DataPropertyName = "trangThai";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.trangThai.DefaultCellStyle = dataGridViewCellStyle3;
+            this.trangThai.HeaderText = "Status";
+            this.trangThai.MinimumWidth = 6;
+            this.trangThai.Name = "trangThai";
+            // 
+            // Add
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
+            this.Add.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Add.HeaderText = "Add";
+            this.Add.Image = ((System.Drawing.Image)(resources.GetObject("Add.Image")));
+            this.Add.MinimumWidth = 6;
+            this.Add.Name = "Add";
             // 
             // label2
             // 
@@ -488,38 +518,6 @@
             this.btnSave.TabIndex = 29;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // roomName
-            // 
-            this.roomName.DataPropertyName = "tenPhong";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.roomName.DefaultCellStyle = dataGridViewCellStyle2;
-            this.roomName.HeaderText = "Room Name";
-            this.roomName.MinimumWidth = 6;
-            this.roomName.Name = "roomName";
-            this.roomName.Width = 125;
-            // 
-            // trangThai
-            // 
-            this.trangThai.DataPropertyName = "trangThai";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.trangThai.DefaultCellStyle = dataGridViewCellStyle3;
-            this.trangThai.HeaderText = "Status";
-            this.trangThai.MinimumWidth = 6;
-            this.trangThai.Name = "trangThai";
-            this.trangThai.Width = 125;
-            // 
-            // Add
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
-            this.Add.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Add.HeaderText = "Add";
-            this.Add.Image = ((System.Drawing.Image)(resources.GetObject("Add.Image")));
-            this.Add.MinimumWidth = 6;
-            this.Add.Name = "Add";
-            this.Add.Width = 125;
             // 
             // frmBooking
             // 

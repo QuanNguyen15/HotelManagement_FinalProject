@@ -295,11 +295,23 @@
     <Compile Include="frmAddSevice.Designer.cs">
       <DependentUpon>frmAddSevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBillDetail.Designer.cs">
+      <DependentUpon>frmBillDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBooking.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBooking.Designer.cs">
       <DependentUpon>frmBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBookingDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBookingDetail.Designer.cs">
+      <DependentUpon>frmBookingDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="frmClientInformation.cs">
       <SubType>Form</SubType>
@@ -385,8 +397,14 @@
     <EmbeddedResource Include="frmAddSevice.resx">
       <DependentUpon>frmAddSevice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBillDetail.resx">
+      <DependentUpon>frmBillDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBooking.resx">
       <DependentUpon>frmBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBookingDetail.resx">
+      <DependentUpon>frmBookingDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientInformation.resx">
       <DependentUpon>frmClientInformation.cs</DependentUpon>
@@ -400,6 +418,7 @@
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

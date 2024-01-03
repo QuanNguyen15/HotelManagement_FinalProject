@@ -28,8 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tabBooking));
             this.dataGridViewBooking = new System.Windows.Forms.DataGridView();
+            this.idDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.khachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detail = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -38,14 +45,77 @@
             // 
             // dataGridViewBooking
             // 
+            this.dataGridViewBooking.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewBooking.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBooking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBooking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDatPhong,
+            this.khachHang,
+            this.ngayDat,
+            this.NhanVien,
+            this.Detail,
+            this.Delete});
             this.dataGridViewBooking.Location = new System.Drawing.Point(67, 169);
             this.dataGridViewBooking.Name = "dataGridViewBooking";
             this.dataGridViewBooking.RowHeadersWidth = 51;
             this.dataGridViewBooking.RowTemplate.Height = 24;
             this.dataGridViewBooking.Size = new System.Drawing.Size(1450, 668);
             this.dataGridViewBooking.TabIndex = 0;
+            this.dataGridViewBooking.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBooking_CellContentClick);
+            // 
+            // idDatPhong
+            // 
+            this.idDatPhong.DataPropertyName = "idDatPhong";
+            this.idDatPhong.HeaderText = "Booking ID ";
+            this.idDatPhong.MinimumWidth = 6;
+            this.idDatPhong.Name = "idDatPhong";
+            // 
+            // khachHang
+            // 
+            this.khachHang.DataPropertyName = "khachHang";
+            this.khachHang.HeaderText = "Client";
+            this.khachHang.MinimumWidth = 6;
+            this.khachHang.Name = "khachHang";
+            // 
+            // ngayDat
+            // 
+            this.ngayDat.DataPropertyName = "ngayDat";
+            this.ngayDat.HeaderText = "Booking date";
+            this.ngayDat.MinimumWidth = 6;
+            this.ngayDat.Name = "ngayDat";
+            // 
+            // NhanVien
+            // 
+            this.NhanVien.DataPropertyName = "NhanVien";
+            this.NhanVien.HeaderText = "Staff";
+            this.NhanVien.MinimumWidth = 6;
+            this.NhanVien.Name = "NhanVien";
+            // 
+            // Detail
+            // 
+            this.Detail.HeaderText = "Detail";
+            this.Detail.Image = ((System.Drawing.Image)(resources.GetObject("Detail.Image")));
+            this.Detail.MinimumWidth = 6;
+            this.Detail.Name = "Detail";
+            this.Detail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Detail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // btnAdd
             // 
@@ -101,5 +171,11 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDatPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn khachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayDat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhanVien;
+        private System.Windows.Forms.DataGridViewImageColumn Detail;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }
