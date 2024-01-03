@@ -45,17 +45,18 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.btnRoom = new System.Windows.Forms.Button();
             this.pnCenter = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pnGrid = new System.Windows.Forms.Panel();
-            this.pnHeader = new System.Windows.Forms.Panel();
-            this.lbDateAndTime = new System.Windows.Forms.Label();
-            this.timerDateAndTime = new System.Windows.Forms.Timer(this.components);
+            this.tabBooking1 = new GuiLayer.tabBooking();
             this.tabStatistic1 = new GuiLayer.tabStatistic();
             this.tabHomePage1 = new GuiLayer.tabHomePage();
             this.tabClient1 = new GuiLayer.tabClient();
             this.tabRoom1 = new GuiLayer.tabRoom();
             this.tabBill1 = new GuiLayer.tabBill();
-            this.tabBooking1 = new GuiLayer.tabBooking();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnGrid = new System.Windows.Forms.Panel();
+            this.pnHeader = new System.Windows.Forms.Panel();
+            this.lbDateAndTime = new System.Windows.Forms.Label();
+            this.timerDateAndTime = new System.Windows.Forms.Timer(this.components);
+            this.tabService1 = new GuiLayer.tabService();
             this.pnMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -264,6 +265,7 @@
             // pnCenter
             // 
             this.pnCenter.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnCenter.Controls.Add(this.tabService1);
             this.pnCenter.Controls.Add(this.tabBooking1);
             this.pnCenter.Controls.Add(this.tabStatistic1);
             this.pnCenter.Controls.Add(this.tabHomePage1);
@@ -277,6 +279,63 @@
             this.pnCenter.Name = "pnCenter";
             this.pnCenter.Size = new System.Drawing.Size(1611, 980);
             this.pnCenter.TabIndex = 2;
+            // 
+            // tabBooking1
+            // 
+            this.tabBooking1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.tabBooking1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabBooking1.Location = new System.Drawing.Point(10, 0);
+            this.tabBooking1.Name = "tabBooking1";
+            this.tabBooking1.Size = new System.Drawing.Size(1601, 980);
+            this.tabBooking1.TabIndex = 8;
+            this.tabBooking1.Load += new System.EventHandler(this.tabBooking1_Load);
+            // 
+            // tabStatistic1
+            // 
+            this.tabStatistic1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.tabStatistic1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabStatistic1.Location = new System.Drawing.Point(10, 0);
+            this.tabStatistic1.Name = "tabStatistic1";
+            this.tabStatistic1.Size = new System.Drawing.Size(1601, 980);
+            this.tabStatistic1.TabIndex = 7;
+            this.tabStatistic1.Load += new System.EventHandler(this.tabStatistic1_Load);
+            // 
+            // tabHomePage1
+            // 
+            this.tabHomePage1.BackColor = System.Drawing.Color.RosyBrown;
+            this.tabHomePage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabHomePage1.Location = new System.Drawing.Point(10, 0);
+            this.tabHomePage1.Name = "tabHomePage1";
+            this.tabHomePage1.Size = new System.Drawing.Size(1601, 980);
+            this.tabHomePage1.TabIndex = 6;
+            // 
+            // tabClient1
+            // 
+            this.tabClient1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.tabClient1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabClient1.Location = new System.Drawing.Point(10, 0);
+            this.tabClient1.Name = "tabClient1";
+            this.tabClient1.Size = new System.Drawing.Size(1601, 980);
+            this.tabClient1.TabIndex = 5;
+            this.tabClient1.Load += new System.EventHandler(this.tabClient1_Load);
+            // 
+            // tabRoom1
+            // 
+            this.tabRoom1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.tabRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabRoom1.Location = new System.Drawing.Point(10, 0);
+            this.tabRoom1.Name = "tabRoom1";
+            this.tabRoom1.Size = new System.Drawing.Size(1601, 980);
+            this.tabRoom1.TabIndex = 4;
+            // 
+            // tabBill1
+            // 
+            this.tabBill1.BackColor = System.Drawing.Color.DimGray;
+            this.tabBill1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabBill1.Location = new System.Drawing.Point(10, 0);
+            this.tabBill1.Name = "tabBill1";
+            this.tabBill1.Size = new System.Drawing.Size(1601, 980);
+            this.tabBill1.TabIndex = 3;
             // 
             // pictureBox2
             // 
@@ -327,61 +386,14 @@
             // 
             this.timerDateAndTime.Tick += new System.EventHandler(this.timerDateAndTime_Tick);
             // 
-            // tabStatistic1
+            // tabService1
             // 
-            this.tabStatistic1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
-            this.tabStatistic1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabStatistic1.Location = new System.Drawing.Point(10, 0);
-            this.tabStatistic1.Name = "tabStatistic1";
-            this.tabStatistic1.Size = new System.Drawing.Size(1601, 980);
-            this.tabStatistic1.TabIndex = 7;
-            this.tabStatistic1.Load += new System.EventHandler(this.tabStatistic1_Load);
-            // 
-            // tabHomePage1
-            // 
-            this.tabHomePage1.BackColor = System.Drawing.Color.RosyBrown;
-            this.tabHomePage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabHomePage1.Location = new System.Drawing.Point(10, 0);
-            this.tabHomePage1.Name = "tabHomePage1";
-            this.tabHomePage1.Size = new System.Drawing.Size(1601, 980);
-            this.tabHomePage1.TabIndex = 6;
-            // 
-            // tabClient1
-            // 
-            this.tabClient1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
-            this.tabClient1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabClient1.Location = new System.Drawing.Point(10, 0);
-            this.tabClient1.Name = "tabClient1";
-            this.tabClient1.Size = new System.Drawing.Size(1601, 980);
-            this.tabClient1.TabIndex = 5;
-            this.tabClient1.Load += new System.EventHandler(this.tabClient1_Load);
-            // 
-            // tabRoom1
-            // 
-            this.tabRoom1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
-            this.tabRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabRoom1.Location = new System.Drawing.Point(10, 0);
-            this.tabRoom1.Name = "tabRoom1";
-            this.tabRoom1.Size = new System.Drawing.Size(1601, 980);
-            this.tabRoom1.TabIndex = 4;
-            // 
-            // tabBill1
-            // 
-            this.tabBill1.BackColor = System.Drawing.Color.DimGray;
-            this.tabBill1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabBill1.Location = new System.Drawing.Point(10, 0);
-            this.tabBill1.Name = "tabBill1";
-            this.tabBill1.Size = new System.Drawing.Size(1601, 980);
-            this.tabBill1.TabIndex = 3;
-            // 
-            // tabBooking1
-            // 
-            this.tabBooking1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabBooking1.Location = new System.Drawing.Point(10, 0);
-            this.tabBooking1.Name = "tabBooking1";
-            this.tabBooking1.Size = new System.Drawing.Size(1601, 980);
-            this.tabBooking1.TabIndex = 8;
-            this.tabBooking1.Load += new System.EventHandler(this.tabBooking1_Load);
+            this.tabService1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.tabService1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabService1.Location = new System.Drawing.Point(10, 0);
+            this.tabService1.Name = "tabService1";
+            this.tabService1.Size = new System.Drawing.Size(1601, 980);
+            this.tabService1.TabIndex = 9;
             // 
             // HomePage
             // 
@@ -434,5 +446,6 @@
         private System.Windows.Forms.Button btnStatistic;
         private tabStatistic tabStatistic1;
         private tabBooking tabBooking1;
+        private tabService tabService1;
     }
 }

@@ -283,11 +283,23 @@
     <Compile Include="frmAddClient.Designer.cs">
       <DependentUpon>frmAddClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddFacilities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddFacilities.Designer.cs">
+      <DependentUpon>frmAddFacilities.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddRoom.Designer.cs">
       <DependentUpon>frmAddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddServiceForAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddServiceForAll.Designer.cs">
+      <DependentUpon>frmAddServiceForAll.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddSevice.cs">
       <SubType>Form</SubType>
@@ -379,6 +391,12 @@
     <Compile Include="tabRoom.Designer.cs">
       <DependentUpon>tabRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="tabService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="tabService.Designer.cs">
+      <DependentUpon>tabService.cs</DependentUpon>
+    </Compile>
     <Compile Include="tabStatistic.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -391,8 +409,14 @@
     <EmbeddedResource Include="frmAddClient.resx">
       <DependentUpon>frmAddClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddFacilities.resx">
+      <DependentUpon>frmAddFacilities.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddRoom.resx">
       <DependentUpon>frmAddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddServiceForAll.resx">
+      <DependentUpon>frmAddServiceForAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddSevice.resx">
       <DependentUpon>frmAddSevice.cs</DependentUpon>
@@ -442,6 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="tabRoom.resx">
       <DependentUpon>tabRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tabService.resx">
+      <DependentUpon>tabService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tabStatistic.resx">
       <DependentUpon>tabStatistic.cs</DependentUpon>
