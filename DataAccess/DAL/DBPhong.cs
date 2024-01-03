@@ -72,5 +72,12 @@ namespace BusinessLogic
 
         }
 
+        public DataTable getRoomAvailable()
+        {
+            string query = "select tenPhong , trangThai from Phong where trangThai = 'Available'";
+            dt = new DataTable();
+            dt = cDB.getData(query);
+            return dt;
+        }
     }
 }

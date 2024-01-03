@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace GuiLayer
 {
     public partial class frmBooking : Form
     {
+        BUSPhong busPhong = new BUSPhong(); 
         public frmBooking()
         {
             InitializeComponent();
@@ -19,6 +21,14 @@ namespace GuiLayer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void frmBooking_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = busPhong.getRoomAvailable();
+            dataGridViewRoomAvail.DataSource = dt;
 
         }
     }

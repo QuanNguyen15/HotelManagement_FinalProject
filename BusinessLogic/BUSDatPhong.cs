@@ -13,11 +13,10 @@ namespace BusinessLogic
     {
         ServerName ServerName = new ServerName();
         DataTable dt = null;
-
+        
         public BUSDatPhong()
         {
         }
-         
 
         public DataTable getDatPhong()
         {
@@ -33,6 +32,17 @@ namespace BusinessLogic
         { 
             DBDatPhong dbDatPhong = new DBDatPhong(ServerName.userName, "HOTELS");
             return dbDatPhong.getDataDatPhong(datphong);
+        }
+        
+        public DataTable getDatPhongChiTiet()
+        {
+            DBDatPhong dbDatPhong = new DBDatPhong(ServerName.userName, "HOTELS");
+            return dbDatPhong.getDatPhongChiTiet();
+        }
+        public DataTable searchDatPhong(classDatPhong Object)
+        {
+            DBDatPhong dbDatPhong = new DBDatPhong(ServerName.userName, "HOTELS");
+            return dbDatPhong.searchDatPhong(Object);
         }
     }
 }

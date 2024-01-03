@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogic;
+using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace GuiLayer
 {
     public partial class tabBooking : UserControl
     {
+        BUSDatPhong busDatPhong = new BUSDatPhong();
         public tabBooking()
         {
             InitializeComponent();
@@ -21,6 +24,34 @@ namespace GuiLayer
         {
             frmBooking booking = new frmBooking();
             booking.ShowDialog();
+        }
+
+        private void tabBooking_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = busDatPhong.getDatPhongChiTiet();
+            dataGridViewBooking.DataSource = dt;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string search = txtSearch.Text.Trim();
+            if(search != "")
+            {
+                classDatPhong datPhong = new classDatPhong();
+                datPhong.tenKhachHang = search;
+                DataTable dt = new DataTable();
+
+                dt = busDatPhong.searchDatPhong(datPhong);
+                dataGridViewBooking.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dt = busDatPhong.getDatPhongChiTiet();
+                dataGridViewBooking.DataSource = dt;
+            }
+
         }
     }
 }

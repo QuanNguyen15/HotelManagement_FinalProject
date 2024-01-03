@@ -75,6 +75,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(761, 34);
             this.txtSearch.TabIndex = 11;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // tabBooking
             // 
@@ -87,6 +88,7 @@
             this.Controls.Add(this.dataGridViewBooking);
             this.Name = "tabBooking";
             this.Size = new System.Drawing.Size(1601, 980);
+            this.Load += new System.EventHandler(this.tabBooking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooking)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
