@@ -130,6 +130,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "tabBill";
             this.Size = new System.Drawing.Size(1601, 980);
+            this.Load += new System.EventHandler(this.tabBill_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCLient)).EndInit();
             this.ResumeLayout(false);

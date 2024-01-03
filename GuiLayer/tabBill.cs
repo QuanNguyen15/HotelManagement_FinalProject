@@ -31,5 +31,10 @@ namespace GuiLayer
                 }
             }
         }
+
+        private void tabBill_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
