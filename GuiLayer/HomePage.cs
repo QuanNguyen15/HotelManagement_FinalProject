@@ -38,6 +38,7 @@ namespace GuiLayer
             tabHomePage1.Visible = true;
             tabStatistic1.Visible = false;
             tabBooking1.Visible = false;
+            tabService1.Visible = false;
 
         }
 
@@ -50,6 +51,7 @@ namespace GuiLayer
             tabHomePage1.Visible = true;
             tabStatistic1.Visible = false;
             tabBooking1.Visible = false;
+            tabService1.Visible = false;
         }
 
         private void btnRoom_Click(object sender, EventArgs e)
@@ -61,6 +63,7 @@ namespace GuiLayer
             tabHomePage1.Visible = false;
             tabStatistic1.Visible = false;
             tabBooking1.Visible = false;
+            tabService1.Visible = false;
         }
 
         private void btnBooking_Click(object sender, EventArgs e)
@@ -72,6 +75,7 @@ namespace GuiLayer
             tabHomePage1.Visible = false;
             tabStatistic1.Visible = false;
             tabBooking1.Visible = true;
+            tabService1.Visible = false;
         }
 
         private void btnClient_Click(object sender, EventArgs e)
@@ -83,6 +87,7 @@ namespace GuiLayer
             tabHomePage1.Visible = false;
             tabStatistic1.Visible = false;
             tabBooking1.Visible = false;
+            tabService1.Visible = false;
         }
 
         private void btnBill_Click(object sender, EventArgs e)
@@ -94,6 +99,7 @@ namespace GuiLayer
             tabHomePage1.Visible = false;
             tabStatistic1.Visible = false;
             tabBooking1.Visible = false;
+            tabService1.Visible = false;
         }
 
         private void btnService_Click(object sender, EventArgs e)
@@ -105,6 +111,7 @@ namespace GuiLayer
             tabHomePage1.Visible = false;
             tabStatistic1.Visible = false;
             tabBooking1.Visible = false;
+            tabService1.Visible = true;
         }
         private void btnStatistic_Click(object sender, EventArgs e)
         {
@@ -115,6 +122,7 @@ namespace GuiLayer
             tabHomePage1.Visible = false;
             tabStatistic1.Visible =true;
             tabBooking1.Visible = false;
+            tabService1.Visible = false;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

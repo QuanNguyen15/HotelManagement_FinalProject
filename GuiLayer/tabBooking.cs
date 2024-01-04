@@ -53,5 +53,18 @@ namespace GuiLayer
             }
 
         }
+
+        private void dataGridViewBooking_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (dataGridViewBooking.Columns[e.ColumnIndex].HeaderText == "Detail")
+                {
+                    frmBookingDetail bookingDetail = new frmBookingDetail();
+                    bookingDetail.ShowDialog();
+
+                }
+            }
+        }
     }
 }

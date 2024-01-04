@@ -17,8 +17,7 @@ namespace BusinessLogic
         public string Quan = "DESKTOP-9HGBU5H\\SQLEXPRESS";
         public ServerName()
         {
-            userName = Viet;
-            nameDataBase = "HOTEL_MANAGEMENT";
+            userName = Khai;
         }
 
     }
