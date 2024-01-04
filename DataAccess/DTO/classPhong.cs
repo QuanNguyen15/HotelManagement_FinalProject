@@ -8,22 +8,24 @@ namespace DataAccess
 {
     public class classPhong
     {
-        public int id { get; set; }
+        public int idPhong { get; set; }
         public string tenPhong { get; set; }
 
         public string trangThai { get; set; }
         public int idLoaiPhong { get; set; }
+        public bool isDelete { get; set; }
 
         public classPhong()
         {
 
         }
-        public classPhong(int id, string tenPhong, string trangThai, int idLoaiPhong)
+        public classPhong(int idPhong, string tenPhong, string trangThai, int idLoaiPhong,bool isDelete)
         {
-            this.id = id;
+            this.idPhong = idPhong;
             this.tenPhong = tenPhong;
             this.trangThai = trangThai;
             this.idLoaiPhong = idLoaiPhong;
+            this.isDelete = isDelete;
         }
 
         public classPhong(string tenPhong, int idLoaiPhong)

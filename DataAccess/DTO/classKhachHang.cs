@@ -8,18 +8,20 @@ namespace DataAccess
 {
     public class classKhachHang
     {
-        public int id { get; set; }
+        public int idKhachHang { get; set; }
         public string hoTen {  get; set; }
+        public string gioiTinh { get; set; }
         public string soCCCD {  get; set; }
         public string dienThoai {  get; set; }
         public string email {  get; set; }
         public string diaChi {  get; set; }
-        public string gioiTinh { get; set; }    
+        public bool isDelete {  get; set; }  
+        
         public classKhachHang() { }
 
-        public classKhachHang(int id, string hoTen, string gioiTinh, string soCCCD, string dienThoai, string email, string diaChi)
+        public classKhachHang(int idKhachHang, string hoTen, string gioiTinh, string soCCCD, string dienThoai, string email, string diaChi)
         {
-            this.id = id;
+            this.idKhachHang = idKhachHang;
             this.hoTen = hoTen;
             this.soCCCD = soCCCD;
             this.dienThoai = dienThoai;

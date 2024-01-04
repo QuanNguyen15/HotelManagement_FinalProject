@@ -11,9 +11,9 @@ namespace BusinessLogic
 {
     public class BUSDatPhong
     {
-        ServerName ServerName = new ServerName();
+        ServerName serverName = new ServerName();
         DataTable dt = null;
-        
+
         public BUSDatPhong()
         {
         }
@@ -21,7 +21,7 @@ namespace BusinessLogic
         public DataTable getDatPhong()
         {
 
-            DBDatPhong dbDatPhong = new DBDatPhong(ServerName.userName, "HOTELS");
+            DBDatPhong dbDatPhong = new DBDatPhong(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dbDatPhong.getDataTable();
 
             dt = getDatatable;
@@ -30,18 +30,18 @@ namespace BusinessLogic
 
         public DataTable getDataDatPhong(classDatPhong datphong)
         { 
-            DBDatPhong dbDatPhong = new DBDatPhong(ServerName.userName, "HOTELS");
+            DBDatPhong dbDatPhong = new DBDatPhong(serverName.userName, serverName.nameDataBase);
             return dbDatPhong.getDataDatPhong(datphong);
         }
         
         public DataTable getDatPhongChiTiet()
         {
-            DBDatPhong dbDatPhong = new DBDatPhong(ServerName.userName, "HOTELS");
+            DBDatPhong dbDatPhong = new DBDatPhong(serverName.userName, serverName.nameDataBase);
             return dbDatPhong.getDatPhongChiTiet();
         }
         public DataTable searchDatPhong(classDatPhong Object)
         {
-            DBDatPhong dbDatPhong = new DBDatPhong(ServerName.userName, "HOTELS");
+            DBDatPhong dbDatPhong = new DBDatPhong(serverName.userName, serverName.nameDataBase);
             return dbDatPhong.searchDatPhong(Object);
         }
     }

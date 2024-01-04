@@ -20,7 +20,7 @@ namespace BusinessLogic
 
         public DataTable getNhanVien()
         {
-            DBNhanVien dbNhanVien = new DBNhanVien(serverName.userName, "HOTELS");
+            DBNhanVien dbNhanVien = new DBNhanVien(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dbNhanVien.getDataTable();
             dt = getDatatable;
             return dt;

@@ -49,12 +49,13 @@
     <Compile Include="DAL\DBLoaiPhong.cs" />
     <Compile Include="DAL\DBNhanVien.cs" />
     <Compile Include="DAL\DBPhongThietBi.cs" />
-    <Compile Include="DAL\DBSanPham.cs" />
+    <Compile Include="DAL\DBDichVu.cs" />
     <Compile Include="DAL\DBTaiKhoan.cs" />
     <Compile Include="DAL\DBThietBi.cs" />
     <Compile Include="DTO\classCongTy.cs" />
     <Compile Include="DAL\classDataBase.cs" />
     <Compile Include="DTO\classDatPhong.cs" />
+    <Compile Include="DTO\classDichVuPhong.cs" />
     <Compile Include="DTO\classDonVi.cs" />
     <Compile Include="DTO\classHoaDon.cs" />
     <Compile Include="DTO\classKhachHang.cs" />
@@ -62,10 +63,11 @@
     <Compile Include="DTO\classNhanVien.cs" />
     <Compile Include="DTO\classPhong.cs" />
     <Compile Include="DTO\classPhongThietBi.cs" />
-    <Compile Include="DTO\classSanPham.cs" />
+    <Compile Include="DTO\classDichVu.cs" />
     <Compile Include="DTO\classTaiKhoan.cs" />
     <Compile Include="DTO\classThietBi.cs" />
     <Compile Include="DAL\DBPhong.cs" />
+    <Compile Include="DTO\classHoaDonPhong.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

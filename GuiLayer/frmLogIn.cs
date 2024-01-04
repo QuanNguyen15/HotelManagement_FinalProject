@@ -30,6 +30,7 @@ namespace GuiLayer
             bool isLoggedIn = false;
             foreach (classTaiKhoan taikhoan in listTaiKhoan)
             {
+             
                 if (username == taikhoan.userName && password == taikhoan.password)
                 {
                     isLoggedIn = true;
@@ -92,6 +93,11 @@ namespace GuiLayer
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

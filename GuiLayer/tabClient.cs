@@ -40,7 +40,7 @@ namespace GuiLayer
                         string id = selectedRow.Cells["idKhachHang"].Value.ToString();
                         int idAsInt = int.Parse(id);
                         classKhachHang khachHang=new classKhachHang();
-                        khachHang.id = idAsInt;
+                        khachHang.idKhachHang = idAsInt;
                         bUSKhachHang.deleteKhachHang(khachHang);
                         dataGridViewCLient.Rows.RemoveAt(e.RowIndex);
                         MessageBox.Show("Delete successfull");

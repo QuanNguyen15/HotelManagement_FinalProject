@@ -9,6 +9,7 @@ namespace BusinessLogic
     public class ServerName
     {
         public string userName {get ; set;}
+        public string nameDataBase { get ; set;}
         public string password { get; set; }
 
         public string Khai = "DESKTOP-FOV0R60\\SQLEXPRESS";
@@ -17,6 +18,7 @@ namespace BusinessLogic
         public ServerName()
         {
             userName = Viet;
+            nameDataBase = "HOTEL_MANAGEMENT";
         }
 
     }

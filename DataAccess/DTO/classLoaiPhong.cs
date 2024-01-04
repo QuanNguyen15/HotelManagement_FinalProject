@@ -8,20 +8,20 @@ namespace DataAccess
 {
     public class classLoaiPhong
     {
-        public int id {  get; set; }
+        public int idLoaiPhong {  get; set; }
         public string tenLoaiPhong {  get; set; }
         public decimal donGia {  get; set; }
-        public int soNguoiMax {  get; set; }
-        public int soGiuong {  get; set; }
+        public int soNguoiToiDa {  get; set; }
+
 
         public classLoaiPhong() { }
-        public classLoaiPhong(int id, string tenLoaiPhong, decimal donGia, int soNguoiMax, int soGiuong)
+
+        public classLoaiPhong(int idLoaiPhong, string tenLoaiPhong, decimal donGia, int soNguoiToiDa)
         {
-            this.id = id;
+            this.idLoaiPhong = idLoaiPhong;
             this.tenLoaiPhong = tenLoaiPhong;
             this.donGia = donGia;
-            this.soNguoiMax = soNguoiMax;
-            this.soGiuong = soGiuong;
+            this.soNguoiToiDa = soNguoiToiDa;
         }
     }
 }

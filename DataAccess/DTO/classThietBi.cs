@@ -8,16 +8,19 @@ namespace DataAccess
 {
     public class classThietBi
     {
-        public int id { get; set; }
+        public int idThietBi { get; set; }
         public string tenThietBi {  get; set; }
-        public decimal dongGia {  get; set; }
+        public decimal donGia {  get; set; }
+        public bool isDelete { get; set; }
 
         public classThietBi() { }
-        public classThietBi(int id, string tenThietBi, decimal dongGia)
+
+        public classThietBi(int idThietBi, string tenThietBi, decimal donGia, bool isDelete)
         {
-            this.id = id;
+            this.idThietBi = idThietBi;
             this.tenThietBi = tenThietBi;
-            this.dongGia = dongGia;
+            this.donGia = donGia;
+            this.isDelete = isDelete;
         }
     }
 }

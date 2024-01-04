@@ -21,7 +21,7 @@ namespace BusinessLogic
         public DataTable getPhongThietBi()
         {
 
-            DBPhongThietBi dbPhongThietBi = new DBPhongThietBi(serverName.userName, "HOTELS");
+            DBPhongThietBi dbPhongThietBi = new DBPhongThietBi(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dbPhongThietBi.getDataTable();
             dt = getDatatable;
             return dt;

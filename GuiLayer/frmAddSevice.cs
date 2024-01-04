@@ -15,7 +15,7 @@ namespace GuiLayer
 {
     public partial class frmAddSevice : Form
     {
-        BUSSanPham bUSSanPham = new BUSSanPham(); 
+        BUSDichVu bUSSanPham = new BUSDichVu(); 
         public frmAddSevice()
         {
             InitializeComponent();
@@ -33,8 +33,8 @@ namespace GuiLayer
 
         private void frmAddSevice_Load(object sender, EventArgs e)
         {
-            BUSSanPham bUSSanPham = new BUSSanPham();
-            DataTable dt =bUSSanPham.getSanPham();
+            BUSDichVu bUSSanPham = new BUSDichVu();
+            DataTable dt =bUSSanPham.getDichVu();
             foreach (DataRow row in dt.Rows)
             {                
                 string tenSanPham = row["TenSanPham"].ToString();
@@ -51,9 +51,9 @@ namespace GuiLayer
         {
             string searchText = textBox1.Text.Trim();
             comboBox1.Items.Clear();
-            classSanPham sanPham = new classSanPham();
-            sanPham.tenSanPham = searchText;
-            BUSSanPham bUSSanPham = new BUSSanPham();
+            classDichVu sanPham = new classDichVu();
+            sanPham.tenDichVu = searchText;
+            BUSDichVu bUSSanPham = new BUSDichVu();
             DataTable dt = bUSSanPham.searchSanPham(sanPham);
             foreach (DataRow row in dt.Rows)
             {

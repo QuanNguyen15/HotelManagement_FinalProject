@@ -50,7 +50,7 @@
     <Compile Include="BUSNhanVien.cs" />
     <Compile Include="BUSPhong.cs" />
     <Compile Include="BUSPhongThietBi.cs" />
-    <Compile Include="BUSSanPham.cs" />
+    <Compile Include="BUSDichVu.cs" />
     <Compile Include="BUSTaiKhoan.cs" />
     <Compile Include="BUSThietBi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

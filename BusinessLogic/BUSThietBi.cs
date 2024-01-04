@@ -10,7 +10,7 @@ namespace BusinessLogic
 {
     public class BUSThietBi
     {
-        ServerName ServerName = new ServerName();
+        ServerName serverName = new ServerName();
         DataTable dt = null;
 
         public BUSThietBi()
@@ -20,7 +20,7 @@ namespace BusinessLogic
         public DataTable getKhachHang()
         {
 
-            DBThietBi dBThietBi = new DBThietBi(ServerName.userName, "HOTELS");
+            DBThietBi dBThietBi = new DBThietBi(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dBThietBi.getDataTable();
 
             dt = getDatatable;

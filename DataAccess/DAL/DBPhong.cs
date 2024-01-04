@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -27,8 +28,9 @@ namespace BusinessLogic
 
         public DataTable getDataTable()
         {
+            string query = "select * from Phong where is_delete = 0";
             dt = new DataTable();
-            dt = cDB.getTable("Phong");
+            dt = cDB.getData(query);
             return dt;
         }
 
@@ -60,7 +62,7 @@ namespace BusinessLogic
             SqlParameter[] sp = new SqlParameter[4];
 
             sp[0] = new SqlParameter("@idPhong", SqlDbType.Int);
-            sp[0].Value = Object.id;
+            sp[0].Value = Object.idPhong;
             sp[1] = new SqlParameter("@tenPhong", SqlDbType.NVarChar, 50);
             sp[1].Value = Object.tenPhong;
             sp[2] = new SqlParameter("@trangThai", SqlDbType.NVarChar, 50);

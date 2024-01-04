@@ -15,7 +15,7 @@ namespace GuiLayer
 {
     public partial class frmRoomInformation : Form
     {
-        BUSSanPham busSanPham = new BUSSanPham();
+        BUSDichVu busSanPham = new BUSDichVu();
         public frmRoomInformation()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace GuiLayer
             // TODO: This line of code loads data into the 'hOTELSDataSet1.SanPham' table. You can move, or remove it, as needed.
             /* this.sanPhamTableAdapter.Fill(this.hOTELSDataSet1.SanPham);*/
             DataTable dt = new DataTable();
-            dt = busSanPham.getSanPham();
+            dt = busSanPham.getDichVu();
             btnAddService.Visible = false;
             dataGridView1.DataSource = dt;
 
@@ -74,12 +74,12 @@ namespace GuiLayer
                         DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                         string id = selectedRow.Cells["idSanPham"].Value.ToString();
                         int idAsInt = int.Parse(id);
-                        classSanPham SanPham = new classSanPham();
-                        SanPham.id = idAsInt;
+                        classDichVu SanPham = new classDichVu();
+                        SanPham.idDichVu = idAsInt;
                         MessageBox.Show(id);
 
-                        BUSSanPham busSanPham = new BUSSanPham();
-                        busSanPham.deleteSanPham(SanPham);
+                        BUSDichVu busSanPham = new BUSDichVu();
+                        busSanPham.deleteDichVu(SanPham);
                         dataGridView1.Rows.RemoveAt(e.RowIndex);
                         MessageBox.Show("Delete successfull");
                     }

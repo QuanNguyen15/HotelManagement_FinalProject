@@ -10,7 +10,7 @@ namespace BusinessLogic
 {
     public class BUSHoaDon
     {
-        ServerName ServerName = new ServerName();
+        ServerName serverName = new ServerName();
         DataTable dt = null;
 
         public BUSHoaDon()
@@ -20,7 +20,7 @@ namespace BusinessLogic
         public DataTable getHoaDon()
         {
 
-            DBHoaDon dBHoaDon = new DBHoaDon(ServerName.userName, "HOTELS");
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dBHoaDon.getDataTable();
 
             dt = getDatatable;

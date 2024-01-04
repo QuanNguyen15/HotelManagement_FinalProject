@@ -55,7 +55,7 @@ namespace DataAccess.DAL
             SqlParameter[] sp = new SqlParameter[1];
 
             sp[0] = new SqlParameter("@idKhachHang", SqlDbType.NVarChar, 100);
-            sp[0].Value = Object.id;
+            sp[0].Value = Object.idKhachHang;
 
             return cDB.executeProcedure("DeleteKhachHang", sp);
 
@@ -65,7 +65,7 @@ namespace DataAccess.DAL
         {
             SqlParameter[] sp = new SqlParameter[7];
             sp[0] = new SqlParameter("@idKhachHang", SqlDbType.Int, 100);
-            sp[0].Value = Object.id;
+            sp[0].Value = Object.idKhachHang;
             sp[1] = new SqlParameter("@hoTen", SqlDbType.NVarChar, 100);
             sp[1].Value = Object.hoTen;
             sp[2] = new SqlParameter("@gioiTinh", SqlDbType.NVarChar, 20);

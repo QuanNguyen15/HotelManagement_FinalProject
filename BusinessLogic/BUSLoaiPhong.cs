@@ -10,7 +10,7 @@ namespace BusinessLogic
 {
     public class BUSLoaiPhong
     {
-        ServerName ServerName = new ServerName();
+        ServerName serverName = new ServerName();
         DataTable dt = null;
 
         public BUSLoaiPhong()
@@ -20,7 +20,7 @@ namespace BusinessLogic
         public DataTable getLoaiPhong()
         {
 
-            DBLoaiPhong dBLoaiPhong = new DBLoaiPhong(ServerName.userName, "HOTELS");
+            DBLoaiPhong dBLoaiPhong = new DBLoaiPhong(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dBLoaiPhong.getDataTable();
 
             dt = getDatatable;

@@ -42,10 +42,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.radOcc = new System.Windows.Forms.RadioButton();
             this.lbStatus = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.radBooked = new System.Windows.Forms.RadioButton();
+            this.radRenting = new System.Windows.Forms.RadioButton();
             this.flpSingleRoom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flpVipRoom.SuspendLayout();
@@ -188,27 +189,16 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.radOcc);
+            this.panel3.Controls.Add(this.radRenting);
+            this.panel3.Controls.Add(this.radBooked);
             this.panel3.Controls.Add(this.lbStatus);
             this.panel3.Controls.Add(this.radMaintenece);
             this.panel3.Controls.Add(this.radAll);
             this.panel3.Controls.Add(this.radAvail);
             this.panel3.Location = new System.Drawing.Point(878, 10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(484, 100);
+            this.panel3.Size = new System.Drawing.Size(605, 100);
             this.panel3.TabIndex = 39;
-            // 
-            // radOcc
-            // 
-            this.radOcc.AutoSize = true;
-            this.radOcc.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radOcc.Location = new System.Drawing.Point(351, 51);
-            this.radOcc.Name = "radOcc";
-            this.radOcc.Size = new System.Drawing.Size(99, 28);
-            this.radOcc.TabIndex = 14;
-            this.radOcc.TabStop = true;
-            this.radOcc.Text = "Occupied";
-            this.radOcc.UseVisualStyleBackColor = true;
             // 
             // lbStatus
             // 
@@ -240,6 +230,30 @@
             this.btnSearch.Size = new System.Drawing.Size(55, 34);
             this.btnSearch.TabIndex = 41;
             this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // radBooked
+            // 
+            this.radBooked.AutoSize = true;
+            this.radBooked.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radBooked.Location = new System.Drawing.Point(476, 51);
+            this.radBooked.Name = "radBooked";
+            this.radBooked.Size = new System.Drawing.Size(86, 28);
+            this.radBooked.TabIndex = 15;
+            this.radBooked.TabStop = true;
+            this.radBooked.Text = "Booked";
+            this.radBooked.UseVisualStyleBackColor = true;
+            // 
+            // radRenting
+            // 
+            this.radRenting.AutoSize = true;
+            this.radRenting.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radRenting.Location = new System.Drawing.Point(355, 51);
+            this.radRenting.Name = "radRenting";
+            this.radRenting.Size = new System.Drawing.Size(87, 28);
+            this.radRenting.TabIndex = 16;
+            this.radRenting.TabStop = true;
+            this.radRenting.Text = "Renting";
+            this.radRenting.UseVisualStyleBackColor = true;
             // 
             // tabRoom
             // 
@@ -284,6 +298,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radOcc;
+        private System.Windows.Forms.RadioButton radBooked;
+        private System.Windows.Forms.RadioButton radRenting;
     }
 }

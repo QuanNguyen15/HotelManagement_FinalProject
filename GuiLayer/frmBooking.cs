@@ -31,5 +31,19 @@ namespace GuiLayer
             dataGridViewRoomAvail.DataSource = dt;
 
         }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            DateTime aDateTime = DateTime.Now;
+           
+            DateTime dateTime = dateTimePickerCheckin.Value;
+            string time = dateTime.ToString();
+            MessageBox.Show(time);
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace DataAccess.DAL
 {
-    public class DBSanPham
+    public class DBDichVu
     {
 
         classDataBase cDB = null;
         DataTable dt = null;
 
-        public DBSanPham() { }
+        public DBDichVu() { }
 
-        public DBSanPham(string sername, string dbname, string user = "", string pass = "")
+        public DBDichVu(string sername, string dbname, string user = "", string pass = "")
         {
             cDB = new classDataBase(sername, dbname);
 
@@ -25,27 +25,27 @@ namespace DataAccess.DAL
         public DataTable getDataTable()
         {
             dt = new DataTable();
-            dt = cDB.getTable("SanPham");
+            dt = cDB.getTable("DichVu");
             return dt;
         }
         
-        public DataTable searchSanPam(classSanPham Object)
+        public DataTable searchDichVu(classDichVu Object)
         {
 
             SqlParameter[] sp = new SqlParameter[1];
 
             sp[0] = new SqlParameter("@searchSanPham", SqlDbType.NVarChar, 100);
-            sp[0].Value = Object.tenSanPham;
+            sp[0].Value = Object.tenDichVu;
             return cDB.executeSQLselect("SearchSanPhamByName", sp);
 
         }
 
-        public bool DeleteSanPham(classSanPham Object)
+        public bool DeleteDichVu(classDichVu Object)
         {
             SqlParameter[] sp = new SqlParameter[1];
 
             sp[0] = new SqlParameter("@idSanPham", SqlDbType.Int);
-            sp[0].Value = Object.id;
+            sp[0].Value = Object.idDichVu;
 
             return cDB.executeProcedure("DeleteProduct", sp);
 

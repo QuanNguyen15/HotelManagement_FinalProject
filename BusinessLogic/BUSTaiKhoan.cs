@@ -11,7 +11,7 @@ namespace BusinessLogic
 {
     public class BUSTaiKhoan
     {
-        ServerName ServerName = new ServerName();
+        ServerName serverName = new ServerName();
         DataTable dt = null;
 
         public BUSTaiKhoan()
@@ -21,7 +21,7 @@ namespace BusinessLogic
         public DataTable getTaiKhoan()
         {
 
-            DBTaiKhoan dBTaiKhoan = new DBTaiKhoan(ServerName.userName, "HOTELS");
+            DBTaiKhoan dBTaiKhoan = new DBTaiKhoan(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dBTaiKhoan.getDataTable();
 
             dt = getDatatable;
@@ -38,7 +38,6 @@ namespace BusinessLogic
                 taiKhoan.idTaiKhoan = Convert.ToInt32(dtTaiKhoan["idTaiKhoan"]);
                 taiKhoan.userName = dtTaiKhoan["userName"].ToString();
                 taiKhoan.password = dtTaiKhoan["password"].ToString();
-                taiKhoan.idCongty = Convert.ToInt32(dtTaiKhoan["idCongTy"]);
                 taiKhoan.idNhanVien = Convert.ToInt32(dtTaiKhoan["idNhanVien"]);
                 taiKhoan.idRole = Convert.ToInt32(dtTaiKhoan["idRole"]);
 
@@ -50,7 +49,7 @@ namespace BusinessLogic
         public List<classTaiKhoan> getTaiKhoanList()
         {
 
-            DBTaiKhoan dBTaiKhoan = new DBTaiKhoan(ServerName.userName, "HOTELS");
+            DBTaiKhoan dBTaiKhoan = new DBTaiKhoan(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dBTaiKhoan.getDataTable();
 
             dt = getDatatable;

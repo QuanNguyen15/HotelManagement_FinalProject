@@ -22,14 +22,14 @@ namespace BusinessLogic
         public DataTable getPhong()
         {
 
-            DBPhong dbPhong = new DBPhong(serverName.userName, "HOTELS");
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dbPhong.getDataTable();
             dt = getDatatable;
             return dt;
         }
         public List<classPhong> getPhongToList()
         {
-            DBPhong dbPhong = new DBPhong(serverName.userName, "HOTELS");
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
             DataTable dataTable = dbPhong.getDataTable();
 
             List<classPhong> phongList = ConvertDataTableToPhongList(dataTable);
@@ -44,7 +44,7 @@ namespace BusinessLogic
             {
                 classPhong phong = new classPhong
                 {
-                    id = Convert.ToInt32(row["IdPhong"]),
+                    idPhong = Convert.ToInt32(row["IdPhong"]),
                     tenPhong = row["TenPhong"].ToString(),
                     trangThai = row["trangThai"].ToString(),
                     idLoaiPhong = Convert.ToInt32(row["IdLoaiPhong"])
@@ -58,13 +58,13 @@ namespace BusinessLogic
 
         public bool addPhong(classPhong Object)
         {
-            DBPhong dbPhong = new DBPhong(serverName.userName, "HOTELS");
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
             return dbPhong.AddPhong(Object);
         }
 
         public List<classPhong> searchPhong(classPhong Object)
         {
-            DBPhong dbPhong = new DBPhong(serverName.userName, "HOTELS");
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
             DataTable dt = dbPhong.searchPhong(Object);
             List<classPhong> list = ConvertDataTableToPhongList(dt);
             return list;
@@ -72,13 +72,13 @@ namespace BusinessLogic
 
         public bool updatePhong(classPhong Object)
         {
-            DBPhong dbPhong = new DBPhong(serverName.userName, "HOTELS");
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
             return dbPhong.UpdatePhong(Object);
         }
 
         public DataTable getRoomAvailable()
         {
-            DBPhong dbPhong = new DBPhong(serverName.userName, "HOTELS");
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
             return dbPhong.getRoomAvailable();
         }
     }
