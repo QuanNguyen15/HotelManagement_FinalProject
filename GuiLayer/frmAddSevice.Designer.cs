@@ -82,6 +82,7 @@
             this.dataGridViewService.RowTemplate.Height = 24;
             this.dataGridViewService.Size = new System.Drawing.Size(411, 260);
             this.dataGridViewService.TabIndex = 6;
+            this.dataGridViewService.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewService_CellContentClick);
             // 
             // label3
             // 

@@ -1,4 +1,5 @@
-﻿using DataAccess.DAL;
+﻿using DataAccess;
+using DataAccess.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +18,7 @@ namespace BusinessLogic
         {
         }
 
-        public DataTable getKhachHang()
+        public DataTable getThietBi()
         {
 
             DBThietBi dBThietBi = new DBThietBi(serverName.userName, serverName.nameDataBase);
@@ -25,6 +26,18 @@ namespace BusinessLogic
 
             dt = getDatatable;
             return dt;
+        }
+
+        public bool addThietBi(classThietBi Object)
+        {
+            DBThietBi dBThietBi = new DBThietBi(serverName.userName, serverName.nameDataBase);
+            return dBThietBi.AddThietBi(Object);
+        }
+
+        public bool deleteThietBi(classThietBi Object)
+        {
+            DBThietBi dBThietBi = new DBThietBi(serverName.userName, serverName.nameDataBase);
+            return dBThietBi.DeleteThietBi(Object);
         }
     }
 }

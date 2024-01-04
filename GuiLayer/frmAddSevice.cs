@@ -61,5 +61,10 @@ namespace GuiLayer
                 comboBox1.Items.Add(tenSanPham);
             }
         }
+
+        private void dataGridViewService_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

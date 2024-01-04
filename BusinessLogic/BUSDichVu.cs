@@ -58,5 +58,11 @@ namespace BusinessLogic
             DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
             return dbDichVu.DeleteDichVu(dichVu);
         }
+
+        public bool addDichVu(classDichVu dichVu)
+        {
+            DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
+            return dbDichVu.AddDichVu(dichVu);
+        }
     }
 }
