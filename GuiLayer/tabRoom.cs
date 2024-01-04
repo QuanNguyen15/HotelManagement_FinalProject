@@ -226,18 +226,32 @@ namespace GuiLayer
             switch (ttRoom)
             {
                 case "Available":
-/*                    room.trangThai = "Maintenance";
-                    busPhong.updatePhong(room);*/
+                    room.trangThai = "Maintenaning";
+                    busPhong.updatePhong(room);
                     control.Text = $"{room.tenPhong}\n {room.trangThai}";
-                    control.BackColor = Color.FromArgb(119, 136, 153);
-                    MessageBox.Show($"{room.tenPhong} has been updated successfuly", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    control.BackColor = Color.FromArgb(226, 51, 51);
+                    MessageBox.Show($"{room.tenPhong} Has Been Updated Successfuly", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case "Maintenaning":
-/*                    room.trangThai = "Available";
-                    busPhong.updatePhong(room);*/
+                    room.trangThai = "Available";
+                    busPhong.updatePhong(room);
                     control.Text = $"{room.tenPhong}\n {room.trangThai}";
-                    control.BackColor = Color.FromArgb(136, 230, 185);
-                    MessageBox.Show($"{room.tenPhong} has been Available", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    control.BackColor = Color.FromArgb(125, 209, 10);
+                    MessageBox.Show($"{room.tenPhong} Has Been Available", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case "Booked":
+                    room.trangThai = "Renting";
+                    busPhong.updatePhong(room);
+                    control.Text = $"{room.tenPhong}\n {room.trangThai}";
+                    control.BackColor = Color.FromArgb(149, 150, 148);
+                    MessageBox.Show($"{room.tenPhong} Has Been Renting", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case "Renting":
+                    room.trangThai = "Maintenaning";
+                    busPhong.updatePhong(room);
+                    control.Text = $"{room.tenPhong}\n {room.trangThai}";
+                    control.BackColor = Color.FromArgb(226, 51, 51);
+                    MessageBox.Show($"{room.tenPhong} Has Been Payment", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
             }
 

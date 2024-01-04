@@ -19,11 +19,11 @@ namespace DataAccess
         
         public classKhachHang() { }
 
-        public classKhachHang(int idKhachHang, string hoTen, string gioiTinh, string soCCCD, string dienThoai, string email, string diaChi)
+        public classKhachHang(int idKhachHang, string hoTen, string gioiTinh, string dienThoai, string email, string diaChi)
         {
             this.idKhachHang = idKhachHang;
             this.hoTen = hoTen;
-            this.soCCCD = soCCCD;
+
             this.dienThoai = dienThoai;
             this.email = email;
             this.diaChi = diaChi;

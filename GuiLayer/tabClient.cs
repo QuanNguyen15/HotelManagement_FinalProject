@@ -102,12 +102,20 @@ namespace GuiLayer
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string searchTerm = txtSearch.Text.Trim();
+            if(searchTerm.Length > 0 )
+            {
+                classKhachHang khachHang = new classKhachHang();
+                khachHang.hoTen = searchTerm;
 
-            classKhachHang khachHang = new classKhachHang();
-            khachHang.hoTen = searchTerm;
+                dt = bUSKhachHang.searchKhachHang(khachHang);
+                dataGridViewCLient.DataSource = dt;
+            }
+            else
+            {
+                dt = bUSKhachHang.getKhachHang();
+                dataGridViewCLient.DataSource = dt;
+            }
 
-            dt = bUSKhachHang.searchKhachHang(khachHang);
-            dataGridViewCLient.DataSource = dt;
         }
     }
 }

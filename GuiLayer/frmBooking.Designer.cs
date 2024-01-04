@@ -459,8 +459,8 @@
             // roomName
             // 
             this.roomName.DataPropertyName = "tenPhong";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.roomName.DefaultCellStyle = dataGridViewCellStyle2;
+/*            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.roomName.DefaultCellStyle = dataGridViewCellStyle2;*/
             this.roomName.HeaderText = "Room Name";
             this.roomName.MinimumWidth = 6;
             this.roomName.Name = "roomName";
@@ -468,18 +468,18 @@
             // trangThai
             // 
             this.trangThai.DataPropertyName = "trangThai";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.trangThai.DefaultCellStyle = dataGridViewCellStyle3;
+/*            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.trangThai.DefaultCellStyle = dataGridViewCellStyle3;*/
             this.trangThai.HeaderText = "Status";
             this.trangThai.MinimumWidth = 6;
             this.trangThai.Name = "trangThai";
             // 
             // Add
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+/*            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
-            this.Add.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Add.DefaultCellStyle = dataGridViewCellStyle4;*/
             this.Add.HeaderText = "Add";
             this.Add.Image = ((System.Drawing.Image)(resources.GetObject("Add.Image")));
             this.Add.MinimumWidth = 6;
@@ -524,8 +524,8 @@
             // roomName
             // 
             this.roomName.DataPropertyName = "tenPhong";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.roomName.DefaultCellStyle = dataGridViewCellStyle2;
+/*            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.roomName.DefaultCellStyle = dataGridViewCellStyle2;*/
             this.roomName.HeaderText = "Room Name";
             this.roomName.MinimumWidth = 6;
             this.roomName.Name = "roomName";
@@ -534,8 +534,8 @@
             // trangThai
             // 
             this.trangThai.DataPropertyName = "trangThai";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.trangThai.DefaultCellStyle = dataGridViewCellStyle3;
+/*            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.trangThai.DefaultCellStyle = dataGridViewCellStyle3;*/
             this.trangThai.HeaderText = "Status";
             this.trangThai.MinimumWidth = 6;
             this.trangThai.Name = "trangThai";
@@ -543,10 +543,10 @@
             // 
             // Add
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+/*            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
-            this.Add.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Add.DefaultCellStyle = dataGridViewCellStyle4;*/
             this.Add.HeaderText = "Add";
             this.Add.Image = ((System.Drawing.Image)(resources.GetObject("Add.Image")));
             this.Add.MinimumWidth = 6;

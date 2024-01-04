@@ -98,6 +98,21 @@ namespace DataAccess
 
 
 
+        public DataTable ExecuteSQLSelect(string nameProcedure)
+        {
+            SqlCommand cmd = new SqlCommand(nameProcedure);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = conn;
+
+            DataTable dataTable = new DataTable();
+            using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+            {
+                adapter.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
 
         public bool executeProcedure(string nameProcedure, SqlParameter[] parma)
         {

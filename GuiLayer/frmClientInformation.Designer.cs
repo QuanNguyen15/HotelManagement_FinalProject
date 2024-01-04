@@ -342,6 +342,7 @@
             this.txtIdCard.Location = new System.Drawing.Point(117, 234);
             this.txtIdCard.Multiline = true;
             this.txtIdCard.Name = "txtIdCard";
+            this.txtIdCard.ReadOnly = true;
             this.txtIdCard.Size = new System.Drawing.Size(395, 30);
             this.txtIdCard.TabIndex = 33;
             // 

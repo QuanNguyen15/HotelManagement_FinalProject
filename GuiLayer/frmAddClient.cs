@@ -48,6 +48,23 @@ namespace GuiLayer
             string dienThoai = txtPhone.Text;
             string email = txtEmail.Text;
             string diachi = txtAddress.Text;
+            bool check = true;
+            List<classKhachHang> khachHangList = busKhachHang.getlistKhachHang();
+            foreach (classKhachHang khachHangitem in khachHangList)
+            {
+                if (khachHangitem.soCCCD == soCDCD)
+                {
+                    MessageBox.Show("soCCCD was exist" + soCDCD);
+                    check = false;
+                }
+                if (khachHangitem.dienThoai == dienThoai)
+                {
+                    check = false;
+                    MessageBox.Show("Phone was exist" + dienThoai);
+                }
+
+            }
+
 
 
             foreach (Control control in pnRadio.Controls)
@@ -81,7 +98,10 @@ namespace GuiLayer
             else if (!IsNumeric(soCDCD) || !IsNumeric(dienThoai))
             {
                 MessageBox.Show("ID card number and phone must be numeric");
-            }
+            }else if (!check)
+            {
+
+            }        
             else
             {
                 classKhachHang khachHang = new classKhachHang(hoTen, gioiTinh, soCDCD, dienThoai, email, diachi);

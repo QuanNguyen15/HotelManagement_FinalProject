@@ -24,10 +24,11 @@ namespace DataAccess.DAL
         public DataTable getDataTable()
         {
             dt = new DataTable();
-            dt = cDB.getTable("KhachHang");
+            dt = cDB.getData("select idKhachHang,hoTen,gioiTinh,soCCCD,dienThoai,email,diaChi from KhachHang where is_delete = 0");
 
             return dt;
         }
+
 
         public bool AddKhachHang(classKhachHang Object)
         {
@@ -54,7 +55,7 @@ namespace DataAccess.DAL
         {
             SqlParameter[] sp = new SqlParameter[1];
 
-            sp[0] = new SqlParameter("@idKhachHang", SqlDbType.NVarChar, 100);
+            sp[0] = new SqlParameter("@idKhachHang", SqlDbType.Int);
             sp[0].Value = Object.idKhachHang;
 
             return cDB.executeProcedure("DeleteKhachHang", sp);
@@ -63,21 +64,19 @@ namespace DataAccess.DAL
 
         public bool UpdateKhachHang(classKhachHang Object)
         {
-            SqlParameter[] sp = new SqlParameter[7];
+            SqlParameter[] sp = new SqlParameter[6];
             sp[0] = new SqlParameter("@idKhachHang", SqlDbType.Int, 100);
             sp[0].Value = Object.idKhachHang;
             sp[1] = new SqlParameter("@hoTen", SqlDbType.NVarChar, 100);
             sp[1].Value = Object.hoTen;
             sp[2] = new SqlParameter("@gioiTinh", SqlDbType.NVarChar, 20);
             sp[2].Value = Object.gioiTinh;
-            sp[3] = new SqlParameter("@soCCCD", SqlDbType.NVarChar, 20);
-            sp[3].Value = Object.soCCCD;
-            sp[4] = new SqlParameter("@dienThoai", SqlDbType.NVarChar, 20);
-            sp[4].Value = Object.dienThoai;
-            sp[5] = new SqlParameter("@email", SqlDbType.NVarChar, 100);
-            sp[5].Value = Object.email;
-            sp[6] = new SqlParameter("@diaChi", SqlDbType.NVarChar, 100);
-            sp[6].Value = Object.diaChi;
+            sp[3] = new SqlParameter("@dienThoai", SqlDbType.NVarChar, 20);
+            sp[3].Value = Object.dienThoai;
+            sp[4] = new SqlParameter("@email", SqlDbType.NVarChar, 100);
+            sp[4].Value = Object.email;
+            sp[5] = new SqlParameter("@diaChi", SqlDbType.NVarChar, 100);
+            sp[5].Value = Object.diaChi;
 
             return cDB.executeProcedure("UpdateKhachHang", sp);
         }

@@ -157,13 +157,15 @@ namespace GuiLayer
             }
             else
             {
-                classKhachHang khachHang = new classKhachHang(id,hoTen,gioiTinh,soCDCD,dienThoai,email,diachi);
+
+                classKhachHang khachHang = new classKhachHang(id, hoTen, gioiTinh, dienThoai, email, diachi);
                 bool update = busKhachHang.upDateKhachHang(khachHang);
-                 MessageBox.Show("Update successful");
-                 client.RefreshDataGridView();
-                   this.Close();
-                
+                MessageBox.Show("Update successful");
+                client.RefreshDataGridView();
+                this.Close();
+
             }
+
             }
         static bool IsNumeric(string input)
         {
