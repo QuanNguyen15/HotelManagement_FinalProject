@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace GuiLayer
 {
-    public partial class frmBookingDetail : Form
+    public partial class frmServiceInfor : Form
     {
-        public frmBookingDetail()
+        public frmServiceInfor()
         {
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Do you want to exit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
