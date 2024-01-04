@@ -1,6 +1,4 @@
-﻿using BusinessLogic;
-using DataAccess;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,22 +17,17 @@ namespace GuiLayer
             InitializeComponent();
         }
 
-        private void dataGridViewCLient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                if (dataGridViewCLient.Columns[e.ColumnIndex].HeaderText == "Detail")
+                if (dataGridViewBill.Columns[e.ColumnIndex].HeaderText == "Detail")
                 {
                     frmBillDetail billDetail = new frmBillDetail();
                     billDetail.ShowDialog();
 
                 }
             }
-        }
-
-        private void tabBill_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

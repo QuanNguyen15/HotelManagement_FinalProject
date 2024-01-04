@@ -331,6 +331,12 @@
     <Compile Include="frmClientInformation.Designer.cs">
       <DependentUpon>frmClientInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFacilitiInfor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacilitiInfor.Designer.cs">
+      <DependentUpon>frmFacilitiInfor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +348,12 @@
     </Compile>
     <Compile Include="frmRoomInformation.Designer.cs">
       <DependentUpon>frmRoomInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServiceInfor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServiceInfor.Designer.cs">
+      <DependentUpon>frmServiceInfor.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -433,11 +445,17 @@
     <EmbeddedResource Include="frmClientInformation.resx">
       <DependentUpon>frmClientInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFacilitiInfor.resx">
+      <DependentUpon>frmFacilitiInfor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogIn.resx">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRoomInformation.resx">
       <DependentUpon>frmRoomInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServiceInfor.resx">
+      <DependentUpon>frmServiceInfor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>

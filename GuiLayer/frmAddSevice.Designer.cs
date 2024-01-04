@@ -67,6 +67,7 @@
             this.dataGridViewPickedService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPickedService.Location = new System.Drawing.Point(524, 146);
             this.dataGridViewPickedService.Name = "dataGridViewPickedService";
+            this.dataGridViewPickedService.RowHeadersVisible = false;
             this.dataGridViewPickedService.RowHeadersWidth = 51;
             this.dataGridViewPickedService.RowTemplate.Height = 24;
             this.dataGridViewPickedService.Size = new System.Drawing.Size(411, 260);
@@ -78,6 +79,7 @@
             this.dataGridViewService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewService.Location = new System.Drawing.Point(39, 146);
             this.dataGridViewService.Name = "dataGridViewService";
+            this.dataGridViewService.RowHeadersVisible = false;
             this.dataGridViewService.RowHeadersWidth = 51;
             this.dataGridViewService.RowTemplate.Height = 24;
             this.dataGridViewService.Size = new System.Drawing.Size(411, 260);

@@ -32,7 +32,7 @@ namespace GuiLayer
         private void HomePage_Load(object sender, EventArgs e)
         {
             timerDateAndTime.Start();
-            tabBill1.Visible = false;
+            tabBill2.Visible = false;
             tabRoom1.Visible = false;
             tabClient1.Visible = false;
             tabHomePage1.Visible = true;
@@ -45,7 +45,7 @@ namespace GuiLayer
         private void btnHome_Click(object sender, EventArgs e)
         {
             PanelMove(btnHome);
-            tabBill1.Visible = false;
+            tabBill2.Visible = false;
             tabRoom1.Visible = false;
             tabClient1.Visible = false;
             tabHomePage1.Visible = true;
@@ -57,7 +57,7 @@ namespace GuiLayer
         private void btnRoom_Click(object sender, EventArgs e)
         {
             PanelMove(btnRoom);
-            tabBill1.Visible = false;
+            tabBill2.Visible = false;
             tabRoom1.Visible = true;
             tabClient1.Visible = false;
             tabHomePage1.Visible = false;
@@ -69,7 +69,7 @@ namespace GuiLayer
         private void btnBooking_Click(object sender, EventArgs e)
         {
             PanelMove(btnBooking);
-            tabBill1.Visible = false;
+            tabBill2.Visible = false;
             tabRoom1.Visible = false;
             tabClient1.Visible = false;
             tabHomePage1.Visible = false;
@@ -81,7 +81,7 @@ namespace GuiLayer
         private void btnClient_Click(object sender, EventArgs e)
         {
             PanelMove(btnClient);
-            tabBill1.Visible = false;
+            tabBill2.Visible = false;
             tabRoom1.Visible = false;
             tabClient1.Visible = true;
             tabHomePage1.Visible = false;
@@ -93,7 +93,7 @@ namespace GuiLayer
         private void btnBill_Click(object sender, EventArgs e)
         {
             PanelMove(btnBill);
-            tabBill1.Visible = true;
+            tabBill2.Visible = true;
             tabRoom1.Visible = false;
             tabClient1.Visible = false;
             tabHomePage1.Visible = false;
@@ -105,7 +105,7 @@ namespace GuiLayer
         private void btnService_Click(object sender, EventArgs e)
         {
             PanelMove(btnService);
-            tabBill1.Visible = false;
+            tabBill2.Visible = false;
             tabRoom1.Visible = false;
             tabClient1.Visible = false;
             tabHomePage1.Visible = false;
@@ -116,7 +116,7 @@ namespace GuiLayer
         private void btnStatistic_Click(object sender, EventArgs e)
         {
             PanelMove(btnStatistic);
-            tabBill1.Visible = false;
+            tabBill2.Visible = false;
             tabRoom1.Visible = false;
             tabClient1.Visible = false;
             tabHomePage1.Visible = false;

@@ -116,8 +116,8 @@ namespace DataAccess
 
         public bool executeProcedure(string nameProcedure, SqlParameter[] parma)
         {
-            cmd = new SqlCommand(nameProcedure);
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd = new SqlCommand(nameProcedure);//truy xuất database
+            cmd.CommandType = CommandType.StoredProcedure;//lưu trữ kiểu thực thi 
             foreach (SqlParameter par in parma)
             {
                 cmd.Parameters.Add(par);

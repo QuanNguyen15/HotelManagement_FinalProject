@@ -115,7 +115,7 @@ namespace GuiLayer
         {
             if (e.RowIndex >= 0)
             {
-                if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "Delete")
+                if (dataGridView2.Columns[e.ColumnIndex].HeaderText == "Delete")
                 {
 
                     DialogResult result = MessageBox.Show("Are you sure you want to delete?", "Comfirm to delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -123,18 +123,20 @@ namespace GuiLayer
                     if (result == DialogResult.Yes)
                     {
 
-                        DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-                        string id = selectedRow.Cells["idDichVu"].Value.ToString();
+                        DataGridViewRow selectedRow = dataGridView2.Rows[e.RowIndex];
+                        string id = selectedRow.Cells["idThietBi"].Value.ToString();
                         int idAsInt = int.Parse(id);
-                        classDichVu dichVu = new classDichVu();
-                        dichVu.idDichVu = idAsInt;
-                        busDichVu.deleteDichVu(dichVu);
-                        dataGridView1.Rows.RemoveAt(e.RowIndex);
+
+                        classThietBi thietBi = new classThietBi();
+                        thietBi.idThietBi = idAsInt;
+                        busThietBi.deleteThietBi(thietBi);                                           
+                        
+                        dataGridView2.Rows.RemoveAt(e.RowIndex);
                         MessageBox.Show("Delete successfull");
                     }
 
                 }
-                else if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "Edit")
+                else if (dataGridView2.Columns[e.ColumnIndex].HeaderText == "Edit")
                 {
                     // Lấy thông tin từ dòng được chọn
                     DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];

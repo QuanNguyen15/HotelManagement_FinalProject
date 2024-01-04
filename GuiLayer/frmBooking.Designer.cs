@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBooking));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radOther = new System.Windows.Forms.RadioButton();
@@ -425,6 +422,7 @@
             this.dataGridViewRoomSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRoomSelect.Location = new System.Drawing.Point(436, 252);
             this.dataGridViewRoomSelect.Name = "dataGridViewRoomSelect";
+            this.dataGridViewRoomSelect.RowHeadersVisible = false;
             this.dataGridViewRoomSelect.RowHeadersWidth = 51;
             this.dataGridViewRoomSelect.RowTemplate.Height = 24;
             this.dataGridViewRoomSelect.Size = new System.Drawing.Size(329, 327);
@@ -434,14 +432,14 @@
             // 
             this.dataGridViewRoomAvail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewRoomAvail.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRoomAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRoomAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewRoomAvail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRoomAvail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.roomName,
@@ -449,9 +447,10 @@
             this.Add});
             this.dataGridViewRoomAvail.Location = new System.Drawing.Point(55, 251);
             this.dataGridViewRoomAvail.Name = "dataGridViewRoomAvail";
+            this.dataGridViewRoomAvail.RowHeadersVisible = false;
             this.dataGridViewRoomAvail.RowHeadersWidth = 51;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewRoomAvail.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewRoomAvail.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewRoomAvail.RowTemplate.Height = 24;
             this.dataGridViewRoomAvail.Size = new System.Drawing.Size(329, 327);
             this.dataGridViewRoomAvail.TabIndex = 2;
@@ -459,8 +458,6 @@
             // roomName
             // 
             this.roomName.DataPropertyName = "tenPhong";
-/*            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.roomName.DefaultCellStyle = dataGridViewCellStyle2;*/
             this.roomName.HeaderText = "Room Name";
             this.roomName.MinimumWidth = 6;
             this.roomName.Name = "roomName";
@@ -468,18 +465,12 @@
             // trangThai
             // 
             this.trangThai.DataPropertyName = "trangThai";
-/*            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.trangThai.DefaultCellStyle = dataGridViewCellStyle3;*/
             this.trangThai.HeaderText = "Status";
             this.trangThai.MinimumWidth = 6;
             this.trangThai.Name = "trangThai";
             // 
             // Add
             // 
-/*            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
-            this.Add.DefaultCellStyle = dataGridViewCellStyle4;*/
             this.Add.HeaderText = "Add";
             this.Add.Image = ((System.Drawing.Image)(resources.GetObject("Add.Image")));
             this.Add.MinimumWidth = 6;
@@ -508,6 +499,7 @@
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -520,38 +512,6 @@
             this.btnSave.TabIndex = 29;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // roomName
-            // 
-            this.roomName.DataPropertyName = "tenPhong";
-/*            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.roomName.DefaultCellStyle = dataGridViewCellStyle2;*/
-            this.roomName.HeaderText = "Room Name";
-            this.roomName.MinimumWidth = 6;
-            this.roomName.Name = "roomName";
-            this.roomName.Width = 125;
-            // 
-            // trangThai
-            // 
-            this.trangThai.DataPropertyName = "trangThai";
-/*            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.trangThai.DefaultCellStyle = dataGridViewCellStyle3;*/
-            this.trangThai.HeaderText = "Status";
-            this.trangThai.MinimumWidth = 6;
-            this.trangThai.Name = "trangThai";
-            this.trangThai.Width = 125;
-            // 
-            // Add
-            // 
-/*            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
-            this.Add.DefaultCellStyle = dataGridViewCellStyle4;*/
-            this.Add.HeaderText = "Add";
-            this.Add.Image = ((System.Drawing.Image)(resources.GetObject("Add.Image")));
-            this.Add.MinimumWidth = 6;
-            this.Add.Name = "Add";
-            this.Add.Width = 125;
             // 
             // frmBooking
             // 

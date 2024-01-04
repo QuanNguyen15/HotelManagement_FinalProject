@@ -41,12 +41,12 @@ namespace DataAccess.DAL
 
         public bool AddThietBi(classThietBi Object)
         {
-            SqlParameter[] sp = new SqlParameter[1];
+            SqlParameter[] sp = new SqlParameter[2];
 
-            sp[0] = new SqlParameter("@tenThietBi", SqlDbType.Int);
+            sp[0] = new SqlParameter("@tenThietBi", SqlDbType.NVarChar);
             sp[0].Value = Object.tenThietBi;
-            sp[0] = new SqlParameter("@donGia", SqlDbType.Decimal);
-            sp[0].Value = Object.donGia;
+            sp[1] = new SqlParameter("@donGia", SqlDbType.Decimal);
+            sp[1].Value = Object.donGia;
 
             return cDB.executeProcedure("addThietBi", sp);
         }

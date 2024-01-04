@@ -40,7 +40,6 @@ namespace GuiLayer
             else
             {
                 decimal isPrice = Convert.ToDecimal(price);
-                classDichVu dichVu = new classDichVu();
                 classThietBi thietbi = new classThietBi();
                 thietbi.tenThietBi = name;
                 thietbi.donGia = isPrice;
@@ -63,6 +62,15 @@ namespace GuiLayer
         private void frmAddFacilities_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to exit?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
