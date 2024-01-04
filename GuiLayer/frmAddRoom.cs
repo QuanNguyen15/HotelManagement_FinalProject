@@ -36,7 +36,7 @@ namespace GuiLayer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string tenPhong = txtRoomName.Text;
+            string tenPhong = txtRoomName.Text.Trim();
             if (string.IsNullOrEmpty(tenPhong))
             {
                 MessageBox.Show("Please fill in all information");

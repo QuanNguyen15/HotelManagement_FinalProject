@@ -21,6 +21,14 @@ namespace GuiLayer
         public tabService()
         {
             InitializeComponent();
+/*            foreach (Control control in panel3.Controls)
+            {
+                if (control is RadioButton radioButton)
+                {
+
+                    radioButton.CheckedChanged += RadioButton;
+                }
+            }*/
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -113,47 +121,7 @@ namespace GuiLayer
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "Delete")
-                {
 
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete?", "Comfirm to delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
-                    {
-
-                        DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-                        string id = selectedRow.Cells["idDichVu"].Value.ToString();
-                        int idAsInt = int.Parse(id);
-                        classDichVu dichVu = new classDichVu();
-                        dichVu.idDichVu = idAsInt;
-                        busDichVu.deleteDichVu(dichVu);
-                        dataGridView1.Rows.RemoveAt(e.RowIndex);
-                        MessageBox.Show("Delete successfull");
-                    }
-
-                }
-                else if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "Edit")
-                {
-                    // Lấy thông tin từ dòng được chọn
-                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-                    string id = selectedRow.Cells["idKhachHang"].Value.ToString();
-                    string name = selectedRow.Cells["hoTen"].Value.ToString();
-                    string idCard = selectedRow.Cells["soCCCD"].Value.ToString();
-                    string phone = selectedRow.Cells["dienThoai"].Value.ToString();
-                    string email = selectedRow.Cells["email"].Value.ToString();
-                    string address = selectedRow.Cells["diaChi"].Value.ToString();
-                    string gender = selectedRow.Cells["gioiTinh"].Value.ToString();
-
-
-                    /*                  // Tạo form mới và truyền thông tin vào
-                                      frmClientInformation infoForm = new frmClientInformation(this);
-                                      infoForm.SetClientInformation(id, name, idCard, phone, email, address, gender);
-                                      infoForm.SetClientInformation(id);
-                                      infoForm.ShowDialog();*/
-                }
-            }
         }
     }
 }

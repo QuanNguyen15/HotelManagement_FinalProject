@@ -42,12 +42,12 @@ namespace GuiLayer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string hoTen = txtName.Text;
+            string hoTen = txtName.Text.Trim();
             string gioiTinh = null;
-            string soCDCD = txtIdCard.Text;
-            string dienThoai = txtPhone.Text;
-            string email = txtEmail.Text;
-            string diachi = txtAddress.Text;
+            string soCDCD = txtIdCard.Text.Trim();
+            string dienThoai = txtPhone.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string diachi = txtAddress.Text.Trim();
             bool check = true;
             List<classKhachHang> khachHangList = busKhachHang.getlistKhachHang();
             foreach (classKhachHang khachHangitem in khachHangList)
@@ -101,7 +101,22 @@ namespace GuiLayer
             }else if (!check)
             {
 
-            }        
+            }
+            else if (!soCCCDmax(soCDCD) && !dienThoaiMax(dienThoai))
+            {
+                
+                MessageBox.Show($"The ID card number must be 12 numbers and the phone number must be 10 numbers", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else if (!soCCCDmax(soCDCD) || !dienThoaiMax(dienThoai))
+            {
+                if (!soCCCDmax(soCDCD))
+                {
+                    MessageBox.Show($"The ID card number must be 12 ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if(!dienThoaiMax(dienThoai))
+                {
+                    MessageBox.Show($"The phone number must be 10 numbers", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
             else
             {
                 classKhachHang khachHang = new classKhachHang(hoTen, gioiTinh, soCDCD, dienThoai, email, diachi);
@@ -123,6 +138,20 @@ namespace GuiLayer
         {
             Regex regex = new Regex("^[0-9]+$");
             return regex.IsMatch(input);
+        }
+
+        public bool soCCCDmax(string input)
+        {
+            string pattern = @"^\d{12}$";
+
+            return Regex.IsMatch(input, pattern);
+        }
+
+        public bool dienThoaiMax(string input)
+        {           
+            string pattern = @"^\d{10}$";
+
+            return Regex.IsMatch(input, pattern);
         }
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {

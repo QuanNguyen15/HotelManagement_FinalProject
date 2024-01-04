@@ -28,44 +28,47 @@ namespace GuiLayer
 
             if (e.RowIndex >= 0)
             {
-                if (dataGridViewCLient.Columns[e.ColumnIndex].HeaderText == "Delete")
+                DataGridViewRow selectedRow = dataGridViewCLient.Rows[e.RowIndex];
+                string id = selectedRow.Cells["idKhachHang"].Value.ToString();
+
+                if (!string.IsNullOrEmpty(id))
                 {
-
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete?", "Comfirm to delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
+                    if (dataGridViewCLient.Columns[e.ColumnIndex].HeaderText == "Delete")
                     {
-                        
-                        DataGridViewRow selectedRow = dataGridViewCLient.Rows[e.RowIndex];
-                        string id = selectedRow.Cells["idKhachHang"].Value.ToString();
-                        int idAsInt = int.Parse(id);
-                        classKhachHang khachHang=new classKhachHang();
-                        khachHang.idKhachHang = idAsInt;
-                        bUSKhachHang.deleteKhachHang(khachHang);
-                        dataGridViewCLient.Rows.RemoveAt(e.RowIndex);
-                        MessageBox.Show("Delete successfull");
+
+                        DialogResult result = MessageBox.Show("Are you sure you want to delete?", "Comfirm to delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+
+                            int idAsInt = int.Parse(id);
+                            classKhachHang khachHang = new classKhachHang();
+                            khachHang.idKhachHang = idAsInt;
+                            bUSKhachHang.deleteKhachHang(khachHang);
+                            dataGridViewCLient.Rows.RemoveAt(e.RowIndex);
+                            MessageBox.Show("Delete successfull");
+                        }
+
                     }
+                    else if (dataGridViewCLient.Columns[e.ColumnIndex].HeaderText == "Edit")
+                    {
 
-                }
-                else if (dataGridViewCLient.Columns[e.ColumnIndex].HeaderText == "Edit")
-                {
-                    // Lấy thông tin từ dòng được chọn
-                    DataGridViewRow selectedRow = dataGridViewCLient.Rows[e.RowIndex];
-                    string id = selectedRow.Cells["idKhachHang"].Value.ToString();
-                    string name = selectedRow.Cells["hoTen"].Value.ToString();
-                    string idCard = selectedRow.Cells["soCCCD"].Value.ToString();
-                    string phone = selectedRow.Cells["dienThoai"].Value.ToString();
-                    string email = selectedRow.Cells["email"].Value.ToString();
-                    string address = selectedRow.Cells["diaChi"].Value.ToString();
-                    string gender = selectedRow.Cells["gioiTinh"].Value.ToString();
-                    
+                        string name = selectedRow.Cells["hoTen"].Value.ToString();
+                        string idCard = selectedRow.Cells["soCCCD"].Value.ToString();
+                        string phone = selectedRow.Cells["dienThoai"].Value.ToString();
+                        string email = selectedRow.Cells["email"].Value.ToString();
+                        string address = selectedRow.Cells["diaChi"].Value.ToString();
+                        string gender = selectedRow.Cells["gioiTinh"].Value.ToString();
 
-                    // Tạo form mới và truyền thông tin vào
-                    frmClientInformation infoForm = new frmClientInformation(this);
-                    infoForm.SetClientInformation(id, name, idCard, phone, email, address, gender);
-                    infoForm.SetClientInformation(id);
-                    infoForm.ShowDialog();
+
+                        // Tạo form mới và truyền thông tin vào
+                        frmClientInformation infoForm = new frmClientInformation(this);
+                        infoForm.SetClientInformation(id, name, idCard, phone, email, address, gender);
+                        infoForm.SetClientInformation(id);
+                        infoForm.ShowDialog();
+                    }
                 }
+
             }
 
         }
@@ -75,6 +78,7 @@ namespace GuiLayer
         {
             dt = bUSKhachHang.getKhachHang();
             dataGridViewCLient.DataSource = dt;
+           
         }
 
 

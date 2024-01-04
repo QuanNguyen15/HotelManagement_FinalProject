@@ -155,6 +155,11 @@ namespace GuiLayer
             {
                 MessageBox.Show("ID card number and phone must be numeric");
             }
+            else if (!dienThoaiMax(dienThoai))
+            {
+
+                MessageBox.Show($"Please enter phone is 10 digital", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
             {
 
@@ -171,6 +176,20 @@ namespace GuiLayer
         {
             Regex regex = new Regex("^[0-9]+$");
             return regex.IsMatch(input);
+        }
+
+        public bool soCCCDmax(string input)
+        {
+            string pattern = @"^\d{12}$";
+
+            return Regex.IsMatch(input, pattern);
+        }
+
+        public bool dienThoaiMax(string input)
+        {
+            string pattern = @"^\d{10}$";
+
+            return Regex.IsMatch(input, pattern);
         }
     }
 }

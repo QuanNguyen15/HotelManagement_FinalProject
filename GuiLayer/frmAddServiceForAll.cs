@@ -27,9 +27,9 @@ namespace GuiLayer
         private void btnSave_Click(object sender, EventArgs e)
         {
             
-            string name =txtName.Text;
-            string price = txtPrice.Text;
-            string loaiSanPham = cbLoaiDichVu.Text;
+            string name =txtName.Text.Trim();
+            string price = txtPrice.Text.Trim();
+            string loaiSanPham = cbLoaiDichVu.Text.Trim();
 
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(price) || string.IsNullOrEmpty(loaiSanPham) )
             {
