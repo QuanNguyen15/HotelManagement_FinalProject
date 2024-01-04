@@ -15,20 +15,20 @@ namespace GuiLayer
 {
     public partial class tabService : UserControl
     {
-        BUSDichVu busDichVu =new BUSDichVu();
+        BUSDichVu busDichVu = new BUSDichVu();
         BUSThietBi busThietBi = new BUSThietBi();
 
         public tabService()
         {
             InitializeComponent();
-/*            foreach (Control control in panel3.Controls)
-            {
-                if (control is RadioButton radioButton)
-                {
+            /*            foreach (Control control in panel3.Controls)
+                        {
+                            if (control is RadioButton radioButton)
+                            {
 
-                    radioButton.CheckedChanged += RadioButton;
-                }
-            }*/
+                                radioButton.CheckedChanged += RadioButton;
+                            }
+                        }*/
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace GuiLayer
 
         private void btnAddfacilities_Click(object sender, EventArgs e)
         {
-            frmAddFacilities addFacilities = new frmAddFacilities(this); 
+            frmAddFacilities addFacilities = new frmAddFacilities(this);
             addFacilities.ShowDialog();
         }
 
@@ -53,7 +53,7 @@ namespace GuiLayer
             DataTable dtService = new DataTable();
             dtService = busDichVu.getDichVu();
             dataGridView1.DataSource = dtService;
-            
+
             DataTable dtThietBi = new DataTable();
             dtThietBi = busThietBi.getThietBi();
             dataGridView2.DataSource = dtThietBi;
@@ -137,8 +137,8 @@ namespace GuiLayer
 
                         classThietBi thietBi = new classThietBi();
                         thietBi.idThietBi = idAsInt;
-                        busThietBi.deleteThietBi(thietBi);                                           
-                        
+                        busThietBi.deleteThietBi(thietBi);
+
                         dataGridView2.Rows.RemoveAt(e.RowIndex);
                         MessageBox.Show("Delete successfull");
                     }
@@ -157,6 +157,8 @@ namespace GuiLayer
                     string gender = selectedRow.Cells["gioiTinh"].Value.ToString();
 
 
+                }
+            }
         }
     }
 }

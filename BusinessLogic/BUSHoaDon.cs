@@ -1,4 +1,5 @@
-﻿using DataAccess.DAL;
+﻿using DataAccess;
+using DataAccess.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,11 +18,30 @@ namespace BusinessLogic
         {
         }
 
-        public DataTable getHoaDon()
+        public DataTable getHoaDonChiTiet()
         {
 
             DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dBHoaDon.getDataTable();
+
+            dt = getDatatable;
+            return dt;
+        }
+
+        public DataTable getHoaDon()
+        {
+
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.getDataHoaDon();
+
+            dt = getDatatable;
+            return dt;
+        }
+
+        public DataTable searchHoaDon(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.searchHoaDon(Object);
 
             dt = getDatatable;
             return dt;
