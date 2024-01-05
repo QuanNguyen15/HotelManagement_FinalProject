@@ -34,7 +34,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.idDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.khachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,13 +57,13 @@
             this.dataGridViewBooking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBooking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDatPhong,
+            this.idHoaDon,
             this.khachHang,
             this.ngayDat,
             this.NhanVien,
             this.Detail,
             this.Delete});
-            this.dataGridViewBooking.Location = new System.Drawing.Point(67, 169);
+            this.dataGridViewBooking.Location = new System.Drawing.Point(67, 173);
             this.dataGridViewBooking.Name = "dataGridViewBooking";
             this.dataGridViewBooking.RowHeadersVisible = false;
             this.dataGridViewBooking.RowHeadersWidth = 51;
@@ -102,16 +102,16 @@
             this.txtSearch.TabIndex = 11;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // idDatPhong
+            // idHoaDon
             // 
-            this.idDatPhong.DataPropertyName = "idDatPhong";
-            this.idDatPhong.HeaderText = "Booking ID ";
-            this.idDatPhong.MinimumWidth = 6;
-            this.idDatPhong.Name = "idDatPhong";
+            this.idHoaDon.DataPropertyName = "idHoaDon";
+            this.idHoaDon.HeaderText = "Booking ID ";
+            this.idHoaDon.MinimumWidth = 6;
+            this.idHoaDon.Name = "idHoaDon";
             // 
             // khachHang
             // 
-            this.khachHang.DataPropertyName = "khachHang";
+            this.khachHang.DataPropertyName = "tenKhachHang";
             this.khachHang.HeaderText = "Client";
             this.khachHang.MinimumWidth = 6;
             this.khachHang.Name = "khachHang";
@@ -125,7 +125,7 @@
             // 
             // NhanVien
             // 
-            this.NhanVien.DataPropertyName = "NhanVien";
+            this.NhanVien.DataPropertyName = "hoTen";
             this.NhanVien.HeaderText = "Staff";
             this.NhanVien.MinimumWidth = 6;
             this.NhanVien.Name = "NhanVien";
@@ -172,7 +172,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDatPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn khachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn NhanVien;

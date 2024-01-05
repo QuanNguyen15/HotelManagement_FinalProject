@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess.DAL;
+using Org.BouncyCastle.Bcpg.OpenPgp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +15,16 @@ namespace GuiLayer
     public partial class HomePage : Form
     {
         private string loggedInUser;
+        tabClient client = null;
+        int idTaiKhoan =1;
         public HomePage(string username)
         {
             InitializeComponent();
             loggedInUser = username;
             lbUser.Text = loggedInUser;
+
         }
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -37,9 +43,9 @@ namespace GuiLayer
             tabClient1.Visible = false;
             tabHomePage1.Visible = true;
             tabStatistic1.Visible = false;
-            tabBooking1.Visible = false;
+            tabBooking.Visible = false;
             tabService1.Visible = false;
-
+            
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -50,7 +56,7 @@ namespace GuiLayer
             tabClient1.Visible = false;
             tabHomePage1.Visible = true;
             tabStatistic1.Visible = false;
-            tabBooking1.Visible = false;
+            tabBooking.Visible = false;
             tabService1.Visible = false;
         }
 
@@ -62,7 +68,7 @@ namespace GuiLayer
             tabClient1.Visible = false;
             tabHomePage1.Visible = false;
             tabStatistic1.Visible = false;
-            tabBooking1.Visible = false;
+            tabBooking.Visible = false;
             tabService1.Visible = false;
         }
 
@@ -74,8 +80,11 @@ namespace GuiLayer
             tabClient1.Visible = false;
             tabHomePage1.Visible = false;
             tabStatistic1.Visible = false;
-            tabBooking1.Visible = true;
+            tabBooking.Visible = true;
             tabService1.Visible = false;
+            int id = idTaiKhoan;
+
+
         }
 
         private void btnClient_Click(object sender, EventArgs e)
@@ -86,8 +95,10 @@ namespace GuiLayer
             tabClient1.Visible = true;
             tabHomePage1.Visible = false;
             tabStatistic1.Visible = false;
-            tabBooking1.Visible = false;
+            tabBooking.Visible = false;
             tabService1.Visible = false;
+            tabClient1.RefreshDataGridView();
+
         }
 
         private void btnBill_Click(object sender, EventArgs e)
@@ -98,7 +109,7 @@ namespace GuiLayer
             tabClient1.Visible = false;
             tabHomePage1.Visible = false;
             tabStatistic1.Visible = false;
-            tabBooking1.Visible = false;
+            tabBooking.Visible = false;
             tabService1.Visible = false;
         }
 
@@ -110,7 +121,7 @@ namespace GuiLayer
             tabClient1.Visible = false;
             tabHomePage1.Visible = false;
             tabStatistic1.Visible = false;
-            tabBooking1.Visible = false;
+            tabBooking.Visible = false;
             tabService1.Visible = true;
         }
         private void btnStatistic_Click(object sender, EventArgs e)
@@ -121,7 +132,7 @@ namespace GuiLayer
             tabClient1.Visible = false;
             tabHomePage1.Visible = false;
             tabStatistic1.Visible =true;
-            tabBooking1.Visible = false;
+            tabBooking.Visible = false;
             tabService1.Visible = false;
         }
 

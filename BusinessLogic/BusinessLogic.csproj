@@ -45,6 +45,7 @@
     <Compile Include="BUSDatPhong.cs" />
     <Compile Include="BUSDonVi.cs" />
     <Compile Include="BUSHoaDon.cs" />
+    <Compile Include="BUSHoaDonPhong.cs" />
     <Compile Include="BUSKhachHang.cs" />
     <Compile Include="BUSLoaiPhong.cs" />
     <Compile Include="BUSNhanVien.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="BUSThietBi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerName.cs" />
+    <Compile Include="staticTaiKhoan.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">

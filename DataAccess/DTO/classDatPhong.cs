@@ -19,6 +19,7 @@ namespace DataAccess
         public int idCongTy {  get; set; }*/
         public bool isDelete { get; set; }
 
+        public int soLuongNguoi { get; set; }
         public string tenKhachHang {  get; set; }
 
 
@@ -34,6 +35,22 @@ namespace DataAccess
             this.ngayThuc = ngayThuc;
             this.idTaiKhoan = idTaiKhoan;
             this.isDelete = isDelete;
+        }
+
+        public classDatPhong(int idDatPhong, int idKhachHang, int idPhong, DateTime ngayDat, DateTime ngayTra, int ngayThuc, int idTaiKhoan, bool isDelete, int soLuongNguoi, string tenKhachHang) : this(idDatPhong, idKhachHang, idPhong, ngayDat, ngayTra, ngayThuc, idTaiKhoan, isDelete)
+        {
+            this.soLuongNguoi = soLuongNguoi;
+            this.tenKhachHang = tenKhachHang;
+        }
+
+        public classDatPhong(int idKhachHang, int idPhong, DateTime ngayDat, DateTime ngayTra, int idTaiKhoan, int soLuongNguoi)
+        {
+            this.idKhachHang = idKhachHang;
+            this.idPhong = idPhong;
+            this.ngayDat = ngayDat;
+            this.ngayTra = ngayTra;
+            this.idTaiKhoan = idTaiKhoan;
+            this.soLuongNguoi = soLuongNguoi;
         }
     }
 }

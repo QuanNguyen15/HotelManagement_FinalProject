@@ -76,10 +76,18 @@ namespace BusinessLogic
 
         public DataTable getRoomAvailable()
         {
-            string query = "select tenPhong , trangThai from Phong where trangThai = 'Available'";
+            string query = "select tenPhong , trangThai from Phong where trangThai = 'Available' and is_delete = 0";
             dt = new DataTable();
             dt = cDB.getData(query);
             return dt;
+        }
+
+        public DataTable getIdPhong(string name)
+        {
+            SqlParameter[] sp = new SqlParameter[1];
+            sp[0] = new SqlParameter("@TenPhong", SqlDbType.NVarChar, 50);
+            sp[0].Value = name;
+            return cDB.executeSQLselect("GetIdPhong", sp);
         }
     }
 }

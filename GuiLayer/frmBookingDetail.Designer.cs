@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBookingDetail));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewBookingDetail = new System.Windows.Forms.DataGridView();
@@ -42,6 +42,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.IDPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Person = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBookingDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,31 +65,37 @@
             // 
             this.dataGridViewBookingDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewBookingDetail.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBookingDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBookingDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewBookingDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBookingDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPhong,
+            this.StartBook,
+            this.EndBook,
+            this.Person});
             this.dataGridViewBookingDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewBookingDetail.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewBookingDetail.Name = "dataGridViewBookingDetail";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBookingDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBookingDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewBookingDetail.RowHeadersVisible = false;
             this.dataGridViewBookingDetail.RowHeadersWidth = 51;
             this.dataGridViewBookingDetail.RowTemplate.Height = 24;
             this.dataGridViewBookingDetail.Size = new System.Drawing.Size(977, 476);
             this.dataGridViewBookingDetail.TabIndex = 0;
+            this.dataGridViewBookingDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBookingDetail_CellContentClick);
             // 
             // btnExit
             // 
@@ -184,6 +194,34 @@
             this.label1.Text = "{?}";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // IDPhong
+            // 
+            this.IDPhong.DataPropertyName = "tenPhong";
+            this.IDPhong.HeaderText = "Room Name";
+            this.IDPhong.MinimumWidth = 6;
+            this.IDPhong.Name = "IDPhong";
+            // 
+            // StartBook
+            // 
+            this.StartBook.DataPropertyName = "ngayDat";
+            this.StartBook.HeaderText = "Start Book";
+            this.StartBook.MinimumWidth = 6;
+            this.StartBook.Name = "StartBook";
+            // 
+            // EndBook
+            // 
+            this.EndBook.DataPropertyName = "ngayTra";
+            this.EndBook.HeaderText = "End Book";
+            this.EndBook.MinimumWidth = 6;
+            this.EndBook.Name = "EndBook";
+            // 
+            // Person
+            // 
+            this.Person.DataPropertyName = "soNguoi";
+            this.Person.HeaderText = "Person";
+            this.Person.MinimumWidth = 6;
+            this.Person.Name = "Person";
+            // 
             // frmBookingDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -202,6 +240,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmBookingDetail";
             this.Text = "frmBookingDetail";
+            this.Load += new System.EventHandler(this.frmBookingDetail_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBookingDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -224,5 +263,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Person;
     }
 }

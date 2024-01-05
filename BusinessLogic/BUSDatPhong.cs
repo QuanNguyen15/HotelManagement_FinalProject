@@ -44,5 +44,26 @@ namespace BusinessLogic
             DBDatPhong dbDatPhong = new DBDatPhong(serverName.userName, serverName.nameDataBase);
             return dbDatPhong.searchDatPhong(Object);
         }
+
+        public bool addDatPhong(classKhachHang khachHang, classHoaDon hoaDon, classDatPhong datPhong, classTaiKhoan TaiKhoan)
+        {
+            DBDatPhong dbDatPhong = new DBDatPhong(serverName.userName, serverName.nameDataBase);
+            return dbDatPhong.AddDatPhong(khachHang, hoaDon, datPhong, TaiKhoan);
+        }
+
+        public string getDatPhongMax()
+        {
+            DBDatPhong dbDatPhong = new DBDatPhong(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dbDatPhong.getDatPhongMax();
+            dt = getDatatable;
+            string DatPhongAsString = getDatatable.Rows[0]["BookingID"].ToString();
+            return DatPhongAsString;
+        }
+
+        public bool creatDatPhong(classDatPhong datPhong)
+        {
+            DBDatPhong dbDatPhong = new DBDatPhong(serverName.userName, serverName.nameDataBase);
+            return dbDatPhong.createDatPhong(datPhong);
+        }
     }
 }

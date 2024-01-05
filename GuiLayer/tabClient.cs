@@ -78,7 +78,7 @@ namespace GuiLayer
         {
             dt = bUSKhachHang.getKhachHang();
             dataGridViewCLient.DataSource = dt;
-           
+
         }
 
 

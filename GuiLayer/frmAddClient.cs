@@ -49,6 +49,7 @@ namespace GuiLayer
             string email = txtEmail.Text.Trim();
             string diachi = txtAddress.Text.Trim();
             bool check = true;
+            bool checkTime = true;
             List<classKhachHang> khachHangList = busKhachHang.getlistKhachHang();
             foreach (classKhachHang khachHangitem in khachHangList)
             {
@@ -62,9 +63,7 @@ namespace GuiLayer
                     check = false;
                     MessageBox.Show("Phone was exist" + dienThoai);
                 }
-
             }
-
 
 
             foreach (Control control in pnRadio.Controls)

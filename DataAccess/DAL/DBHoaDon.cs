@@ -44,6 +44,53 @@ namespace DataAccess.DAL
 
         }
 
+        public DataTable getBooKing(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@idHoaDon", SqlDbType.Int);
+            sp[0].Value = Object.idHoaDon;
+            return cDB.executeSQLselect("getBooking", sp);
+
+        }
+
+        public DataTable getBooKinglable(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@idHoaDon", SqlDbType.Int);
+            sp[0].Value = Object.idHoaDon;
+            return cDB.executeSQLselect("getBookinglb", sp);
+
+        }
+
+        public DataTable searchBooking(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@searchValue", SqlDbType.NVarChar);
+            sp[0].Value = Object.tenHoaDon;
+            return cDB.executeSQLselect("SearchBooking", sp);
+        }
+
+        public DataTable getMaxHoaDon()
+        {
+            dt = new DataTable();
+            dt = cDB.getData("select max(idHoaDon) as idBill from HoaDon");
+            return dt;
+        }
+
+        public bool CreateHoaDon(classHoaDon hoaDon)
+        {
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@idKhachHang", SqlDbType.Int);
+            sp[0].Value = hoaDon.idKhachHang;
+            return cDB.executeProcedure("creatHoaDon", sp);
+        }
 
     }
 }

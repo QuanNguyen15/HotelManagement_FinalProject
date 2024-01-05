@@ -1,5 +1,6 @@
 ﻿using BusinessLogic;
 using DataAccess;
+using DataAccess.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,11 +29,13 @@ namespace GuiLayer
             string password = txtPassword.Text;
             List<classTaiKhoan> listTaiKhoan = busTaiKhoan.getTaiKhoanList();
             bool isLoggedIn = false;
+            staticTaiKhoan.idTaiKhoanStatic = 0;
             foreach (classTaiKhoan taikhoan in listTaiKhoan)
             {
-             
+                    
                 if (username == taikhoan.userName && password == taikhoan.password)
                 {
+                    staticTaiKhoan.idTaiKhoanStatic = taikhoan.idTaiKhoan;
                     isLoggedIn = true;
                     break; // Thoát vòng lặp khi đã tìm thấy kết quả khớp
                 }

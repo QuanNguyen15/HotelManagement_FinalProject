@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBooking));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radOther = new System.Windows.Forms.RadioButton();
@@ -61,8 +64,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewRoomSelect = new System.Windows.Forms.DataGridView();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Person = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewRoomAvail = new System.Windows.Forms.DataGridView();
-            this.roomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Add = new System.Windows.Forms.DataGridViewImageColumn();
             this.label2 = new System.Windows.Forms.Label();
@@ -385,6 +390,7 @@
             this.dateTimePickerCheckoout.Name = "dateTimePickerCheckoout";
             this.dateTimePickerCheckoout.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerCheckoout.TabIndex = 7;
+            this.dateTimePickerCheckoout.Value = new System.DateTime(2024, 1, 5, 16, 15, 20, 0);
             // 
             // dateTimePickerCheckin
             // 
@@ -392,7 +398,7 @@
             this.dateTimePickerCheckin.Name = "dateTimePickerCheckin";
             this.dateTimePickerCheckin.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerCheckin.TabIndex = 6;
-            this.dateTimePickerCheckin.Value = new System.DateTime(2024, 1, 1, 17, 30, 0, 0);
+            this.dateTimePickerCheckin.Value = new System.DateTime(2024, 1, 5, 16, 15, 11, 0);
             // 
             // label4
             // 
@@ -419,48 +425,85 @@
             // dataGridViewRoomSelect
             // 
             this.dataGridViewRoomSelect.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRoomSelect.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewRoomSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRoomSelect.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Delete,
+            this.Person});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewRoomSelect.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewRoomSelect.Location = new System.Drawing.Point(436, 252);
             this.dataGridViewRoomSelect.Name = "dataGridViewRoomSelect";
             this.dataGridViewRoomSelect.RowHeadersVisible = false;
             this.dataGridViewRoomSelect.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewRoomSelect.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewRoomSelect.RowTemplate.Height = 24;
             this.dataGridViewRoomSelect.Size = new System.Drawing.Size(329, 327);
             this.dataGridViewRoomSelect.TabIndex = 3;
+            this.dataGridViewRoomSelect.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRoomSelect_CellContentClick);
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Width = 80;
+            // 
+            // Person
+            // 
+            this.Person.HeaderText = "Amount";
+            this.Person.MinimumWidth = 6;
+            this.Person.Name = "Person";
+            this.Person.Width = 125;
             // 
             // dataGridViewRoomAvail
             // 
             this.dataGridViewRoomAvail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewRoomAvail.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRoomAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRoomAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewRoomAvail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRoomAvail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.roomName,
+            this.tenPhong,
             this.trangThai,
             this.Add});
             this.dataGridViewRoomAvail.Location = new System.Drawing.Point(55, 251);
             this.dataGridViewRoomAvail.Name = "dataGridViewRoomAvail";
             this.dataGridViewRoomAvail.RowHeadersVisible = false;
             this.dataGridViewRoomAvail.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewRoomAvail.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewRoomAvail.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewRoomAvail.RowTemplate.Height = 24;
             this.dataGridViewRoomAvail.Size = new System.Drawing.Size(329, 327);
             this.dataGridViewRoomAvail.TabIndex = 2;
+            this.dataGridViewRoomAvail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRoomAvail_CellContentClick);
             // 
-            // roomName
+            // tenPhong
             // 
-            this.roomName.DataPropertyName = "tenPhong";
-            this.roomName.HeaderText = "Room Name";
-            this.roomName.MinimumWidth = 6;
-            this.roomName.Name = "roomName";
+            this.tenPhong.DataPropertyName = "tenPhong";
+            this.tenPhong.HeaderText = "Room Name";
+            this.tenPhong.MinimumWidth = 6;
+            this.tenPhong.Name = "tenPhong";
             // 
             // trangThai
             // 
@@ -512,6 +555,7 @@
             this.btnSave.TabIndex = 29;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_2);
             // 
             // frmBooking
             // 
@@ -554,7 +598,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridViewRoomSelect;
         private System.Windows.Forms.DataGridView dataGridViewRoomAvail;
         private System.Windows.Forms.DateTimePicker dateTimePickerCheckoout;
         private System.Windows.Forms.DateTimePicker dateTimePickerCheckin;
@@ -583,8 +626,11 @@
         private System.Windows.Forms.RadioButton radOther;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roomName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn trangThai;
         private System.Windows.Forms.DataGridViewImageColumn Add;
+        private System.Windows.Forms.DataGridView dataGridViewRoomSelect;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Person;
     }
 }

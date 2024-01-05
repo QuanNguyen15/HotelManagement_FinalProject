@@ -46,5 +46,45 @@ namespace BusinessLogic
             dt = getDatatable;
             return dt;
         }
+        public DataTable getBooking(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.getBooKing(Object);
+
+            dt = getDatatable;
+            return dt;
+        }
+
+        public DataTable getBookinglable(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.getBooKinglable(Object);
+
+            dt = getDatatable;
+            return dt;
+        }
+
+        public DataTable serchBooking(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.searchBooking(Object);
+            dt = getDatatable;
+            return dt;
+        }
+
+        public string maxHoaDon()
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.getMaxHoaDon();
+            dt = getDatatable;
+            string tenHoaDonAsString = getDatatable.Rows[0]["idBill"].ToString();
+            return tenHoaDonAsString;
+        }
+
+        public bool creatHoaDon(classHoaDon hoaDon)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            return dBHoaDon.CreateHoaDon(hoaDon);
+        }
     }
 }

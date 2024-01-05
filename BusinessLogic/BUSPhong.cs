@@ -81,5 +81,11 @@ namespace BusinessLogic
             DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
             return dbPhong.getRoomAvailable();
         }
+
+        public DataTable getIdPhong(string name)
+        {
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
+            return dbPhong.getIdPhong(name);
+        }
     }
 }

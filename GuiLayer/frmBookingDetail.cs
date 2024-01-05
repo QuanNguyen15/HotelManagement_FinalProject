@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogic;
+using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,11 @@ namespace GuiLayer
 {
     public partial class frmBookingDetail : Form
     {
-        public frmBookingDetail()
+        BUSHoaDon busHoaDon = new BUSHoaDon();
+        string idBook;
+        public frmBookingDetail(string id)
         {
+            idBook = id;
             InitializeComponent();
         }
 
@@ -24,6 +29,42 @@ namespace GuiLayer
             {
                 this.Close();
             }
+        }
+
+        private void frmBookingDetail_Load(object sender, EventArgs e)
+        {
+            classHoaDon hoaDon = new classHoaDon();
+            int id = int.Parse(idBook);
+            hoaDon.idHoaDon = id;
+
+            DataTable dt = new DataTable();
+            dt = busHoaDon.getBooking(hoaDon);
+            dataGridViewBookingDetail.DataSource = dt;
+
+            DataTable dtLable = new DataTable();
+            dtLable = busHoaDon.getBookinglable(hoaDon);
+
+            if (dtLable.Columns.Contains("tenKhachHang"))
+            {
+                string clientt = dtLable.Rows[0][1].ToString();
+                lbClient.Text = clientt;
+                string time = dtLable.Rows[0]["ngayDat"].ToString();
+                lbDateTime.Text = time;
+                string staff = dtLable.Rows[0]["hoten"].ToString();
+                lbStaff.Text = staff;
+                string idHoaDon = dtLable.Rows[0]["idHoaDon"].ToString();
+                label1.Text = idHoaDon;
+            }
+            else
+            {
+                MessageBox.Show("");
+            }
+
+        }
+
+        private void dataGridViewBookingDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

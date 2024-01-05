@@ -45,6 +45,7 @@
     <Compile Include="DAL\DBDatPhong.cs" />
     <Compile Include="DAL\DBDonVi.cs" />
     <Compile Include="DAL\DBHoaDon.cs" />
+    <Compile Include="DAL\DBHoaDonPhong.cs" />
     <Compile Include="DAL\DBKhachHang.cs" />
     <Compile Include="DAL\DBLoaiPhong.cs" />
     <Compile Include="DAL\DBNhanVien.cs" />
