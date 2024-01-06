@@ -86,5 +86,11 @@ namespace BusinessLogic
             DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
             return dBHoaDon.CreateHoaDon(hoaDon);
         }
+
+        public bool deleteBooking(classHoaDon hoaDon)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            return dBHoaDon.DeleteBooking(hoaDon);
+        }
     }
 }

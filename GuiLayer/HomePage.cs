@@ -70,6 +70,7 @@ namespace GuiLayer
             tabStatistic1.Visible = false;
             tabBooking.Visible = false;
             tabService1.Visible = false;
+            tabRoom1.getAll();
         }
 
         private void btnBooking_Click(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace GuiLayer
             tabStatistic1.Visible = false;
             tabBooking.Visible = true;
             tabService1.Visible = false;
-            int id = idTaiKhoan;
+
 
 
         }

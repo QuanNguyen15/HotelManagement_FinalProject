@@ -83,5 +83,15 @@ namespace BusinessLogic
             DBKhachHang dBKhachHang = new DBKhachHang(serverName.userName, serverName.nameDataBase);
             return dBKhachHang.searchKhachHang(Object);
         }
+
+        public int maxKhachHang()
+        {
+            DBKhachHang dBKhachHang = new DBKhachHang(serverName.userName, serverName.nameDataBase);
+
+           DataTable dt =dBKhachHang.maxKhachHang();
+            string idKhachhangString = dt.Rows[0]["idKhachHang"].ToString();
+            int idKhachHang = int.Parse(idKhachhangString);
+            return idKhachHang;
+        }
     }
 }

@@ -87,5 +87,11 @@ namespace BusinessLogic
             DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
             return dbPhong.getIdPhong(name);
         }
+
+        public bool updateBookedPhong(classPhong Object)
+        {
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
+            return dbPhong.updateBookedPhong(Object);
+        }
     }
 }

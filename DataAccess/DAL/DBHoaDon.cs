@@ -92,5 +92,13 @@ namespace DataAccess.DAL
             return cDB.executeProcedure("creatHoaDon", sp);
         }
 
+        public bool DeleteBooking(classHoaDon hoaDon)
+        {
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@idHoaDon", SqlDbType.Int);
+            sp[0].Value = hoaDon.idHoaDon;
+            return cDB.executeProcedure("DeleteBooking", sp);
+        }
     }
 }

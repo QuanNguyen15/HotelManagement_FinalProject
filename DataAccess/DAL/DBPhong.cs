@@ -89,5 +89,13 @@ namespace BusinessLogic
             sp[0].Value = name;
             return cDB.executeSQLselect("GetIdPhong", sp);
         }
+
+        public bool updateBookedPhong(classPhong phong)
+        {
+            SqlParameter[] sp = new SqlParameter[1];
+            sp[0] = new SqlParameter("@idPhong", SqlDbType.Int);
+            sp[0].Value = phong.idPhong;
+            return cDB.executeProcedure("updateBookedPhong", sp);
+        }
     }
 }

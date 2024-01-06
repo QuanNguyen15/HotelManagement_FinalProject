@@ -92,6 +92,14 @@ namespace DataAccess.DAL
 
         }
 
+        public DataTable maxKhachHang()
+        {
+            dt = new DataTable();
+            dt = cDB.getData("select max(idKhachHang) as idKhachHang from KhachHang where is_delete = 0");
+
+            return dt;
+
+        }
 
     }
 }

@@ -3,6 +3,7 @@ using DataAccess;
 using DataAccess.DAL;
 using DataAccess.DTO;
 using Google.Protobuf.WellKnownTypes;
+using ServiceStack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -118,7 +119,7 @@ namespace GuiLayer
             }
             if (dataGridViewRoomSelect.Columns["NameRoom"] == null)
             {
-  
+
                 DataGridViewTextBoxColumn newColumn = new DataGridViewTextBoxColumn();
                 newColumn.HeaderText = "Name Room";
                 newColumn.Name = "NameRoom";
@@ -181,76 +182,8 @@ namespace GuiLayer
 
             }
 
-            bool checkPhong = false;
-            DataGridView dataGridView = dataGridViewRoomSelect;
-            bool checkdataGridView = true;
-            int numberCreateHoaDonPhong = 0;
-            DataTable dtPhong = new DataTable();
-            List<string> idPhongList = new List<string>();
-            List<string> soLuongNGuoilist = new List<string>();
-
-            if (dataGridView != null)
-            {
-                foreach (DataGridViewRow row in dataGridView.Rows)
-                {
-                    if (!row.IsNewRow)
-                    {
-                        object valueCot1 = row.Cells["Person"].Value;
-                        object valueCot2 = row.Cells["NameRoom"].Value;
-
-                        if (valueCot1 != null && valueCot2 != null)
-                        {
-                            checkPhong = true;
-                            string nameRoom = valueCot2.ToString();
-                            dtPhong = busPhong.getIdPhong(nameRoom);
-                            string cellValue = dtPhong.Rows[0][0].ToString();
-                            idPhongList.Add(cellValue);
-                            soLuongNGuoilist.Add(valueCot1.ToString());
-                            numberCreateHoaDonPhong += 1;
-
-                        }
-
-
-                    }
-
-
-                }
-
-                if (checkPhong)
-                {
-                    int idKhachHangtest = 5;
-                    // creat hoa don
-                    classHoaDon hoaDon = new classHoaDon();
-                    hoaDon.idKhachHang = idKhachHangtest;
-                    MessageBox.Show(staticTaiKhoan.idTaiKhoanStatic + "");
-                    bool checkCreateHoaDon = busHoaDon.creatHoaDon(hoaDon);
-
-                    int idMaxHoaDon = int.Parse(busHoaDon.maxHoaDon());
-                    if (checkCreateHoaDon)
-                    {
-                        MessageBox.Show("add thanh cong");
-                        for (int i = 0; i < numberCreateHoaDonPhong; i++)
-                        {
-                            int idPhong = int.Parse(idPhongList[i]);
-                            int soNguoi = int.Parse(soLuongNGuoilist[i]);
-                            classDatPhong datPhong = new classDatPhong(idKhachHangtest, idPhong, timeIn, timeOut, idTaiKhoan, soNguoi);
-                            bool checkCreateDatPhong = busDatPhong.creatDatPhong(datPhong);
-
-                            int idMaxDatPhong = int.Parse(busDatPhong.getDatPhongMax());
-
-                            classHoaDonPhong createHoaDonPhong = new classHoaDonPhong();
-                            createHoaDonPhong.idHoaDon = idMaxHoaDon;
-                            createHoaDonPhong.idDatPhong = idMaxDatPhong;
-                            busHoaDonPhong.creatHoaDonPhong(createHoaDonPhong);
-                        }
-                    }
-                
-
-                }
-
-            }
- /*           List<classKhachHang> khachHangList = busKhachHang.getlistKhachHang();
-            classKhachHang KhachHangCu;
+            List<classKhachHang> khachHangList = busKhachHang.getlistKhachHang();
+            classKhachHang KhachHangCu = null;
             foreach (classKhachHang khachHangitem in khachHangList)
             {
                 if (khachHangitem.soCCCD == soCDCD)
@@ -312,7 +245,7 @@ namespace GuiLayer
             }
             else if (!checkTime)
             {
-                DataGridView dataGridView = dataGridViewRoomSelect;
+/*                DataGridView dataGridView = dataGridViewRoomSelect;
                 bool checkdataGridView = true;
                 DataTable dtPhong = new DataTable();
                 List<string> createDatPhongByid = new List<string>();
@@ -329,11 +262,14 @@ namespace GuiLayer
                         {
                             string Room = valueCot2.ToString();
                             dtPhong = busPhong.getIdPhong(Room);
+
                             string idAsString = dtPhong.Rows[0]["idPhong"].ToString();
                             createDatPhongByid.Add(idAsString);
+
+
                         }
                     }
-                }
+                }*/
 
                 MessageBox.Show($"Choose time greater than the present", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -342,37 +278,83 @@ namespace GuiLayer
                 bool checkPhong = false;
                 DataGridView dataGridView = dataGridViewRoomSelect;
                 bool checkdataGridView = true;
+                int numberCreateHoaDonPhong = 0;
                 DataTable dtPhong = new DataTable();
+                List<string> idPhongList = new List<string>();
+                List<string> soLuongNGuoilist = new List<string>();
+
                 if (dataGridView != null)
                 {
                     foreach (DataGridViewRow row in dataGridView.Rows)
                     {
-                        if (row.IsNewRow) continue;
-
-                        object valueCot1 = row.Cells["Person"].Value;
-                        object valueCot2 = row.Cells["NameRoom"].Value;
-
-                        if (valueCot1 != null && valueCot2 != null)
+                        if (!row.IsNewRow)
                         {
-                            checkPhong = true;
-                            string idRoom = valueCot1.ToString();
-                            dtPhong = busPhong.getIdPhong(idRoom);
-                            string result = $"Giá trị từ cột 1: {valueCot1.ToString()}, Giá trị từ cột 2: {valueCot2.ToString()}";
-                            MessageBox.Show(result);
+                            object valueCot1 = row.Cells["Person"].Value;
+                            object valueCot2 = row.Cells["NameRoom"].Value;
+
+                            if (valueCot1 != null && valueCot2 != null)
+                            {
+                                checkPhong = true;
+                                string nameRoom = valueCot2.ToString();
+                                dtPhong = busPhong.getIdPhong(nameRoom);
+                                string idAsString = dtPhong.Rows[0][0].ToString();
+
+
+                                classPhong phongIsBooked = new classPhong();
+                                phongIsBooked.idPhong = int.Parse(idAsString);
+                                bool checkTrangThaiPhong = busPhong.updateBookedPhong(phongIsBooked);
+
+
+                                idPhongList.Add(idAsString);
+                                soLuongNGuoilist.Add(valueCot1.ToString());
+                                numberCreateHoaDonPhong += 1;
+
+                            }
+
 
                         }
+
+
                     }
-                    if (check)
+
+                    if (checkPhong)
                     {
+                        int idKhachHang = KhachHangCu.idKhachHang;
+                        // creat hoa don
                         classHoaDon hoaDon = new classHoaDon();
-                        hoaDon.idHoaDon = idTaiKhoan;
-                        busHoaDon.creatHoaDon(hoaDon);
+                        hoaDon.idKhachHang = idKhachHang;
+                        bool checkCreateHoaDon = busHoaDon.creatHoaDon(hoaDon);
+
                         int idMaxHoaDon = int.Parse(busHoaDon.maxHoaDon());
-                        MessageBox.Show(busHoaDon.maxHoaDon());
+                        if (checkCreateHoaDon)
+                        {
+                            for (int i = 0; i < numberCreateHoaDonPhong; i++)
+                            {
+                                int idPhong = int.Parse(idPhongList[i]);
+                                int soNguoi = int.Parse(soLuongNGuoilist[i]);
+                                classDatPhong datPhong = new classDatPhong(idKhachHang, idPhong, timeIn, timeOut, idTaiKhoan, soNguoi);
+                                bool checkCreateDatPhong = busDatPhong.creatDatPhong(datPhong);
+
+                                int idMaxDatPhong = int.Parse(busDatPhong.getDatPhongMax());
+
+                                classHoaDonPhong createHoaDonPhong = new classHoaDonPhong();
+                                createHoaDonPhong.idHoaDon = idMaxHoaDon;
+                                createHoaDonPhong.idDatPhong = idMaxDatPhong;
+                                busHoaDonPhong.creatHoaDonPhong(createHoaDonPhong);
+                            }
+                            MessageBox.Show($"Booking room successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please choose your room", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
-                MessageBox.Show($"Booking room successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
 
             }
             else
@@ -380,14 +362,89 @@ namespace GuiLayer
                 classKhachHang khachHang = new classKhachHang(hoTen, gioiTinh, soCDCD, dienThoai, email, diachi);
 
                 bool save = busKhachHang.addKhachHang(khachHang);
-                if (save)
+                bool checkPhong = false;
+                DataGridView dataGridView = dataGridViewRoomSelect;
+                bool checkdataGridView = true;
+                int numberCreateHoaDonPhong = 0;
+                DataTable dtPhong = new DataTable();
+                List<string> idPhongList = new List<string>();
+                List<string> soLuongNGuoilist = new List<string>();
+
+                if (dataGridView != null)
                 {
-                    MessageBox.Show($"Add new client and booking room successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    foreach (DataGridViewRow row in dataGridView.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            object valueCot1 = row.Cells["Person"].Value;
+                            object valueCot2 = row.Cells["NameRoom"].Value;
+
+                            if (valueCot1 != null && valueCot2 != null)
+                            {
+                                checkPhong = true;
+                                string nameRoom = valueCot2.ToString();
+                                dtPhong = busPhong.getIdPhong(nameRoom);
+                                string idAsString = dtPhong.Rows[0][0].ToString();
+                               
+
+                                classPhong phongIsBooked = new classPhong();
+                                phongIsBooked.idPhong = int.Parse(idAsString);
+                                bool checkTrangThaiPhong = busPhong.updateBookedPhong(phongIsBooked);
+                                idPhongList.Add(idAsString);
+
+                                soLuongNGuoilist.Add(valueCot1.ToString());
+                                numberCreateHoaDonPhong += 1;
+
+                            }
+                        }
+
+                    }
+
+                    if (checkPhong)
+                    {
+                        int idKhachHang = busKhachHang.maxKhachHang();
+                        // creat hoa don
+                        classHoaDon hoaDon = new classHoaDon();
+                        hoaDon.idKhachHang = idKhachHang;
+                        bool checkCreateHoaDon = busHoaDon.creatHoaDon(hoaDon);
+
+                        int idMaxHoaDon = int.Parse(busHoaDon.maxHoaDon());
+                        if (checkCreateHoaDon)
+                        {
+                            for (int i = 0; i < numberCreateHoaDonPhong; i++)
+                            {
+                                int idPhong = int.Parse(idPhongList[i]);
+                                int soNguoi = int.Parse(soLuongNGuoilist[i]);
+                                classDatPhong datPhong = new classDatPhong(idKhachHang, idPhong, timeIn, timeOut, idTaiKhoan, soNguoi);
+                                bool checkCreateDatPhong = busDatPhong.creatDatPhong(datPhong);
+
+                                int idMaxDatPhong = int.Parse(busDatPhong.getDatPhongMax());
+
+                                classHoaDonPhong createHoaDonPhong = new classHoaDonPhong();
+                                createHoaDonPhong.idHoaDon = idMaxHoaDon;
+                                createHoaDonPhong.idDatPhong = idMaxDatPhong;
+                                busHoaDonPhong.creatHoaDonPhong(createHoaDonPhong);
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please choose your room", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
+
+                        if (save && checkPhong)
+                        {
+                            MessageBox.Show($"Add new client and booking room successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                    }
+
+                    book.refreshdataGridview();
+
                 }
-            }*/
-          
-            book.refreshdataGridview();
+            }
+
         }
     }
-    }
-
+}
