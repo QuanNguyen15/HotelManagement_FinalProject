@@ -32,6 +32,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.hehe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,10 +55,6 @@
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.hehe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
@@ -114,6 +114,35 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(769, 331);
             this.dataGridView1.TabIndex = 68;
+            // 
+            // hehe
+            // 
+            this.hehe.HeaderText = "Service";
+            this.hehe.MinimumWidth = 6;
+            this.hehe.Name = "hehe";
+            this.hehe.Width = 200;
+            // 
+            // vv
+            // 
+            this.vv.HeaderText = "Price";
+            this.vv.MinimumWidth = 6;
+            this.vv.Name = "vv";
+            this.vv.Width = 150;
+            // 
+            // Amount
+            // 
+            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Amount.HeaderText = "Amount";
+            this.Amount.MinimumWidth = 6;
+            this.Amount.Name = "Amount";
+            this.Amount.Width = 81;
+            // 
+            // Sum
+            // 
+            this.Sum.HeaderText = "Sum";
+            this.Sum.MinimumWidth = 6;
+            this.Sum.Name = "Sum";
+            this.Sum.Width = 150;
             // 
             // label9
             // 
@@ -303,39 +332,11 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(52)))), ((int)(((byte)(108)))));
             this.label7.Location = new System.Drawing.Point(393, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(169, 51);
+            this.label7.Size = new System.Drawing.Size(89, 51);
             this.label7.TabIndex = 56;
-            this.label7.Text = "Invoice";
+            this.label7.Text = "Bill";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // hehe
-            // 
-            this.hehe.HeaderText = "Service";
-            this.hehe.MinimumWidth = 6;
-            this.hehe.Name = "hehe";
-            this.hehe.Width = 200;
-            // 
-            // vv
-            // 
-            this.vv.HeaderText = "Price";
-            this.vv.MinimumWidth = 6;
-            this.vv.Name = "vv";
-            this.vv.Width = 150;
-            // 
-            // Amount
-            // 
-            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Amount.HeaderText = "Amount";
-            this.Amount.MinimumWidth = 6;
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 81;
-            // 
-            // Sum
-            // 
-            this.Sum.HeaderText = "Sum";
-            this.Sum.MinimumWidth = 6;
-            this.Sum.Name = "Sum";
-            this.Sum.Width = 150;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // frmBillDetail
             // 

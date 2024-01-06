@@ -28,6 +28,16 @@ namespace BusinessLogic
             return dt;
         }
 
+
+        public DataTable getLoaiDichVu()
+        {
+
+            DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dbDichVu.getLoaiDichVu();
+            dt = getDatatable;
+            return dt;
+        }
+
         public DataTable searchSanPham(classDichVu dichVu) {
 
             DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
@@ -63,6 +73,50 @@ namespace BusinessLogic
         {
             DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
             return dbDichVu.AddDichVu(dichVu);
+        }
+
+        public DataTable getDichVubyLoai(classDichVu dichVu)
+        {
+
+            DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dbDichVu.getDicVuByLoai(dichVu);
+            return getDatatable;
+        }
+
+        public DataTable getNameAndPrice()
+        {
+
+            DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dbDichVu.getNameAndPrice();
+            dt = getDatatable;
+            return dt;
+        }
+
+        public DataTable SearchDichVuByNameAndLoai(classDichVu dichVu)
+        {
+
+            DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dbDichVu.SearchDichVuByNameAndLoai(dichVu);
+            return getDatatable;
+        }
+
+        public DataTable getTenPriceDichVuByName(classDichVu dichVu)
+        {
+            DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dbDichVu.getTenPriceDichVuByName(dichVu);
+            return getDatatable;
+        }
+
+        public bool DeleteDichVuPhongByRoomAndService(classDichVu dichVu)
+        {
+            DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
+            return dbDichVu.DeleteDichVuPhongByRoomAndService(dichVu);
+        }
+
+        public bool AddDichVuPhongByRoomAndService(classDichVu dichVu)
+        {
+            DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
+            return dbDichVu.AddDichVuPhongByRoomAndService(dichVu);
         }
     }
 }

@@ -122,6 +122,7 @@ namespace GuiLayer
             roomButton.Margin = new Padding(5, 10, 15, 10);
             roomButton.Font = new System.Drawing.Font("Arial", 12, System.Drawing.FontStyle.Bold);
            
+
             if (room.trangThai == "Available")
             {
                 roomButton.BackColor = Color.FromArgb(125, 209, 10);
@@ -188,29 +189,37 @@ namespace GuiLayer
 
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
 
-            ToolStripMenuItem menuItem1 = new ToolStripMenuItem("Change Room");
+/*            ToolStripMenuItem menuItem1 = new ToolStripMenuItem("Change Room");*/
 
             ToolStripMenuItem menuItem3 = new ToolStripMenuItem(ttPhong);
-/*            ToolStripMenuItem menuItem4 = new ToolStripMenuItem("Thanh toán");*/
-            ToolStripMenuItem menuItem5 = new ToolStripMenuItem("Room Information");
+            /*            ToolStripMenuItem menuItem4 = new ToolStripMenuItem("Thanh toán");*/
 
-            menuItem1.Click += (sender, e) => ChuyenPhong(room, control);  // bieu thuc lam da
+            if (room.trangThai == "Booked" || room.trangThai == "Renting")
+            {
+                ToolStripMenuItem menuItem5 = new ToolStripMenuItem("Room Information");
+                menuItem5.Click += (sender, e) => getThongTinPhong(room, control);
+                contextMenuStrip.Items.Add(menuItem5);
+            }
+
+
+/*
+            menuItem1.Click += (sender, e) => ChuyenPhong(room, control);  */// bieu thuc lam da
 
             menuItem3.Click += (sender, e) => CapNhatSanPham(room, control);
 /*            menuItem4.Click += (sender, e) => ThanhToan(room, control);*/
-            menuItem5.Click += (sender, e) => getThongTinPhong(room ,control);
 
-            contextMenuStrip.Items.Add(menuItem1);
+
+/*            contextMenuStrip.Items.Add(menuItem1);*/
             contextMenuStrip.Items.Add(menuItem3);
 /*            contextMenuStrip.Items.Add(menuItem4);*/
-            contextMenuStrip.Items.Add(menuItem5);
+
 
             contextMenuStrip.Show(control, new Point(control.Width / 2, control.Height / 2));
             // control vi tri của click 
         }
         private void getThongTinPhong(classPhong room, Control control)
         {
-            frmRoomInformation roomInformation = new frmRoomInformation();
+            frmRoomInformation roomInformation = new frmRoomInformation(room,this);
             roomInformation.ShowDialog();
         }
         private void ChuyenPhong(classPhong room, Control control)

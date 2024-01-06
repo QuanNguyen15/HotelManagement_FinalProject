@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRoomInformation));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.hOTELSDataSet1 = new GuiLayer.HOTELSDataSet1();
             this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -44,14 +44,9 @@
             this.lbPeople = new System.Windows.Forms.Label();
             this.lbDayRent = new System.Windows.Forms.Label();
             this.lbNumDay = new System.Windows.Forms.Label();
-            this.lbClientName = new System.Windows.Forms.Label();
+            this.lbClient = new System.Windows.Forms.Label();
             this.btnAddService = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenSanPhamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbRoomType = new System.Windows.Forms.Label();
             this.lbRomStatus = new System.Windows.Forms.Label();
@@ -60,6 +55,11 @@
             this.btnBook = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lbPhong = new System.Windows.Forms.Label();
+            this.nameDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuongDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.hOTELSDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
             this.pnFatherSanPham.SuspendLayout();
@@ -107,7 +107,7 @@
             this.pnFatherSanPham.Controls.Add(this.lbPeople);
             this.pnFatherSanPham.Controls.Add(this.lbDayRent);
             this.pnFatherSanPham.Controls.Add(this.lbNumDay);
-            this.pnFatherSanPham.Controls.Add(this.lbClientName);
+            this.pnFatherSanPham.Controls.Add(this.lbClient);
             this.pnFatherSanPham.Controls.Add(this.btnAddService);
             this.pnFatherSanPham.Controls.Add(this.dataGridView1);
             this.pnFatherSanPham.Controls.Add(this.panel2);
@@ -185,14 +185,14 @@
             this.lbNumDay.TabIndex = 43;
             this.lbNumDay.Text = "{?}";
             // 
-            // lbClientName
+            // lbClient
             // 
-            this.lbClientName.AutoSize = true;
-            this.lbClientName.Location = new System.Drawing.Point(105, 59);
-            this.lbClientName.Name = "lbClientName";
-            this.lbClientName.Size = new System.Drawing.Size(24, 16);
-            this.lbClientName.TabIndex = 42;
-            this.lbClientName.Text = "{?}";
+            this.lbClient.AutoSize = true;
+            this.lbClient.Location = new System.Drawing.Point(105, 59);
+            this.lbClient.Name = "lbClient";
+            this.lbClient.Size = new System.Drawing.Size(24, 16);
+            this.lbClient.TabIndex = 42;
+            this.lbClient.Text = "{?}";
             // 
             // btnAddService
             // 
@@ -212,30 +212,29 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idSanPham,
-            this.tenSanPhamDataGridViewTextBoxColumn,
-            this.dongGiaDataGridViewTextBoxColumn,
-            this.Delete,
-            this.Edit});
+            this.nameDichVu,
+            this.soLuongDichVu,
+            this.price,
+            this.Delete});
             this.dataGridView1.DataSource = this.sanPhamBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Location = new System.Drawing.Point(43, 176);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
@@ -244,48 +243,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 284);
             this.dataGridView1.TabIndex = 40;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idSanPham
-            // 
-            this.idSanPham.DataPropertyName = "idSanPham";
-            this.idSanPham.HeaderText = "Id Product";
-            this.idSanPham.MinimumWidth = 6;
-            this.idSanPham.Name = "idSanPham";
-            this.idSanPham.ReadOnly = true;
-            // 
-            // tenSanPhamDataGridViewTextBoxColumn
-            // 
-            this.tenSanPhamDataGridViewTextBoxColumn.DataPropertyName = "tenSanPham";
-            this.tenSanPhamDataGridViewTextBoxColumn.HeaderText = "Product Name";
-            this.tenSanPhamDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenSanPhamDataGridViewTextBoxColumn.Name = "tenSanPhamDataGridViewTextBoxColumn";
-            // 
-            // dongGiaDataGridViewTextBoxColumn
-            // 
-            this.dongGiaDataGridViewTextBoxColumn.DataPropertyName = "dongGia";
-            this.dongGiaDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.dongGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dongGiaDataGridViewTextBoxColumn.Name = "dongGiaDataGridViewTextBoxColumn";
-            // 
-            // Delete
-            // 
-            this.Delete.FillWeight = 70F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Edit
-            // 
-            this.Edit.FillWeight = 70F;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel2
             // 
@@ -351,7 +308,7 @@
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(218, 44);
             this.btnBook.TabIndex = 42;
-            this.btnBook.Text = "Book";
+            this.btnBook.Text = "Check In";
             this.btnBook.UseVisualStyleBackColor = false;
             this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
@@ -380,12 +337,57 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lbPhong
+            // 
+            this.lbPhong.AutoSize = true;
+            this.lbPhong.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            this.lbPhong.Location = new System.Drawing.Point(466, 9);
+            this.lbPhong.Name = "lbPhong";
+            this.lbPhong.Size = new System.Drawing.Size(106, 51);
+            this.lbPhong.TabIndex = 45;
+            this.lbPhong.Text = "{ ? }";
+            this.lbPhong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nameDichVu
+            // 
+            this.nameDichVu.DataPropertyName = "tenDichVu";
+            this.nameDichVu.HeaderText = "Service";
+            this.nameDichVu.MinimumWidth = 6;
+            this.nameDichVu.Name = "nameDichVu";
+            // 
+            // soLuongDichVu
+            // 
+            this.soLuongDichVu.DataPropertyName = "soLuong";
+            this.soLuongDichVu.HeaderText = "Amount";
+            this.soLuongDichVu.MinimumWidth = 6;
+            this.soLuongDichVu.Name = "soLuongDichVu";
+            this.soLuongDichVu.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "donGia";
+            this.price.HeaderText = "Price";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 70F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // frmRoomInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1311, 844);
+            this.Controls.Add(this.lbPhong);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnBook);
@@ -425,7 +427,7 @@
         private System.Windows.Forms.Label lbPeople;
         private System.Windows.Forms.Label lbDayRent;
         private System.Windows.Forms.Label lbNumDay;
-        private System.Windows.Forms.Label lbClientName;
+        private System.Windows.Forms.Label lbClient;
         private System.Windows.Forms.Button btnAddService;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
@@ -437,9 +439,12 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSanPham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenSanPhamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dongGiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
+        private System.Windows.Forms.Label lbPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
     }
 }

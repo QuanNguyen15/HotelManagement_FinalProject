@@ -239,20 +239,6 @@
         FjqH6MJhuAMGBgCpZldoZwloJwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="Edit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Edit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAVRJREFUOE9j
-        oBScDwgQuODvP/28n180VIh8sLS4Wn5p28SPX7q6/j8vK/tCkaFz5lTLT1uw7uWBC/f+r5q9/D/I0IvB
-        wd0M/XPWek9YsH4+MXj1jiMbz9x4cP705auXzm4r+LFgxeKfx64++Q8ydAnQpSDvM0xYtGH+p1///xOL
-        3335/P/S7vL/v17MBXIW/wcZCnIpyPtgp5NiILphIBrkUpD3wYaBALEGYjMMxD99+dolqFEQQIyBuAwD
-        iZ+5+fA81CgIIGQgPsNA8qt3Hd0INQoC8Bn44s2L/2e35uI0DIRB+qFGQQAuA998+vz/8IpYvIaBMNEG
-        nty35P/DvaX/b+0rABt2elMGhmEgTLSBTVWp/7+eawUbenBpFNj72NQRZeCFK5f/mzn4gg09f2wd2Pvo
-        amCYaANBGF0cGybKQFLwqIEMkPIQKEguBumHGgUEDAwAxfkjLT94fj8AAAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

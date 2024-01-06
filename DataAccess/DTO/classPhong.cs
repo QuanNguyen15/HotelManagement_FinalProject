@@ -14,7 +14,7 @@ namespace DataAccess
         public string trangThai { get; set; }
         public int idLoaiPhong { get; set; }
         public bool isDelete { get; set; }
-
+        public string Room { get; set; }
         public classPhong()
         {
 

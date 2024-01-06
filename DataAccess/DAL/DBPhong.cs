@@ -97,5 +97,44 @@ namespace BusinessLogic
             sp[0].Value = phong.idPhong;
             return cDB.executeProcedure("updateBookedPhong", sp);
         }
+
+        public DataTable getPhongByName(string name)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@tenPhong", SqlDbType.NVarChar, 50);
+            sp[0].Value = name;
+            return cDB.executeSQLselect("getPhongbyName", sp);
+
+        }
+
+        public DataTable roomInforlb(classPhong Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+
+
+            sp[0] = new SqlParameter("@tenPhong", SqlDbType.NVarChar, 50);
+            sp[0].Value = Object.tenPhong;
+
+            return cDB.executeSQLselect("roomInforlb", sp);
+
+        }
+
+        public DataTable GetDichVuDatPhong(classPhong Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+
+
+            sp[0] = new SqlParameter("@tenPhong", SqlDbType.NVarChar, 50);
+            sp[0].Value = Object.tenPhong;
+
+            return cDB.executeSQLselect("GetDichVuDatPhong", sp);
+
+        }
     }
 }

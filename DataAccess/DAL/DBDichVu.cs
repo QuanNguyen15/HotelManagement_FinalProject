@@ -67,6 +67,84 @@ namespace DataAccess.DAL
 
         }
 
+        public DataTable getLoaiDichVu()
+        {
+            dt = new DataTable();
+            dt = cDB.getData("select loaiDichVu from DichVu group by loaiDichVu");
+            return dt;
+        }
 
+        public DataTable getDicVuByLoai(classDichVu Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@dichVu", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.loaiDichVu;
+            return cDB.executeSQLselect("getServiceByLoai", sp);
+
+        }
+
+        public DataTable getNameAndPrice()
+        {
+            dt = new DataTable();
+            dt = cDB.getData("select tenDichVu, donGia from DichVu");
+            return dt;
+        }
+
+        public DataTable SearchDichVuByNameAndLoai(classDichVu Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[2];
+
+            sp[0] = new SqlParameter("@loaidichVu", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.loaiDichVu;
+            sp[1] = new SqlParameter("@tenDichVu", SqlDbType.NVarChar, 100);
+            sp[1].Value = Object.tenDichVu;
+            return cDB.executeSQLselect("SearchDicVuByNameAndLoai", sp);
+
+        }
+
+        public DataTable getTenPriceDichVuByName(classDichVu Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@tenDichVu", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.tenDichVu;
+            return cDB.executeSQLselect("getTenPriceDichVuByName", sp);
+
+        }
+
+        public bool DeleteDichVuPhongByRoomAndService(classDichVu Object)
+        {
+            SqlParameter[] sp = new SqlParameter[2];
+
+            sp[0] = new SqlParameter("@tenPhong", SqlDbType.NVarChar, 50);
+            sp[0].Value = Object.loaiDichVu;
+            sp[1] = new SqlParameter("@tenDichVu", SqlDbType.NVarChar, 100);
+            sp[1].Value = Object.tenDichVu;
+
+
+
+            return cDB.executeProcedure("DeleteDichVuPhongByRoomAndService", sp);
+
+        }
+
+        public bool AddDichVuPhongByRoomAndService(classDichVu Object)
+        {
+            SqlParameter[] sp = new SqlParameter[3];
+
+            sp[0] = new SqlParameter("@tenPhong", SqlDbType.NVarChar, 50);
+            sp[0].Value = Object.loaiDichVu;
+            sp[1] = new SqlParameter("@tenDichVu", SqlDbType.NVarChar, 100);
+            sp[1].Value = Object.tenDichVu;
+            sp[2] = new SqlParameter("@soLuong", SqlDbType.Int);
+            sp[2].Value = Object.idDichVu;
+
+
+            return cDB.executeProcedure("AddDichVuPhongByRoomAndService", sp);
+
+        }
     }
-}
+    }

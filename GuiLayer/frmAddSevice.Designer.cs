@@ -30,7 +30,11 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewPickedService = new System.Windows.Forms.DataGridView();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewService = new System.Windows.Forms.DataGridView();
+            this.tenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Add = new System.Windows.Forms.DataGridViewImageColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -65,6 +69,8 @@
             // 
             this.dataGridViewPickedService.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewPickedService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPickedService.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Delete});
             this.dataGridViewPickedService.Location = new System.Drawing.Point(524, 146);
             this.dataGridViewPickedService.Name = "dataGridViewPickedService";
             this.dataGridViewPickedService.RowHeadersVisible = false;
@@ -72,11 +78,26 @@
             this.dataGridViewPickedService.RowTemplate.Height = 24;
             this.dataGridViewPickedService.Size = new System.Drawing.Size(411, 260);
             this.dataGridViewPickedService.TabIndex = 7;
+            this.dataGridViewPickedService.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPickedService_CellContentClick);
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Width = 76;
             // 
             // dataGridViewService
             // 
             this.dataGridViewService.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewService.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tenDichVu,
+            this.donGia,
+            this.Add});
             this.dataGridViewService.Location = new System.Drawing.Point(39, 146);
             this.dataGridViewService.Name = "dataGridViewService";
             this.dataGridViewService.RowHeadersVisible = false;
@@ -85,6 +106,32 @@
             this.dataGridViewService.Size = new System.Drawing.Size(411, 260);
             this.dataGridViewService.TabIndex = 6;
             this.dataGridViewService.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewService_CellContentClick);
+            // 
+            // tenDichVu
+            // 
+            this.tenDichVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tenDichVu.DataPropertyName = "tenDichVu";
+            this.tenDichVu.HeaderText = "Service";
+            this.tenDichVu.MinimumWidth = 6;
+            this.tenDichVu.Name = "tenDichVu";
+            this.tenDichVu.Width = 82;
+            // 
+            // donGia
+            // 
+            this.donGia.DataPropertyName = "donGia";
+            this.donGia.HeaderText = "Price";
+            this.donGia.MinimumWidth = 6;
+            this.donGia.Name = "donGia";
+            this.donGia.Width = 50;
+            // 
+            // Add
+            // 
+            this.Add.HeaderText = "Add";
+            this.Add.MinimumWidth = 6;
+            this.Add.Name = "Add";
+            this.Add.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Add.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Add.Width = 75;
             // 
             // label3
             // 
@@ -182,6 +229,7 @@
             this.btnSave.TabIndex = 35;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmAddSevice
             // 
@@ -219,5 +267,9 @@
         private System.Windows.Forms.DataGridView dataGridViewPickedService;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
+        private System.Windows.Forms.DataGridViewImageColumn Add;
     }
 }

@@ -93,5 +93,27 @@ namespace BusinessLogic
             DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
             return dbPhong.updateBookedPhong(Object);
         }
+
+        public DataTable getPhongbyName(string name)
+        {
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
+            return dbPhong.getPhongByName(name);
+        }
+
+        public DataTable roomInforlb(classPhong Object)
+        {
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dbPhong.roomInforlb(Object);
+            dt = getDatatable;
+            return dt;
+        }
+
+        public DataTable GetDichVuDatPhong(classPhong Object)
+        {
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dbPhong.GetDichVuDatPhong(Object);
+            dt = getDatatable;
+            return dt;
+        }
     }
 }

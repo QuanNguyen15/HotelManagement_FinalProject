@@ -37,9 +37,16 @@ namespace GuiLayer
         private void btnSave_Click(object sender, EventArgs e)
         {
             string tenPhong = txtRoomName.Text.Trim();
+
+                DataTable dt = busPhong.getPhongbyName(tenPhong);
+
+
             if (string.IsNullOrEmpty(tenPhong))
             {
                 MessageBox.Show("Please fill in all information");
+            }else if(dt != null && dt.Rows.Count > 0)
+            {
+                MessageBox.Show("Room is exist. Please choose other room name.");
             }
             else
             {
@@ -68,7 +75,7 @@ namespace GuiLayer
                     MessageBox.Show("Add room successfull");
                     this.Close();
                 }
-            }             
+            }
         }
 
         private void frmAddRoom_Load(object sender, EventArgs e)

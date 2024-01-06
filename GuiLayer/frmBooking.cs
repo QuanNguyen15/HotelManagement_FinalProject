@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -68,63 +69,83 @@ namespace GuiLayer
             }
         }
 
-        private void dataGridViewRoomAvail_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
+            private void dataGridViewRoomAvail_CellContentClick(object sender, DataGridViewCellEventArgs e)
             {
-                DataGridViewRow selectedRow = dataGridViewRoomAvail.Rows[e.RowIndex];
-                string tenPhong = selectedRow.Cells["tenPhong"].Value.ToString();
-
-                if (!string.IsNullOrEmpty(tenPhong) && e.ColumnIndex >= 0 && dataGridViewRoomAvail.Columns[e.ColumnIndex].HeaderText == "Add")
+                if (e.RowIndex >= 0)
                 {
-                    themCottrongGrid2();
+                    DataGridViewRow selectedRow = dataGridViewRoomAvail.Rows[e.RowIndex];
+                    string tenPhong = selectedRow.Cells["tenPhong"].Value.ToString();
 
-                    // Add a row 
-                    DataGridViewRow newRow = dataGridViewRoomSelect.Rows[dataGridViewRoomSelect.Rows.Add(selectedRow.Cells.Cast<DataGridViewCell>().Select(cell => cell.Value).ToArray())];
+                    if (!string.IsNullOrEmpty(tenPhong) && e.ColumnIndex >= 0 && dataGridViewRoomAvail.Columns[e.ColumnIndex].HeaderText == "Add")
+                    {
+                        themCottrongGrid2();
 
-
-                    newRow.Cells["Person"].Value = "1";
-                    newRow.Cells["NameRoom"].Value = tenPhong;
-                    // Xóa dòng
-                    dataGridViewRoomAvail.Rows.Remove(selectedRow);
-
-                    // Tự động chọn ô "Số Người" trong dataGridViewRoomSelect
-                    dataGridViewRoomSelect.CurrentCell = newRow.Cells["Person"];
+                        // Add a row 
+                        DataGridViewRow newRow = dataGridViewRoomSelect.Rows[dataGridViewRoomSelect.Rows.Add(selectedRow.Cells.Cast<DataGridViewCell>().Select(cell => cell.Value).ToArray())];
 
 
+                        newRow.Cells["Person"].Value = "1";
+                        newRow.Cells["NameRoom"].Value = tenPhong;
+                        // Xóa dòng
+                        dataGridViewRoomAvail.Rows.Remove(selectedRow);
+
+                        // Tự động chọn ô "Số Người" trong dataGridViewRoomSelect
+                        dataGridViewRoomSelect.CurrentCell = newRow.Cells["Person"];
+
+
+                    }
                 }
             }
-        }
-        private void themCottrongGrid2()
+            private void themCottrongGrid2()
+            {
+
+                // Kiểm tra xem các cột đã được thêm chưa
+                if (dataGridViewRoomSelect.Columns.Count == 0)
+                {
+
+                    // Thêm các cột cần thiết động từ dataGridViewRoomAvail
+                    foreach (DataGridViewColumn column in dataGridViewRoomAvail.Columns)
+                    {
+
+                        dataGridViewRoomSelect.Columns.Add(column.Clone() as DataGridViewColumn);
+                    }
+                }
+                if (dataGridViewRoomSelect.Columns["Person"] == null)
+                {
+
+                    DataGridViewTextBoxColumn newColumn = new DataGridViewTextBoxColumn();
+                    newColumn.HeaderText = "Person";
+                    newColumn.Name = "Person";
+                    dataGridViewRoomSelect.Columns.Add(newColumn);
+                }
+                if (dataGridViewRoomSelect.Columns["NameRoom"] == null)
+                {
+
+                    DataGridViewTextBoxColumn newColumn = new DataGridViewTextBoxColumn();
+                    newColumn.HeaderText = "Name Room";
+                    newColumn.Name = "NameRoom";
+                    dataGridViewRoomSelect.Columns.Add(newColumn);
+                }
+            }
+
+        private void xoaCotTrongGrid2()
         {
 
             // Kiểm tra xem các cột đã được thêm chưa
-            if (dataGridViewRoomSelect.Columns.Count == 0)
+            if (dataGridViewRoomSelect.Columns.Count > 0)
             {
+                DataGridViewRow selectedRow = dataGridViewRoomSelect.SelectedRows[0];
 
-                // Thêm các cột cần thiết động từ dataGridViewRoomAvail
-                foreach (DataGridViewColumn column in dataGridViewRoomAvail.Columns)
+                DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
+
+                for (int i = 0; i < selectedRow.Cells.Count; i++)
                 {
-
-                    dataGridViewRoomSelect.Columns.Add(column.Clone() as DataGridViewColumn);
+                    newRow.Cells[i].Value = selectedRow.Cells[i].Value;
                 }
-            }
-            if (dataGridViewRoomSelect.Columns["Person"] == null)
-            {
 
-                DataGridViewTextBoxColumn newColumn = new DataGridViewTextBoxColumn();
-                newColumn.HeaderText = "Person";
-                newColumn.Name = "Person";
-                dataGridViewRoomSelect.Columns.Add(newColumn);
+                dataGridViewRoomAvail.Rows.Add(newRow);
             }
-            if (dataGridViewRoomSelect.Columns["NameRoom"] == null)
-            {
-
-                DataGridViewTextBoxColumn newColumn = new DataGridViewTextBoxColumn();
-                newColumn.HeaderText = "Name Room";
-                newColumn.Name = "NameRoom";
-                dataGridViewRoomSelect.Columns.Add(newColumn);
-            }
+          
         }
 
         static bool IsNumeric(string input)
@@ -149,8 +170,61 @@ namespace GuiLayer
 
         private void dataGridViewRoomSelect_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+ 
+            
+            // Kiểm tra xem có ô nào được chọn trong DataGridViewRoomSelect hay không
+                if (dataGridViewRoomSelect.SelectedCells.Count > 0)
+                {
+                    // Lấy ô được chọn từ DataGridViewRoomSelect
+                    DataGridViewCell selectedCell = dataGridViewRoomSelect.SelectedCells[0];
 
-        }
+                    // Lấy dòng và cột của ô được chọn
+                    int rowIndex = selectedCell.RowIndex;
+                    string columnName = "NameRoom";
+
+                    object cellValue = dataGridViewRoomSelect.Rows[rowIndex].Cells[columnName].Value;
+    
+                    string nameRoom = cellValue?.ToString();
+
+
+
+                // Kiểm tra xem dòng và cột có hợp lệ hay không
+                if (rowIndex >= 0 && !string.IsNullOrEmpty(nameRoom))
+                {
+
+                    // Lấy DataTable từ busPhong
+                    DataTable dataTable = busPhong.getPhongbyName(nameRoom);
+                    //datagridview là một datasource
+                    DataTable dataSource = (DataTable)dataGridViewRoomAvail.DataSource;
+
+                    if (dataSource != null)
+                    {
+
+                         foreach (DataRow row in dataTable.Rows)
+                        {
+                            // Tạo một dòng mới
+                            DataRow newRow = dataSource.NewRow();
+
+                            // Duyệt qua từng cột trong dòng của DataTable và gán giá trị cho dòng mới
+                            foreach (DataColumn column in dataTable.Columns)
+                            {
+                                // Gán giá trị cho từng cột tương ứng trong dòng mới
+                                newRow[column.ColumnName] = row[column.ColumnName];
+                            }
+
+                            // Thêm dòng mới vào DataTable
+                            dataSource.Rows.Add(newRow);
+                        }
+
+                        // Cập nhật nguồn dữ liệu của DataGridViewRoomAvail
+                        dataGridViewRoomAvail.DataSource = dataSource;
+                        dataGridViewRoomSelect.Rows.RemoveAt(rowIndex);
+
+                    }
+                }
+            }
+            }
+        
 
         private void btnSave_Click_2(object sender, EventArgs e)
         {
@@ -436,15 +510,16 @@ namespace GuiLayer
                         if (save && checkPhong)
                         {
                             MessageBox.Show($"Add new client and booking room successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
+
                         }
                     }
 
-                    book.refreshdataGridview();
 
                 }
+               
             }
-
+            book.refreshdataGridview();
+            this.Close();
         }
     }
 }

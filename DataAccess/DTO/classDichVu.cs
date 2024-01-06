@@ -13,6 +13,7 @@ namespace DataAccess
         public string loaiDichVu { get; set; }
         public decimal donGia {  get; set; }
 
+
         public classDichVu() { }
 
         public classDichVu(int idDichVu, string tenDichVu, string loaiDichVu, decimal donGia)
