@@ -108,5 +108,29 @@ namespace BusinessLogic
             dt = getDatatable;
             return dt;
         }
+
+        public DataTable getBillDetail(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.getBillDetail(Object);
+            dt = getDatatable;
+            return dt;
+        }
+
+        public DataTable getBillDichVuDetail(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.getBillDichVuDetail(Object);
+            dt = getDatatable;
+            return dt;
+        }
+
+        public DataTable SearchHoaDonPhongBySoHoaDonNew(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.SearchHoaDonPhongBySoHoaDonNew(Object);
+            dt = getDatatable;
+            return dt;
+        }
     }
 }

@@ -109,6 +109,17 @@ namespace DataAccess.DAL
 
         }
 
-       
+        public bool UpdateSoNgayThuc(classDatPhong Object)
+        {
+            SqlParameter[] sp = new SqlParameter[2];
+
+            sp[0] = new SqlParameter("@idDatPhong", SqlDbType.Int);
+            sp[0].Value = Object.idDatPhong;
+            sp[1] = new SqlParameter("@soNgayThuc", SqlDbType.Int);
+            sp[1].Value = Object.ngayThuc;
+
+            return cDB.executeProcedure("UpdateSoNgayThuc", sp);
+
+        }
     }
 }

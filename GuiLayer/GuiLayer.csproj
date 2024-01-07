@@ -271,6 +271,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="billDetail2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="billDetail2.Designer.cs">
+      <DependentUpon>billDetail2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,6 +427,9 @@
     <Compile Include="tabStatistic.Designer.cs">
       <DependentUpon>tabStatistic.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="billDetail2.resx">
+      <DependentUpon>billDetail2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

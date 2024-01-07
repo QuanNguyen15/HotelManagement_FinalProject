@@ -24,10 +24,14 @@ namespace GuiLayer
         {
             if (e.RowIndex >= 0)
             {
-                if (dataGridViewBill.Columns[e.ColumnIndex].HeaderText == "Detail")
+                DataGridViewRow selectedRow = dataGridViewBill.Rows[e.RowIndex];
+                string idHoaDon = selectedRow.Cells["idHoaDon"].Value.ToString();
+
+                if (dataGridViewBill.Columns[e.ColumnIndex].HeaderText == "Detail" && !string.IsNullOrEmpty(idHoaDon))
                 {
-/*                    frmBillDetail billDetail = new frmBillDetail();
-                    billDetail.ShowDialog();*/
+                    int idHoaDonNew = int.Parse(idHoaDon);
+                    billDetail2 billDetail = new billDetail2(idHoaDonNew);
+                    billDetail.ShowDialog();
 
                 }
             }
@@ -49,19 +53,21 @@ namespace GuiLayer
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string search = txtSearch.Text.Trim();
-            if (string.IsNullOrEmpty(search))
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                DataTable dt = new DataTable();
+                classHoaDon hoaDon = new classHoaDon();
+                hoaDon.tenHoaDon = search;
+           
+                dt = busHoaDon.SearchHoaDonPhongBySoHoaDonNew(hoaDon);
+                dataGridViewBill.DataSource = dt;
+            }
+
+            else
             {
                 DataTable dt = new DataTable();
                 dt = busHoaDon.getHoaDon();
-                dataGridViewBill.DataSource = dt;
-            }
-            else
-            {
-                classHoaDon hoaDon = new classHoaDon();
-                hoaDon.tenHoaDon = search;
-
-                DataTable dt = new DataTable();
-                dt = busHoaDon.searchHoaDon(hoaDon);
                 dataGridViewBill.DataSource = dt;
             }
         }

@@ -19,6 +19,8 @@ namespace GuiLayer
         BUSPhong busPhong = new BUSPhong();
         BUSHoaDon busHoaDon=new BUSHoaDon();
         BUSHoaDonPhong busHoaDonPhong = new BUSHoaDonPhong();
+        BUSDatPhong busDatPhong = new BUSDatPhong();
+
         classPhong room;
         tabRoom roomTab;
         public frmBillDetail(classPhong cPhong , tabRoom tRoom)
@@ -53,9 +55,10 @@ namespace GuiLayer
                 lbIdRoom.Text = idPhong;
                 string soLuong = dtBill.Rows[0]["soNguoi"].ToString();
                 lbNumpeople.Text = soLuong;
-                string ngayThuc = dtBill.Rows[0]["SoNgayThuc"].ToString();
-                lbNumday.Text = ngayThuc;
+
             }
+            string ngayThuc = dtBill.Rows[0]["SoNgayThuc"].ToString();
+            lbNumday.Text = ngayThuc;
             // Lấy thời gian thực
             DateTime thoiGianThuc = DateTime.Now;
             string chuoiThoiGian = thoiGianThuc.ToString("yyyy /MM/dd HH:mm:ss");
@@ -96,11 +99,16 @@ namespace GuiLayer
             int parsedIdHoaDon = int.Parse(idHoaDon);
             int parsedIdDatPhong = int.Parse(idDatPhong);
 
+            int soNgayThuc = int.Parse(ngayThuc);
+
             /*   DateTime thoiGianChuyenDoi;
                thoiGianChuyenDoi = DateTime.ParseExact(chuoiThoiGian, "yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);*/
+            classDatPhong classDatPhong = new classDatPhong();
+            classDatPhong.idDatPhong = parsedIdDatPhong;
+            classDatPhong.ngayThuc = soNgayThuc;
+            busDatPhong.UpdateSoNgayThuc(classDatPhong);
 
-
-           classHoaDonPhong hoaDonPhong = new classHoaDonPhong(parsedIdHoaDon, parsedIdDatPhong, tongHoaDon, thoiGianThuc);
+            classHoaDonPhong hoaDonPhong = new classHoaDonPhong(parsedIdHoaDon, parsedIdDatPhong, tongHoaDon, thoiGianThuc);
             busHoaDonPhong.UpdateHoaDonPhong(hoaDonPhong);
 
 

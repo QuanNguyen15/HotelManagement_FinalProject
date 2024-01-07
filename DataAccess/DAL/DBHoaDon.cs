@@ -120,5 +120,34 @@ namespace DataAccess.DAL
             sp[0].Value = Object.tenHoaDon;
             return cDB.executeSQLselect("getBillDichVu", sp);
         }
+
+        public DataTable getBillDetail(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@soHoaDon", SqlDbType.Int);
+            sp[0].Value = Object.soHoaDon;
+            return cDB.executeSQLselect("getBillDetail", sp);
+        }
+
+        public DataTable getBillDichVuDetail(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@soHoaDon", SqlDbType.Int);
+            sp[0].Value = Object.soHoaDon;
+            return cDB.executeSQLselect("getBillDichVuDetail", sp);
+        }
+
+        public DataTable SearchHoaDonPhongBySoHoaDonNew(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+            sp[0] = new SqlParameter("@search", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.tenHoaDon;
+            return cDB.executeSQLselect("SearchHoaDonPhongBySoHoaDonNew", sp);
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace GuiLayer
 {
-    partial class frmBillDetail
+    partial class billDetail2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBillDetail));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(billDetail2));
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -64,10 +65,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(725, 798);
+            this.label5.Location = new System.Drawing.Point(727, 808);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(180, 24);
-            this.label5.TabIndex = 61;
+            this.label5.TabIndex = 66;
             this.label5.Text = "Contact us: 095466456";
             // 
             // panel1
@@ -90,10 +91,11 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lbClientFullname);
-            this.panel1.Location = new System.Drawing.Point(37, 95);
+            this.panel1.Location = new System.Drawing.Point(39, 87);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(868, 624);
-            this.panel1.TabIndex = 60;
+            this.panel1.TabIndex = 65;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dataGridView1
             // 
@@ -101,19 +103,27 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tenDichVu,
             this.donGia,
             this.TongSoLuong,
             this.TongDonGia});
-            this.dataGridView1.Location = new System.Drawing.Point(51, 224);
+            this.dataGridView1.Location = new System.Drawing.Point(51, 188);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(769, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(756, 378);
             this.dataGridView1.TabIndex = 68;
             // 
             // label9
@@ -151,17 +161,18 @@
             // 
             this.lbNumday.AutoSize = true;
             this.lbNumday.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumday.Location = new System.Drawing.Point(724, 144);
+            this.lbNumday.Location = new System.Drawing.Point(724, 140);
             this.lbNumday.Name = "lbNumday";
             this.lbNumday.Size = new System.Drawing.Size(33, 19);
             this.lbNumday.TabIndex = 64;
             this.lbNumday.Text = "{?}";
+            this.lbNumday.Click += new System.EventHandler(this.lbNumday_Click);
             // 
             // lbNumpeople
             // 
             this.lbNumpeople.AutoSize = true;
             this.lbNumpeople.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumpeople.Location = new System.Drawing.Point(742, 109);
+            this.lbNumpeople.Location = new System.Drawing.Point(742, 103);
             this.lbNumpeople.Name = "lbNumpeople";
             this.lbNumpeople.Size = new System.Drawing.Size(33, 19);
             this.lbNumpeople.TabIndex = 63;
@@ -171,7 +182,7 @@
             // 
             this.lbIdRoom.AutoSize = true;
             this.lbIdRoom.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdRoom.Location = new System.Drawing.Point(654, 77);
+            this.lbIdRoom.Location = new System.Drawing.Point(654, 73);
             this.lbIdRoom.Name = "lbIdRoom";
             this.lbIdRoom.Size = new System.Drawing.Size(33, 19);
             this.lbIdRoom.TabIndex = 62;
@@ -201,7 +212,7 @@
             // 
             this.lbStaffFullname.AutoSize = true;
             this.lbStaffFullname.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStaffFullname.Location = new System.Drawing.Point(115, 145);
+            this.lbStaffFullname.Location = new System.Drawing.Point(115, 144);
             this.lbStaffFullname.Name = "lbStaffFullname";
             this.lbStaffFullname.Size = new System.Drawing.Size(33, 19);
             this.lbStaffFullname.TabIndex = 59;
@@ -231,7 +242,7 @@
             // 
             this.lbIdBill.AutoSize = true;
             this.lbIdBill.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdBill.Location = new System.Drawing.Point(119, 109);
+            this.lbIdBill.Location = new System.Drawing.Point(119, 112);
             this.lbIdBill.Name = "lbIdBill";
             this.lbIdBill.Size = new System.Drawing.Size(33, 19);
             this.lbIdBill.TabIndex = 56;
@@ -280,21 +291,21 @@
             // btnPrint
             // 
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(855, 725);
+            this.btnPrint.Location = new System.Drawing.Point(857, 735);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(50, 50);
             this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnPrint.TabIndex = 59;
+            this.btnPrint.TabIndex = 64;
             this.btnPrint.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 768);
+            this.label4.Location = new System.Drawing.Point(34, 778);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(233, 54);
-            this.label4.TabIndex = 57;
+            this.label4.TabIndex = 63;
             this.label4.Text = "\r\nSee you again in the future!";
             // 
             // label7
@@ -302,17 +313,17 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(52)))), ((int)(((byte)(108)))));
-            this.label7.Location = new System.Drawing.Point(393, 29);
+            this.label7.Location = new System.Drawing.Point(416, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 51);
-            this.label7.TabIndex = 56;
+            this.label7.TabIndex = 62;
             this.label7.Text = "Bill";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // tenDichVu
             // 
             this.tenDichVu.DataPropertyName = "tenDichVu";
+            this.tenDichVu.FillWeight = 68.88634F;
             this.tenDichVu.HeaderText = "Service";
             this.tenDichVu.MinimumWidth = 6;
             this.tenDichVu.Name = "tenDichVu";
@@ -321,10 +332,11 @@
             // donGia
             // 
             this.donGia.DataPropertyName = "donGia";
+            this.donGia.FillWeight = 95.80474F;
             this.donGia.HeaderText = "Price";
             this.donGia.MinimumWidth = 6;
             this.donGia.Name = "donGia";
-            this.donGia.Width = 150;
+            this.donGia.Width = 278;
             // 
             // TongSoLuong
             // 
@@ -337,26 +349,25 @@
             // TongDonGia
             // 
             this.TongDonGia.DataPropertyName = "TongDonGia";
+            this.TongDonGia.FillWeight = 135.309F;
             this.TongDonGia.HeaderText = "Sum";
             this.TongDonGia.MinimumWidth = 6;
             this.TongDonGia.Name = "TongDonGia";
             this.TongDonGia.Width = 150;
             // 
-            // frmBillDetail
+            // billDetail2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 966);
+            this.ClientSize = new System.Drawing.Size(940, 913);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
-            this.MaximumSize = new System.Drawing.Size(958, 1013);
-            this.MinimumSize = new System.Drawing.Size(958, 1013);
-            this.Name = "frmBillDetail";
-            this.Text = "frmBillDetail";
-            this.Load += new System.EventHandler(this.frmBillDetail_Load);
+            this.Name = "billDetail2";
+            this.Text = "billDetail2";
+            this.Load += new System.EventHandler(this.billDetail2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -370,6 +381,7 @@
 
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label label1;
@@ -389,7 +401,6 @@
         private System.Windows.Forms.PictureBox btnPrint;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongSoLuong;

@@ -66,5 +66,10 @@ namespace BusinessLogic
             return dbDatPhong.createDatPhong(datPhong);
         }
 
+        public bool UpdateSoNgayThuc(classDatPhong datPhong)
+        {
+            DBDatPhong dbDatPhong = new DBDatPhong(serverName.userName, serverName.nameDataBase);
+            return dbDatPhong.UpdateSoNgayThuc(datPhong);
+        }
     }
 }
