@@ -26,8 +26,8 @@ namespace GuiLayer
             {
                 if (dataGridViewBill.Columns[e.ColumnIndex].HeaderText == "Detail")
                 {
-                    frmBillDetail billDetail = new frmBillDetail();
-                    billDetail.ShowDialog();
+/*                    frmBillDetail billDetail = new frmBillDetail();
+                    billDetail.ShowDialog();*/
 
                 }
             }

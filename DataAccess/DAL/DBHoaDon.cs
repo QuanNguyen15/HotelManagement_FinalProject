@@ -100,5 +100,15 @@ namespace DataAccess.DAL
             sp[0].Value = hoaDon.idHoaDon;
             return cDB.executeProcedure("DeleteBooking", sp);
         }
+
+        public DataTable getBill(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@tenPhong", SqlDbType.NVarChar ,100);
+            sp[0].Value = Object.tenHoaDon;
+            return cDB.executeSQLselect("getBill", sp);
+        }
     }
 }

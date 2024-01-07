@@ -92,5 +92,13 @@ namespace BusinessLogic
             DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
             return dBHoaDon.DeleteBooking(hoaDon);
         }
+
+        public DataTable getBill(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.getBill(Object);
+            dt = getDatatable;
+            return dt;
+        }
     }
 }

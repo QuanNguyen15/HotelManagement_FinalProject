@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\classBill.cs" />
     <Compile Include="DAL\DBCongTy.cs" />
     <Compile Include="DAL\DBDatPhong.cs" />
     <Compile Include="DAL\DBDonVi.cs" />

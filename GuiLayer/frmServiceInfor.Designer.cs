@@ -131,6 +131,7 @@
             this.cbLoaiDichVu.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiDichVu.FormattingEnabled = true;
             this.cbLoaiDichVu.Items.AddRange(new object[] {
+            "Food",
             "Drink",
             "Delivery",
             "Entertaiment"});

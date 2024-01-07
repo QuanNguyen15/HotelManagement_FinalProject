@@ -256,8 +256,11 @@ namespace GuiLayer
                     MessageBox.Show($"{room.tenPhong} Has Been Renting", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case "Renting":
-                    frmBillDetail bill= new frmBillDetail();
+                    frmBillDetail bill= new frmBillDetail(room,this);
                     bill.ShowDialog();
+
+
+
                    /* room.trangThai = "Maintenaning";
                     busPhong.updatePhong(room);
                     control.Text = $"{room.tenPhong}\n {room.trangThai}";
