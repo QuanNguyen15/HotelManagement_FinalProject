@@ -176,5 +176,16 @@ namespace DataAccess.DAL
             sp[0].Value = Object.tenHoaDon;
             return cDB.executeSQLselect("SelectSoPhongByMonth", sp);
         }
+
+        public DataTable SelectHoaDonByMonthAndYear(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[2];
+            sp[0] = new SqlParameter("@thang", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.tenHoaDon;
+            sp[1] = new SqlParameter("@nam", SqlDbType.NVarChar, 100);
+            sp[1].Value = Object.loaiHoaDon;
+            return cDB.executeSQLselect("SelectHoaDonByMonthAndYear", sp);
+        }
     }
 }

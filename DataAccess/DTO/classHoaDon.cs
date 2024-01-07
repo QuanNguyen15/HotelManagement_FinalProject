@@ -17,6 +17,7 @@ namespace DataAccess
         public string hinhThucThanhToan { get; set; }
         public decimal tongTien { get; set; }   
         public int soHoaDon { get; set; }   
+        public string loaiHoaDon { get; set; } 
         public classHoaDon() { }
 
         public classHoaDon(int idHoaDon, int idKhachHang, string tenHoaDon, DateTime ngayThanhToan, string hinhThucThanhToan, decimal tongTien)

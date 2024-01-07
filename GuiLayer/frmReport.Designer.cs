@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
             this.cbYear = new System.Windows.Forms.ComboBox();
             this.cbMonth = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewReport = new System.Windows.Forms.DataGridView();
-            this.idHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.cbTypePrint = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
+            this.soHoaDonNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             this.SuspendLayout();
@@ -118,17 +118,17 @@
             // 
             this.dataGridViewReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewReport.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idHoaDon,
+            this.soHoaDonNew,
             this.ngayLap,
             this.tenNhanVien,
             this.idDatPhong,
@@ -137,49 +137,19 @@
             this.dataGridViewReport.Location = new System.Drawing.Point(53, 202);
             this.dataGridViewReport.Name = "dataGridViewReport";
             this.dataGridViewReport.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReport.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReport.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewReport.RowHeadersVisible = false;
             this.dataGridViewReport.RowHeadersWidth = 51;
             this.dataGridViewReport.RowTemplate.Height = 24;
             this.dataGridViewReport.Size = new System.Drawing.Size(1035, 400);
             this.dataGridViewReport.TabIndex = 4;
-            // 
-            // idHoaDon
-            // 
-            this.idHoaDon.HeaderText = "Bill ID";
-            this.idHoaDon.MinimumWidth = 6;
-            this.idHoaDon.Name = "idHoaDon";
-            // 
-            // ngayLap
-            // 
-            this.ngayLap.HeaderText = "Check in day";
-            this.ngayLap.MinimumWidth = 6;
-            this.ngayLap.Name = "ngayLap";
-            // 
-            // tenNhanVien
-            // 
-            this.tenNhanVien.HeaderText = "Staff name";
-            this.tenNhanVien.MinimumWidth = 6;
-            this.tenNhanVien.Name = "tenNhanVien";
-            // 
-            // idDatPhong
-            // 
-            this.idDatPhong.HeaderText = "Booking ID";
-            this.idDatPhong.MinimumWidth = 6;
-            this.idDatPhong.Name = "idDatPhong";
-            // 
-            // tongTien
-            // 
-            this.tongTien.HeaderText = "Total";
-            this.tongTien.MinimumWidth = 6;
-            this.tongTien.Name = "tongTien";
             // 
             // btnPrint
             // 
@@ -237,6 +207,41 @@
             this.lbTotal.TabIndex = 9;
             this.lbTotal.Text = "{?}";
             // 
+            // soHoaDonNew
+            // 
+            this.soHoaDonNew.DataPropertyName = "soHoaDonNew";
+            this.soHoaDonNew.HeaderText = "Bill ID";
+            this.soHoaDonNew.MinimumWidth = 6;
+            this.soHoaDonNew.Name = "soHoaDonNew";
+            // 
+            // ngayLap
+            // 
+            this.ngayLap.DataPropertyName = "ngayDat";
+            this.ngayLap.HeaderText = "Check in day";
+            this.ngayLap.MinimumWidth = 6;
+            this.ngayLap.Name = "ngayLap";
+            // 
+            // tenNhanVien
+            // 
+            this.tenNhanVien.DataPropertyName = "tenNhanVien";
+            this.tenNhanVien.HeaderText = "Staff name";
+            this.tenNhanVien.MinimumWidth = 6;
+            this.tenNhanVien.Name = "tenNhanVien";
+            // 
+            // idDatPhong
+            // 
+            this.idDatPhong.DataPropertyName = "idDatPhong";
+            this.idDatPhong.HeaderText = "Booking ID";
+            this.idDatPhong.MinimumWidth = 6;
+            this.idDatPhong.Name = "idDatPhong";
+            // 
+            // tongTien
+            // 
+            this.tongTien.DataPropertyName = "tienPhong";
+            this.tongTien.HeaderText = "Total";
+            this.tongTien.MinimumWidth = 6;
+            this.tongTien.Name = "tongTien";
+            // 
             // frmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -277,7 +282,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soHoaDonNew;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayLap;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDatPhong;

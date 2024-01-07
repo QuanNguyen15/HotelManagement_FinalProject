@@ -174,5 +174,12 @@ namespace BusinessLogic
             return string.Empty;
         }
 
+        public DataTable SelectHoaDonByMonthAndYear(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.SelectHoaDonByMonthAndYear(Object);
+            dt = getDatatable;
+            return dt;
+        }
     }
 }
