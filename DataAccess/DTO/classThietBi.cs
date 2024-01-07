@@ -15,12 +15,12 @@ namespace DataAccess
 
         public classThietBi() { }
 
-        public classThietBi(int idThietBi, string tenThietBi, decimal donGia, bool isDelete)
+        public classThietBi(int idThietBi, string tenThietBi, decimal donGia)
         {
             this.idThietBi = idThietBi;
             this.tenThietBi = tenThietBi;
             this.donGia = donGia;
-            this.isDelete = isDelete;
+        
         }
     }
 }

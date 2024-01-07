@@ -118,5 +118,18 @@ namespace BusinessLogic
             DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
             return dbDichVu.AddDichVuPhongByRoomAndService(dichVu);
         }
+
+        public bool UpdateDichVu(classDichVu dichVu)
+        {
+            DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
+            return dbDichVu.UpdateDichVu(dichVu);
+        }
+
+        public DataTable SearchDichVu(classDichVu dichVu)
+        {
+            DBDichVu dbDichVu = new DBDichVu(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dbDichVu.SearchDichVu(dichVu);
+            return getDatatable;
+        }
     }
 }

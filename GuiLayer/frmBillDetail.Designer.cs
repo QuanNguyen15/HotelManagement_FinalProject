@@ -350,6 +350,7 @@
             this.Controls.Add(this.label7);
             this.Name = "frmBillDetail";
             this.Text = "frmBillDetail";
+            this.Load += new System.EventHandler(this.frmBillDetail_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

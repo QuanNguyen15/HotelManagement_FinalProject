@@ -256,11 +256,13 @@ namespace GuiLayer
                     MessageBox.Show($"{room.tenPhong} Has Been Renting", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case "Renting":
-                    room.trangThai = "Maintenaning";
+                    frmBillDetail bill= new frmBillDetail();
+                    bill.ShowDialog();
+                   /* room.trangThai = "Maintenaning";
                     busPhong.updatePhong(room);
                     control.Text = $"{room.tenPhong}\n {room.trangThai}";
                     control.BackColor = Color.FromArgb(226, 51, 51);
-                    MessageBox.Show($"{room.tenPhong} Has Been Payment", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"{room.tenPhong} Has Been Payment", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
                     break;
             }
 

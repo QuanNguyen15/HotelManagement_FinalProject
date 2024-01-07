@@ -146,5 +146,35 @@ namespace DataAccess.DAL
             return cDB.executeProcedure("AddDichVuPhongByRoomAndService", sp);
 
         }
+
+        public bool UpdateDichVu(classDichVu Object)
+        {
+            SqlParameter[] sp = new SqlParameter[4];
+
+            sp[0] = new SqlParameter("@IDDichVu", SqlDbType.Int);
+            sp[0].Value = Object.idDichVu;
+            sp[1] = new SqlParameter("@tenDichVu", SqlDbType.NVarChar, 100);
+            sp[1].Value = Object.tenDichVu;
+            sp[2] = new SqlParameter("@LoaiDichVu", SqlDbType.NVarChar, 100);
+            sp[2].Value = Object.loaiDichVu;
+            sp[3] = new SqlParameter("@DonGia", SqlDbType.Decimal);
+            sp[3].Value = Object.donGia;
+
+
+            return cDB.executeProcedure("UpdateDichVu", sp);
+
+        }
+
+        public DataTable SearchDichVu(classDichVu Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@SearchKeyword", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.tenDichVu;
+
+            return cDB.executeSQLselect("SearchDichVu", sp);
+
+        }
     }
     }

@@ -50,5 +50,31 @@ namespace DataAccess.DAL
 
             return cDB.executeProcedure("addThietBi", sp);
         }
+
+        public bool UpdateThietBi(classThietBi Object)
+        {
+            SqlParameter[] sp = new SqlParameter[3];
+
+            sp[0] = new SqlParameter("@idThietBi", SqlDbType.Int);
+            sp[0].Value = Object.idThietBi;
+            sp[1] = new SqlParameter("@tenThietBi", SqlDbType.NVarChar , 100);
+            sp[1].Value = Object.tenThietBi;
+            sp[2] = new SqlParameter("@donGia", SqlDbType.Decimal);
+            sp[2].Value = Object.donGia;
+
+            return cDB.executeProcedure("UpdateThietBi", sp);
+        }
+
+        public DataTable SearchThietBi(classThietBi Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+            sp[0] = new SqlParameter("@SearchKeyword", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.tenThietBi;
+
+            return cDB.executeSQLselect("SearchThietBi", sp);
+
+        }
     }
 }

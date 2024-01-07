@@ -121,7 +121,6 @@ namespace GuiLayer
             string dienThoai = txtPhone.Text;
             string email = txtEmail.Text;
             string diachi = txtAddress.Text;
-
             foreach (Control control in pnRadio.Controls)
             {
                 if (control is RadioButton radioButton)
@@ -147,30 +146,35 @@ namespace GuiLayer
                 }
             }
 
-            if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(soCDCD) || string.IsNullOrEmpty(dienThoai) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(diachi))
-            {
-                MessageBox.Show("Please fill in all information");
-            }
-            else if (!IsNumeric(soCDCD) || !IsNumeric(dienThoai))
-            {
-                MessageBox.Show("ID card number and phone must be numeric");
-            }
-            else if (!dienThoaiMax(dienThoai))
-            {
+            
 
-                MessageBox.Show($"Please enter phone is 10 digital", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
 
-                classKhachHang khachHang = new classKhachHang(id, hoTen, gioiTinh, dienThoai, email, diachi);
-                bool update = busKhachHang.upDateKhachHang(khachHang);
-                MessageBox.Show("Update successful");
-                client.RefreshDataGridView();
-                this.Close();
 
-            }
 
+                if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(soCDCD) || string.IsNullOrEmpty(dienThoai) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(diachi))
+                {
+                    MessageBox.Show("Please fill in all information");
+                }
+                else if (!IsNumeric(soCDCD) || !IsNumeric(dienThoai))
+                {
+                    MessageBox.Show("ID card number and phone must be numeric");
+                }
+                else if (!dienThoaiMax(dienThoai))
+                {
+
+                    MessageBox.Show($"Please enter phone is 10 digital", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+
+                    classKhachHang khachHang = new classKhachHang(id, hoTen, gioiTinh, dienThoai, email, diachi);
+                    bool update = busKhachHang.upDateKhachHang(khachHang);
+                    MessageBox.Show("Update successful");
+                    client.RefreshDataGridView();
+                    this.Close();
+
+                }
+            
             }
         static bool IsNumeric(string input)
         {

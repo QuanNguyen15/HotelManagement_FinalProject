@@ -21,5 +21,10 @@ namespace GuiLayer
         {
 
         }
+
+        private void frmBillDetail_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

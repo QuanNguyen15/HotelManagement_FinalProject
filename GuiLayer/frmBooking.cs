@@ -404,8 +404,10 @@ namespace GuiLayer
                         {
                             for (int i = 0; i < numberCreateHoaDonPhong; i++)
                             {
+                                
                                 int idPhong = int.Parse(idPhongList[i]);
                                 int soNguoi = int.Parse(soLuongNGuoilist[i]);
+
                                 classDatPhong datPhong = new classDatPhong(idKhachHang, idPhong, timeIn, timeOut, idTaiKhoan, soNguoi);
                                 bool checkCreateDatPhong = busDatPhong.creatDatPhong(datPhong);
 
@@ -417,6 +419,8 @@ namespace GuiLayer
                                 busHoaDonPhong.creatHoaDonPhong(createHoaDonPhong);
                             }
                             MessageBox.Show($"Booking room successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            book.refreshdataGridview();
+                            this.Close();
                         }
 
 
@@ -510,7 +514,8 @@ namespace GuiLayer
                         if (save && checkPhong)
                         {
                             MessageBox.Show($"Add new client and booking room successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                            book.refreshdataGridview();
+                            this.Close();
                         }
                     }
 
@@ -518,8 +523,7 @@ namespace GuiLayer
                 }
                
             }
-            book.refreshdataGridview();
-            this.Close();
+
         }
     }
 }
