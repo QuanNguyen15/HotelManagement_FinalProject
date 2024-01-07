@@ -132,5 +132,47 @@ namespace BusinessLogic
             dt = getDatatable;
             return dt;
         }
+        public string SelectTongTienDichVuPhongByMonth(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.SelectTongTienDichVuPhongByMonth(Object);
+
+            // Kiểm tra xem DataTable có dữ liệu hay không
+            if (getDatatable != null && getDatatable.Rows.Count > 0)
+            {
+                // Chuyển giá trị từ DataTable thành chuỗi và trả về
+                return getDatatable.Rows[0][0].ToString();
+            }
+
+            // Nếu không có dữ liệu, trả về chuỗi trống hoặc một giá trị mặc định khác tùy thuộc vào yêu cầu của bạn
+            return string.Empty;
+        }
+
+        public string SelectTongTienPhongByMonth(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.SelectTongTienPhongByMonth(Object);
+
+            if (getDatatable != null && getDatatable.Rows.Count > 0)
+            {
+                return getDatatable.Rows[0][0].ToString();
+            }
+
+            return string.Empty;
+        }
+
+        public string SelectSoPhongByMonth(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.SelectSoPhongByMonth(Object);
+
+            if (getDatatable != null && getDatatable.Rows.Count > 0)
+            {
+                return getDatatable.Rows[0][0].ToString();
+            }
+
+            return string.Empty;
+        }
+
     }
 }

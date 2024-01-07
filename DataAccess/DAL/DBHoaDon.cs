@@ -149,5 +149,32 @@ namespace DataAccess.DAL
             sp[0].Value = Object.tenHoaDon;
             return cDB.executeSQLselect("SearchHoaDonPhongBySoHoaDonNew", sp);
         }
+
+        public DataTable SelectTongTienDichVuPhongByMonth(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+            sp[0] = new SqlParameter("@thang", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.tenHoaDon;
+            return cDB.executeSQLselect("SelectTongTienDichVuPhongByMonth", sp);
+        }
+
+        public DataTable SelectTongTienPhongByMonth(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+            sp[0] = new SqlParameter("@thang", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.tenHoaDon;
+            return cDB.executeSQLselect("SelectTongTienPhongByMonth", sp);
+        }
+
+        public DataTable SelectSoPhongByMonth(classHoaDon Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+            sp[0] = new SqlParameter("@thang", SqlDbType.NVarChar, 100);
+            sp[0].Value = Object.tenHoaDon;
+            return cDB.executeSQLselect("SelectSoPhongByMonth", sp);
+        }
     }
 }

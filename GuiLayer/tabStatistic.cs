@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogic;
+using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace GuiLayer
 {
     public partial class tabStatistic : UserControl
     {
+        BUSHoaDon busHoaDon =new BUSHoaDon();
         public tabStatistic()
         {
             InitializeComponent();
@@ -22,5 +25,32 @@ namespace GuiLayer
             frmReport report = new frmReport(); 
             report.ShowDialog();
         }
+
+        private void tabStatistic_Load(object sender, EventArgs e)
+        {
+            // Lấy thời gian thực
+            DateTime thoiGianThuc = DateTime.Now;
+
+            // Lấy ngày, tháng và năm từ thời gian thực
+            int month = thoiGianThuc.Month;
+            string chuoiMonth= month.ToString();
+            classHoaDon hoaDon = new classHoaDon();
+            hoaDon.tenHoaDon = chuoiMonth;
+
+            
+            string tongTienDV= busHoaDon.SelectTongTienDichVuPhongByMonth(hoaDon);
+            string tongTienPhong = busHoaDon.SelectTongTienPhongByMonth(hoaDon);
+            string tongSoDatPhong = busHoaDon.SelectSoPhongByMonth(hoaDon);
+
+
+
+
+
+            label5.Text = tongTienDV;
+            label6.Text = tongSoDatPhong;
+            label4.Text = tongTienPhong;
+        }
+
+
     }
 }
