@@ -16,5 +16,11 @@ namespace GuiLayer
         {
             InitializeComponent();
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            frmReport report = new frmReport(); 
+            report.ShowDialog();
+        }
     }
 }

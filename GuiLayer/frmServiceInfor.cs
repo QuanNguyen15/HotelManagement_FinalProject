@@ -72,5 +72,10 @@ namespace GuiLayer
             lbServiceName.Text = id;
 
         }
+
+        private void cbLoaiDichVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

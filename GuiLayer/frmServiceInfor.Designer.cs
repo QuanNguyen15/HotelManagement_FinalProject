@@ -140,6 +140,7 @@
             this.cbLoaiDichVu.Size = new System.Drawing.Size(395, 34);
             this.cbLoaiDichVu.TabIndex = 49;
             this.cbLoaiDichVu.Text = "Food";
+            this.cbLoaiDichVu.SelectedIndexChanged += new System.EventHandler(this.cbLoaiDichVu_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
