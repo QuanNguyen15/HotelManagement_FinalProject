@@ -23,5 +23,11 @@ namespace BusinessLogic
             DBHoaDonPhong dBHoaDonPhong =new DBHoaDonPhong(serverName.userName, serverName.nameDataBase);
             return dBHoaDonPhong.creatHoaDonPhong(hoaDonPhong);
         }
+
+        public bool UpdateHoaDonPhong(classHoaDonPhong hoaDonPhong)
+        {
+            DBHoaDonPhong dBHoaDonPhong = new DBHoaDonPhong(serverName.userName, serverName.nameDataBase);
+            return dBHoaDonPhong.UpdateHoaDonPhong(hoaDonPhong);
+        }
     }
 }

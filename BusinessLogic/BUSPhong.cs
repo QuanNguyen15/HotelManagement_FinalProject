@@ -115,5 +115,12 @@ namespace BusinessLogic
             dt = getDatatable;
             return dt;
         }
+        public DataTable GetDonGiaByIdPhong(classPhong Object)
+        {
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dbPhong.GetDonGiaByIdPhong(Object);
+            dt = getDatatable;
+            return dt;
+        }
     }
 }

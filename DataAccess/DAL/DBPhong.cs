@@ -136,5 +136,18 @@ namespace BusinessLogic
             return cDB.executeSQLselect("GetDichVuDatPhong", sp);
 
         }
+        public DataTable GetDonGiaByIdPhong(classPhong Object)
+        {
+
+            SqlParameter[] sp = new SqlParameter[1];
+
+
+
+            sp[0] = new SqlParameter("@tenPhong", SqlDbType.NVarChar, 50);
+            sp[0].Value = Object.tenPhong;
+
+            return cDB.executeSQLselect("GetDonGiaByIdPhong", sp);
+
+        }
     }
 }

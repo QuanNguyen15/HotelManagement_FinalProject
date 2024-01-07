@@ -100,5 +100,13 @@ namespace BusinessLogic
             dt = getDatatable;
             return dt;
         }
+      
+        public DataTable getBillDichVu(classHoaDon Object)
+        {
+            DBHoaDon dBHoaDon = new DBHoaDon(serverName.userName, serverName.nameDataBase);
+            DataTable getDatatable = dBHoaDon.getBillDichVu(Object);
+            dt = getDatatable;
+            return dt;
+        }
     }
 }

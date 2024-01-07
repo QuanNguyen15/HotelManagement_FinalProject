@@ -40,6 +40,12 @@ namespace GuiLayer
             dataGridViewBill.DataSource = dt;
         }
 
+        public void refreshDatagridview()
+        {
+            DataTable dt = new DataTable();
+            dt = busHoaDon.getHoaDon();
+            dataGridViewBill.DataSource = dt;
+        }
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string search = txtSearch.Text.Trim();

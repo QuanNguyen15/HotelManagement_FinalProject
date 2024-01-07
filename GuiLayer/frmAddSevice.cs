@@ -290,10 +290,10 @@ namespace GuiLayer
                     }
                     MessageBox.Show($"Add service successful", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmRoomInformation frmRefrest = Information;
-                    frmRefrest.refreshDataGridView();   
+                    frmRefrest.refreshDataGridView();
                     this.Close();
 
                 }
-                }
+            }
     }
 }}

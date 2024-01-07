@@ -256,8 +256,21 @@ namespace GuiLayer
                     MessageBox.Show($"{room.tenPhong} Has Been Renting", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case "Renting":
-                    frmBillDetail bill= new frmBillDetail(room,this);
-                    bill.ShowDialog();
+                    DialogResult result = MessageBox.Show("Are you sure you want to pay?", "Comfirm to delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+                    if (result == DialogResult.Yes )
+                    {
+
+                        frmBillDetail bill = new frmBillDetail(room, this);
+                        bill.ShowDialog();
+
+                        control.Text = $"{room.tenPhong}\n {room.trangThai}";
+                        control.BackColor = Color.FromArgb(226, 51, 51);
+                        MessageBox.Show($"{room.tenPhong} Has Been Payment", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+
 
 
 

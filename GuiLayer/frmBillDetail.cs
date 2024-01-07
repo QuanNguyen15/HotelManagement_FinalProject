@@ -1,10 +1,12 @@
 ﻿using BusinessLogic;
 using DataAccess;
+using DataAccess.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +16,9 @@ namespace GuiLayer
 {
     public partial class frmBillDetail : Form
     {
+        BUSPhong busPhong = new BUSPhong();
         BUSHoaDon busHoaDon=new BUSHoaDon();
+        BUSHoaDonPhong busHoaDonPhong = new BUSHoaDonPhong();
         classPhong room;
         tabRoom roomTab;
         public frmBillDetail(classPhong cPhong , tabRoom tRoom)
@@ -57,6 +61,53 @@ namespace GuiLayer
             string chuoiThoiGian = thoiGianThuc.ToString("yyyy /MM/dd HH:mm:ss");
 
             lbDateBill.Text = chuoiThoiGian;
+
+            DataTable dtGridDichVu = busHoaDon.getBillDichVu(hoaDon);
+            dataGridView1.DataSource = dtGridDichVu;
+
+            DataTable dtDonGiaPhong = busPhong.GetDonGiaByIdPhong(room);
+            decimal donGiaPhong = Convert.ToDecimal(dtDonGiaPhong.Rows[0][0]);
+            decimal tongTienDichVu = 0;
+            decimal TongNgayThuc = decimal.Parse(lbNumday.Text);
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                // Kiểm tra xem dòng có được chọn hay không
+                if (!row.IsNewRow)
+                {
+                    // Kiểm tra giá trị cột có thể được chuyển đổi thành decimal hay không
+                    if (row.Cells["TongDonGia"].Value != null && Decimal.TryParse(row.Cells["TongDonGia"].Value.ToString(), out decimal giaTri))
+                    {
+                        // Tính tổng
+                        tongTienDichVu += giaTri;
+                    }
+                }
+            }
+
+            decimal tongHoaDon = (TongNgayThuc * donGiaPhong) + tongTienDichVu;
+            
+            lbTotal.Text = tongHoaDon.ToString();
+
+
+
+            string idHoaDon = dtBill.Rows[0]["idHoaDon"].ToString();
+            string idDatPhong = dtBill.Rows[0]["idDatPhong"].ToString();
+
+            int parsedIdHoaDon = int.Parse(idHoaDon);
+            int parsedIdDatPhong = int.Parse(idDatPhong);
+
+            /*   DateTime thoiGianChuyenDoi;
+               thoiGianChuyenDoi = DateTime.ParseExact(chuoiThoiGian, "yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);*/
+
+
+           classHoaDonPhong hoaDonPhong = new classHoaDonPhong(parsedIdHoaDon, parsedIdDatPhong, tongHoaDon, thoiGianThuc);
+            busHoaDonPhong.UpdateHoaDonPhong(hoaDonPhong);
+
+
+            room.trangThai = "Maintenaning";
+            busPhong.updatePhong(room);
+
+
         }
     }
     }

@@ -32,10 +32,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.hehe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,6 +51,10 @@
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.tenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
@@ -102,10 +102,10 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.hehe,
-            this.vv,
-            this.Amount,
-            this.Sum});
+            this.tenDichVu,
+            this.donGia,
+            this.TongSoLuong,
+            this.TongDonGia});
             this.dataGridView1.Location = new System.Drawing.Point(51, 224);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -114,35 +114,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(769, 331);
             this.dataGridView1.TabIndex = 68;
-            // 
-            // hehe
-            // 
-            this.hehe.HeaderText = "Service";
-            this.hehe.MinimumWidth = 6;
-            this.hehe.Name = "hehe";
-            this.hehe.Width = 200;
-            // 
-            // vv
-            // 
-            this.vv.HeaderText = "Price";
-            this.vv.MinimumWidth = 6;
-            this.vv.Name = "vv";
-            this.vv.Width = 150;
-            // 
-            // Amount
-            // 
-            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Amount.HeaderText = "Amount";
-            this.Amount.MinimumWidth = 6;
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 81;
-            // 
-            // Sum
-            // 
-            this.Sum.HeaderText = "Sum";
-            this.Sum.MinimumWidth = 6;
-            this.Sum.Name = "Sum";
-            this.Sum.Width = 150;
             // 
             // label9
             // 
@@ -338,6 +309,39 @@
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // tenDichVu
+            // 
+            this.tenDichVu.DataPropertyName = "tenDichVu";
+            this.tenDichVu.HeaderText = "Service";
+            this.tenDichVu.MinimumWidth = 6;
+            this.tenDichVu.Name = "tenDichVu";
+            this.tenDichVu.Width = 200;
+            // 
+            // donGia
+            // 
+            this.donGia.DataPropertyName = "donGia";
+            this.donGia.HeaderText = "Price";
+            this.donGia.MinimumWidth = 6;
+            this.donGia.Name = "donGia";
+            this.donGia.Width = 150;
+            // 
+            // TongSoLuong
+            // 
+            this.TongSoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TongSoLuong.DataPropertyName = "TongSoLuong";
+            this.TongSoLuong.HeaderText = "Amount";
+            this.TongSoLuong.MinimumWidth = 6;
+            this.TongSoLuong.Name = "TongSoLuong";
+            this.TongSoLuong.Width = 81;
+            // 
+            // TongDonGia
+            // 
+            this.TongDonGia.DataPropertyName = "TongDonGia";
+            this.TongDonGia.HeaderText = "Sum";
+            this.TongDonGia.MinimumWidth = 6;
+            this.TongDonGia.Name = "TongDonGia";
+            this.TongDonGia.Width = 150;
+            // 
             // frmBillDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -384,9 +388,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hehe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongSoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongDonGia;
     }
 }

@@ -112,6 +112,7 @@ namespace GuiLayer
             tabStatistic1.Visible = false;
             tabBooking.Visible = false;
             tabService1.Visible = false;
+            tabBill2.refreshDatagridview();
         }
 
         private void btnService_Click(object sender, EventArgs e)

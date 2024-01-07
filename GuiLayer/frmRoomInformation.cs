@@ -90,6 +90,19 @@ namespace GuiLayer
         {
             if (roomDichVu.trangThai == "Renting")
             {
+                DialogResult result = MessageBox.Show("Are you sure you want to pay?", "Comfirm to delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+                if (result == DialogResult.Yes)
+                {
+
+                    frmBillDetail bill = new frmBillDetail(roomDichVu, tabPhong);
+                    bill.ShowDialog();
+                    tabPhong.getAll();
+                    this.Close();
+
+
+                }
 
             }
             else
@@ -154,6 +167,41 @@ namespace GuiLayer
                 else if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "Edit")
                 {
                    
+                }
+            }
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "Delete")
+                {
+
+                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                    string tenDichVu = selectedRow.Cells["ten"].Value.ToString();
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete?", "Comfirm to delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+                    if (result == DialogResult.Yes && !string.IsNullOrEmpty(tenDichVu))
+                    {
+
+
+                        classDichVu dichVu = new classDichVu();
+                        dichVu.tenDichVu = tenDichVu;
+                        dichVu.loaiDichVu = roomDichVu.tenPhong;
+
+                        BUSDichVu busDichVu = new BUSDichVu();
+                        busDichVu.DeleteDichVuPhongByRoomAndService(dichVu);
+                        dataGridView1.Rows.RemoveAt(e.RowIndex);
+                        MessageBox.Show("Delete successfull");
+                    }
+
+                }
+                else if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "Edit")
+                {
+
                 }
             }
 
