@@ -33,6 +33,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBookingDetail));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewBookingDetail = new System.Windows.Forms.DataGridView();
+            this.IDPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Person = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExit = new System.Windows.Forms.Button();
             this.lbClient = new System.Windows.Forms.Label();
             this.lbDateTime = new System.Windows.Forms.Label();
@@ -42,10 +46,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.IDPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Person = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBookingDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,6 +96,34 @@
             this.dataGridViewBookingDetail.Size = new System.Drawing.Size(977, 476);
             this.dataGridViewBookingDetail.TabIndex = 0;
             this.dataGridViewBookingDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBookingDetail_CellContentClick);
+            // 
+            // IDPhong
+            // 
+            this.IDPhong.DataPropertyName = "tenPhong";
+            this.IDPhong.HeaderText = "Room Name";
+            this.IDPhong.MinimumWidth = 6;
+            this.IDPhong.Name = "IDPhong";
+            // 
+            // StartBook
+            // 
+            this.StartBook.DataPropertyName = "ngayDat";
+            this.StartBook.HeaderText = "Start Book";
+            this.StartBook.MinimumWidth = 6;
+            this.StartBook.Name = "StartBook";
+            // 
+            // EndBook
+            // 
+            this.EndBook.DataPropertyName = "ngayTra";
+            this.EndBook.HeaderText = "End Book";
+            this.EndBook.MinimumWidth = 6;
+            this.EndBook.Name = "EndBook";
+            // 
+            // Person
+            // 
+            this.Person.DataPropertyName = "soNguoi";
+            this.Person.HeaderText = "Person";
+            this.Person.MinimumWidth = 6;
+            this.Person.Name = "Person";
             // 
             // btnExit
             // 
@@ -193,34 +221,6 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "{?}";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // IDPhong
-            // 
-            this.IDPhong.DataPropertyName = "tenPhong";
-            this.IDPhong.HeaderText = "Room Name";
-            this.IDPhong.MinimumWidth = 6;
-            this.IDPhong.Name = "IDPhong";
-            // 
-            // StartBook
-            // 
-            this.StartBook.DataPropertyName = "ngayDat";
-            this.StartBook.HeaderText = "Start Book";
-            this.StartBook.MinimumWidth = 6;
-            this.StartBook.Name = "StartBook";
-            // 
-            // EndBook
-            // 
-            this.EndBook.DataPropertyName = "ngayTra";
-            this.EndBook.HeaderText = "End Book";
-            this.EndBook.MinimumWidth = 6;
-            this.EndBook.Name = "EndBook";
-            // 
-            // Person
-            // 
-            this.Person.DataPropertyName = "soNguoi";
-            this.Person.HeaderText = "Person";
-            this.Person.MinimumWidth = 6;
-            this.Person.Name = "Person";
             // 
             // frmBookingDetail
             // 

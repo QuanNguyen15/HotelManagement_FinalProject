@@ -33,6 +33,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,10 +56,7 @@
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
@@ -74,6 +75,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.lbTotal);
@@ -99,6 +101,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -126,6 +129,43 @@
             this.dataGridView1.Size = new System.Drawing.Size(756, 378);
             this.dataGridView1.TabIndex = 68;
             // 
+            // tenDichVu
+            // 
+            this.tenDichVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tenDichVu.DataPropertyName = "tenDichVu";
+            this.tenDichVu.FillWeight = 68.88634F;
+            this.tenDichVu.HeaderText = "Service";
+            this.tenDichVu.MinimumWidth = 6;
+            this.tenDichVu.Name = "tenDichVu";
+            this.tenDichVu.Width = 89;
+            // 
+            // donGia
+            // 
+            this.donGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.donGia.DataPropertyName = "donGia";
+            this.donGia.FillWeight = 95.80474F;
+            this.donGia.HeaderText = "Price";
+            this.donGia.MinimumWidth = 6;
+            this.donGia.Name = "donGia";
+            // 
+            // TongSoLuong
+            // 
+            this.TongSoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TongSoLuong.DataPropertyName = "TongSoLuong";
+            this.TongSoLuong.HeaderText = "Amount";
+            this.TongSoLuong.MinimumWidth = 6;
+            this.TongSoLuong.Name = "TongSoLuong";
+            this.TongSoLuong.Width = 87;
+            // 
+            // TongDonGia
+            // 
+            this.TongDonGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TongDonGia.DataPropertyName = "TongDonGia";
+            this.TongDonGia.FillWeight = 135.309F;
+            this.TongDonGia.HeaderText = "Sum";
+            this.TongDonGia.MinimumWidth = 6;
+            this.TongDonGia.Name = "TongDonGia";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -141,7 +181,7 @@
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(52)))), ((int)(((byte)(108)))));
-            this.lbTotal.Location = new System.Drawing.Point(613, 569);
+            this.lbTotal.Location = new System.Drawing.Point(584, 569);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(54, 33);
             this.lbTotal.TabIndex = 66;
@@ -151,7 +191,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(502, 569);
+            this.label1.Location = new System.Drawing.Point(487, 569);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 33);
             this.label1.TabIndex = 65;
@@ -320,40 +360,15 @@
             this.label7.Text = "Bill";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tenDichVu
+            // label12
             // 
-            this.tenDichVu.DataPropertyName = "tenDichVu";
-            this.tenDichVu.FillWeight = 68.88634F;
-            this.tenDichVu.HeaderText = "Service";
-            this.tenDichVu.MinimumWidth = 6;
-            this.tenDichVu.Name = "tenDichVu";
-            this.tenDichVu.Width = 200;
-            // 
-            // donGia
-            // 
-            this.donGia.DataPropertyName = "donGia";
-            this.donGia.FillWeight = 95.80474F;
-            this.donGia.HeaderText = "Price";
-            this.donGia.MinimumWidth = 6;
-            this.donGia.Name = "donGia";
-            this.donGia.Width = 278;
-            // 
-            // TongSoLuong
-            // 
-            this.TongSoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TongSoLuong.DataPropertyName = "TongSoLuong";
-            this.TongSoLuong.HeaderText = "Amount";
-            this.TongSoLuong.MinimumWidth = 6;
-            this.TongSoLuong.Name = "TongSoLuong";
-            // 
-            // TongDonGia
-            // 
-            this.TongDonGia.DataPropertyName = "TongDonGia";
-            this.TongDonGia.FillWeight = 135.309F;
-            this.TongDonGia.HeaderText = "Sum";
-            this.TongDonGia.MinimumWidth = 6;
-            this.TongDonGia.Name = "TongDonGia";
-            this.TongDonGia.Width = 150;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(742, 575);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 24);
+            this.label12.TabIndex = 69;
+            this.label12.Text = "VND";
             // 
             // billDetail2
             // 
@@ -405,5 +420,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongDonGia;
+        private System.Windows.Forms.Label label12;
     }
 }
