@@ -39,7 +39,6 @@
             this.ngayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detail = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooking)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,8 +60,7 @@
             this.khachHang,
             this.ngayDat,
             this.NhanVien,
-            this.Detail,
-            this.Delete});
+            this.Detail});
             this.dataGridViewBooking.Location = new System.Drawing.Point(67, 173);
             this.dataGridViewBooking.Name = "dataGridViewBooking";
             this.dataGridViewBooking.RowHeadersVisible = false;
@@ -139,15 +137,6 @@
             this.Detail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Detail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // tabBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -177,6 +166,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn NhanVien;
         private System.Windows.Forms.DataGridViewImageColumn Detail;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

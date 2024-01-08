@@ -149,5 +149,14 @@ namespace BusinessLogic
             return cDB.executeSQLselect("GetDonGiaByIdPhong", sp);
 
         }
+
+        public bool DeleteDatPhong(classPhong phong)
+        {
+            SqlParameter[] sp = new SqlParameter[1];
+            sp[0] = new SqlParameter("@tenPhong", SqlDbType.NVarChar, 100);
+            sp[0].Value = phong.tenPhong;
+            return cDB.executeProcedure("DeleteDatPhong", sp);
+        }
+
     }
 }

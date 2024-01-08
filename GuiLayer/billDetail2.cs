@@ -6,10 +6,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace GuiLayer
 {
@@ -64,6 +67,67 @@ namespace GuiLayer
         private void lbNumday_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            using (PrintDocument pd = new PrintDocument())
+            {
+                pd.PrintPage += new PrintPageEventHandler(PrintPageHandler);
+
+                // Hiển thị hộp thoại nhập tên file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+                saveFileDialog.Title = "Save PDF File";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn đầy đủ cho tệp PDF từ hộp thoại nhập tên file
+                    string outputPath = saveFileDialog.FileName;
+
+                    // Kiểm tra xem thư mục tồn tại chưa, nếu chưa thì tạo mới
+                    string directory = Path.GetDirectoryName(outputPath);
+                    if (!Directory.Exists(directory))
+                    {
+                        Directory.CreateDirectory(directory);
+                    }
+
+                    // Thiết lập máy in để in ra tệp PDF
+                    PrintDialog printDialog = new PrintDialog();
+                    printDialog.Document = pd;
+
+                    if (printDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        pd.PrinterSettings.PrintToFile = true;
+                        pd.PrinterSettings.PrintFileName = outputPath;
+                        pd.Print();
+
+                        // Hiển thị địa chỉ in sau khi in và lưu thành công
+                        MessageBox.Show("Đã in PDF và lưu thành công!\nĐịa chỉ in: " + outputPath);
+                    }
+                }
+            }
+        }
+        private void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+
+            // Lưu trạng thái ban đầu của FormBorderStyle
+            FormBorderStyle originalFormBorderStyle = this.FormBorderStyle;
+
+            // Tạm thời vô hiệu hóa việc vẽ khung control
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            // Chuyển đổi cửa sổ Windows Form thành hình ảnh và vẽ nó ở giữa trang in
+            Bitmap bitmap = new Bitmap(this.Width, this.Height);
+            this.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, this.Width, this.Height));
+
+            float x = (e.PageBounds.Width - bitmap.Width) / 2;
+            float y = (e.PageBounds.Height - bitmap.Height) / 2;
+
+            e.Graphics.DrawImage(bitmap, x, y);
+
+            // Khôi phục lại FormBorderStyle
+            this.FormBorderStyle = originalFormBorderStyle;
         }
     }
 }

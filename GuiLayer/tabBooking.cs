@@ -81,7 +81,7 @@ namespace GuiLayer
                         frmBookingDetail bookingDetail = new frmBookingDetail(id);
                         bookingDetail.ShowDialog();
                     }
-                    if (dataGridViewBooking.Columns[e.ColumnIndex].HeaderText == "Delete")
+                   /* if (dataGridViewBooking.Columns[e.ColumnIndex].HeaderText == "Delete")
                     {
                         DialogResult result = MessageBox.Show("Are you sure you want to delete?", "Comfirm to delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
@@ -89,11 +89,11 @@ namespace GuiLayer
                             int idHoaDon = int.Parse(id);
                             classHoaDon hoaDon = new classHoaDon();
                             hoaDon.idHoaDon = idHoaDon;
-                            busHoaDon.deleteBooking(hoaDon);
+
                             dataGridViewBooking.Rows.RemoveAt(e.RowIndex);
                             MessageBox.Show("Delete successfull");
                         }
-                    }
+                    }*/
                 }
                 }
                 

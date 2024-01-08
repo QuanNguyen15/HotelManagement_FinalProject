@@ -189,10 +189,9 @@ namespace GuiLayer
 
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
 
-/*            ToolStripMenuItem menuItem1 = new ToolStripMenuItem("Change Room");*/
 
             ToolStripMenuItem menuItem3 = new ToolStripMenuItem(ttPhong);
-            /*            ToolStripMenuItem menuItem4 = new ToolStripMenuItem("Thanh toán");*/
+            /*           // ToolStripMenuItem menuItem4 = new ToolStripMenuItem("Thanh toán");*/
 
             if (room.trangThai == "Booked" || room.trangThai == "Renting")
             {
@@ -201,17 +200,21 @@ namespace GuiLayer
                 contextMenuStrip.Items.Add(menuItem5);
             }
 
+            if (room.trangThai == "Booked")
+            {
+                ToolStripMenuItem menuItem4 = new ToolStripMenuItem("Cancel Reservation");
+                menuItem4.Click += (sender, e) => huyDatPhong(room, control);
+                contextMenuStrip.Items.Add(menuItem4);
+            }
 
-/*
-            menuItem1.Click += (sender, e) => ChuyenPhong(room, control);  */// bieu thuc lam da
 
             menuItem3.Click += (sender, e) => CapNhatSanPham(room, control);
-/*            menuItem4.Click += (sender, e) => ThanhToan(room, control);*/
+          
 
 
 /*            contextMenuStrip.Items.Add(menuItem1);*/
             contextMenuStrip.Items.Add(menuItem3);
-/*            contextMenuStrip.Items.Add(menuItem4);*/
+
 
 
             contextMenuStrip.Show(control, new Point(control.Width / 2, control.Height / 2));
@@ -303,28 +306,22 @@ namespace GuiLayer
                 MessageBox.Show($"{room.tenPhong} is in use ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }*/
         }
-/*
-        private void ThanhToan(classPhong room, Control control)
+
+        private void huyDatPhong(classPhong room, Control control)
         {
-            if(room.trangThai == "Renting")
+            bool huyPhong = busPhong.DeleteDatPhong(room);
+            room.trangThai = "Available";
+            busPhong.updatePhong(room);
+            control.Text = $"{room.tenPhong}\n {room.trangThai}";
+            control.BackColor = Color.FromArgb(125, 209, 10);
+            if (huyPhong)
             {
-                room.trangThai = "Available";
-                busPhong.updatePhong(room);
-                control.Text = $"{room.tenPhong}\n {room.trangThai}";
-                control.BackColor = Color.FromArgb(136, 230, 185);
-                MessageBox.Show($"{room.tenPhong} has been booked", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"{room.tenPhong} has been cancel reservation", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-    
-            else if(room.trangThai == "Maintenance")
-            {
-                MessageBox.Show($"{room.tenPhong} is under maintainance", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show($"{room.tenPhong} has not been booked yet", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
            
-        }*/
+
+        }
 
         public void getAll()
         {
@@ -716,6 +713,11 @@ namespace GuiLayer
                     flpVipRoom.Controls.Add(roomButtonForVipRoom);
                 }
             }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

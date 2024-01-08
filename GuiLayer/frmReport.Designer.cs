@@ -36,16 +36,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewReport = new System.Windows.Forms.DataGridView();
-            this.btnPrint = new System.Windows.Forms.PictureBox();
-            this.cbTypePrint = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbTotal = new System.Windows.Forms.Label();
             this.soHoaDonNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPrint = new System.Windows.Forms.PictureBox();
+            this.cbTypePrint = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             this.SuspendLayout();
@@ -151,6 +151,41 @@
             this.dataGridViewReport.Size = new System.Drawing.Size(1035, 400);
             this.dataGridViewReport.TabIndex = 4;
             // 
+            // soHoaDonNew
+            // 
+            this.soHoaDonNew.DataPropertyName = "soHoaDonNew";
+            this.soHoaDonNew.HeaderText = "Bill ID";
+            this.soHoaDonNew.MinimumWidth = 6;
+            this.soHoaDonNew.Name = "soHoaDonNew";
+            // 
+            // ngayLap
+            // 
+            this.ngayLap.DataPropertyName = "ngayDat";
+            this.ngayLap.HeaderText = "Check in day";
+            this.ngayLap.MinimumWidth = 6;
+            this.ngayLap.Name = "ngayLap";
+            // 
+            // tenNhanVien
+            // 
+            this.tenNhanVien.DataPropertyName = "tenNhanVien";
+            this.tenNhanVien.HeaderText = "Staff name";
+            this.tenNhanVien.MinimumWidth = 6;
+            this.tenNhanVien.Name = "tenNhanVien";
+            // 
+            // idDatPhong
+            // 
+            this.idDatPhong.DataPropertyName = "idDatPhong";
+            this.idDatPhong.HeaderText = "Booking ID";
+            this.idDatPhong.MinimumWidth = 6;
+            this.idDatPhong.Name = "idDatPhong";
+            // 
+            // tongTien
+            // 
+            this.tongTien.DataPropertyName = "tienPhong";
+            this.tongTien.HeaderText = "Total";
+            this.tongTien.MinimumWidth = 6;
+            this.tongTien.Name = "tongTien";
+            // 
             // btnPrint
             // 
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
@@ -160,6 +195,7 @@
             this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnPrint.TabIndex = 5;
             this.btnPrint.TabStop = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // cbTypePrint
             // 
@@ -206,41 +242,6 @@
             this.lbTotal.Size = new System.Drawing.Size(46, 29);
             this.lbTotal.TabIndex = 9;
             this.lbTotal.Text = "{?}";
-            // 
-            // soHoaDonNew
-            // 
-            this.soHoaDonNew.DataPropertyName = "soHoaDonNew";
-            this.soHoaDonNew.HeaderText = "Bill ID";
-            this.soHoaDonNew.MinimumWidth = 6;
-            this.soHoaDonNew.Name = "soHoaDonNew";
-            // 
-            // ngayLap
-            // 
-            this.ngayLap.DataPropertyName = "ngayDat";
-            this.ngayLap.HeaderText = "Check in day";
-            this.ngayLap.MinimumWidth = 6;
-            this.ngayLap.Name = "ngayLap";
-            // 
-            // tenNhanVien
-            // 
-            this.tenNhanVien.DataPropertyName = "tenNhanVien";
-            this.tenNhanVien.HeaderText = "Staff name";
-            this.tenNhanVien.MinimumWidth = 6;
-            this.tenNhanVien.Name = "tenNhanVien";
-            // 
-            // idDatPhong
-            // 
-            this.idDatPhong.DataPropertyName = "idDatPhong";
-            this.idDatPhong.HeaderText = "Booking ID";
-            this.idDatPhong.MinimumWidth = 6;
-            this.idDatPhong.Name = "idDatPhong";
-            // 
-            // tongTien
-            // 
-            this.tongTien.DataPropertyName = "tienPhong";
-            this.tongTien.HeaderText = "Total";
-            this.tongTien.MinimumWidth = 6;
-            this.tongTien.Name = "tongTien";
             // 
             // frmReport
             // 

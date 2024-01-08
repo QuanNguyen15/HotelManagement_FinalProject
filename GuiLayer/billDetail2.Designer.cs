@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(billDetail2));
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +57,6 @@
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
@@ -99,6 +99,16 @@
             this.panel1.TabIndex = 65;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(742, 575);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 24);
+            this.label12.TabIndex = 69;
+            this.label12.Text = "VND";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -106,14 +116,14 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tenDichVu,
@@ -201,22 +211,22 @@
             // 
             this.lbNumday.AutoSize = true;
             this.lbNumday.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumday.Location = new System.Drawing.Point(724, 140);
+            this.lbNumday.Location = new System.Drawing.Point(765, 140);
             this.lbNumday.Name = "lbNumday";
-            this.lbNumday.Size = new System.Drawing.Size(33, 19);
+            this.lbNumday.Size = new System.Drawing.Size(63, 19);
             this.lbNumday.TabIndex = 64;
-            this.lbNumday.Text = "{?}";
+            this.lbNumday.Text = "{   ?   }";
             this.lbNumday.Click += new System.EventHandler(this.lbNumday_Click);
             // 
             // lbNumpeople
             // 
             this.lbNumpeople.AutoSize = true;
             this.lbNumpeople.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumpeople.Location = new System.Drawing.Point(742, 103);
+            this.lbNumpeople.Location = new System.Drawing.Point(765, 104);
             this.lbNumpeople.Name = "lbNumpeople";
-            this.lbNumpeople.Size = new System.Drawing.Size(33, 19);
+            this.lbNumpeople.Size = new System.Drawing.Size(73, 19);
             this.lbNumpeople.TabIndex = 63;
-            this.lbNumpeople.Text = "{?}";
+            this.lbNumpeople.Text = "{   ?    } ";
             // 
             // lbIdRoom
             // 
@@ -252,11 +262,11 @@
             // 
             this.lbStaffFullname.AutoSize = true;
             this.lbStaffFullname.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStaffFullname.Location = new System.Drawing.Point(115, 144);
+            this.lbStaffFullname.Location = new System.Drawing.Point(150, 140);
             this.lbStaffFullname.Name = "lbStaffFullname";
-            this.lbStaffFullname.Size = new System.Drawing.Size(33, 19);
+            this.lbStaffFullname.Size = new System.Drawing.Size(78, 19);
             this.lbStaffFullname.TabIndex = 59;
-            this.lbStaffFullname.Text = "{?}";
+            this.lbStaffFullname.Text = "{    ?     }";
             // 
             // label8
             // 
@@ -282,7 +292,7 @@
             // 
             this.lbIdBill.AutoSize = true;
             this.lbIdBill.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdBill.Location = new System.Drawing.Point(119, 112);
+            this.lbIdBill.Location = new System.Drawing.Point(150, 110);
             this.lbIdBill.Name = "lbIdBill";
             this.lbIdBill.Size = new System.Drawing.Size(33, 19);
             this.lbIdBill.TabIndex = 56;
@@ -337,6 +347,7 @@
             this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnPrint.TabIndex = 64;
             this.btnPrint.TabStop = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // label4
             // 
@@ -359,16 +370,6 @@
             this.label7.TabIndex = 62;
             this.label7.Text = "Bill";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(742, 575);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 24);
-            this.label12.TabIndex = 69;
-            this.label12.Text = "VND";
             // 
             // billDetail2
             // 

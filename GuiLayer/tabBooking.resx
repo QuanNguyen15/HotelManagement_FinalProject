@@ -142,20 +142,6 @@
         RU5ErkJggg==
 </value>
   </data>
-  <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Delete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAT5JREFUOE9j
-        GPpAwcBAQEFJJx+MgWyoMGkApNFLz7LLS9divom60WEQjcIGyhFtuIuOeYmHrsXVvb4x/7HhkwEJ//cA
-        aV89y4uuOubFUG3YAcjWiY7+37AZhA1Pcgz4RtClCsraEdPCMv/vS6/Fi0FqQGqh2vCD3ek1nz/Xzfi/
-        yD3s//X81v/XU6sgGMgGiYHkdqRVPocqJwza/RNvgzSBwmpvQsn/T7lNYHw9uxEsBpIDqYEqJwyqPKPu
-        EzIQpAaqnDBYHJN/GZuBIDbMwPmReSegygmDBu/YDYQMBKmBKicM0h0C9hMyEKQGqpwwoLoLSz0i22EG
-        ngKmuScZEAxiwwzMdgmqgSonDDyNnbqfVkz8/6SsD6wZRCOzQXLBlu5ToMoJA1B2SncKmDQvMmcBNlzo
-        FjqH6MJhuAMGBgCpZldoZwloJwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="btnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAO9JREFUOE+9

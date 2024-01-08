@@ -122,5 +122,12 @@ namespace BusinessLogic
             dt = getDatatable;
             return dt;
         }
+
+        public bool DeleteDatPhong(classPhong Object)
+        {
+            DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
+            return dbPhong.DeleteDatPhong(Object);
+        }
+
     }
 }

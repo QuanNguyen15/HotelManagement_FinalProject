@@ -150,7 +150,7 @@
             // 
             // idDatPhong
             // 
-            this.idDatPhong.DataPropertyName = "idDatPhong";
+            this.idDatPhong.DataPropertyName = "idHoaDon";
             this.idDatPhong.HeaderText = "Booking ID ";
             this.idDatPhong.MinimumWidth = 6;
             this.idDatPhong.Name = "idDatPhong";

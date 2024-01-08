@@ -187,5 +187,7 @@ namespace DataAccess.DAL
             sp[1].Value = Object.loaiHoaDon;
             return cDB.executeSQLselect("SelectHoaDonByMonthAndYear", sp);
         }
+
+
     }
 }

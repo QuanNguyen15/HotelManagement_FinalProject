@@ -42,11 +42,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.radRenting = new System.Windows.Forms.RadioButton();
+            this.radBooked = new System.Windows.Forms.RadioButton();
             this.lbStatus = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.radBooked = new System.Windows.Forms.RadioButton();
-            this.radRenting = new System.Windows.Forms.RadioButton();
             this.flpSingleRoom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flpVipRoom.SuspendLayout();
@@ -199,6 +199,31 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(605, 100);
             this.panel3.TabIndex = 39;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // radRenting
+            // 
+            this.radRenting.AutoSize = true;
+            this.radRenting.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radRenting.Location = new System.Drawing.Point(355, 51);
+            this.radRenting.Name = "radRenting";
+            this.radRenting.Size = new System.Drawing.Size(87, 28);
+            this.radRenting.TabIndex = 16;
+            this.radRenting.TabStop = true;
+            this.radRenting.Text = "Renting";
+            this.radRenting.UseVisualStyleBackColor = true;
+            // 
+            // radBooked
+            // 
+            this.radBooked.AutoSize = true;
+            this.radBooked.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radBooked.Location = new System.Drawing.Point(476, 51);
+            this.radBooked.Name = "radBooked";
+            this.radBooked.Size = new System.Drawing.Size(86, 28);
+            this.radBooked.TabIndex = 15;
+            this.radBooked.TabStop = true;
+            this.radBooked.Text = "Booked";
+            this.radBooked.UseVisualStyleBackColor = true;
             // 
             // lbStatus
             // 
@@ -230,30 +255,6 @@
             this.btnSearch.Size = new System.Drawing.Size(55, 34);
             this.btnSearch.TabIndex = 41;
             this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // radBooked
-            // 
-            this.radBooked.AutoSize = true;
-            this.radBooked.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radBooked.Location = new System.Drawing.Point(476, 51);
-            this.radBooked.Name = "radBooked";
-            this.radBooked.Size = new System.Drawing.Size(86, 28);
-            this.radBooked.TabIndex = 15;
-            this.radBooked.TabStop = true;
-            this.radBooked.Text = "Booked";
-            this.radBooked.UseVisualStyleBackColor = true;
-            // 
-            // radRenting
-            // 
-            this.radRenting.AutoSize = true;
-            this.radRenting.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radRenting.Location = new System.Drawing.Point(355, 51);
-            this.radRenting.Name = "radRenting";
-            this.radRenting.Size = new System.Drawing.Size(87, 28);
-            this.radRenting.TabIndex = 16;
-            this.radRenting.TabStop = true;
-            this.radRenting.Text = "Renting";
-            this.radRenting.UseVisualStyleBackColor = true;
             // 
             // tabRoom
             // 

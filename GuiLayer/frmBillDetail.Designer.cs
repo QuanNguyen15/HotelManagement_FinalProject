@@ -32,6 +32,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,10 +55,6 @@
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
@@ -115,6 +115,38 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(769, 331);
             this.dataGridView1.TabIndex = 68;
+            // 
+            // tenDichVu
+            // 
+            this.tenDichVu.DataPropertyName = "tenDichVu";
+            this.tenDichVu.HeaderText = "Service";
+            this.tenDichVu.MinimumWidth = 6;
+            this.tenDichVu.Name = "tenDichVu";
+            this.tenDichVu.Width = 200;
+            // 
+            // donGia
+            // 
+            this.donGia.DataPropertyName = "donGia";
+            this.donGia.HeaderText = "Price";
+            this.donGia.MinimumWidth = 6;
+            this.donGia.Name = "donGia";
+            this.donGia.Width = 150;
+            // 
+            // TongSoLuong
+            // 
+            this.TongSoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TongSoLuong.DataPropertyName = "TongSoLuong";
+            this.TongSoLuong.HeaderText = "Amount";
+            this.TongSoLuong.MinimumWidth = 6;
+            this.TongSoLuong.Name = "TongSoLuong";
+            // 
+            // TongDonGia
+            // 
+            this.TongDonGia.DataPropertyName = "TongDonGia";
+            this.TongDonGia.HeaderText = "Sum";
+            this.TongDonGia.MinimumWidth = 6;
+            this.TongDonGia.Name = "TongDonGia";
+            this.TongDonGia.Width = 150;
             // 
             // label9
             // 
@@ -286,6 +318,7 @@
             this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnPrint.TabIndex = 59;
             this.btnPrint.TabStop = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // label4
             // 
@@ -309,38 +342,6 @@
             this.label7.Text = "Bill";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // tenDichVu
-            // 
-            this.tenDichVu.DataPropertyName = "tenDichVu";
-            this.tenDichVu.HeaderText = "Service";
-            this.tenDichVu.MinimumWidth = 6;
-            this.tenDichVu.Name = "tenDichVu";
-            this.tenDichVu.Width = 200;
-            // 
-            // donGia
-            // 
-            this.donGia.DataPropertyName = "donGia";
-            this.donGia.HeaderText = "Price";
-            this.donGia.MinimumWidth = 6;
-            this.donGia.Name = "donGia";
-            this.donGia.Width = 150;
-            // 
-            // TongSoLuong
-            // 
-            this.TongSoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TongSoLuong.DataPropertyName = "TongSoLuong";
-            this.TongSoLuong.HeaderText = "Amount";
-            this.TongSoLuong.MinimumWidth = 6;
-            this.TongSoLuong.Name = "TongSoLuong";
-            // 
-            // TongDonGia
-            // 
-            this.TongDonGia.DataPropertyName = "TongDonGia";
-            this.TongDonGia.HeaderText = "Sum";
-            this.TongDonGia.MinimumWidth = 6;
-            this.TongDonGia.Name = "TongDonGia";
-            this.TongDonGia.Width = 150;
             // 
             // frmBillDetail
             // 

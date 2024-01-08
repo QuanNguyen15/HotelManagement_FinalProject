@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -116,6 +117,39 @@ namespace GuiLayer
             busPhong.updatePhong(room);
 
 
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("In");
+            // Sử dụng PrintDocument để tạo PDF
+            using (PrintDocument pd = new PrintDocument())
+            {
+                pd.PrintPage += new PrintPageEventHandler(PrintPageHandler);
+
+                // Thiết lập tên tệp PDF
+                string pdfFileName = "output.pdf";
+
+                // Thiết lập máy in để in ra tệp PDF
+                PrintDialog printDialog = new PrintDialog();
+                printDialog.Document = pd;
+
+                if (printDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // In ra tệp PDF
+                    pd.PrinterSettings.PrintToFile = true;
+                    pd.PrinterSettings.PrintFileName = pdfFileName;
+                    pd.Print();
+                    MessageBox.Show("Đã in PDF thành công!");
+                }
+            }
+        }
+        private void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+            // Chuyển đổi cửa sổ Windows Form thành hình ảnh và vẽ ra trang in
+            Bitmap bitmap = new Bitmap(this.Width, this.Height);
+            this.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, this.Width, this.Height));
+            e.Graphics.DrawImage(bitmap, 0, 0);
         }
     }
     }
