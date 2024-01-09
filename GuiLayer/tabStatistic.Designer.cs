@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend23 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title23 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tabStatistic));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend24 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title24 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chartIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,6 +51,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnReport = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,33 +63,35 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReport)).BeginInit();
             this.SuspendLayout();
             // 
             // chartIncome
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartIncome.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartIncome.Legends.Add(legend3);
+            chartArea23.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea23);
+            legend23.Name = "Legend1";
+            this.chartIncome.Legends.Add(legend23);
             this.chartIncome.Location = new System.Drawing.Point(865, 324);
             this.chartIncome.Name = "chartIncome";
             this.chartIncome.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "RoundChart";
-            series3.YValuesPerPoint = 2;
-            this.chartIncome.Series.Add(series3);
+            series23.ChartArea = "ChartArea1";
+            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series23.Legend = "Legend1";
+            series23.Name = "RoundChart";
+            series23.YValuesPerPoint = 2;
+            this.chartIncome.Series.Add(series23);
             this.chartIncome.Size = new System.Drawing.Size(561, 570);
             this.chartIncome.TabIndex = 0;
             this.chartIncome.Text = "chart1";
-            title3.Name = "Title1";
-            title3.Text = "Incomes";
-            this.chartIncome.Titles.Add(title3);
+            title23.Name = "Title1";
+            title23.Text = "Incomes";
+            this.chartIncome.Titles.Add(title23);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
@@ -129,6 +135,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(185)))), ((int)(((byte)(4)))));
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label2);
@@ -142,7 +149,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(146, 149);
+            this.label5.Location = new System.Drawing.Point(125, 149);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 27);
             this.label5.TabIndex = 3;
@@ -214,28 +221,74 @@
             // 
             // chartRevenue
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartRevenue.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartRevenue.Legends.Add(legend4);
+            chartArea24.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea24);
+            legend24.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend24);
             this.chartRevenue.Location = new System.Drawing.Point(76, 324);
             this.chartRevenue.Name = "chartRevenue";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "RevenueMonth";
-            this.chartRevenue.Series.Add(series4);
+            series24.ChartArea = "ChartArea1";
+            series24.Legend = "Legend1";
+            series24.Name = "RevenueMonth";
+            this.chartRevenue.Series.Add(series24);
             this.chartRevenue.Size = new System.Drawing.Size(752, 570);
             this.chartRevenue.TabIndex = 5;
             this.chartRevenue.Text = "chart2";
-            title4.Name = "Title1";
-            title4.Text = "Revenue of Month";
-            this.chartRevenue.Titles.Add(title4);
+            title24.Name = "Title1";
+            title24.Text = "Revenue of Month";
+            this.chartRevenue.Titles.Add(title24);
+            // 
+            // btnReport
+            // 
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.Location = new System.Drawing.Point(1490, 324);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(32, 32);
+            this.btnReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnReport.TabIndex = 6;
+            this.btnReport.TabStop = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(248, 149);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 27);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "VND";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(257, 149);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 27);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "VND";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(1475, 359);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 22);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Report";
             // 
             // tabStatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.chartRevenue);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -255,7 +308,9 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReport)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -275,5 +330,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
+        private System.Windows.Forms.PictureBox btnReport;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
