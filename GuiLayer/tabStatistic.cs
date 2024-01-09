@@ -42,15 +42,27 @@ namespace GuiLayer
             string tongTienPhong = busHoaDon.SelectTongTienPhongByMonth(hoaDon);
             string tongSoDatPhong = busHoaDon.SelectSoPhongByMonth(hoaDon);
 
-
-
-
-
             label5.Text = tongTienDV;
             label6.Text = tongSoDatPhong;
             label4.Text = tongTienPhong;
+
+            decimal tongTienPhongTrongThanh = decimal.Parse(tongTienDV) + decimal.Parse(tongTienPhong);
+
+            
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("January", tongTienPhongTrongThanh);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("February", tongTienPhong);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("March", tongTienPhongTrongThanh);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("April", tongTienPhongTrongThanh);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("May", tongTienPhongTrongThanh);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("June", tongTienPhongTrongThanh);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("Junly", tongTienPhongTrongThanh);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("August", tongTienPhongTrongThanh);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("September", tongTienPhongTrongThanh);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("October", tongTienPhongTrongThanh);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("November", tongTienPhongTrongThanh);
+            chartRevenue.Series["RevenueMonth"].Points.AddXY("December", tongTienPhongTrongThanh);
+
+            
         }
-
-
     }
 }

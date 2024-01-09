@@ -19,6 +19,7 @@ namespace GuiLayer
     {
         BUSHoaDon busHoaDon = new BUSHoaDon();
         DataTable dt = new DataTable();
+        double total;
         public frmReport()
         {
             InitializeComponent();
@@ -35,24 +36,29 @@ namespace GuiLayer
             dataGridViewReport.DataSource = dt;
 
 
+            dataGridViewReport.AllowUserToAddRows = false;
+
+
+
 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             refreshDataGridview();
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             refreshDataGridview();
+
         }
 
         public void refreshDataGridview()
         {
             string year = cbYear.Text.Trim();
             string thang = cbMonth.Text.Trim(); ;
-            MessageBox.Show("year " + year + "thang" + thang);
             classHoaDon hoaDon = new classHoaDon();
             hoaDon.tenHoaDon = year;
             hoaDon.loaiHoaDon = thang;
@@ -78,6 +84,7 @@ namespace GuiLayer
 
             string chuoiTong = tong.ToString();
             lbTotal.Text = chuoiTong;
+            totalRevenue();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -85,7 +92,7 @@ namespace GuiLayer
             DialogResult dr = MessageBox.Show("Ban co muon xuat file excel khong", "Hoi", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
-                toExcel1(dt, "RevenueReport");
+                toExcel(dt, "RevenueReportNews");
             }
             else
             {
@@ -93,7 +100,7 @@ namespace GuiLayer
             }
         }
 
-        public static void toExcel(DataTable dt, string fileName)
+       public static void toExcel(DataTable dt, string fileName)
         {
             Microsoft.Office.Interop.Excel.Application excel;
             Microsoft.Office.Interop.Excel.Workbook workbook;
@@ -107,25 +114,15 @@ namespace GuiLayer
                 excel.DisplayAlerts = false;
 
                 workbook = excel.Workbooks.Add(Type.Missing);
+                workbook = excel.Workbooks.Open("C:\\Users\\nguye\\Downloads\\RevenueReport.xlsx");
                 worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
-                worksheet.Name = "RevenueReport";
-                /*
-                                for (int i = 0; i < dt.Columns.Count; i++)
-                                {
-                                    worksheet.Cells[1, i + 1] = dt.Columns[i].ColumnName;
-                                }*/
-                for (int i = 0; i < dt.Rows.Count; i++)
+                //worksheet.Name = "RevenueReport";
+
+                for (int i = 0; (i < dt.Rows.Count); i++)
                 {
                     for (int j = 0; j < dt.Columns.Count; j++)
                     {
-                        if (j < dt.Rows[i].ItemArray.Length) // Kiểm tra xem cột thứ j có tồn tại không
-                        {
-                            worksheet.Cells[i + 3, j + 1] = dt.Rows[i][j].ToString();
-                        }
-                        else
-                        {
-                            MessageBox.Show("cot j khong ton tai");
-                        }
+                        worksheet.Cells[i + 4, j + 1] = dt.Rows[i][j].ToString();
 
                     }
                 }
@@ -145,73 +142,43 @@ namespace GuiLayer
                 worksheet = null;
             }
         }
-        public static void toExcel1(DataTable dt, string fileName)
+
+
+        public void totalRevenue()
         {
-            Microsoft.Office.Interop.Excel.Application excel;
-            Microsoft.Office.Interop.Excel.Workbook workbook;
-            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+            decimal total = 0;
 
-            try
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                excel = new Microsoft.Office.Interop.Excel.Application();
-                excel.Visible = false;
-
-                excel.DisplayAlerts = false;
-
-                workbook = excel.Workbooks.Add(Type.Missing);
-
-                workbook = excel.Workbooks.Open("C:\\Users\\Admin\\Downloads\\RevenueReport (1).xlsx");
-
-                string startupPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName, "BangLoaiHang.xlsx");
-
-                /*                string filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "BangLoaiHang.xlsx");
-                                string text = System.IO.File.ReadAllText(filePath);*/
-
-                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
-                worksheet.Name = "loaihang";
-
-                /*for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    worksheet.Cells[1, i + 1] = dt.Columns[i].ColumnName;
-                }*/
-                int fixedRow = 13; // Dòng cố định
-                int currentRow = 4; // Dòng bắt đầu từ 4
-
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dt.Columns.Count; j++)
-                    {
-                        worksheet.Cells[currentRow, j + 1].Value = dt.Rows[i][j].ToString();
-                    }
-
-                    // Kiểm tra nếu đang ở dòng cố định, chèn một dòng mới
-                    if (currentRow == fixedRow)
-                    {
-                        InsertRow(worksheet, currentRow + 1);
-                        // Tăng giá trị của dòng cố định và dòng hiện tại
-                        fixedRow++;
-                        currentRow++;
-                    }
-
-                    // Tăng giá trị của dòng hiện tại
-                    currentRow++;
-                }
-
-                workbook.SaveAs(fileName);
-                workbook.Close();
-                excel.Quit();
-                MessageBox.Show("Xuat du lieu thanh cong ra Excel!");
+                total += Convert.ToDecimal(dt.Rows[i]["tienPhong"]);
             }
-            catch (Exception e)
+
+            // Add a new row to the DataTable
+            DataRow totalRow = dt.NewRow();
+            totalRow["tenNhanVien"] = "Total";  // Replace "columnName3" with the actual column name
+            totalRow["tienPhong"] = total;
+            dt.Rows.Add(totalRow);
+            DataRow signalRow = dt.NewRow();
+            signalRow["tenNhanVien"] = "Signal";
+            dt.Rows.Add(signalRow);
+
+
+            // Set the font style to bold for the "Total" row
+            if (dataGridViewReport.Rows.Count > 0)
             {
-                MessageBox.Show(e.Message);
+                int totalRowIndex = dataGridViewReport.Rows.Count - 2; // Assuming "Total" is the second last row
+                dataGridViewReport.Rows[totalRowIndex].DefaultCellStyle.Font = new Font(dataGridViewReport.DefaultCellStyle.Font, FontStyle.Bold);
             }
-            finally
+
+            // Set the font style to bold for the "Signal" row
+            if (dataGridViewReport.Rows.Count > 0)
             {
-                workbook = null;
-                worksheet = null;
+                int signalRowIndex = dataGridViewReport.Rows.Count - 1; // Assuming "Signal" is the last row
+                dataGridViewReport.Rows[signalRowIndex].DefaultCellStyle.Font = new Font(dataGridViewReport.DefaultCellStyle.Font, FontStyle.Bold);
             }
+
         }
+
 
     }
 }

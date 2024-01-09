@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
             this.cbYear = new System.Windows.Forms.ComboBox();
             this.cbMonth = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewReport = new System.Windows.Forms.DataGridView();
-            this.soHoaDonNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPrint = new System.Windows.Forms.PictureBox();
             this.cbTypePrint = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.soHoaDonNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +68,7 @@
             this.cbYear.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cbYear.Size = new System.Drawing.Size(126, 27);
             this.cbYear.TabIndex = 0;
-            this.cbYear.Text = "2023";
+            this.cbYear.Text = "2024";
             this.cbYear.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // cbMonth
@@ -91,7 +93,7 @@
             this.cbMonth.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cbMonth.Size = new System.Drawing.Size(126, 27);
             this.cbMonth.TabIndex = 1;
-            this.cbMonth.Text = "12";
+            this.cbMonth.Text = "1";
             this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label1
@@ -118,73 +120,46 @@
             // 
             this.dataGridViewReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewReport.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.soHoaDonNew,
             this.ngayLap,
-            this.tenNhanVien,
             this.idDatPhong,
+            this.tenNhanVien,
             this.tongTien});
             this.dataGridViewReport.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewReport.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewReport.Location = new System.Drawing.Point(53, 202);
             this.dataGridViewReport.Name = "dataGridViewReport";
             this.dataGridViewReport.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReport.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReport.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewReport.RowHeadersVisible = false;
             this.dataGridViewReport.RowHeadersWidth = 51;
             this.dataGridViewReport.RowTemplate.Height = 24;
             this.dataGridViewReport.Size = new System.Drawing.Size(1035, 400);
             this.dataGridViewReport.TabIndex = 4;
-            // 
-            // soHoaDonNew
-            // 
-            this.soHoaDonNew.DataPropertyName = "soHoaDonNew";
-            this.soHoaDonNew.HeaderText = "Bill ID";
-            this.soHoaDonNew.MinimumWidth = 6;
-            this.soHoaDonNew.Name = "soHoaDonNew";
-            // 
-            // ngayLap
-            // 
-            this.ngayLap.DataPropertyName = "ngayDat";
-            this.ngayLap.HeaderText = "Check in day";
-            this.ngayLap.MinimumWidth = 6;
-            this.ngayLap.Name = "ngayLap";
-            // 
-            // tenNhanVien
-            // 
-            this.tenNhanVien.DataPropertyName = "tenNhanVien";
-            this.tenNhanVien.HeaderText = "Staff name";
-            this.tenNhanVien.MinimumWidth = 6;
-            this.tenNhanVien.Name = "tenNhanVien";
-            // 
-            // idDatPhong
-            // 
-            this.idDatPhong.DataPropertyName = "idDatPhong";
-            this.idDatPhong.HeaderText = "Booking ID";
-            this.idDatPhong.MinimumWidth = 6;
-            this.idDatPhong.Name = "idDatPhong";
-            // 
-            // tongTien
-            // 
-            this.tongTien.DataPropertyName = "tienPhong";
-            this.tongTien.HeaderText = "Total";
-            this.tongTien.MinimumWidth = 6;
-            this.tongTien.Name = "tongTien";
             // 
             // btnPrint
             // 
@@ -243,12 +218,59 @@
             this.lbTotal.TabIndex = 9;
             this.lbTotal.Text = "{?}";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(986, 650);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label5.Size = new System.Drawing.Size(66, 29);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "VND";
+            // 
+            // soHoaDonNew
+            // 
+            this.soHoaDonNew.DataPropertyName = "soHoaDonNew";
+            this.soHoaDonNew.HeaderText = "Bill ID";
+            this.soHoaDonNew.MinimumWidth = 6;
+            this.soHoaDonNew.Name = "soHoaDonNew";
+            // 
+            // ngayLap
+            // 
+            this.ngayLap.DataPropertyName = "ngayDat";
+            this.ngayLap.HeaderText = "Check in day";
+            this.ngayLap.MinimumWidth = 6;
+            this.ngayLap.Name = "ngayLap";
+            // 
+            // idDatPhong
+            // 
+            this.idDatPhong.DataPropertyName = "idDatPhong";
+            this.idDatPhong.HeaderText = "Booking ID";
+            this.idDatPhong.MinimumWidth = 6;
+            this.idDatPhong.Name = "idDatPhong";
+            // 
+            // tenNhanVien
+            // 
+            this.tenNhanVien.DataPropertyName = "tenNhanVien";
+            this.tenNhanVien.HeaderText = "Staff name";
+            this.tenNhanVien.MinimumWidth = 6;
+            this.tenNhanVien.Name = "tenNhanVien";
+            // 
+            // tongTien
+            // 
+            this.tongTien.DataPropertyName = "tienPhong";
+            this.tongTien.HeaderText = "Total";
+            this.tongTien.MinimumWidth = 6;
+            this.tongTien.Name = "tongTien";
+            // 
             // frmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1147, 756);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -283,10 +305,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn soHoaDonNew;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayLap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDatPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn tongTien;
     }
 }
