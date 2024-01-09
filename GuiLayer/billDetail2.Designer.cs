@@ -103,7 +103,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(742, 575);
+            this.label12.Location = new System.Drawing.Point(765, 581);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 24);
             this.label12.TabIndex = 69;
@@ -191,17 +191,18 @@
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(52)))), ((int)(((byte)(108)))));
-            this.lbTotal.Location = new System.Drawing.Point(584, 569);
+            this.lbTotal.Location = new System.Drawing.Point(451, 572);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(54, 33);
             this.lbTotal.TabIndex = 66;
             this.lbTotal.Text = "{?}";
+            this.lbTotal.Click += new System.EventHandler(this.lbTotal_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(487, 569);
+            this.label1.Location = new System.Drawing.Point(354, 575);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 33);
             this.label1.TabIndex = 65;

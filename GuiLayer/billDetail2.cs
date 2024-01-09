@@ -1,6 +1,7 @@
 ﻿using BusinessLogic;
 using DataAccess;
 using DataAccess.DAL;
+using ServiceStack.Script;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace GuiLayer
 {
     public partial class billDetail2 : Form
     {
-        
+        DataTable dtGridDichVu;
         int id;
         BUSHoaDon BUShoaDon = new BUSHoaDon();
         public billDetail2(int id)
@@ -35,8 +36,6 @@ namespace GuiLayer
             datalabel = BUShoaDon.getBillDetail(cHoaDon);
 
 
-            if (datalabel.Columns.Contains("KhachHang"))
-            {
                 string clientt = datalabel.Rows[0]["KhachHang"].ToString();
                 lbClientFullname.Text = clientt;
                 string soHoaDon = datalabel.Rows[0]["soHoaDonNew"].ToString();
@@ -52,11 +51,29 @@ namespace GuiLayer
                 string ngayThanhToan = datalabel.Rows[0]["ngayTra"].ToString();
                 lbDateBill.Text = ngayThanhToan;
                 string tongTien = datalabel.Rows[0]["tienPhong"].ToString();
-                lbTotal.Text = tongTien;
-            }
+                decimal parsedTongTien;
 
-            DataTable dtGridDichVu = BUShoaDon.getBillDichVuDetail(cHoaDon);
+                string tenPhong = datalabel.Rows[0]["tenPhong"].ToString();
+                string giaPhong = datalabel.Rows[0]["donGia"].ToString();
+                if (decimal.TryParse(tongTien, out parsedTongTien))
+                {             
+                    string tongTienFormat = parsedTongTien.ToString("#,##0.000");
+
+                    // Hiển thị kết quả trong lbTotal
+                    lbTotal.Text = tongTienFormat;
+                }
+                else
+                {
+                   
+                    lbTotal.Text = "Không hợp lệ";
+                }
+
+
+            
+
+            dtGridDichVu = BUShoaDon.getBillDichVuDetail(cHoaDon);
             dataGridView1.DataSource = dtGridDichVu;
+            billDetail(tenPhong, giaPhong, ngayThuc);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -129,5 +146,30 @@ namespace GuiLayer
             // Khôi phục lại FormBorderStyle
             this.FormBorderStyle = originalFormBorderStyle;
         }
+
+        private void lbTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void billDetail(string tenPhong, string giaPhong,string ngayThuc)
+        {
+            decimal total = 0;
+
+
+
+            DataRow totalRow =dtGridDichVu.NewRow();
+            totalRow["tenDichVu"] = tenPhong;  // Replace "columnName3" with the actual column name
+            totalRow["donGia"] = decimal.Parse(giaPhong);
+            totalRow["TongSoLuong"] = int.Parse(ngayThuc);
+
+            totalRow["TongDonGia"] = decimal.Parse(ngayThuc) * decimal.Parse(giaPhong);
+            dtGridDichVu.Rows.Add(totalRow);
+
+
+
+
+
+        }
+
     }
 }

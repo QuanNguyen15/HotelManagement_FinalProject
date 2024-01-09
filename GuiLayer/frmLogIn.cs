@@ -27,7 +27,9 @@ namespace GuiLayer
         {
             string username = txtUserName.Text;
             string password = txtPassword.Text;
+
             List<classTaiKhoan> listTaiKhoan = busTaiKhoan.getTaiKhoanList();
+            int idrole = 0;
             bool isLoggedIn = false;
             staticTaiKhoan.idTaiKhoanStatic = 0;
             foreach (classTaiKhoan taikhoan in listTaiKhoan)
@@ -35,8 +37,10 @@ namespace GuiLayer
                     
                 if (username == taikhoan.userName && password == taikhoan.password)
                 {
+
                     staticTaiKhoan.idTaiKhoanStatic = taikhoan.idTaiKhoan;
                     isLoggedIn = true;
+                    idrole = taikhoan.idRole;
                     break; // Thoát vòng lặp khi đã tìm thấy kết quả khớp
                 }
             }
@@ -44,7 +48,7 @@ namespace GuiLayer
             if (isLoggedIn)
             {
                 this.Hide();
-                HomePage home = new HomePage(txtUserName.Text);
+                HomePage home = new HomePage(txtUserName.Text, idrole);
                 home.ShowDialog();
                 this.Close();
             }

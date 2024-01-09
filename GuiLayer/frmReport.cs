@@ -83,7 +83,9 @@ namespace GuiLayer
             }
 
             string chuoiTong = tong.ToString();
-            lbTotal.Text = chuoiTong;
+
+            string formattedTong = tong.ToString("#,##0.000");
+            lbTotal.Text = formattedTong;
             totalRevenue();
         }
 

@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace GuiLayer
 
         classPhong room;
         tabRoom roomTab;
+        DataTable dtGridDichVu;
         public frmBillDetail(classPhong cPhong , tabRoom tRoom)
         {
             room = cPhong;
@@ -66,7 +68,7 @@ namespace GuiLayer
 
             lbDateBill.Text = chuoiThoiGian;
 
-            DataTable dtGridDichVu = busHoaDon.getBillDichVu(hoaDon);
+            dtGridDichVu = busHoaDon.getBillDichVu(hoaDon);
             dataGridView1.DataSource = dtGridDichVu;
 
             DataTable dtDonGiaPhong = busPhong.GetDonGiaByIdPhong(room);
@@ -89,8 +91,12 @@ namespace GuiLayer
             }
 
             decimal tongHoaDon = (TongNgayThuc * donGiaPhong) + tongTienDichVu;
-            
-            lbTotal.Text = tongHoaDon.ToString();
+            string tongHoaDonFormat = tongHoaDon.ToString("#,##0.000");
+            billDetail(TongNgayThuc, donGiaPhong);
+            lbTotal.Text = tongHoaDonFormat;
+
+
+
 
 
 
@@ -121,35 +127,79 @@ namespace GuiLayer
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("In");
-            // Sử dụng PrintDocument để tạo PDF
             using (PrintDocument pd = new PrintDocument())
             {
                 pd.PrintPage += new PrintPageEventHandler(PrintPageHandler);
 
-                // Thiết lập tên tệp PDF
-                string pdfFileName = "output.pdf";
+                // Hiển thị hộp thoại nhập tên file
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+                saveFileDialog.Title = "Save PDF File";
 
-                // Thiết lập máy in để in ra tệp PDF
-                PrintDialog printDialog = new PrintDialog();
-                printDialog.Document = pd;
-
-                if (printDialog.ShowDialog() == DialogResult.OK)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // In ra tệp PDF
-                    pd.PrinterSettings.PrintToFile = true;
-                    pd.PrinterSettings.PrintFileName = pdfFileName;
-                    pd.Print();
-                    MessageBox.Show("Đã in PDF thành công!");
+                    // Lấy đường dẫn đầy đủ cho tệp PDF từ hộp thoại nhập tên file
+                    string outputPath = saveFileDialog.FileName;
+
+                    // Kiểm tra xem thư mục tồn tại chưa, nếu chưa thì tạo mới
+                    string directory = Path.GetDirectoryName(outputPath);
+                    if (!Directory.Exists(directory))
+                    {
+                        Directory.CreateDirectory(directory);
+                    }
+
+                    // Thiết lập máy in để in ra tệp PDF
+                    PrintDialog printDialog = new PrintDialog();
+                    printDialog.Document = pd;
+
+                    if (printDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        pd.PrinterSettings.PrintToFile = true;
+                        pd.PrinterSettings.PrintFileName = outputPath;
+                        pd.Print();
+
+                        // Hiển thị địa chỉ in sau khi in và lưu thành công
+                        MessageBox.Show("Đã in PDF và lưu thành công!\nĐịa chỉ in: " + outputPath);
+                    }
                 }
             }
         }
         private void PrintPageHandler(object sender, PrintPageEventArgs e)
         {
-            // Chuyển đổi cửa sổ Windows Form thành hình ảnh và vẽ ra trang in
+
+            // Lưu trạng thái ban đầu của FormBorderStyle
+            FormBorderStyle originalFormBorderStyle = this.FormBorderStyle;
+
+            // Tạm thời vô hiệu hóa việc vẽ khung control
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            // Chuyển đổi cửa sổ Windows Form thành hình ảnh và vẽ nó ở giữa trang in
             Bitmap bitmap = new Bitmap(this.Width, this.Height);
             this.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, this.Width, this.Height));
-            e.Graphics.DrawImage(bitmap, 0, 0);
+
+            float x = (e.PageBounds.Width - bitmap.Width) / 2;
+            float y = (e.PageBounds.Height - bitmap.Height) / 2;
+
+            e.Graphics.DrawImage(bitmap, x, y);
+
+            // Khôi phục lại FormBorderStyle
+            this.FormBorderStyle = originalFormBorderStyle;
+        }
+
+        public void billDetail(decimal TongNgayThuc, decimal dongiaPhong)
+        {
+            decimal total = 0;
+
+
+            // Add a new row to the DataTable
+            DataRow totalRow = dtGridDichVu.NewRow();
+            totalRow["tenDichVu"] = room.tenPhong;  // Replace "columnName3" with the actual column name
+            totalRow["donGia"] = dongiaPhong;
+            totalRow["TongSoLuong"] = TongNgayThuc; 
+            totalRow["TongDonGia"] = TongNgayThuc* dongiaPhong;
+            dtGridDichVu.Rows.Add(totalRow);
+
+
         }
     }
     }

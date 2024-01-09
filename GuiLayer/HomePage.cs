@@ -17,12 +17,20 @@ namespace GuiLayer
         private string loggedInUser;
         tabClient client = null;
         int idTaiKhoan =1;
-        public HomePage(string username)
+        int Role = 0;
+        public HomePage(string username ,int idRole)
         {
             InitializeComponent();
             loggedInUser = username;
             lbUser.Text = loggedInUser;
-
+            Role = idRole;
+            if(Role == 1)
+            {
+                btnStatistic.Visible = true;
+            }else
+            {
+                btnStatistic.Visible = false;
+            }
         }
 
 
@@ -136,6 +144,8 @@ namespace GuiLayer
             tabStatistic1.Visible =true;
             tabBooking.Visible = false;
             tabService1.Visible = false;
+
+            tabStatistic1.refresh();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

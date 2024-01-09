@@ -163,7 +163,7 @@
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(52)))), ((int)(((byte)(108)))));
-            this.lbTotal.Location = new System.Drawing.Point(613, 569);
+            this.lbTotal.Location = new System.Drawing.Point(549, 569);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(54, 33);
             this.lbTotal.TabIndex = 66;
@@ -173,7 +173,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(502, 569);
+            this.label1.Location = new System.Drawing.Point(408, 569);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 33);
             this.label1.TabIndex = 65;
