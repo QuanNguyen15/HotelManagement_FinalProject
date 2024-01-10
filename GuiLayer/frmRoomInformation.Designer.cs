@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRoomInformation));
             this.label7 = new System.Windows.Forms.Label();
             this.hOTELSDataSet1 = new GuiLayer.HOTELSDataSet1();
             this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sanPhamTableAdapter = new GuiLayer.HOTELSDataSet1TableAdapters.SanPhamTableAdapter();
             this.pnFatherSanPham = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,7 +55,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lbPhong = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dongGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,12 +62,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.hOTELSDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
             this.pnFatherSanPham.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -115,6 +116,33 @@
             this.pnFatherSanPham.TabIndex = 31;
             this.pnFatherSanPham.Paint += new System.Windows.Forms.PaintEventHandler(this.pnFatherSanPham_Paint);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ten,
+            this.soLuong,
+            this.dongGia,
+            this.Deleted});
+            this.dataGridView1.Location = new System.Drawing.Point(81, 146);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(776, 284);
+            this.dataGridView1.TabIndex = 50;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
@@ -158,9 +186,10 @@
             // lbPeople
             // 
             this.lbPeople.AutoSize = true;
+            this.lbPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPeople.Location = new System.Drawing.Point(1097, 59);
             this.lbPeople.Name = "lbPeople";
-            this.lbPeople.Size = new System.Drawing.Size(24, 16);
+            this.lbPeople.Size = new System.Drawing.Size(32, 22);
             this.lbPeople.TabIndex = 45;
             this.lbPeople.Text = "{?}";
             // 
@@ -168,27 +197,30 @@
             // 
             this.lbDayRent.AutoSize = true;
             this.lbDayRent.BackColor = System.Drawing.SystemColors.Control;
+            this.lbDayRent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDayRent.Location = new System.Drawing.Point(396, 59);
             this.lbDayRent.Name = "lbDayRent";
-            this.lbDayRent.Size = new System.Drawing.Size(24, 16);
+            this.lbDayRent.Size = new System.Drawing.Size(32, 22);
             this.lbDayRent.TabIndex = 44;
             this.lbDayRent.Text = "{?}";
             // 
             // lbNumDay
             // 
             this.lbNumDay.AutoSize = true;
+            this.lbNumDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNumDay.Location = new System.Drawing.Point(770, 59);
             this.lbNumDay.Name = "lbNumDay";
-            this.lbNumDay.Size = new System.Drawing.Size(24, 16);
+            this.lbNumDay.Size = new System.Drawing.Size(32, 22);
             this.lbNumDay.TabIndex = 43;
             this.lbNumDay.Text = "{?}";
             // 
             // lbClient
             // 
             this.lbClient.AutoSize = true;
+            this.lbClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbClient.Location = new System.Drawing.Point(105, 59);
             this.lbClient.Name = "lbClient";
-            this.lbClient.Size = new System.Drawing.Size(24, 16);
+            this.lbClient.Size = new System.Drawing.Size(32, 22);
             this.lbClient.TabIndex = 42;
             this.lbClient.Text = "{?}";
             // 
@@ -221,18 +253,20 @@
             // lbRoomType
             // 
             this.lbRoomType.AutoSize = true;
+            this.lbRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRoomType.Location = new System.Drawing.Point(96, 172);
             this.lbRoomType.Name = "lbRoomType";
-            this.lbRoomType.Size = new System.Drawing.Size(24, 16);
+            this.lbRoomType.Size = new System.Drawing.Size(37, 25);
             this.lbRoomType.TabIndex = 3;
             this.lbRoomType.Text = "{?}";
             // 
             // lbRomStatus
             // 
             this.lbRomStatus.AutoSize = true;
+            this.lbRomStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRomStatus.Location = new System.Drawing.Point(96, 72);
             this.lbRomStatus.Name = "lbRomStatus";
-            this.lbRomStatus.Size = new System.Drawing.Size(24, 16);
+            this.lbRomStatus.Size = new System.Drawing.Size(37, 25);
             this.lbRomStatus.TabIndex = 2;
             this.lbRomStatus.Text = "{?}";
             // 
@@ -310,30 +344,12 @@
             this.lbPhong.Text = "{ ? }";
             this.lbPhong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ten,
-            this.soLuong,
-            this.dongGia,
-            this.Deleted});
-            this.dataGridView1.Location = new System.Drawing.Point(81, 146);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 284);
-            this.dataGridView1.TabIndex = 50;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
             // ten
             // 
             this.ten.DataPropertyName = "tenDichVu";
             this.ten.HeaderText = "Service";
             this.ten.MinimumWidth = 6;
             this.ten.Name = "ten";
-            this.ten.Width = 125;
             // 
             // soLuong
             // 
@@ -341,7 +357,6 @@
             this.soLuong.HeaderText = "Amount";
             this.soLuong.MinimumWidth = 6;
             this.soLuong.Name = "soLuong";
-            this.soLuong.Width = 125;
             // 
             // dongGia
             // 
@@ -349,14 +364,13 @@
             this.dongGia.HeaderText = "Price";
             this.dongGia.MinimumWidth = 6;
             this.dongGia.Name = "dongGia";
-            this.dongGia.Width = 125;
             // 
             // Deleted
             // 
             this.Deleted.HeaderText = "Delete";
+            this.Deleted.Image = ((System.Drawing.Image)(resources.GetObject("Deleted.Image")));
             this.Deleted.MinimumWidth = 6;
             this.Deleted.Name = "Deleted";
-            this.Deleted.Width = 125;
             // 
             // frmRoomInformation
             // 
@@ -379,13 +393,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
             this.pnFatherSanPham.ResumeLayout(false);
             this.pnFatherSanPham.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

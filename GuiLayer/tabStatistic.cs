@@ -62,7 +62,7 @@ namespace GuiLayer
             chartRevenue.ChartAreas[0].AxisX.Maximum = 12;
             chartRevenue.ChartAreas[0].AxisX.Minimum = 0;
 
-            chartRevenue.ChartAreas[0].AxisY.Maximum = 2000000;
+            chartRevenue.ChartAreas[0].AxisY.Maximum = 10000;
             chartRevenue.ChartAreas[0].AxisY.Minimum = 0;
 
         

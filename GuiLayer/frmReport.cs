@@ -91,7 +91,7 @@ namespace GuiLayer
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Ban co muon xuat file excel khong", "Hoi", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Would you like to export the data to an Excel file?", "Question", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 toExcel(dt, "RevenueReportNews");
@@ -196,6 +196,23 @@ namespace GuiLayer
                 worksheet.Range[worksheet.Cells[totalIndex, 4], worksheet.Cells[totalIndex, 4]].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
                 worksheet.Range[worksheet.Cells[lastRowIndex, 4], worksheet.Cells[lastRowIndex, 5]].Merge();
+                //worksheet.Range[worksheet.Cells[lastRowIndex, 5], worksheet.Cells[lastRowIndex, 6]].Merge();
+
+
+                DateTime currentTime = DateTime.Now;
+                string formattedDate = currentTime.ToString("dddd, dd MMMM yyyy");
+
+                // Merge 4 dòng phía dưới "Signal"
+                worksheet.Range[worksheet.Cells[lastRowIndex + 1, 4], worksheet.Cells[lastRowIndex + 4, 5]].Merge();
+
+                worksheet.Cells[lastRowIndex - 1 , 4] = formattedDate;
+                worksheet.Range[worksheet.Cells[lastRowIndex - 1, 4], worksheet.Cells[lastRowIndex - 1, 4]].Font.Bold = true;
+                worksheet.Range[worksheet.Cells[lastRowIndex - 1, 4], worksheet.Cells[lastRowIndex -1, 4]].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                worksheet.Range[worksheet.Cells[lastRowIndex - 1, 4], worksheet.Cells[lastRowIndex - 1, 5]].Merge();
+                worksheet.Range[worksheet.Cells[lastRowIndex - 1, 4], worksheet.Cells[lastRowIndex - 1, 5]].Merge();
+
+
+                // Gán giá trị cho ô "Signal"
                 worksheet.Cells[lastRowIndex, 4] = "Signal";
 
                 // Make "Signal" bold and center it in columns 4

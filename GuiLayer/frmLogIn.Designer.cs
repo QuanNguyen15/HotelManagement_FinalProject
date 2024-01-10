@@ -115,7 +115,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(69)))));
-            this.label7.Location = new System.Drawing.Point(191, 34);
+            this.label7.Location = new System.Drawing.Point(185, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(169, 75);
             this.label7.TabIndex = 30;

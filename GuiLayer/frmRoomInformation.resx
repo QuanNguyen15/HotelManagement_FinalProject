@@ -139,6 +139,17 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Deleted.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAEqSURBVEhL7ZUxTgJBFIY30ZpzWOgZaIkWu28SboAFthRG
+        DwAnwBNgY4sn0ITKBrgAngDtWCjGf5OfRMibfQ9JbPRL/kyyzP/NMDvJZn+TVQhn6xDm1chHx7EqihzC
+        p+8pQ5hgjBx3fqvms2pTigxQesP4iTF6w/lVr09Vmu0iP41rkV8DO+qtRW4PDnpU2KDwjoJ69rURWVBh
+        g9vzqkqM4H28UGGDHT1qEkdGVNjwhmmS2hx0s/BPbjSJI10qbDYiV4rAzCaESypsyjy/0CRWcFznVNjE
+        VquhSaxUPSp8YFcfmigVXPslq35QnO2LaiMyZdUPdvasyhLB/DGrfnBcD5osFSwyZNVPWRTXmiwVbKrD
+        qp/YbJ7inO8h2PkCJnIX2+0TVv85hiz7At55iYInnuE7AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAzVJREFUWEft
