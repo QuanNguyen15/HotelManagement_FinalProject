@@ -58,8 +58,14 @@ namespace GuiLayer
             label6.Text = tongSoDatPhong;
      
 
-            chartRevenue.Series["RevenueMonth"].Points.Clear(); // Clear existing points
+/*            chartRevenue.Series["RevenueMonth"].Points.Clear(); // Clear existing points*/
+            chartRevenue.ChartAreas[0].AxisX.Maximum = 12;
+            chartRevenue.ChartAreas[0].AxisX.Minimum = 0;
 
+            chartRevenue.ChartAreas[0].AxisY.Maximum = 2000000;
+            chartRevenue.ChartAreas[0].AxisY.Minimum = 0;
+
+        
             for (int i = 1; i <= 12; i++)
             {
                 hoaDon.tenHoaDon = i.ToString();
@@ -72,9 +78,17 @@ namespace GuiLayer
 
                 decimal tongTienPhongTrongThang = tienDV + tienPhong;
 
-                chartRevenue.Series["RevenueMonth"].Points.AddXY(GetMonthName(i), tongTienPhongTrongThang);
+                string monthName = GetMonthName(i);
+
+                // Đặt chiều rộng của cột (đơn vị là pixels)
+                chartRevenue.Series["RevenueMonth"]["PointWidth"] = "0.5";
+
+                // Thêm điểm cho Series "RevenueMonth" với tên tháng làm giá trị x
+                chartRevenue.Series["RevenueMonth"].Points.AddXY(monthName, tongTienPhongTrongThang);
             }
 
+            // Sau khi thêm dữ liệu, nếu bạn muốn có 12 tháng trên trục x, bạn có thể cập nhật giới hạn trục x lại
+            chartRevenue.ChartAreas[0].AxisX.Maximum = 12;
 
         }
         private string GetMonthName(int monthNumber)
