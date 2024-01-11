@@ -186,7 +186,7 @@ namespace GuiLayer
             this.FormBorderStyle = originalFormBorderStyle;
         }
 
-        public void billDetail(decimal TongNgayThuc, decimal dongiaPhong)
+        public void billDetail(decimal TongNgayThuc, decimal donggiaPhong)
         {
             decimal total = 0;
 
@@ -194,9 +194,9 @@ namespace GuiLayer
             // Add a new row to the DataTable
             DataRow totalRow = dtGridDichVu.NewRow();
             totalRow["tenDichVu"] = room.tenPhong;  // Replace "columnName3" with the actual column name
-            totalRow["donGia"] = dongiaPhong;
+            totalRow["donGia"] = donggiaPhong;
             totalRow["TongSoLuong"] = TongNgayThuc; 
-            totalRow["TongDonGia"] = TongNgayThuc* dongiaPhong;
+            totalRow["TongDonGia"] = TongNgayThuc* donggiaPhong;
             dtGridDichVu.Rows.Add(totalRow);
 
 

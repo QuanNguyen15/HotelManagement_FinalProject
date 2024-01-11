@@ -8,8 +8,11 @@ namespace BusinessLogic
 {
     public class ServerName
     {
-        public string userName {get ; set;}
-        public string nameDataBase { get ; set;}
+        public string userName { get; set; }
+        public string nameDataBase { get; set; }
+
+        public string userNameTest { get; set; }
+        public string nameDataBaseTest { get; set; }
         public string password { get; set; }
 
         public string Khai = "DESKTOP-FOV0R60\\SQLEXPRESS";
@@ -17,14 +20,21 @@ namespace BusinessLogic
         public string Quan = "DESKTOP-9HGBU5H\\SQLEXPRESS";
 
         public string dataBase = "HOTEL_MANAGEMENT";
-        public string dataBaseTesting = "HOTEL_MANAGEMENT_TESTING";
+        public string dataBaseTesting = "HOTEL_MANAGEMENT_2";
 
 
         public ServerName()
         {
-            userName = Quan;
+            userName = Viet;
             nameDataBase = dataBase;
+
+            ///////////////////////////////////////
+
+            userNameTest = Viet;
+            nameDataBaseTest = dataBaseTesting;
         }
+
+
 
     }
 }

@@ -22,5 +22,16 @@ namespace DataAccess
             this.donGia = donGia;
         
         }
+
+        public classThietBi(string tenThietBi, decimal donGia)
+        {
+            this.tenThietBi = tenThietBi;
+            this.donGia = donGia;
+        }
+
+        public classThietBi(int idThietBi)
+        {
+            this.idThietBi = idThietBi;
+        }
     }
 }

@@ -63,7 +63,7 @@ namespace GuiLayer
                 string ngayDat = thongTinPhongLb.Rows[0]["ngayDat"].ToString();
                 lbDayRent.Text = ngayDat;
                 string ngayTra = thongTinPhongLb.Rows[0]["ngayTra"].ToString();
-                lbNumDay.Text = ngayDat;
+                lbNumDay.Text = ngayTra;
                 string soNguoi = thongTinPhongLb.Rows[0]["soNguoi"].ToString();
                 lbPeople.Text = soNguoi;
                 string trangThai = thongTinPhongLb.Rows[0]["trangThai"].ToString();

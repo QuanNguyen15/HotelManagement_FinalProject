@@ -105,6 +105,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewBill.RowHeadersVisible = false;
             this.dataGridViewBill.RowHeadersWidth = 51;
             this.dataGridViewBill.RowTemplate.Height = 24;
             this.dataGridViewBill.Size = new System.Drawing.Size(1450, 668);
@@ -118,7 +119,7 @@
             this.idHoaDon.HeaderText = "ID Invoice";
             this.idHoaDon.MinimumWidth = 6;
             this.idHoaDon.Name = "idHoaDon";
-            this.idHoaDon.Width = 126;
+            this.idHoaDon.Width = 116;
             // 
             // hoTenKhachHang
             // 

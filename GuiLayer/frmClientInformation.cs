@@ -151,7 +151,7 @@ namespace GuiLayer
 
 
 
-                if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(soCDCD) || string.IsNullOrEmpty(dienThoai) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(diachi))
+                if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(soCDCD) || string.IsNullOrEmpty(dienThoai) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(diachi) || string.IsNullOrEmpty(gioiTinh))
                 {
                     MessageBox.Show("Please fill in all information");
                 }
