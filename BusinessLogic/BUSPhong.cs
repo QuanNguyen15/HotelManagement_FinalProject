@@ -21,7 +21,6 @@ namespace BusinessLogic
 
         public DataTable getPhong()
         {
-
             DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
             DataTable getDatatable = dbPhong.getDataTable();
             dt = getDatatable;
