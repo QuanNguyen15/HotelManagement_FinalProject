@@ -10,12 +10,10 @@ namespace BusinessLogic
     {
         public  string userName {get ; set;}
         public  string nameDataBase { get ; set;}
-
-/*        public static string userNameTest { get; set; }
-        public static string nameDataBaseTest { get; set; }*/
         public string password { get; set; }
-
-/*        public string Khai = "DESKTOP-FOV0R60\\SQLEXPRESS";
+        public static string userNameTest { get; set; }
+        public static string nameDataBaseTest { get; set; }
+        public string Khai = "DESKTOP-FOV0R60\\SQLEXPRESS";
         public string Viet = "DESKTOP-2MC26TB\\SQLEXPRESS";
         public string Quan = "DESKTOP-9HGBU5H\\SQLEXPRESS";
 
@@ -25,7 +23,7 @@ namespace BusinessLogic
 
         public ServerName()
         {
-            userName = Quan;
+            userName = Viet;
             nameDataBase = dataBase;
         }
 
