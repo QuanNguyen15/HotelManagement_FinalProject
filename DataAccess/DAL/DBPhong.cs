@@ -43,7 +43,6 @@ namespace BusinessLogic
             sp[1] = new SqlParameter("@idLoaiPhong", SqlDbType.Int);
             sp[1].Value = Object.idLoaiPhong;
             return cDB.executeProcedure("AddPhong", sp);
-
         }
 
         public DataTable searchPhong(classPhong Object)
