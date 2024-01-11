@@ -76,10 +76,10 @@ namespace BusinessLogic
             return dbPhong.UpdatePhong(Object);
         }
 
-        public DataTable getRoomAvailable()
+        public DataTable getRoomAvailable(string loaiPhong)
         {
             DBPhong dbPhong = new DBPhong(serverName.userName, serverName.nameDataBase);
-            return dbPhong.getRoomAvailable();
+            return dbPhong.getRoomAvailable(loaiPhong);
         }
 
         public DataTable getIdPhong(string name)

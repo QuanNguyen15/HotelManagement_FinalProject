@@ -74,9 +74,9 @@ namespace BusinessLogic
 
         }
 
-        public DataTable getRoomAvailable()
+        public DataTable getRoomAvailable(string loaPhong)
         {
-            string query = "select tenPhong , trangThai from Phong where trangThai = 'Available' and is_delete = 0";
+            string query = "select tenPhong , trangThai from Phong where trangThai = 'Available' and is_delete = 0 and idloaiPhong =" + loaPhong;
             dt = new DataTable();
             dt = cDB.getData(query);
             return dt;

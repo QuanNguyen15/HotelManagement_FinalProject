@@ -31,8 +31,41 @@ namespace GuiLayer
         {
             book = booking;
             InitializeComponent();
-        }
+            foreach (Control control in panel3.Controls)
+            {
+                if (control is RadioButton radioButton)
+                {
 
+                    radioButton.CheckedChanged += RadioButton;
+                }
+            }
+            }
+
+        private void RadioButton(object sender, EventArgs e)
+        {
+            string loaiPhong = "1";
+            RadioButton radioButton = sender as RadioButton;
+
+            if (radioButton != null && radioButton.Checked)
+            {
+                string Option = radioButton.Text;
+                if (Option == "Single")
+                {
+                    loaiPhong = "1";
+                }
+                else if (Option == "Double")
+                {
+                    loaiPhong = "2";
+                }
+                else if (Option == "Vip")
+                {
+                    loaiPhong = "3";
+                }
+                DataTable dt = new DataTable();
+                dt = busPhong.getRoomAvailable(loaiPhong);
+                dataGridViewRoomAvail.DataSource = dt;
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
 
@@ -41,10 +74,18 @@ namespace GuiLayer
         private void frmBooking_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = busPhong.getRoomAvailable();
+            dt = busPhong.getRoomAvailable("1");
             dataGridViewRoomAvail.DataSource = dt;
 
         }
+
+
+
+
+
+
+
+
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
@@ -147,7 +188,18 @@ namespace GuiLayer
             }
           
         }
-
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         static bool IsNumeric(string input)
         {
             Regex regex = new Regex("^[0-9]+$");
@@ -316,6 +368,14 @@ namespace GuiLayer
                 {
                     MessageBox.Show($"The phone number must be 10 numbers", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+            else if (hoTen.Length > 30)
+            {
+                MessageBox.Show("Please enter your full name in less than 30 characters");
+            }
+            else if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Invalid email");
             }
             else if (!checkTime)
             {
@@ -523,6 +583,11 @@ namespace GuiLayer
                 }
                
             }
+
+        }
+
+        private void radAvail_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }

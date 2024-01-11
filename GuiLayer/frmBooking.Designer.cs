@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBooking));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radOther = new System.Windows.Forms.RadioButton();
@@ -73,6 +73,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.radMaintenece = new System.Windows.Forms.RadioButton();
+            this.radAll = new System.Windows.Forms.RadioButton();
+            this.radAvail = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -86,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAvail)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -121,6 +126,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this.dateTimePickerCheckoout);
@@ -425,32 +431,32 @@
             // dataGridViewRoomSelect
             // 
             this.dataGridViewRoomSelect.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRoomSelect.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRoomSelect.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewRoomSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRoomSelect.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete,
             this.Person});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewRoomSelect.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewRoomSelect.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewRoomSelect.Location = new System.Drawing.Point(436, 252);
             this.dataGridViewRoomSelect.Name = "dataGridViewRoomSelect";
             this.dataGridViewRoomSelect.RowHeadersVisible = false;
             this.dataGridViewRoomSelect.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewRoomSelect.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewRoomSelect.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewRoomSelect.RowTemplate.Height = 24;
             this.dataGridViewRoomSelect.Size = new System.Drawing.Size(329, 327);
             this.dataGridViewRoomSelect.TabIndex = 3;
@@ -474,14 +480,14 @@
             // 
             this.dataGridViewRoomAvail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewRoomAvail.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRoomAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRoomAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewRoomAvail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRoomAvail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tenPhong,
@@ -491,8 +497,8 @@
             this.dataGridViewRoomAvail.Name = "dataGridViewRoomAvail";
             this.dataGridViewRoomAvail.RowHeadersVisible = false;
             this.dataGridViewRoomAvail.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewRoomAvail.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewRoomAvail.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewRoomAvail.RowTemplate.Height = 24;
             this.dataGridViewRoomAvail.Size = new System.Drawing.Size(329, 327);
             this.dataGridViewRoomAvail.TabIndex = 2;
@@ -557,6 +563,56 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_2);
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.radMaintenece);
+            this.panel3.Controls.Add(this.radAll);
+            this.panel3.Controls.Add(this.radAvail);
+            this.panel3.Location = new System.Drawing.Point(197, 193);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(233, 45);
+            this.panel3.TabIndex = 40;
+            // 
+            // radMaintenece
+            // 
+            this.radMaintenece.AutoSize = true;
+            this.radMaintenece.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radMaintenece.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radMaintenece.Location = new System.Drawing.Point(172, 7);
+            this.radMaintenece.Name = "radMaintenece";
+            this.radMaintenece.Size = new System.Drawing.Size(54, 28);
+            this.radMaintenece.TabIndex = 12;
+            this.radMaintenece.TabStop = true;
+            this.radMaintenece.Text = "Vip";
+            this.radMaintenece.UseVisualStyleBackColor = true;
+            // 
+            // radAll
+            // 
+            this.radAll.AutoSize = true;
+            this.radAll.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAll.ForeColor = System.Drawing.Color.Black;
+            this.radAll.Location = new System.Drawing.Point(3, 9);
+            this.radAll.Name = "radAll";
+            this.radAll.Size = new System.Drawing.Size(75, 28);
+            this.radAll.TabIndex = 9;
+            this.radAll.TabStop = true;
+            this.radAll.Text = "Single";
+            this.radAll.UseVisualStyleBackColor = true;
+            // 
+            // radAvail
+            // 
+            this.radAvail.AutoSize = true;
+            this.radAvail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAvail.ForeColor = System.Drawing.Color.Black;
+            this.radAvail.Location = new System.Drawing.Point(84, 9);
+            this.radAvail.Name = "radAvail";
+            this.radAvail.Size = new System.Drawing.Size(82, 28);
+            this.radAvail.TabIndex = 10;
+            this.radAvail.TabStop = true;
+            this.radAvail.Text = "Double";
+            this.radAvail.UseVisualStyleBackColor = true;
+            this.radAvail.CheckedChanged += new System.EventHandler(this.radAvail_CheckedChanged);
+            // 
             // frmBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -587,6 +643,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAvail)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -632,5 +690,9 @@
         private System.Windows.Forms.DataGridView dataGridViewRoomSelect;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn Person;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton radMaintenece;
+        private System.Windows.Forms.RadioButton radAll;
+        private System.Windows.Forms.RadioButton radAvail;
     }
 }

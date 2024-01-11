@@ -53,7 +53,10 @@ namespace GuiLayer
             }
 
             string tongSoDatPhong = busHoaDon.SelectSoPhongByMonth(hoaDon);
+
             decimal tongTienPhongTrongThanh = decimal.Parse(tongTienDV) + decimal.Parse(tongTienPhong);
+
+
 
             label6.Text = tongSoDatPhong;
      

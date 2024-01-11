@@ -101,6 +101,13 @@ namespace GuiLayer
             {
 
             }
+            else if (hoTen.Length > 30)
+            {
+                MessageBox.Show("Please enter your full name in less than 30 characters");
+            }else if (!IsValidEmail(email))
+            {
+                    MessageBox.Show("Invalid email");
+            }
             else if (!soCCCDmax(soCDCD) && !dienThoaiMax(dienThoai))
             {
                 
@@ -151,6 +158,19 @@ namespace GuiLayer
             string pattern = @"^\d{10}$";
 
             return Regex.IsMatch(input, pattern);
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
