@@ -38,6 +38,7 @@
             this.khachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soCCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detail = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooking)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             this.khachHang,
             this.ngayDat,
             this.NhanVien,
+            this.soCCCD,
             this.Detail});
             this.dataGridViewBooking.Location = new System.Drawing.Point(67, 173);
             this.dataGridViewBooking.Name = "dataGridViewBooking";
@@ -117,7 +119,7 @@
             // ngayDat
             // 
             this.ngayDat.DataPropertyName = "ngayDat";
-            this.ngayDat.HeaderText = "Booking date";
+            this.ngayDat.HeaderText = "Booking Date";
             this.ngayDat.MinimumWidth = 6;
             this.ngayDat.Name = "ngayDat";
             // 
@@ -127,6 +129,13 @@
             this.NhanVien.HeaderText = "Staff";
             this.NhanVien.MinimumWidth = 6;
             this.NhanVien.Name = "NhanVien";
+            // 
+            // soCCCD
+            // 
+            this.soCCCD.DataPropertyName = "soCCCD";
+            this.soCCCD.HeaderText = "ID Number";
+            this.soCCCD.MinimumWidth = 6;
+            this.soCCCD.Name = "soCCCD";
             // 
             // Detail
             // 
@@ -165,6 +174,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn khachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayDat;
         private System.Windows.Forms.DataGridViewTextBoxColumn NhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soCCCD;
         private System.Windows.Forms.DataGridViewImageColumn Detail;
     }
 }
