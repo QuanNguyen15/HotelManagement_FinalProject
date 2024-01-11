@@ -15,10 +15,15 @@ namespace BusinessLogic
         public string Khai = "DESKTOP-FOV0R60\\SQLEXPRESS";
         public string Viet = "DESKTOP-2MC26TB\\SQLEXPRESS";
         public string Quan = "DESKTOP-9HGBU5H\\SQLEXPRESS";
+
+        public string dataBase = "HOTEL_MANAGEMENT";
+        public string dataBaseTesting = "HOTEL_MANAGEMENT_TESTING";
+
+
         public ServerName()
         {
-            userName = Viet;
-            nameDataBase = "HOTEL_MANAGEMENT";
+            userName = Quan;
+            nameDataBase = dataBase;
         }
 
     }

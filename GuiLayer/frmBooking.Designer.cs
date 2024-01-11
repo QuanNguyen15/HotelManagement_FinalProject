@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBooking));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radOther = new System.Windows.Forms.RadioButton();
@@ -57,6 +57,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.radMaintenece = new System.Windows.Forms.RadioButton();
+            this.radAll = new System.Windows.Forms.RadioButton();
+            this.radAvail = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePickerCheckoout = new System.Windows.Forms.DateTimePicker();
@@ -73,10 +77,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.radMaintenece = new System.Windows.Forms.RadioButton();
-            this.radAll = new System.Windows.Forms.RadioButton();
-            this.radAvail = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -88,9 +88,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAvail)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -368,12 +368,62 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Client information";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.radMaintenece);
+            this.panel3.Controls.Add(this.radAll);
+            this.panel3.Controls.Add(this.radAvail);
+            this.panel3.Location = new System.Drawing.Point(55, 202);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(329, 45);
+            this.panel3.TabIndex = 40;
+            // 
+            // radMaintenece
+            // 
+            this.radMaintenece.AutoSize = true;
+            this.radMaintenece.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radMaintenece.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radMaintenece.Location = new System.Drawing.Point(226, 7);
+            this.radMaintenece.Name = "radMaintenece";
+            this.radMaintenece.Size = new System.Drawing.Size(54, 28);
+            this.radMaintenece.TabIndex = 12;
+            this.radMaintenece.TabStop = true;
+            this.radMaintenece.Text = "Vip";
+            this.radMaintenece.UseVisualStyleBackColor = true;
+            // 
+            // radAll
+            // 
+            this.radAll.AutoSize = true;
+            this.radAll.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAll.ForeColor = System.Drawing.Color.Black;
+            this.radAll.Location = new System.Drawing.Point(3, 8);
+            this.radAll.Name = "radAll";
+            this.radAll.Size = new System.Drawing.Size(75, 28);
+            this.radAll.TabIndex = 9;
+            this.radAll.TabStop = true;
+            this.radAll.Text = "Single";
+            this.radAll.UseVisualStyleBackColor = true;
+            // 
+            // radAvail
+            // 
+            this.radAvail.AutoSize = true;
+            this.radAvail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAvail.ForeColor = System.Drawing.Color.Black;
+            this.radAvail.Location = new System.Drawing.Point(114, 8);
+            this.radAvail.Name = "radAvail";
+            this.radAvail.Size = new System.Drawing.Size(82, 28);
+            this.radAvail.TabIndex = 10;
+            this.radAvail.TabStop = true;
+            this.radAvail.Text = "Double";
+            this.radAvail.UseVisualStyleBackColor = true;
+            this.radAvail.CheckedChanged += new System.EventHandler(this.radAvail_CheckedChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label6.Location = new System.Drawing.Point(432, 126);
+            this.label6.Location = new System.Drawing.Point(432, 96);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 19);
             this.label6.TabIndex = 9;
@@ -384,7 +434,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(51, 126);
+            this.label5.Location = new System.Drawing.Point(51, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 19);
             this.label5.TabIndex = 8;
@@ -392,7 +442,7 @@
             // 
             // dateTimePickerCheckoout
             // 
-            this.dateTimePickerCheckoout.Location = new System.Drawing.Point(436, 148);
+            this.dateTimePickerCheckoout.Location = new System.Drawing.Point(436, 118);
             this.dateTimePickerCheckoout.Name = "dateTimePickerCheckoout";
             this.dateTimePickerCheckoout.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerCheckoout.TabIndex = 7;
@@ -400,7 +450,7 @@
             // 
             // dateTimePickerCheckin
             // 
-            this.dateTimePickerCheckin.Location = new System.Drawing.Point(51, 148);
+            this.dateTimePickerCheckin.Location = new System.Drawing.Point(51, 118);
             this.dateTimePickerCheckin.Name = "dateTimePickerCheckin";
             this.dateTimePickerCheckin.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerCheckin.TabIndex = 6;
@@ -411,7 +461,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(432, 202);
+            this.label4.Location = new System.Drawing.Point(432, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(150, 24);
             this.label4.TabIndex = 5;
@@ -422,7 +472,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(47, 202);
+            this.label3.Location = new System.Drawing.Point(54, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 24);
             this.label3.TabIndex = 4;
@@ -431,32 +481,32 @@
             // dataGridViewRoomSelect
             // 
             this.dataGridViewRoomSelect.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRoomSelect.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRoomSelect.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewRoomSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRoomSelect.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete,
             this.Person});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewRoomSelect.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewRoomSelect.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewRoomSelect.Location = new System.Drawing.Point(436, 252);
             this.dataGridViewRoomSelect.Name = "dataGridViewRoomSelect";
             this.dataGridViewRoomSelect.RowHeadersVisible = false;
             this.dataGridViewRoomSelect.RowHeadersWidth = 51;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewRoomSelect.RowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewRoomSelect.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewRoomSelect.RowTemplate.Height = 24;
             this.dataGridViewRoomSelect.Size = new System.Drawing.Size(329, 327);
             this.dataGridViewRoomSelect.TabIndex = 3;
@@ -480,14 +530,14 @@
             // 
             this.dataGridViewRoomAvail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewRoomAvail.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewRoomAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRoomAvail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewRoomAvail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRoomAvail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tenPhong,
@@ -497,8 +547,8 @@
             this.dataGridViewRoomAvail.Name = "dataGridViewRoomAvail";
             this.dataGridViewRoomAvail.RowHeadersVisible = false;
             this.dataGridViewRoomAvail.RowHeadersWidth = 51;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewRoomAvail.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewRoomAvail.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewRoomAvail.RowTemplate.Height = 24;
             this.dataGridViewRoomAvail.Size = new System.Drawing.Size(329, 327);
             this.dataGridViewRoomAvail.TabIndex = 2;
@@ -563,56 +613,6 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_2);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.radMaintenece);
-            this.panel3.Controls.Add(this.radAll);
-            this.panel3.Controls.Add(this.radAvail);
-            this.panel3.Location = new System.Drawing.Point(197, 193);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(233, 45);
-            this.panel3.TabIndex = 40;
-            // 
-            // radMaintenece
-            // 
-            this.radMaintenece.AutoSize = true;
-            this.radMaintenece.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radMaintenece.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radMaintenece.Location = new System.Drawing.Point(172, 7);
-            this.radMaintenece.Name = "radMaintenece";
-            this.radMaintenece.Size = new System.Drawing.Size(54, 28);
-            this.radMaintenece.TabIndex = 12;
-            this.radMaintenece.TabStop = true;
-            this.radMaintenece.Text = "Vip";
-            this.radMaintenece.UseVisualStyleBackColor = true;
-            // 
-            // radAll
-            // 
-            this.radAll.AutoSize = true;
-            this.radAll.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radAll.ForeColor = System.Drawing.Color.Black;
-            this.radAll.Location = new System.Drawing.Point(3, 9);
-            this.radAll.Name = "radAll";
-            this.radAll.Size = new System.Drawing.Size(75, 28);
-            this.radAll.TabIndex = 9;
-            this.radAll.TabStop = true;
-            this.radAll.Text = "Single";
-            this.radAll.UseVisualStyleBackColor = true;
-            // 
-            // radAvail
-            // 
-            this.radAvail.AutoSize = true;
-            this.radAvail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radAvail.ForeColor = System.Drawing.Color.Black;
-            this.radAvail.Location = new System.Drawing.Point(84, 9);
-            this.radAvail.Name = "radAvail";
-            this.radAvail.Size = new System.Drawing.Size(82, 28);
-            this.radAvail.TabIndex = 10;
-            this.radAvail.TabStop = true;
-            this.radAvail.Text = "Double";
-            this.radAvail.UseVisualStyleBackColor = true;
-            this.radAvail.CheckedChanged += new System.EventHandler(this.radAvail_CheckedChanged);
-            // 
             // frmBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -641,10 +641,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomSelect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAvail)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAvail)).EndInit();
             this.ResumeLayout(false);
 
         }
